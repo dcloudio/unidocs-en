@@ -1,0 +1,23 @@
+{
+  "name": "unidocs-en",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "validate": "node scripts/validate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dcloudio/unidocs-en.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dcloudio/unidocs-en/issues"
+  },
+  "homepage": "https://github.com/dcloudio/unidocs-en#readme"
+}
