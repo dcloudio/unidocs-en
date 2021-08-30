@@ -1,14 +1,20 @@
 #### form
 表单，将组件内的用户输入的``<switch>`` ``<input>`` ``<checkbox>`` ``<slider>`` ``<radio>`` ``<picker>`` 提交。
+Form, `<switch>` `<input>` `<checkbox>` `<slider>` `<radio>` `<picker>`submit the user input in the component .
 
 当点击 ``<form>`` 表单中 formType 为 submit 的 ``<button>`` 组件时，会将表单组件中的 value 值进行提交，需要在表单组件中加上 name 来作为 key。
+When you click `<form>`the form to submit formType of `<button>`the component, value value will be submitted in the form component, we need to add components to the form name as key.
 
 **属性说明**
+**Property description**
 
-|属性名|类型|说明|平台差异说明|
-|:-|:-|:-|:-|
-|@submit|EventHandle|携带 form 中的数据触发 submit 事件，event.detail = {value : {'name': 'value'} , formId: ''}，report-submit 为 true 时才会返回 formId||
-|@reset|EventHandle|表单重置时会触发 reset 事件|&nbsp;|
+|属性名|类型|说明|
+| Attribute name        | Types of    | Description                                                  |
+|:-|:-|:-|
+|@submit|EventHandle|携带 form 中的数据触发 submit 事件，event.detail = {value : {'name': 'value'} , formId: ''}，report-submit 为 true 时才会返回 formId|
+| @submit               | EventHandle | Carrying the data in the form to trigger the submit event, event.detail = {value: {'name':'value'}, formId:''}, formId will only be returned when report-submit is true |
+|@reset|EventHandle|表单重置时会触发 reset 事件|
+| @reset                | EventHandle | The reset event is triggered when the form is reset          |
 
 **示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/form/form)
  
@@ -29,10 +35,10 @@
 					<view class="title">radio</view>
 					<radio-group name="radio">
 						<label>
-							<radio value="radio1" /><text>选项一</text>
+							<radio value="radio1" /><text>Option one</text>
 						</label>
 						<label>
-							<radio value="radio2" /><text>选项二</text>
+							<radio value="radio2" /><text>Option two</text>
 						</label>
 					</radio-group>
 				</view>
@@ -40,10 +46,10 @@
 					<view class="title">checkbox</view>
 					<checkbox-group name="checkbox">
 						<label>
-							<checkbox value="checkbox1" /><text>选项一</text>
+							<checkbox value="checkbox1" /><text>Option one</text>
 						</label>
 						<label>
-							<checkbox value="checkbox2" /><text>选项二</text>
+							<checkbox value="checkbox2" /><text>Option two</text>
 						</label>
 					</checkbox-group>
 				</view>
@@ -53,7 +59,7 @@
 				</view>
 				<view class="uni-form-item uni-column">
 					<view class="title">input</view>
-					<input class="uni-input" name="input" placeholder="这是一个输入框" />
+					<input class="uni-input" name="input" placeholder="" />
 				</view>
 				<view class="uni-btn-v">
 					<button form-type="submit">Submit</button>
@@ -74,7 +80,7 @@
 				console.log('form发生了submit事件，携带数据为：' + JSON.stringify(e.detail.value))
 				var formdata = e.detail.value
 				uni.showModal({
-					content: '表单数据内容：' + JSON.stringify(formdata),
+					content: 'data：' + JSON.stringify(formdata),
 					showCancel: false
 				});
 			},

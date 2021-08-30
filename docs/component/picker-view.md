@@ -1,26 +1,38 @@
 #### picker-view
 
 嵌入页面的滚动选择器。
+Scroll selector embedded in the page.
 
 相对于`picker`组件，`picker-view`拥有更强的灵活性。当需要对自定义选择的弹出方式和UI表现时，往往需要使用`picker-view`。
+Compared with `picker`components, it `picker-view`has more flexibility. When you need to customize the pop-up mode and UI performance, you often need to use it `picker-view`.
 
 **属性说明**
+**Property description**
 
 |属性名|类型|默认值|平台差异说明|
+| Attribute name  | Types of        | Defaults|Platform difference description|
 |:-|:-|:-|:-|
 |value|Array＜Number＞|数组中的数字依次表示 picker-view 内的 picker-view-column 选择的第几项（下标从 0 开始），数字大于 picker-view-column 可选项长度时，选择最后一项。||
+| value           | Array＜Number＞ | The numbers in the array indicate the number of items selected by picker-view-column in picker-view (the subscript starts from 0). When the number is greater than the length of the picker-view-column option, the last item is selected. ||
 |indicator-style|String|设置选择器中间选中框的样式||
+| indicator-style | String          | Set the style of the selected box in the middle of the selector ||
 |indicator-class|String|设置选择器中间选中框的类名，注意页面或组件的style中写了scoped时，需要在类名前写/deep/|app-nvue不支持|
+| indicator-class | String          | Set the class name of the selected box in the selector. Note that when scoped is written in the style of the page or component, you need to write /deep/ before the class name |app-nvue不支持|
 |mask-style|String|设置蒙层的样式||
+| mask-style      | String          | Set the style of the mask                                    ||
 |mask-class|String|设置蒙层的类名|app-nvue不支持|
+| mask-class      | String          | Set the class name of the mask                               |app-nvue不支持|
 |@change|EventHandle|当滚动选择，value 改变时触发 change 事件，event.detail = {value: value}；value为数组，表示 picker-view 内的 picker-view-column 当前选择的是第几项（下标从 0 开始）|&nbsp;|
+| @change         | EventHandle     | When scrolling selection, the change event is triggered when the value changes, event.detail = {value: value}; value is an array, which means the picker-view-column in the picker-view is currently selected (the subscript starts from 0) ||
 
 
 **注意：**其中只可放置 `<picker-view-column/>` 组件，其他节点不会显示。
+**Note:** in which may be placed only `<picker-view-column/>`components, other nodes will not be displayed.
 
 #### picker-view-column
 
 `<picker-view />` 的子组件，仅可放置于 `<picker-view />` 中，其子节点的高度会自动设置成与 picker-view 的选中框的高度一致。
+`<picker-view />`The subassembly may be placed only in the `<picker-view />`height level of the child nodes will be automatically set to the height of the picker-view is consistent with the selected frame.
 
 **注意：**nvue页面子节点未继承 picker-view 的选中框的高度，需要自己设置高度并居中。
 
@@ -34,17 +46,17 @@
 <template>
     <view>
         <view class="uni-padding-wrap">
-            <view class="uni-title">日期：{{year}}年{{month}}月{{day}}日</view>
+            <view class="uni-title">Date：{{year}}year{{month}}month{{day}}day</view>
         </view>
         <picker-view v-if="visible" :indicator-style="indicatorStyle" :value="value" @change="bindChange" class="picker-view">
             <picker-view-column>
-                <view class="item" v-for="(item,index) in years" :key="index">{{item}}年</view>
+                <view class="item" v-for="(item,index) in years" :key="index">{{item}}year</view>
             </picker-view-column>
             <picker-view-column>
-                <view class="item" v-for="(item,index) in months" :key="index">{{item}}月</view>
+                <view class="item" v-for="(item,index) in months" :key="index">{{item}}month</view>
             </picker-view-column>
             <picker-view-column>
-                <view class="item" v-for="(item,index) in days" :key="index">{{item}}日</view>
+                <view class="item" v-for="(item,index) in days" :key="index">{{item}}day</view>
             </picker-view-column>
         </picker-view>
     </view>

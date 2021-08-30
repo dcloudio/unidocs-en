@@ -1,25 +1,36 @@
 #### radio-group
 
 单项选择器，内部由多个 ``<radio>`` 组成。通过把多个`radio`包裹在一个`radio-group`下，实现这些`radio`的单选。
+Single selector, a plurality of internal `<radio>`components. By putting multiple `radio`packages under one `radio-group`, `radio`the single selection of these is realized .
 
 **属性说明**
+**Property description**
 
 |属性名|类型|默认值|说明|
+| Attribute name | Types of    | Defaults | Description                                                  |
 |:-|:-|:-|:-|
 |@change|EventHandle||``<radio-group>`` 中的选中项发生变化时触发 change 事件，event.detail = {value: 选中项radio的value}|
+| @change        | EventHandle |          | `<radio-group>` The change event is triggered when the selected item in the selection changes, event.detail = {value: the value of the selected item radio} |
 
 #### radio
 
 单选项目。
+Single-select items.
 
 **属性说明**
+**Property description**
 
 |属性名|类型|默认值|说明|
+| Attribute name | Types of | Defaults | Description                                                  |
 |:-|:-|:-|:-|
 |value|String||``<radio>`` 标识。当该 ``<radio>`` 选中时，``<radio-group>`` 的 change 事件会携带 ``<radio>`` 的 value|
+| value          | String   |          | `<radio>`Logo. When the `<radio>`time is selected, `<radio-group>`a change event will carry `<radio>`a value |
 |checked|Boolean|false|当前是否选中|
+| checked        | Boolean  | false    | Is currently selected                                        |
 |disabled|Boolean|false|是否禁用|
+| disabled       | Boolean  | false    | Whether to disable                                           |
 |color|Color||radio的颜色，同css的color|
+| color          | Color    |          | The color of radio, same as the color of css                 |
 
 **示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/radio/radio)
  
@@ -29,13 +40,13 @@
 <template>
 	<view>
 		<view class="uni-padding-wrap">
-			<view class="uni-title">默认样式</view>
+			<view class="uni-title">Default style</view>
 			<view>
-				<label class="radio"><radio value="r1" checked="true" />选中</label>
-				<label class="radio"><radio value="r2" />未选中</label>
+				<label class="radio"><radio value="r1" checked="true" />Selected</label>
+				<label class="radio"><radio value="r2" />Unselected</label>
 			</view>
 		</view>
-		<view class="uni-title uni-common-mt uni-common-pl">推荐展示样式</view>
+		<view class="uni-title uni-common-mt uni-common-pl">Recommended display style</view>
 		<view class="uni-list">
 			<radio-group @change="radioChange">
 				<label class="uni-list-cell uni-list-cell-pd" v-for="(item, index) in items" :key="item.value">
@@ -55,28 +66,28 @@ export default {
         return {
             items: [{
                     value: 'USA',
-                    name: '美国'
+                    name: 'USA'
                 },
                 {
                     value: 'CHN',
-                    name: '中国',
+                    name: 'China',
                     checked: 'true'
                 },
                 {
                     value: 'BRA',
-                    name: '巴西'
+                    name: 'Brazil'
                 },
                 {
                     value: 'JPN',
-                    name: '日本'
+                    name: 'Japan'
                 },
                 {
                     value: 'ENG',
-                    name: '英国'
+                    name: 'England'
                 },
                 {
                     value: 'FRA',
-                    name: '法国'
+                    name: 'France'
                 },
             ],
             current: 0

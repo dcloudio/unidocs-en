@@ -1,20 +1,33 @@
 #### video
 视频播放组件。
+Video playback component.
 
 **属性说明**
+**Property description**
 
 |属性名|类型|默认值|说明|平台差异说明|
+| Attribute name| Types of     | Defaults | Description| Platform difference description |
 |:-|:-|:-|:-|:-|
 |src|String||要播放视频的资源地址||
+|src|String||The resource address of the video to be played||
 |autoplay|Boolean|false|是否自动播放||
+|autoplay|Boolean|false|Whether to play automatically||
 |loop|Boolean|false|是否循环播放||
+|loop|Boolean|false|Whether to loop||
 |muted|Boolean|false|是否静音播放||
+|muted|Boolean|false|Whether to play silently||
 |initial-time|Number||指定视频初始播放位置，单位为秒（s）。||
+|initial-time|Number||Specify the initial playback position of the video, in seconds (s).||
 |duration|Number||指定视频时长，单位为秒（s）。||
+|duration|Number||Specify the video duration in seconds (s).||
 |controls|Boolean|true|是否显示默认播放控件（播放/暂停按钮、播放进度、时间）||
+|controls|Boolean|true|Whether to display the default playback controls (play/pause button, playback progress, time)||
 |danmu-list|Object Array||弹幕列表||
+|danmu-list|Object Array||Barrage list||
 |danmu-btn|Boolean|false|是否显示弹幕按钮，只在初始化时有效，不能动态变更||
+|danmu-btn|Boolean|false|Whether to display the barrage button, it is only valid during initialization and cannot be changed dynamically||
 |enable-danmu|Boolean|false|是否展示弹幕，只在初始化时有效，不能动态变更||
+|enable-danmu|Boolean|false|Whether to display the barrage, it is only valid during initialization and cannot be changed dynamically||
 |page-gesture|Boolean|false|在非全屏模式下，是否开启亮度与音量调节手势|H5|
 |direction|Number||设置全屏时视频的方向，不指定则根据宽高比自动判断。有效值为 0（正常竖向）, 90（屏幕逆时针90度）, -90（屏幕顺时针90度）|H5不支持|
 |show-progress|Boolean|true|若不设置，宽度大于240时才会显示||
@@ -42,24 +55,35 @@
 
 
 `<video>` 默认宽度 300px、高度 225px，可通过 css 设置宽高。
+`<video>` The default width is 300px, height is 225px, and the width and height can be set through css.
 
 
 ##### direction 的合法值
+##### legal value of direction
 
 |值|说明|
+| value | Description                        |
 |:-|:-|
 |0|正常竖向|
+|0|Normal vertical|
 |90|屏幕逆时针90度|
+|90|Screen 90 degrees counterclockwise|
 |-90|屏幕顺时针90度|
+|-90|Screen 90 degrees clockwise|
 
 
 ##### object-fit 的合法值
+##### Legal value of object-fit
 
 |值|说明|
+| value | Description |
 |:-|:-|
 |contain|包含|
+|contain|contain|
 |fill|填充|
+|fill|filling|
 |cover|覆盖|
+|cover|cover|
 
 
 **示例** [查看示例](https://hellouniapp.dcloud.net.cn/pages/component/video/video)
@@ -76,7 +100,7 @@
             <view class="uni-list uni-common-mt">
                 <view class="uni-list-cell">
                     <view>
-                        <view class="uni-label">弹幕内容</view>
+                        <view class="uni-label">Barrage content</view>
                     </view>
                     <view class="uni-list-cell-db">
                         <input v-model="danmuValue" class="uni-input" type="text" placeholder="在此处输入弹幕内容" />
@@ -84,7 +108,7 @@
                 </view>
             </view>
             <view class="uni-btn-v">
-                <button @click="sendDanmu" class="page-body-button">发送弹幕</button>
+                <button @click="sendDanmu" class="page-body-button">Send barrage</button>
             </view>
             <!-- #endif -->
         </view>
@@ -98,12 +122,12 @@ export default {
         return {
             src: '',
             danmuList: [{
-                    text: '第 1s 出现的弹幕',
+                    text: 'Barrage appeared in 1s',
                     color: '#ff0000',
                     time: 1
                 },
                 {
-                    text: '第 3s 出现的弹幕',
+                    text: 'Barrage appearing in 3s',
                     color: '#ff00ff',
                     time: 3
                 }

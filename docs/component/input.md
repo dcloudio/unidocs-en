@@ -1,12 +1,16 @@
 #### input
 
 输入框。
+Input box.
 
 **属性说明**
+**Property description**
 
 |属性名|类型|默认值|说明|平台差异说明|
+|Attribute name|Types of|Defaults|Description|Platform difference description|
 |:-|:-|:-|:-|:-|
 |value|String||输入框的初始内容||
+| value             | String      |                     | The initial content of the input box                         ||
 |type|String|text|input 的类型|H5 暂未支持动态切换，详见下方 Tips，请使用 v-if 进行整体切换|
 |text-content-type|String| |文本区域的语义，根据类型自动填充|仅 App-nvue-iOS 支持|
 |password|Boolean|false|是否是密码类型|H5和App写此属性时，type失效|
@@ -146,16 +150,16 @@ App平台软键盘弹出有 adjustResize|adjustPan 两种模式，默认为 adju
 	<view>
 		<view class="uni-common-mt">
 			<view class="uni-form-item uni-column">
-				<view class="title">可自动聚焦的input</view>
-				<input class="uni-input" focus placeholder="自动获得焦点" />
+				<view class="title">Auto-focusable input</view>
+				<input class="uni-input" focus placeholder="Get focus automatically" />
 			</view>
 			<view class="uni-form-item uni-column">
-				<view class="title">键盘右下角按钮显示为搜索</view>
-				<input class="uni-input" confirm-type="search" placeholder="键盘右下角按钮显示为搜索" />
+				<view class="title">The button at the bottom right corner of the keyboard is displayed as search</view>
+				<input class="uni-input" confirm-type="search" placeholder="The button at the bottom right corner of the keyboard is displayed as search" />
 			</view>
 			<view class="uni-form-item uni-column">
-				<view class="title">控制最大输入长度的input</view>
-				<input class="uni-input" maxlength="10" placeholder="最大输入长度为10" />
+				<view class="title">Input to control the maximum input length</view>
+				<input class="uni-input" maxlength="10" placeholder="Maximum input length is 10" />
 			</view>
 			<view class="uni-form-item uni-column">
 				<view class="title">实时获取输入值：{{inputValue}}</view>
