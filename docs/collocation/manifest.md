@@ -1,18 +1,30 @@
 `manifest.json` 文件是应用的配置文件，用于指定应用的名称、图标、权限等。HBuilderX 创建的工程此文件在根目录，CLI 创建的工程此文件在 src 目录。
+`manifest.json`The file is the configuration file of the application, used to specify the name, icon, permissions, etc. of the application. The project created by HBuilderX is in the root directory, and the project created by CLI is in the src directory.
 
 ### 配置项列表
+### List of configuration items
 
 |属性|类型|默认值|描述|最低版本|
+| Attributes        | Types of | Defaults                                                    | description                                                  | Minimum version |
 |:-|:-|:-|:-|:-|
 |name|String||应用名称||
+| name              | String   |                                                             | Application Name                                             |                 |
 |appid|String|新建 uni-app 项目时，DCloud 云端分配。用途[详见](https://ask.dcloud.net.cn/article/35907)|应用标识|| 
+| appid             | String   | When creating a new uni-app project, DCloud will assign it. | Application ID                                               |                 |
 |description|String||应用描述||
+| description       | String   |                                                             | Application description                                      |                 |
 |versionName|String||版本名称，例如：1.0.0。详见下方Tips说明||
+| versionName       | String   |                                                             | Version name, for example: 1.0.0. See the Tips description below for details |                 |
 |versionCode|String||版本号，例如：36||
+| versionCode       | String   |                                                             | Version number, for example: 36                              |                 |
 |transformPx|Boolean|true|是否转换项目的px，为true时将px转换为rpx，为false时，px为传统的实际像素||
+| transformPx       | Boolean  | true                                                        | Whether to convert the px of the project, when true, convert px to rpx, when false, px is the traditional actual pixel |                 |
 |networkTimeout|Object||网络超时时间，[详见](/collocation/manifest?id=networktimeout)||
+| networkTimeout    | Object   |                                                             | Network timeout time                                         |                 |
 |debug|Boolean|false|是否开启 debug 模式，开启后调试信息以 ``info`` 的形式给出，其信息有页面的注册，页面路由，数据更新，事件触发等||
+| debug             | Boolean  | false                                                       | Debug mode is turned on, after opening the debug information `info`given in the form, the information pages have registered, page routing, data updates, event triggers, etc. |                 |
 |uniStatistics|Object||[是否开启 uni 统计，全局配置](/collocation/manifest?id=uniStatistics)|2.2.3+|
+| uniStatistics     | Object   |                                                             | Whether to enable uni statistics, global configuration       | 2.2.3+          |
 |app-plus|Object||[App 特有配置](/collocation/manifest?id=app-plus)||
 |h5|Object||[H5 特有配置](/collocation/manifest?id=h5)||
 |quickapp|Object||快应用特有配置，即将支持||
@@ -24,30 +36,44 @@
 **Tips**
 
 - uni-app 的 `appid` 由 DCloud 云端分配，主要用于 DCloud 相关的云服务，请勿自行修改。[详见](https://ask.dcloud.net.cn/article/35907)
+- uni-app of `appid`the cloud DCloud allocated, mainly for DCloud related cloud service, do not modify. 
 - 注意区分 uni-app 的 `appid` 与微信小程序、iOS 等其它平台分配的 `appid`，以及第三方 SDK 的 `appid`。
+- Note the distinction between uni-app `appid`with other platforms WeChat applets, iOS like distribution `appid`, and the third party SDK `appid`.
 - versionName在云打包App和生成wgt应用资源时会使用。如需升级App版本，先修改此处再云打包。导出wgt资源用于离线打包和热更新时也会以此版本为依据。
+- versionName is used when cloud packaging App and generating wgt application resources. If you need to upgrade the App version, first modify this and then cloud packaging. Exporting wgt resources for offline packaging and hot updates will also be based on this version.
 - 在本地打包时和热更新时，App版本和wgt应用资源版本将不再保持一致。此时通过[plus.runtime.version](https://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.version)可获取App版本，通过[plus.runtime.getProperty](https://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.getProperty)获取wgt资源版本。
+- During local packaging and hot update, the App version and wgt application resource version will no longer be consistent. By this time plus.runtime.version available App version, by plus.runtime.getProperty get wgt resource version.
 
 #### networkTimeout
 
 各类网络请求的超时时间，单位均为毫秒。
+The timeout period of various network requests, in milliseconds.
 
 |属性|类型|必填|默认值|说明|
+| Attributes    | Types of | Required | Defaults | Description                                              |
 |--|--|--|--|--|
 |request|Number|否|60000|uni.request 的超时时间，单位毫秒。|
+| request       | Number   | no       | 60000    | The timeout period of uni.request, in milliseconds.      |
 |connectSocket|Number|否|60000|uni.connectSocket 的超时时间，单位毫秒。|
+| connectSocket | Number   | no       | 60000    | Uni.connectSocket timeout time, in milliseconds.         |
 |uploadFile|Number|否|60000|uni.uploadFile 的超时时间，单位毫秒。|
+| uploadFile    | Number   | no       | 60000    | The timeout period of uni.uploadFile, in milliseconds.   |
 |downloadFile|Number|否|60000|uni.downloadFile 的超时时间，单位毫秒。|
+| downloadFile  | Number   | no       | 60000    | The timeout period of uni.downloadFile, in milliseconds. |
 
 自`HBuilderX 2.5.10`起，上述默认超时时间由6秒改为60秒，对齐微信小程序平台。
+Since `HBuilderX 2.5.10`then, the above-mentioned default timeout period has been changed from 6 seconds to 60 seconds.
 
 
 ### uniStatistics
 uni 统计配置项
+uni statistics configuration items
 
 |属性|类型|必填|默认值|说明|
+| Attributes | Types of | Required | Defaults | Description                      |
 |--|--|--|--|--|
 |enable|Boolean|是|true|是否开启uni统计|
+| enable     | Boolean  | Yes      | true     | Whether to enable uni statistics |
 
 ### app-plus
 
@@ -146,40 +172,56 @@ splash（启动封面）是App必然存在的、不可取消的。
 #### optimization@app-vue-optimization
 
 小程序的分包，除了联网分段下载外，还可以减轻启动时加载的js数量，可以提升启动速度。
+The subcontracting of the applet can reduce the number of js loaded at startup and increase the startup speed in addition to the segmented download on the Internet.
 
 从uni-app 2.7.12+ 开始，App-vue平台也兼容了小程序的分包配置，但默认并不开启。
+Starting from uni-app 2.7.12+, the App-vue platform is also compatible with the sub-package configuration of applets, but it is not enabled by default.
 
 在manifest配置以下节点，可以在App端启动分包。
+Configure the following nodes in the manifest to start subcontracting on the App side.
 
 |属性|类型|说明|
+| Attributes  | Types of | Description                                   |
 |:-|:-|:-|
 |subPackages|Boolean|是否开启分包优化|
+| subPackages | Boolean  | Whether to enable subcontracting optimization |
 
 ```
 "app-plus": {
   "optimization": {
     "subPackages": true
   },
-  "runmode" : "liberate" // 开启分包优化后，必须配置资源释放模式
+  // 开启分包优化后，必须配置资源释放模式
+  // After the subcontracting optimization is enabled, the resource release mode must be configured
+  "runmode" : "liberate"
 }
 ```
 
 在manifest中启动分包后，需要在pages.json中配置具体的分包规则，与小程序的配置相同，详见：[https://uniapp.dcloud.io/collocation/pages?id=subpackages](https://uniapp.dcloud.io/collocation/pages?id=subpackages)
+After starting the subpackage in the manifest, you need to configure specific subpackage rules in pages.json, which are the same as the configuration of the applet.
 
 也就是一旦在pages.json里配置分包，小程序一定生效，而app是否生效，取决于manifest里是否开启。
+That is, once subcontracting is configured in pages.json, the applet must take effect, and whether the app takes effect depends on whether it is enabled in the manifest.
 
 注意: 
+note:
 * App开启分包后，每个分包单独编译成一个js文件(都包含在app内，不会联网下载)，当App首页是vue时，可减小启动加载文件大小，提升启动速度。
+- After the app is sub-packaged, each sub-package is separately compiled into a js file (all included in the app and will not be downloaded on the Internet). When the home page of the App is vue, the startup loading file size can be reduced and the startup speed can be improved.
 * 首页是nvue时，分包不会提升启动速度，nvue本身启动速度就快于vue，也快于开启分包后的首页为vue的应用。如果追求极致启动速度，还是应该使用nvue做首页并在manifest开启fast模式。
+- When the homepage is nvue, subcontracting will not increase the startup speed, and the startup speed of nvue itself is faster than vue, and faster than the application whose homepage is vue after opening the subcontracting. If you pursue the ultimate startup speed, you should still use nvue as the home page and enable fast mode in the manifest.
 * App页面较少时，分包对启动速度的优化不明显。
+- When the homepage is nvue, subcontracting will not increase the startup speed, and the startup speed of nvue itself is faster than vue, and faster than the application whose homepage is vue after opening the subcontracting. If you pursue the ultimate startup speed, you should still use nvue as the home page and enable fast mode in the manifest.
 
 
 #### nvue@nvue
 `nvue` 页面布局初始设置
+`nvue` Initial page layout settings
 
 |属性|类型|描述|
+| Attributes     | Types of | description                                                  |
 |:-|:-|:-|
 |flex-direction|String| flex 成员项的排列方向，支持项，row：从左到右； row-reverse：从右到左；column：从上到下；column-reverse：与 column 相反，默认值 column。|
+| flex-direction | String   | The arrangement direction of flex member items, support items, row: from left to right; row-reverse: from right to left; column: from top to bottom; column-reverse: opposite to column, the default value is column. |
 
 
 ### h5
