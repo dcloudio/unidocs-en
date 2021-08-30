@@ -1,28 +1,41 @@
 ### uni.request(OBJECT)
 发起网络请求。
+Initiate a network request.
 
 
 **OBJECT 参数说明**
+**OBJECT parameter description**
 
 |参数名|类型|必填|默认值|说明|平台差异说明|
+| parameter name | Types  | Required | Defaults | Description  | Platform difference description |
 |:-|:-|:-|:-|:-|:-|
 |url|String|是||开发者服务器接口地址||
+| url     | String   | Yes      | | Developer server interface address  |    |
 |data|Object/String/ArrayBuffer|否||请求的参数|App（自定义组件编译模式）不支持ArrayBuffer类型|
+| data     | Object/String | no       |     | Requested parameters    |   App（自定义组件编译模式）不支持ArrayBuffer类型     |
 |header|Object|否||设置请求的 header，header 中不能设置 Referer。|App、H5端会自动带上cookie，且H5端不可手动修改|
+| header   | Object        | no       |          | Set the requested header. Referer cannot be set in the header. |  App、H5端会自动带上cookie，且H5端不可手动修改                               |
 |method|String|否|GET|有效值详见下方说明||
+| method    | String   | no       | GET      | See the description below for valid values | |
 |timeout|Number|否|60000|超时时间，单位 ms|H5(HBuilderX 2.9.9+)、APP(HBuilderX 2.9.9+)|
 |dataType|String|否|json	|如果设为 json，会尝试对返回的数据做一次 JSON.parse||
+| dataType       | String        | no       | json     | If set to json, it will try to do a JSON.parse on the returned data |     |
 |responseType|String|否|text	|设置响应的数据类型。合法值：text、arraybuffer||
 |sslVerify|Boolean|否|true|验证 ssl 证书|仅App安卓端支持（HBuilderX 2.3.3+）|
 |withCredentials|Boolean|否|false|跨域请求时是否携带凭证（cookies）|仅H5支持（HBuilderX 2.6.15+）|
 |firstIpv4|Boolean|否|false|DNS解析时优先使用ipv4|仅 App-Android 支持 (HBuilderX 2.8.0+)|
 |success|Function|否||收到开发者服务器成功返回的回调函数||
+| success        | Function      | no       |          | Receive the callback function successfully returned by the developer server |                                 |
 |fail|Function|否||接口调用失败的回调函数||
+| fail           | Function      | no       |          | Callback function for interface call failure                 |                                 |
 |complete|Function|否||接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
+| complete       | Function      | no       |          | The callback function for the end of the interface call (the call will be executed if it succeeds or fails) |         |
 
 **method 有效值**
 
-必须大写，有效值在不同平台差异说明不同。
+必须大写
+Must be capitalized.
+有效值在不同平台差异说明不同。
 
 |method|App|H5|
 |:-:|:-:|:-:|
@@ -36,32 +49,46 @@
 |TRACE|x|√|
 
 **success 返回参数说明**
+**success return parameter description**
 
 |参数|类型|说明|
+| parameter  | Types   | Description   |
 |:-|:-|:-|
 |data|Object/String/ArrayBuffer|开发者服务器返回的数据|
+| data       | Object/String/ArrayBuffer | Data returned by the developer server                        |
 |statusCode|Number|开发者服务器返回的 HTTP 状态码|
+| statusCode | Number                    | HTTP status code returned by the developer server            |
 |header|Object|开发者服务器返回的 HTTP Response Header|
+| header     | Object                    | HTTP Response Header returned by the developer server        |
 |cookies|``Array.<string>``|开发者服务器返回的 cookies，格式为字符串数组|
+| cookies    | `Array.<string>`          | Cookies returned by the developer server, in the format of a string array |
 
 **data 数据说明**
+**data data description**
 
 最终发送给服务器的数据是 String 类型，如果传入的 data 不是 String 类型，会被转换成 String。转换规则如下：
+The final data sent to the server is of type String. If the incoming data is not of type String, it will be converted to String. The conversion rules are as follows:
 
 - 对于 ``GET`` 方法，会将数据转换为 query string。例如 ``{ name: 'name', age: 18 }`` 转换后的结果是 ``name=name&age=18``。
+- - For the `GET`method, it converts the data query string. For example `{ name: 'name', age: 18 }`the result of transformation is `name=name&age=18`.
 - 对于 ``POST`` 方法且 ``header['content-type']`` 为 ``application/json`` 的数据，会进行 JSON 序列化。
+- - For the `POST`method and `header['content-type']`of `application/json`the data, will JSON serialization.
 - 对于 ``POST`` 方法且 ``header['content-type']`` 为 ``application/x-www-form-urlencoded`` 的数据，会将数据转换为 query string。 
+- - For the `POST`method and `header['content-type']`for the `application/x-www-form-urlencoded`data, converts the data query string.
 
 **示例**
+**Example**
 
 ```javascript
 uni.request({
     url: 'https://www.example.com/request', //仅为示例，并非真实接口地址。
+	 //Example only, not the real interface address.
     data: {
         text: 'uni.request'
     },
     header: {
         'custom-header': 'hello' //自定义请求头信息
+		  //Customize request header information
     },
     success: (res) => {
         console.log(res.data);
@@ -71,12 +98,15 @@ uni.request({
 ```
 
 **返回值**
+**return value**
 
 如果希望返回一个 `requestTask` 对象，需要至少传入 success / fail / complete 参数中的一个。例如：
+If you want to return an `requestTask`object that need to pass at least a success / fail / complete parameters. E.g:
 
 ```javascript
 var requestTask = uni.request({
 	url: 'https://www.example.com/request', //仅为示例，并非真实接口地址。
+	//Example only, not the real interface address.
 	complete: ()=> {}
 });
 requestTask.abort();
