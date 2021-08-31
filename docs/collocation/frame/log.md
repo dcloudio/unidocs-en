@@ -1,17 +1,24 @@
 ## console
 向控制台打印日志信息。
+Print log information to the console.
 ### debug
 向控制台打印 debug 日志
+Print debug log to the console
 
 注：App 端自定义组件模式下，debug 方法等同于 log 方法。
+Note: In the App-side custom component mode, the debug method is equivalent to the log method.
 ### log
 向控制台打印 log 日志
+Print log to the console
 ### info
 向控制台打印 info 日志
+Print info log to the console
 ### warn
 向控制台打印 warn 日志
+Print warn log to the console
 ### error
 向控制台打印 error 日志
+Print error log to the console
 
 注意：
 
