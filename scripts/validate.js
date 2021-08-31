@@ -4,12 +4,37 @@ const parse = require('./parse')
 
 const argv = process.argv
 const mdPath = argv[argv.length - 1]
+const validateResultPath = path.join(__dirname, '..', `validate_result.md`)
 if (mdPath.endsWith('.md')) {
-  fs.readFile(path.join(__dirname, '../docs', mdPath.replace(/^docs\//, '')), { encoding: 'utf-8' }, (err, data) => {
+  validateMd(path.join(__dirname, '../docs', mdPath.replace(/^docs\//, '')))
+} else {
+  fs.unlinkSync(validateResultPath)
+  const mdFileDir = path.join(__dirname, '../docs', mdPath)
+  fs.readdir(mdFileDir, (err, files) => {
+    files.forEach(fileName => {
+      validateMd(path.join(mdFileDir, fileName), fileName)
+    })
+  })
+}
+
+function validateMd(mdPath, fileName) {
+  fs.readFile(mdPath, { encoding: 'utf-8' }, (err, data) => {
     if (err) {
       throw err
     }
     const result = parse(data)
-    console.log(result.notTranslate)
+    if (!fileName) {
+      console.log(result.notTranslate)
+      return;
+    }
+
+    fs.writeFileSync(validateResultPath, `
+#### ${fileName} not Translate content 
+\`\`\`
+${result.notTranslate.join('\n')}
+\`\`\`
+---
+
+`, { flag: 'a+' })
   })
 }
