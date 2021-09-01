@@ -17,7 +17,7 @@ The scroll selector that pops up from the bottom. Supports five types of selecto
 |range|Array / Array＜Object＞|[]|mode为 selector 或 multiSelector 时，range 有效||
 | range          | Array / Array＜Object＞ | []       | When mode is selector or multiSelector, range is valid       ||
 |range-key|String||当 range 是一个 Array＜Object＞ 时，通过 range-key 来指定 Object 中 key 的值作为选择器显示内容||
-| range-key      | String                  |          | When range is an Array<Object>, use range-key to specify the value of key in Object as the selector display content ||
+| range-key      | String                  |          | When range is an `Array<Object>`, use range-key to specify the value of key in Object as the selector display content ||
 |value|Number|0|value 的值表示选择了 range 中的第几个（下标从 0 开始）||
 | value          | Number                  | 0        | The value of value indicates which number in the range is selected (the subscript starts from 0) ||
 |selector-type|String|auto|大屏时UI类型，支持 picker、select、auto，默认在 iPad 以 picker 样式展示而在 PC 以 select 样式展示|H5 2.9.9+|

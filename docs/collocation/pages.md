@@ -957,7 +957,7 @@ Under the App platform, you can customize the partial pull-down refresh configur
 - 开启原生下拉刷新时，页面里不应该使用全屏高的scroll-view，向下拖动内容时，会优先触发下拉刷新而不是scroll-view滚动
 - 原生下拉刷新的起始位置在原生导航栏的下方，如果取消原生导航栏，使用自定义导航栏，原生下拉刷新的位置会在屏幕顶部。如果希望在自定义导航栏下方拉动，只能使用circle方式的下拉刷新，并设置offset参数，将circle圈的起始位置调整到自定义导航栏下方。hello uni-app的扩展组件中有示例。
 - The starting position of the native pull-down refresh is below the native navigation bar. If you cancel the native navigation bar and use a custom navigation bar, the position of the native pull-down refresh will be at the top of the screen. If you want to pull below the custom navigation bar, you can only use the circle method to pull down to refresh, and set the offset parameter to adjust the starting position of the circle circle to the bottom of the custom navigation bar. There are examples in the extension component of hello uni-app.
-- 如果想在app端实现更多复杂的下拉刷新，比如美团、京东App那种拉下一个特殊图形，可以使用nvue的<refresh>组件。HBuilderX 2.0.3+起，新建项目选择新闻模板可以体验
+- 如果想在app端实现更多复杂的下拉刷新，比如美团、京东App那种拉下一个特殊图形，可以使用nvue的`<refresh>`组件。HBuilderX 2.0.3+起，新建项目选择新闻模板可以体验
 - If you want to achieve more complex pull-down refresh on the app side, such as the Meituan and Jingdong App, you can use nvue'sComponents. Starting from HBuilderX 2.0.3+, you can experience new projects by choosing news templates
 - 如果想在vue页面通过web前端技术实现下拉刷新，插件市场有例子，但前端下拉刷新的性能不如原生，复杂长列表会很卡
 - If you want to implement pull-down refresh on the vue page through web front-end technology, there are examples in the plug-in market, but the performance of the front-end pull-down refresh is not as good as the original one, and the complex long list will be very stuck
