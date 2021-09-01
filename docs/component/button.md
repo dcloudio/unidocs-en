@@ -19,7 +19,7 @@ button.
 |disabled|Boolean|false|Whether to disable||
 |loading|Boolean|false|名称前是否带 loading 图标|App-nvue 平台，在 ios 上为雪花，Android上为圆圈|
 |form-type|String||用于 ``<form>`` 组件，点击分别会触发 ``<form>`` 组件的 submit/reset 事件||
-|open-type|String||开放能力|||
+|open-type|String||开放能力||
 |hover-class|String|button-hover|指定按钮按下去的样式类。当 hover-class="none" 时，没有点击态效果|App-nvue 平台暂不支持|
 |hover-start-time|Number|20|按住后多久出现点击态，单位毫秒||
 |hover-stay-time|Number|70|手指松开后点击态保留时间，单位毫秒||
