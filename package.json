@@ -7,7 +7,9 @@
     "doc": "docs"
   },
   "scripts": {
-    "validate": "node scripts/validate"
+    "validate": "node scripts/validate",
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
   },
   "repository": {
     "type": "git",
@@ -19,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/dcloudio/unidocs-en/issues"
   },
-  "homepage": "https://github.com/dcloudio/unidocs-en#readme"
+  "homepage": "https://github.com/dcloudio/unidocs-en#readme",
+  "devDependencies": {
+    "vuepress": "^1.8.2"
+  }
 }
