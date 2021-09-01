@@ -14,7 +14,7 @@ function parse(str = '') {
     } else {
       target.push(item)
       if (originTest.test(item)) {
-        notTranslated.push(`${String(`${index + 1}: `).padStart(5)}${item}`)
+        notTranslated.push(`${`${index + 1}: `.padStart(5) + item}`)
       }
     }
     origin.push(item)
