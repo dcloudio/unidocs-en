@@ -14,7 +14,7 @@ button.
 |type|String|default|按钮的样式类型||
 |type|String|default|Button style type||
 |plain|Boolean|false|按钮是否镂空，背景色透明||
-|plain|Boolean|false|Whether the button is hollowed out and the background color is transparent|
+|plain|Boolean|false|Whether the button is hollowed out and the background color is transparent||
 |disabled|Boolean|false|是否禁用||
 |disabled|Boolean|false|Whether to disable||
 |loading|Boolean|false|名称前是否带 loading 图标|App-nvue 平台，在 ios 上为雪花，Android上为圆圈|
