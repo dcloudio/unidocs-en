@@ -1,6 +1,12 @@
+function isSame(origin, target) {
+  const test = /[\s#*\-`|</│└├┌:]*/
+  const originStart = origin.match(test)[0]
+  const targetStart = target.match(test)[0]
+  return (originStart.trimEnd() || originStart) === (targetStart.trimEnd() || targetStart)
+}
+
 function parse(str = '') {
   const originTest = /[\u4e00-\u9fa5]/
-  const wordTest = /[A-z]/
   const origin = []
   const target = []
   const notTranslated = []
@@ -8,7 +14,7 @@ function parse(str = '') {
   for (let index = 0; index < array.length; index++) {
     const item = array[index]
     const nextItem = array[index + 1]
-    if (item && nextItem && wordTest.test(nextItem) && !originTest.test(nextItem)) {
+    if (item && originTest.test(item) && nextItem && !originTest.test(nextItem) && isSame(item, nextItem)) {
       target.push(nextItem)
       index++
     } else {
