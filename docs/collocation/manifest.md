@@ -13,6 +13,8 @@
 | appid             | String   | When creating a new uni-app project, DCloud will assign it. | Application ID                                               |                 |
 |description|String||应用描述||
 | description       | String   |                                                             | Application description                                      |                 |
+|locale|String|auto|设置当前默认语言，具体参考 [locale](/api/ui/prompt/locale)||
+|locale|String|auto|Set default language, see [locale](/api/ui/prompt/locale)||
 |versionName|String||版本名称，例如：1.0.0。详见下方Tips说明||
 | versionName       | String   |                                                             | Version name, for example: 1.0.0. See the Tips description below for details |                 |
 |versionCode|String||版本号，例如：36||

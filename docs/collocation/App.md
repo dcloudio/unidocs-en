@@ -57,8 +57,8 @@ js中操作globalData的方式如下：
 The way to manipulate globalData in js is as follows: 
 `getApp().globalData.text = 'test'`
 
-在应用onLaunch时，getApp对象还未获取，暂时可以使用this.$scope.globalData获取globalData。
-When applying onLaunch, the getApp object has not been obtained yet, temporarily you can use this.$scope.globalData to obtain globalData.
+在应用onLaunch时，getApp对象还未获取，暂时可以使用this.globalData获取globalData。
+When applying onLaunch, the getApp object has not been obtained yet, temporarily you can use this.globalData to obtain globalData.
 
 如果需要把globalData的数据绑定到页面上，可在页面的onShow页面生命周期里进行变量重赋值。
 If you need to bind globalData data to the page, you can perform variable reassignment during the onShow page life cycle of the page.

@@ -123,6 +123,3 @@ uni.chooseFile({
   }
 })
 ```
-
-
-

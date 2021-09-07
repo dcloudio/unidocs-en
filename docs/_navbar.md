@@ -10,4 +10,4 @@
 * [Other](http://www.html5plus.org/doc/h5p.html)
   - [App扩展规范HTML5 Plus](http://www.html5plus.org/doc/h5p.html)
   - [HTML5 Plus](http://www.html5plus.org/doc/h5p.html)
-  - [Weex](https://doc.weex.io/cn/guide/)
+  - [Weex](http://doc.weex.io/guide/introduction.html)
