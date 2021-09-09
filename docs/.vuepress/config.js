@@ -23,7 +23,7 @@ array.forEach(str => {
   }
 })
 
-const tabs = ['/collocation/', '/component/', '/api/', '/uniCloud/', '/']
+const tabs = ['/collocation/', '/component/', '/api/', '/']
 const sidebar = {}
 tabs.forEach(tab => {
   const sidebarItems = sidebar[tab] = []
