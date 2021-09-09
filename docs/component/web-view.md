@@ -169,20 +169,16 @@ In the `<web-view>`loaded HTML, add the following code:
         height: 40px;
         width: 200px;
       }
-
       .btn-red {
         background-color: #dd524d;
       }
-
       .btn-yellow {
         background-color: #f0ad4e;
       }
-
       .desc {
         padding: 10px;
         color: #999999;
       }
-
       .post-message-section {
         visibility: hidden;
       }

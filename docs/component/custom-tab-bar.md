@@ -4,7 +4,7 @@
 Custom tabBar component.
 
 在App端，为提升性能，在 `pages.json` 里配置固定的原生tabBar。但在H5端，这一设计并不会提升性能。
- to enhance performance, `pages.json`in a fixed configuration native tabBar. 
+to enhance performance, `pages.json`in a fixed configuration native tabBar. 
 
 同时，H5端尤其是PC宽屏，对tabBar的位置和样式有更灵活的需求，tabBar作为一级导航，更多的时候是在PC网页顶部而不是底部。
 At the same time,  has more flexible requirements for the position and style of the tabBar. As a first-level navigation, the tabBar is more often at the top of the PC web page rather than the bottom.
