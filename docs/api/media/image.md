@@ -132,8 +132,8 @@ Note that when there are duplicate image links in urls:
 
 - 传链接，预览结果始终显示该链接在 urls 中第一次出现的位置。
 - After uploading a link, the preview result always shows the first position of the link in urls.
-- 传索引值，在微信/百度/字节跳动小程序平台，会过滤掉传入的 urls 中该索引值之前与其对应图片链接重复的值。其它平台会保留原始的 urls 不会做去重处理。
-- Pass the index value. In the WeChat/Baidu/ByteDance applet platform, the value that is duplicated with the corresponding image link before the index value in the incoming urls will be filtered out. Other platforms will keep the original urls without de-duplication.
+- 传索引值会保留原始的 urls 不会做去重处理。
+- Pass the index value will keep the original urls without de-duplication.
 
 举例说明：
  for example:
