@@ -92,8 +92,8 @@ Vue is a single-page application, which makes the page partially refresh, withou
 ```html
 	<template>  
 		<view>  
-		注意必须有一个view，且只能有一个根view。所有内容写在这个view下面。  
-		Note that there must be one view and only one root view. All the content is written under this view.  
+		<!-- 注意必须有一个view，且只能有一个根view。所有内容写在这个view下面。   -->
+		<!-- Note that there must be one view and only one root view. All the content is written under this view.   -->
 		</view>  
 	</template>  
 	<script>  
@@ -171,7 +171,7 @@ In this `util.js`, the prior should `function`method for encapsulating as an obj
 
 
 **另外，vue支持组件导入，可以更方便的封装一个包括界面、js、样式的库**。[详见](/vue-components.md)
-**In addition, Vue supports component import, which makes it easier to encapsulate a library that includes interface, js, and styles** [详见](/vue-components.md).
+**In addition, Vue supports component import, which makes it easier to encapsulate a library that includes interface, js, and styles** [See](/vue-components.md).
 
 ### 组件/标签的变化
 ### Component/label changes
@@ -775,9 +775,9 @@ Non-H5 end (non-custom pattern compiler component) **temporarily supported** on 
 ### v-if和v-else
 
 `v-if` 指令用于条件性地渲染一块内容。这块内容只会在指令的表达式返回 `truthy` 值的时候被渲染。
-使用 `v-else` 指令来表示 v-if 的“else 块”。
 `v-if`Instructions are used to conditionally render a piece of content. This content will only return instruction in an expression `truthy`is rendered value of the time.
- Use `v-else`instructions represent the v-if "else block."
+使用 `v-else` 指令来表示 v-if 的“else 块”。
+Use `v-else`instructions represent the v-if "else block."
 
 > 在 JavaScript 中，truthy（真值）指的是在布尔值上下文中，转换后的值为真的值。所有值都是真值，除非它们被定义为 假值（即除 false、0、""、null、undefined 和 NaN 以外皆为真值）。
 > In JavaScript, truthy means that the converted value is true in the context of Boolean values. All values are true values unless they are defined as false values (that is, all true values except false, 0, "", null, undefined, and NaN).

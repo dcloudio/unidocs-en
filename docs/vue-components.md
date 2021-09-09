@@ -108,7 +108,7 @@ When defining a component using PascalCase (name with initial capital letters), 
 - nvue 页面暂不支持全局组件。
 - The nvue page does not currently support global components.
 
-1.`main.js` 里进行全局导入和注册
+1. `main.js` 里进行全局导入和注册
 1. Global import and registration in `main.js`
 
 ```js
@@ -117,7 +117,7 @@ When defining a component using PascalCase (name with initial capital letters), 
 	Vue.component('page-head',pageHead)
 ```
 
-2.`index.vue` 里可直接使用组件
+2. `index.vue` 里可直接使用组件
 2. Components can be used directly in`index.vue`
  
 
@@ -144,7 +144,7 @@ Before partial registration, import the component you want to use on the page th
 The following two ways to import a corner label component library[https://ext.dcloud.net.cn/plugin?id=21](https://ext.dcloud.net.cn/plugin?id=21), recommended to use `easycom` to introduce
 
 
-1.**传统vue规范：** 在 index.vue 页面中，通过 `import` 方式引入组件 ，在 `components` 选项中定义你想要使用的组件。
+1. **传统vue规范：** 在 index.vue 页面中，通过 `import` 方式引入组件 ，在 `components` 选项中定义你想要使用的组件。
 1. **Traditional vue specifications:** On the index.vue page, import the component as `import` ,and define the `components`you want to use  in the Components option.
 
 ```html
@@ -178,8 +178,8 @@ Putting a variable name similar to uniBadge in the object is actually uniBadge: 
 - The variable name that contains this component option (Only hump naming is supported)
 
 
-2.**通过uni-app的[easycom](https://uniapp.dcloud.io/collocation/pages?id=easycom)：** 将组件引入精简为一步。只要组件安装在项目的 `components` 目录下，并符合 `components/组件名称/组件名称.vue` 目录结构。就可以不用引用、注册，直接在页面中使用。
-2. **[easycom](https://uniapp.dcloud.io/collocation/pages?id=easycom)**  : introduce the components into one step. As long as the components are installed in the project `components`directory, and in accordance with `components/组件名称/组件名称.vue`the directory structure. You can use it directly on the page without quoting or registering.
+2. **通过uni-app的[easycom](https://uniapp.dcloud.io/collocation/pages?id=easycom)：** 将组件引入精简为一步。只要组件安装在项目的 `components` 目录下，并符合 `components/组件名称/组件名称.vue` 目录结构。就可以不用引用、注册，直接在页面中使用。
+2. **[easycom](https://uniapp.dcloud.io/collocation/pages?id=easycom)**  : introduce the components into one step. As long as the components are installed in the project `components`directory, and in accordance with `components/component-name/component-name.vue`the directory structure. You can use it directly on the page without quoting or registering.
 
 
 ```html
