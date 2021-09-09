@@ -47,8 +47,8 @@ Pay attention to the difference between sliding switch and scrolling, sliding sw
 |disable-touch|Boolean|false|Whether to prohibit user touch operation|App 2.5.5+、H5 2.5.5+|
 |@change|EventHandle||current 改变时会触发 change 事件，event.detail = {current: current, source: source}||
 |@change|EventHandle||The change event will be triggered when current changes, event.detail = {current: current, source: source}||
-|@transition|EventHandle||swiper-item 的位置发生改变时会触发 transition 事件，event.detail = {dx: dx, dy: dy}，支付宝小程序暂不支持dx, dy|App、H5|
-|@transition|EventHandle||The transition event will be triggered when the position of swiper-item changes, event.detail = {dx: dx, dy: dy}, Alipay applet does not support dx, dy|App、H5|
+|@transition|EventHandle||swiper-item 的位置发生改变时会触发 transition 事件，event.detail = {dx: dx, dy: dy}|App、H5|
+|@transition|EventHandle||The transition event will be triggered when the position of swiper-item changes, event.detail = {dx: dx, dy: dy}|App、H5|
 |@animationfinish|EventHandle||动画结束时会触发 animationfinish 事件，event.detail = {current: current, source: source}||
 |@animationfinish|EventHandle||The animationfinish event will be triggered when the animation ends, event.detail = {current: current, source: source}||
 

@@ -27,10 +27,10 @@ image.
 - If the page structure is complicated and there are too many css styles, the use of image may cause the style to take effect slowly, causing a "flicker" situation. At this time, the setting `image{will-change: transform}`can optimize this problem.
 - 自定义组件里面使用 `<image>`时，若 `src` 使用相对路径可能出现路径查找失败的情况，故建议使用绝对路径。
 - Custom components to use inside `<image>`when, if the `src`situation Pathfinder failure may occur using a relative path, it is recommended to use absolute paths.
-- webp格式的图片在Android上是内置支持的。iOS上不同平台不一样，具体如下：app-vue下，iOS不支持；app-nvue下，iOS支持；微信小程序2.9.0起，iOS支持。
+- webp格式的图片在Android上是内置支持的。iOS上不同平台不一样，具体如下：app-vue下，iOS不支持；app-nvue下，iOS支持。
 - Images in webp format are built-in support on Android. Different platforms on iOS are different. The details are as follows: under app-vue, iOS does not support; under app-nvue, iOS supports; 
-- svg 格式的图片在不同的平台支持情况不同。具体为：app-nvue 不支持 svg 格式的图片，小程序上只支持网络地址。
-- svg format images are supported differently on different platforms. Specifically: app-nvue does not support pictures in svg format, and only network addresses are supported on the applet.
+- svg 格式的图片在不同的平台支持情况不同。具体为：app-nvue 不支持 svg 格式的图片。
+- svg format images are supported differently on different platforms. Specifically: app-nvue does not support pictures in svg format.
 
 
 **mode 有效值：**

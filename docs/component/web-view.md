@@ -3,8 +3,6 @@
 `web-view` 是一个 web 浏览器组件，可以用来承载网页的容器，会自动铺满整个页面（nvue 使用需要手动指定宽高）。
 `web-view` It is a web browser component that can be used to host a web page container, which will automatically fill the entire page (nvue use requires manual specification of width and height).
 
-> 各小程序平台，web-view 加载的 url 需要在后台配置域名白名单，包括内部再次 iframe 内嵌的其他 url 。
-> For each applet platform, the URL loaded by the web-view needs to configure the domain name whitelist in the background, including other URLs embedded in the iframe again.
 
 **属性说明**
 **Property description**
@@ -340,10 +338,10 @@ onReady() {
 
 ##### `web-view`组件的层级问题解决
 ##### `web-view`Component level problem solving
-web-view组件在App和小程序中层级较高，如需要在vue页面中写代码为web-view组件覆盖内容，小程序端无解，只能由web-view的组件自己弹出div。App端有如下若干方案：
-The web-view component has a higher level in App and applet. If you need to write code in the vue page to cover the content of the web-view component, the applet has no solution, and the div can only be popped up by the web-view component. There are several solutions on the App side:
-1. 比较简单的方式是actionsheet等原生弹出菜单（小程序也可以使用此方案）
-1. The simpler way is native pop-up menus such as actionsheet (small programs can also use this scheme)
+web-view组件在App中层级较高，如需要在vue页面中写代码为web-view组件覆盖内容，只能由web-view的组件自己弹出div。App端有如下若干方案：
+The web-view component has a higher level in App. If you need to write code in the vue page to cover the content of the web-view component, and the div can only be popped up by the web-view component. There are several solutions on the App side:
+1. 比较简单的方式是actionsheet等原生弹出菜单
+1. The simpler way is native pop-up menus such as actionsheet
 2. 使用plus.nativeObj.view。这里有一个底部图标菜单的示例，可参考[https://ext.dcloud.net.cn/plugin?id=69](https://ext.dcloud.net.cn/plugin?id=69)
 3. 使用[原生子窗体subNvue](/api/window/subNVues)
 3. [Raw child window used subNvue](/api/window/subNVues)
@@ -352,7 +350,6 @@ The web-view component has a higher level in App and applet. If you need to writ
 
 ##### web-view组件的浏览器内核说明
 - H5端的web-view其实是被转为iframe运行，使用的是当前的浏览器
-- 小程序的web-view使用的是小程序自带的浏览器内核，不同厂商不一样，[详见](https://ask.dcloud.net.cn/article/1318)
 - App端，Android，默认使用的是os自带的浏览器内核，在设置-所有应用里，显示系统服务，可查看Android System Webview的版本。在Android5+，系统webview支持安装升级。
 - App端，Android，支持在manifest中配置选用腾讯X5浏览器内核。使用x5内核需要一些注意事项！具体请参考[详见](https://ask.dcloud.net.cn/article/36806)
 - App端，iOS，是分为UIWebview和WKWebview的，2.2.5+起默认为WKWebview，之前版本[详见](https://ask.dcloud.net.cn/article/36348)
@@ -363,8 +360,7 @@ The web-view component has a higher level in App and applet. If you need to writ
 - `<web-view>` 组件所在窗口的标题，跟随页面的 `<title>` 值的变化而变化（不含H5端）。
 - App-vue的`web-view`加载的html页面可以运行plus的api，但注意如果该页面调用了plus.key的API监听了back按键（或使用mui的封装），会造成back监听冲突。需要该html页面移除对back的监听。或按照上面的示例代码禁止网页使用plus对象。app-nvue页面的`web-view`组件不能运行plus API。
 - `uni.webview.js` 最新版地址：[https://js.cdn.aliyun.dcloud.net.cn/dev/uni-app/uni.webview.1.5.2.js](https://js.cdn.aliyun.dcloud.net.cn/dev/uni-app/uni.webview.1.5.2.js)
-- 小程序平台，个人类型与海外类型的小程序使用 `web-view` 组件，提交审核时注意微信等平台是否允许使用
-- 小程序平台， `src` 指向的链接需登录小程序管理后台配置域名白名单。`App`和`H5` 无此限制。
+
 
 ##### FAQ
 
