@@ -41,9 +41,9 @@
 
 - [WU-App](https://ext.dcloud.net.cn/plugin?id=318)：WordPress(可视化后端界面) + uni-app(跨平台App)  -- by bawangxx
 
-- [Wordpress网站转APP和小程序](https://ext.dcloud.net.cn/plugin?id=1542)： by xiaoa
+- [Wordpress网站转APP](https://ext.dcloud.net.cn/plugin?id=1542)： by xiaoa
 
-- [WordPress与uni-app](https://ask.dcloud.net.cn/article/35704)：一个WordPress使用uni-app开发app和小程序的教程 -- by lqczzyx
+- [WordPress与uni-app](https://ask.dcloud.net.cn/article/35704)：一个WordPress使用uni-app开发app的教程 -- by lqczzyx
 
 - [unicmf模板](https://ext.dcloud.net.cn/plugin?id=241)：基于thinkcmf5.1(thinkphp5.1)开发的unicmf模板 -- by hrai.online
 
@@ -57,7 +57,7 @@
 
 - [Iron-video影视项目](https://ext.dcloud.net.cn/plugin?id=1839)：在线视频、电影项目模板 -- by Tz张无忌
 
-- [bookstack](https://github.com/TruthHun/BookChatApp)：通用书籍阅读APP及多端小程序 -- by www.bookstack.cn
+- [bookstack](https://github.com/TruthHun/BookChatApp)：通用书籍阅读APP -- by www.bookstack.cn
 
 - [小说阅读器模板](https://ext.dcloud.net.cn/plugin?id=519)：前端uni-app，后端tp5 -- by burtyang
 
@@ -75,7 +75,7 @@
 
 - [生鲜市场](https://ext.dcloud.net.cn/plugin?id=834)：基于color ui的生鲜电商系统 -- by https://ext.dcloud.net.cn/publisher?id=113423
 
-- [仿奈雪の茶](https://ext.dcloud.net.cn/plugin?id=1807)：线下商铺小程序和H5 -- by tinypuppe
+- [仿奈雪の茶](https://ext.dcloud.net.cn/plugin?id=1807)：线下商铺H5 -- by tinypuppe
 
 - [jpress-uniapp](https://github.com/xieyushi/jpress-uniapp)：搭配jpress后台的uniapp博客 -- by xieyushi
 
@@ -85,7 +85,7 @@
 
 - [tradingview行情K线](https://ext.dcloud.net.cn/plugin?id=817)
 
-- [碧波世界](https://github.com/qqlcx5/uniapp)：通过uni-app实现移动端和IOS端+小程序的碧波世界，主要做虚拟币交易类 -- by qqlcx5
+- [碧波世界](https://github.com/qqlcx5/uniapp)：通过uni-app实现移动端和IOS端的碧波世界，主要做虚拟币交易类 -- by qqlcx5
 
 - [数字货币交易系统模板](http://ext.dcloud.net.cn/plugin?id=304)：用uni-app开发的数字货币交易所移动端UI  -- by Airubby
 

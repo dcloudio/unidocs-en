@@ -1,13 +1,13 @@
 
-```uni-app``` 使用vue的语法+小程序的标签和API。
+```uni-app``` 使用vue的语法+标签和API。
 
 ## 开发规范
 
 为了实现多端兼容，综合考虑编译速度、运行性能等因素，```uni-app``` 约定了如下开发规范：
 
 - 页面文件遵循 [Vue 单文件组件 (SFC) 规范](https://vue-loader.vuejs.org/zh/spec.html)
-- 组件标签靠近小程序规范，详见[uni-app 组件规范](component/README.md)
-- 接口能力（JS API）靠近微信小程序规范，但需将前缀 ```wx``` 替换为 ```uni```，详见[uni-app接口规范](api/README.md)
+- 组件标签规范，详见[uni-app 组件规范](component/README.md)
+- 接口能力（JS API）规范，详见[uni-app接口规范](api/README.md)
 - 数据绑定及事件处理同 ```Vue.js``` 规范，同时补充了App及页面的生命周期
 - 为兼容多端运行，建议使用flex布局进行开发
 
@@ -259,7 +259,7 @@ nvue中，uni-app 模式（[nvue 不同编译模式介绍](https://ask.dcloud.ne
 
 而且主要是宽度变形。高度一般因为有滚动条，不容易出问题。由此，引发了较强的动态宽度单位需求。
 
-微信小程序设计了 rpx 解决这个问题。`uni-app` 在 App 端、H5 端都支持了 `rpx`，并且可以配置不同屏幕宽度的计算方式，具体参考：[rpx计算配置](https://uniapp.dcloud.io/collocation/pages?id=globalstyle)。
+`uni-app` 在 App 端、H5 端都支持了 `rpx`，并且可以配置不同屏幕宽度的计算方式，具体参考：[rpx计算配置](https://uniapp.dcloud.io/collocation/pages?id=globalstyle)。
 
 rpx 是相对于基准宽度的单位，可以根据屏幕宽度进行自适应。```uni-app``` 规定屏幕基准宽度 750rpx。
 
