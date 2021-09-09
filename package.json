@@ -8,6 +8,7 @@
   },
   "scripts": {
     "validate": "node scripts/validate",
+    "translate": "node scripts/translate",
     "dev": "vuepress dev docs",
     "build": "vuepress build docs"
   },
@@ -23,6 +24,8 @@
   },
   "homepage": "https://github.com/dcloudio/unidocs-en#readme",
   "devDependencies": {
+    "fs-extra": "^10.0.0",
+    "glob": "^7.1.7",
     "vuepress": "^1.8.2"
   }
 }
