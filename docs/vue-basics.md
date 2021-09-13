@@ -307,9 +307,11 @@ The content in {{msg}} will be replaced with the value of msg on the correspondi
 
 
 #### 使用 JavaScript 表达式
+#### Using JavaScript Expressions
 
 
 迄今为止，在我们的模板中，我们一直都只绑定简单的 `property` 键值。但实际上，对于所有的数据绑定，Vue.js 都提供了完全的 `JavaScript` 表达式支持。
+So far we’ve only been binding to simple property keys in our templates. But Vue.js actually supports the full power of JavaScript expressions inside all data bindings:
 
 ```html
 <template>
@@ -363,7 +365,7 @@ The content in {{msg}} will be replaced with the value of msg on the correspondi
 
 
 这些表达式会在所属 Vue 实例的数据作用域下作为 `JavaScript` 被解析。有个限制就是，每个绑定都只能包含单个表达式，所以下面的例子都不会生效。
-
+These expressions will be evaluated as JavaScript in the data scope of the owner Vue instance. One restriction is that each binding can only contain one single expression, so the following will NOT work:
 
 ```html
 <template>
@@ -388,6 +390,7 @@ The content in {{msg}} will be replaced with the value of msg on the correspondi
 
 
 > 模板表达式都被放在沙盒中，只能访问**全局变量的一个白名单**：
+> Template expressions are sandboxed and only have access to a whitelist of globals
 > - `Infinity`
 > - `undefined`
 > - `NaN`
@@ -413,6 +416,7 @@ The content in {{msg}} will be replaced with the value of msg on the correspondi
 > - `Intl`
 > 
 > 你不应该在模板表达式中试图访问用户定义的全局变量。
+> You should not attempt to access user-defined globals in template expressions.
 
 
 
@@ -423,7 +427,7 @@ The content in {{msg}} will be replaced with the value of msg on the correspondi
 [观看本节视频讲解](https://learning.dcloud.io/#/?vid=6)
 
 指令是带有 v- 前缀的特殊属性。
-Instructions are special attributes prefixed with v-.
+Directives are special attributes with the v- prefix.
 
 - 指令属性的值预期是单个 JavaScript 表达式 (v-for 是例外情况)。
 - The value of the directive attribute is expected to be a single JavaScript expression (v-for is an exception).
@@ -913,6 +917,7 @@ v-for 指令可以实现基于一个数组来渲染一个列表。
 The v-for instruction can render a list based on an array.
 
 - `v-for` 指令需要使用 `item in items` 形式的特殊语法，其中 `items` 是源数据数组，而 `item` 则是被迭代的数组元素的别名。
+- The v-for directive requires a special syntax in the form of item in items, where items is the source data array and item is an alias for the array element being iterated on.
 	- 第一个参数 `item` 则是被迭代的数组元素的别名。
 	- The first parameter `item`is the alias iterated array elements.
 	- 第二个参数，即当前项的索引 `index` ，是可选的。
@@ -1171,7 +1176,7 @@ Example:
 ### 内联处理器中的方法
 
 除了直接绑定到一个方法，也可以在内联 `JavaScript` 语句中调用方法：
-
+Instead of binding directly to a method name, we can also use methods in an inline JavaScript statement:
 
 ```html
 	<template>
@@ -1194,6 +1199,7 @@ Example:
 ```
 
 有时也需要在内联语句处理器中访问原始的 DOM 事件。可以用特殊变量 `$event` 把它传入方法：
+Sometimes we also need to access the original DOM event in an inline statement handler. You can pass it into a method using the special `$event` variable:
 
 ```html
 	<template>

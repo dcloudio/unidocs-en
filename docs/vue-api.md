@@ -6,10 +6,11 @@
 | Vue global configuration         | description     |H5		|App端|说明	|
 | --				| --		| --	|--		| --	|
 |Vue.config.silent	| 取消 Vue 所有的日志与警告 [详情](https://cn.vuejs.org/v2/api/#silent)	|√	|√	| 		|
-| Vue.config.silent   | Cancel all logging and warning Vue   |√	|√	| 		|
+| Vue.config.silent   | Cancel all logging and warning Vue [details](https://cn.vuejs.org/v2/api/#silent)  |√	|√	| 		|
 |Vue.config.optionMergeStrategies	| 自定义合并策略的选项 [详情](https://cn.vuejs.org/v2/api/#optionMergeStrategies)	|√	| √	|		|
 | Vue.config.optionMergeStrategies | Custom options into policy [details](https://vuejs.org/v2/api/#optionMergeStrategies) |√	| √	|		|
 |Vue.config.devtools	| 配置是否允许 vue-devtools 检查代码 [详情](https://cn.vuejs.org/v2/api/#devtools) 	|√	| x	| 只在Web环境下支持		|
+|Vue.config.devtools	| Configure whether to allow vue-devtools inspection.  [details](https://cn.vuejs.org/v2/api/#devtools) 	|√	| x	| 只在Web环境下支持		|
 |Vue.config.errorHandler	| 指定组件的渲染和观察期间未捕获错误的处理函数 [详情](https://cn.vuejs.org/v2/api/#errorHandler) 	|√	|√	|		|
 | Vue.config.errorHandler          | Uncaught error handler specified component during rendering and viewing [details](https://vuejs.org/v2/api/#errorHandler) |√	|√	|		|
 |Vue.config.warnHandler	| 为 Vue 的运行时警告赋予一个自定义处理函数 [详情](https://cn.vuejs.org/v2/api/#warnHandler) 	|√	| √	| 		|
@@ -17,8 +18,11 @@
 |Vue.config.ignoredElements	| 须使 Vue 忽略在 Vue 之外的自定义元素 [详情](https://cn.vuejs.org/v2/api/#ignoredElements) 	|√	| √	| 强烈不推荐，会覆盖uni-app框架配置的内置组件		|
 | Vue.config.ignoredElements       | Vue must ignore the custom elements outside the Vue's [details](https://vuejs.org/v2/api/#ignoredElements) |√	| √	| 强烈不推荐，会覆盖uni-app框架配置的内置组件		|
 |Vue.config.keyCodes	| 给 v-on 自定义键位别名 [详情](https://cn.vuejs.org/v2/api/#keyCodes)	|√	| x	|		|
+|Vue.config.keyCodes	| Define custom key alias(es) for v-on. [details](https://cn.vuejs.org/v2/api/#keyCodes)	|√	| x	|		|
 |Vue.config.performance	| 设置为 true 以在浏览器开发工具的性能/时间线面板中启用对组件初始化、编译、渲染和打补丁的性能追踪 [详情](https://cn.vuejs.org/v2/api/#performance)	|√	|x	| 只在Web环境下支持	|
+|Vue.config.performance	| Set this to true to enable component init, compile, render and patch performance tracing in the browser devtool performance/timeline panel. [details](https://cn.vuejs.org/v2/api/#performance)	|√	|x	| 只在Web环境下支持	|
 |Vue.config.productionTip	| 设置为 false 以阻止 vue 在启动时生成生产提示 [详情](https://cn.vuejs.org/v2/api/#productionTip)	|√	| √	|	-	|
+|Vue.config.productionTip	| Set this to false to prevent the production tip on Vue startup. [details](https://cn.vuejs.org/v2/api/#productionTip)	|√	| √	|	-	|
 
 
 
@@ -33,6 +37,7 @@
 |Vue.extend		| 使用基础 Vue 构造器，创建一个“子类” [详情](https://cn.vuejs.org/v2/api/#Vue-extend)	|√	|√		|不可作为组件使用	|
 | Vue.extend     | Use the basic Vue constructor to create a "subclass" [details](https://vuejs.org/v2/api/#Vue-extend) |√	|√		|不可作为组件使用	|
 |Vue.nextTick	| 在下次 DOM 更新循环结束之后执行延迟回调 [详情](https://cn.vuejs.org/v2/api/#Vue-nextTick)	|√	| x		| 	|
+|Vue.nextTick	| Defer the callback to be executed after the next DOM update cycle.  [details](https://cn.vuejs.org/v2/api/#Vue-nextTick)	|√	| x		| 	|
 |Vue.set		| 向响应式对象中添加一个 property，并确保这个新 property 同样是响应式的，且触发视图更新 [详情](https://cn.vuejs.org/v2/api/#Vue-set)|√	| √|		|
 | View.set       | Add a property to the responsive object and ensure that the new property is also responsive, and trigger a view update [details](https://vuejs.org/v2/api/#Vue-set) |√	| √|		|
 |Vue.delete	| 删除对象的 property。如果对象是响应式的，确保删除能触发更新视图 [详情](https://cn.vuejs.org/v2/api/#Vue-delete)		|√	| √		|  |
@@ -48,7 +53,9 @@
 |Vue.mixin		| 全局注册一个混入，影响注册之后所有创建的每个 Vue 实例 [详情](https://cn.vuejs.org/v2/api/#Vue-mixin)	|√	|√		|	|
 | Vue.mixin      | A mixed global registration, all created after the impact of every registered Vue instance [details](https://vuejs.org/v2/api/#Vue-mixin) |√	|√		|	|
 |Vue.version	| 提供字符串形式的 Vue 安装版本号 [详情](https://cn.vuejs.org/v2/api/#Vue-version)	|√	| √		| 	|
+|Vue.version	|  Provides the installed version of Vue as a string. [details](https://cn.vuejs.org/v2/api/#Vue-version)	|√	| √		| 	|
 |Vue.compile	| 将一个模板字符串编译成 render 函数。只在完整版时可用。[详情](https://cn.vuejs.org/v2/api/#Vue-compile)	|√	| x	| uni-app使用的vue是只包含运行时的版本	|
+|Vue.compile	| Compiles a template string into a render function. Only available in the full build.[details](https://cn.vuejs.org/v2/api/#Vue-compile)	|√	| x	| uni-app使用的vue是只包含运行时的版本	|
 
 
 
@@ -72,9 +79,13 @@
 |watch	| 一个对象，键是需要观察的表达式，值是对应回调函数 [详情](https://cn.vuejs.org/v2/api/#watch) 	|√	| √	| 		|
 | watch          | An object key is an expression of the need to observe the value of the callback function corresponding [details](https://vuejs.org/v2/api/#watch) |√	| √	| 		|
 |el	| 提供一个在页面上已存在的 DOM 元素作为 Vue 实例的挂载目标 [详情](https://cn.vuejs.org/v2/api/#el) 	|√	| x	| 		|
+|el	| Provide the Vue instance an existing DOM element to mount on.  [details](https://cn.vuejs.org/v2/api/#el) 	|√	| x	| 		|
 |template	| 一个字符串模板作为 Vue 实例的标识使用 [详情](https://cn.vuejs.org/v2/api/#template) 	|√	| x	|uni-app使用的vue是只包含运行时的版本		|
-|render	| 字符串模板的代替方案，该渲染函数接收一个 createElement 方法作为第一个参数用来创建 VNode。[详情](https://cn.vuejs.org/v2/api/#render) 	|√	| x	| |
+|template	| A string template to be used as the markup for the Vue instance.  [details](https://cn.vuejs.org/v2/api/#template) 	|√	| x	|uni-app使用的vue是只包含运行时的版本		|
+|render	| 字符串模板的代替方案，允许你发挥 JavaScript 最大的编程能力。该渲染函数接收一个 createElement 方法作为第一个参数用来创建 VNode。[详情](https://cn.vuejs.org/v2/api/#render) 	|√	| x	| |
+|render	| An alternative to string templates allowing you to leverage the full programmatic power of JavaScript. The render function receives a createElement method as it’s first argument used to create VNodes.[详情](https://cn.vuejs.org/v2/api/#render) 	|√	| x	| |
 |renderError	| 当 render 函数遭遇错误时，提供另外一种渲染输出，只在开发者环境下工作 [详情](https://cn.vuejs.org/v2/api/#renderError) 	|√	| x	| 		|
+|renderError	| Provide an alternative render output when the default render function encounters an error.  [details](https://cn.vuejs.org/v2/api/#renderError) 	|√	| x	| 		|
 |directives	| 包含 Vue 实例可用指令的哈希表 [详情](https://cn.vuejs.org/v2/api/#directives) 	|√	| √	|	|
 | directives     | Examples of useful instructions comprising Vue hash table [Details](https://vuejs.org/v2/api/#directives) |√	| √	|	|
 |filters	| 包含 Vue 实例可用过滤器的哈希表 [详情](https://cn.vuejs.org/v2/api/#filters) 	|√	| √	| 		|
@@ -92,12 +103,15 @@
 |name	| 允许组件模板递归地调用自身 [详情](https://cn.vuejs.org/v2/api/#name) 	|√	| √	| 		|
 | name           | Allow the component template calls itself recursively [details](https://vuejs.org/v2/api/#name) |√	| √	| 		|
 |delimiters	| 改变纯文本插入分隔符 [详情](https://cn.vuejs.org/v2/api/#delimiters) 	|√	|x	| 		|
+|delimiters	| Change the plain text interpolation delimiters.[details](https://cn.vuejs.org/v2/api/#delimiters) 	|√	|x	| 		|
 |functional	| 使组件无状态 (没有 data) 和无实例 (没有 this 上下文) [详情](https://cn.vuejs.org/v2/api/#functional) 	|√	| x	|		|
+|functional	| Causes a component to be stateless (no data) and instanceless (no this context).  [details](https://cn.vuejs.org/v2/api/#functional) 	|√	| x	|		|
 |model	| 允许一个自定义组件在使用 v-model 时定制 prop 和 event [详情](https://cn.vuejs.org/v2/api/#model) 	|√	|√	| 		|
 | model          | Allows a custom component to customize prop and event [details](https://vuejs.org/v2/api/#model) when using v-model |√	|√	| 		|
 |inheritAttrs	| inheritAttrs属性默认值为true，表示允许组件的根节点继承$attrs包含的属性 [详情](https://cn.vuejs.org/v2/api/#inheritAttrs) 	|√	|√	|		|
 | inheritAttrs   | inheritAttrs attribute default value is true, indicating that allows components of the root node contains the properties inherited $ attrs [details](https://vuejs.org/v2/api/#inheritAttrs) |√	|√	|		|
 |comments	| 当设为 true 时，将会保留且渲染模板中的 HTML 注释 [详情](https://cn.vuejs.org/v2/api/#comments) 	|√	| x	| 	-	|
+|comments	| When set to true, will preserve and render HTML comments found in templates. [details](https://cn.vuejs.org/v2/api/#comments) 	|√	| x	| 	-	|
 
 
 
@@ -108,17 +122,28 @@
 
 |生命周期钩子	|描述	|H5	|App端|
 | --			| --	| --|--		| 
-|beforeCreate		| 在实例初始化之后被调用 [详情](https://cn.vuejs.org/v2/api/#beforeCreate)	|√	|√		|	
-|created	| 在实例创建完成后被立即调用 [详情](https://cn.vuejs.org/v2/api/#created)	|√	| √		| 	
-|beforeMount		| 在挂载开始之前被调用 [详情](https://cn.vuejs.org/v2/api/#beforeMount)|√	| √|	
-|mounted	| 挂载到实例上去之后调用 [详情](https://cn.vuejs.org/v2/api/#mounted) 注意：此处并不能确定子组件被全部挂载，如果需要子组件完全挂载之后在执行操作可以使用$nextTick	[详情](https://cn.vuejs.org/v2/api/#Vue-nextTick)	|√	| √		| 
-|beforeUpdate	| 数据更新时调用，发生在虚拟 DOM 打补丁之前 [详情](https://cn.vuejs.org/v2/api/#beforeUpdate)|√	|√		| 	
-|updated		| 由于数据更改导致的虚拟 DOM 重新渲染和打补丁，在这之后会调用该钩子 [详情](https://cn.vuejs.org/v2/api/#updated)|√	|√		| 	
+|beforeCreate		| 在实例初始化之后,进行数据侦听和事件/侦听器的配置之前同步调用。 [详情](https://cn.vuejs.org/v2/api/#beforeCreate)	|√	|√		|	
+|beforeCreate		| Called synchronously immediately after the instance has been initialized, before data observation and event/watcher setup. [details](https://cn.vuejs.org/v2/api/#beforeCreate)	|√	|√		|	
+|created	| 在实例创建完成后被立即同步调用。 [详情](https://cn.vuejs.org/v2/api/#created)	|√	| √		| 	
+|created	| Called synchronously after the instance is created.  [details](https://cn.vuejs.org/v2/api/#created)	|√	| √		| 	
+|beforeMount		| 在挂载开始之前被调用：相关的 render 函数首次被调用。[详情](https://cn.vuejs.org/v2/api/#beforeMount)|√	| √|	
+|beforeMount		| Called right before the mounting begins: the render function is about to be called for the first time. [details](https://cn.vuejs.org/v2/api/#beforeMount)|√	| √|	
+|mounted	| 实例被挂载后调用 [详情](https://cn.vuejs.org/v2/api/#mounted) 注意：此处并不能确定子组件被全部挂载，如果需要子组件完全挂载之后在执行操作可以使用$nextTick	[详情](https://cn.vuejs.org/v2/api/#Vue-nextTick)	|√	| √		| 
+|mounted	| Called after the instance has been mounted. [details](https://cn.vuejs.org/v2/api/#mounted) 注意：此处并不能确定子组件被全部挂载，如果需要子组件完全挂载之后在执行操作可以使用$nextTick	[详情](https://cn.vuejs.org/v2/api/#Vue-nextTick)	|√	| √		| 
+|beforeUpdate	| 在数据发生改变后，DOM 被更新之前被调用。 [详情](https://cn.vuejs.org/v2/api/#beforeUpdate)|√	|√		| 	
+|beforeUpdate	| CCalled when data changes, before the DOM is patched.  [details](https://cn.vuejs.org/v2/api/#beforeUpdate)|√	|√		| 	
+|updated		| 在数据更改导致的虚拟 DOM 重新渲染和更新完毕之后被调用。 [详情](https://cn.vuejs.org/v2/api/#updated)|√	|√		| 	
+|updated		| Called after a data change causes the virtual DOM to be re-rendered and patched. [details](https://cn.vuejs.org/v2/api/#updated)|√	|√		| 	
 |activated	| 被 keep-alive 缓存的组件激活时调用 [详情](https://cn.vuejs.org/v2/api/#activated)	|√	| √		|  
+|activated	| Called when a kept-alive component is activated. [details](https://cn.vuejs.org/v2/api/#activated)	|√	| √		|  
 |deactivated		| 被 keep-alive 缓存的组件停用时调用 [详情](https://cn.vuejs.org/v2/api/#deactivated)	|√	| √		| 		
+|deactivated		| Called when a kept-alive component is deactivated. [details](https://cn.vuejs.org/v2/api/#deactivated)	|√	| √		| 		
 |beforeDestroy		| 实例销毁之前调用。在这一步，实例仍然完全可用 [详情](https://cn.vuejs.org/v2/api/#beforeDestroy)	|√	|√		| 	
-|destroyed	| Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁 [详情](https://cn.vuejs.org/v2/api/#destroyed)	|√	| √		| 	
-|errorCaptured	| 当捕获一个来自子孙组件的错误时被调用 [详情](https://cn.vuejs.org/v2/api/#errorCaptured)	|√	| √	| 
+|beforeDestroy		| Called right before a Vue instance is destroyed. At this stage the instance is still fully functional. [details](https://cn.vuejs.org/v2/api/#beforeDestroy)	|√	|√		| 	
+|destroyed	| 实例销毁后调用。该钩子被调用后，对应 Vue 实例的所有指令都被解绑，所有的事件监听器被移除，所有的子实例也都被销毁。 [详情](https://cn.vuejs.org/v2/api/#destroyed)	|√	| √		| 	
+|destroyed	| Called after a Vue instance has been destroyed. When this hook is called, all directives of the Vue instance have been unbound, all event listeners have been removed, and all child Vue instances have also been destroyed. [details](https://cn.vuejs.org/v2/api/#destroyed)	|√	| √		| 
+|errorCaptured	| 在捕获一个来自后代组件的错误时被调用。 [详情](https://cn.vuejs.org/v2/api/#errorCaptured)	|√	| √	| 
+|errorCaptured	| Called when an error from any descendent component is captured.  [details](https://cn.vuejs.org/v2/api/#errorCaptured)	|√	| √	| 
 
 
 
@@ -135,6 +160,7 @@
 |vm.$props	| 当前组件接收到的 props 对象 [详情](https://cn.vuejs.org/v2/api/#vm-props) 	|√	| √	| 		|
 | vm.$props               | Current props object components received [details](https://vuejs.org/v2/api/#vm-props) |√	| √	| 		|
 |vm.$el	| Vue 实例使用的根 DOM 元素 [详情](https://cn.vuejs.org/v2/api/#vm-el) 	|√	| x	|		|
+|vm.$el	| The root DOM element that the Vue instance is managing. [details](https://cn.vuejs.org/v2/api/#vm-el) 	|√	| x	|		|
 |vm.$options	| 用于当前 Vue 实例的初始化选项 [详情](https://cn.vuejs.org/v2/api/#vm-options) 	|√	| √	| 		|
 | vm.$options             | Vue initialization options for the current instance [details](https://vuejs.org/v2/api/#vm-options) |√	| √	| 		|
 |vm.$parent	| 父实例，如果当前实例有的话 [详情](https://cn.vuejs.org/v2/api/#vm-parent) 	|√	|√	| H5端 `view`、`text` 等内置标签是以 Vue 组件方式实现，`$parent` 会获取这些到内置组件，导致的问题是 `this.$parent` 与其他平台不一致，解决方式是使用 `this.$parent.$parent` 获取或自定义组件根节点由 `view` 改为 `div`|
@@ -150,8 +176,11 @@
 |vm.$refs	| 一个对象，持有注册过 ref attribute 的所有 DOM 元素和组件实例[详情](https://cn.vuejs.org/v2/api/#vm-refs) 	|√	| √	| 非H5端只能用于获取自定义组件，不能用于获取内置组件实例（如：view、text）		|
 | vm.$refs                | An object that holds the [details](https://vuejs.org/v2/api/#vm-refs) of all DOM elements and component instances that have registered ref attribute |√	| √	| 非H5端只能用于获取自定义组件，不能用于获取内置组件实例（如：view、text）		|
 |vm.$isServer	| 当前 Vue 实例是否运行于服务器 [详情](https://cn.vuejs.org/v2/api/#vm-isServer) 	|√	| √	| 		|
+|vm.$isServer	| Whether the current Vue instance is running on the server. [details](https://cn.vuejs.org/v2/api/#vm-isServer) 	|√	| √	| 		|
 |vm.$attrs	| 包含了父作用域中不作为 prop 被识别 (且获取) 的 attribute 绑定 [详情](https://cn.vuejs.org/v2/api/#vm-attrs) 	|√	| √	|	|
+|vm.$attrs	| Contains parent-scope attribute bindings (except for class and style) that are not recognized (and extracted) as props. [details](https://cn.vuejs.org/v2/api/#vm-attrs) 	|√	| √	|	|
 |vm.$listeners	| 包含了父作用域中的 (不含 .native 修饰器的) v-on 事件监听器 [详情](https://cn.vuejs.org/v2/api/#vm-listeners) 	|√	| √	|	-	|
+|vm.$listeners	| Contains parent-scope v-on event listeners (without .native modifiers).  [details](https://cn.vuejs.org/v2/api/#vm-listeners) 	|√	| √	|	-	|
 
 
 
@@ -225,6 +254,7 @@
 |v-once	| 只渲染元素和组件一次 [详情](https://cn.vuejs.org/v2/api/#v-once) 	|√	| √	|
 | v-once           | Only render elements and components once [details](https://vuejs.org/v2/api/#v-once) |√	| √	|
  |v-cloak| 这个指令保持在元素上直到关联实例结束编译 [详情](https://cn.vuejs.org/v2/api/#v-cloak) 	|√	| x	|
+ |v-cloak| This directive will remain on the element until the associated Vue instance finishes compilation. [details](https://cn.vuejs.org/v2/api/#v-cloak) 	|√	| x	|
 
 
 
@@ -258,9 +288,13 @@
 |component	| 渲染一个“元组件”为动态组件。依 is 的值，来决定哪个组件被渲染 [详情](https://cn.vuejs.org/v2/api/#component) 	|√	| √	|	
 | component           | Render a "meta component" as a dynamic component. According to the value is to determine which components are rendered [details](https://vuejs.org/v2/api/#component) |√	| √	|
 |transition	| 作为单个元素/组件的过渡效果 [详情](https://cn.vuejs.org/v2/api/#transition) 	|√	| x	| 		
+|transition	| as transition effects for single element/component. [details](https://cn.vuejs.org/v2/api/#transition) 	|√	| x	| 		
 |transition-group	| 作为多个元素/组件的过渡效果 [详情](https://cn.vuejs.org/v2/api/#transition-group) 	|√	| x	| 		
+|transition-group	| as transition effects for multiple elements/components.  [details](https://cn.vuejs.org/v2/api/#transition-group) 	|√	| x	| 		
 |keep-alive	| 包裹动态组件时，会缓存不活动的组件实例，而不是销毁它们 [详情](https://cn.vuejs.org/v2/api/#keep-alive) 	|√	|x	| 	
+|keep-alive	| When wrapped around a dynamic component, `<keep-alive>` caches the inactive component instances without destroying them.  [details](https://cn.vuejs.org/v2/api/#keep-alive) 	|√	|x	| 	
 |slot	| 作为组件模板之中的内容分发插槽 [详情](https://cn.vuejs.org/v2/api/#slot) 	|√	| √	| 
+|slot	| as content distribution outlets in component templates.  [details](https://cn.vuejs.org/v2/api/#slot) 	|√	| √	| 
 |template	| 并不是一个组件，它仅仅是一个包装元素，不会在页面中做任何渲染，只接受控制属性 [详情](https://uniapp.dcloud.io/component/vue-component?id=template) 	|√	| √	|	
 
 
@@ -350,7 +384,7 @@ When some properties are repeatedly set to the same value, they are not synchron
 解决办法有两种（以scroll-view组件为例）：
 There are two solutions (take the scroll-view component as an example):
 
-1.监听scroll事件，记录组件内部变化的值，在设置新值之前先设置为记录的当前值
+1. 监听scroll事件，记录组件内部变化的值，在设置新值之前先设置为记录的当前值
 1. Monitor the scroll event, record the value of the internal change of the component, and set the current value of the record before setting the new value
 
 
@@ -385,7 +419,7 @@ export default {
 
 ```
 
-2.监听scroll事件，获取组件内部变化的值，实时更新其绑定值
+2. 监听scroll事件，获取组件内部变化的值，实时更新其绑定值
 2. Monitor the scroll event, get the value of the internal change of the component, and update its binding value in real time
 
 ```html

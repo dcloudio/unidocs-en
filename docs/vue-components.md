@@ -435,8 +435,10 @@ All props form a one **-line downward binding** between their parent and child p
 
 
 被用来给元素或子组件注册引用信息，引用信息将会注册在父组件的 `$refs` 对象上。
+ref is used to register a reference to an element or a child component. The reference will be registered under the parent component’s $refs object.
 
 如果在普通的 DOM 元素上使用，引用指向的就是 DOM 元素；如果用在子组件上，引用就指向组件实例：
+If used on a plain DOM element, the reference will be that element; if used on a child component, the reference will be component instance:
 
 ```html
 
@@ -450,29 +452,35 @@ All props form a one **-line downward binding** between their parent and child p
 
 
 当 `ref` 和 `v-for` 一起用于元素或组件的时候，引用信息将是包含 DOM 节点或组件实例的数组。
-
+When used on elements/components with v-for, the registered reference will be an Array containing DOM nodes or component instances.
 
 
 **关于 ref 注册时间的重要说明：**
+**An important note about the ref registration timing: **
 
 因为 `ref` 本身是作为渲染结果被创建的，在初始渲染的时候你不能访问它们，它们还不存在！`$refs` 也不是响应式的，因此你不应该用它在模板中做数据绑定。
+because the refs themselves are created as a result of the render function, you cannot access them on the initial render - they don’t exist yet! $refs is also non-reactive, therefore you should not attempt to use it in templates for data-binding.
 
 
 
 
 #### 子组件ref
+#### Child Component Refs
 
 
 尽管存在 prop 和事件，有的时候你仍可能需要在 JavaScript 里直接访问一个子组件。
 访问子组件实例或子元素，通过 ref 为子组件赋予一个 ID 引用，在vue的js中可通过`this.$refs.XXX`来获取到组件对象。
+Despite the existence of props and events, sometimes you might still need to directly access a child component in JavaScript. To achieve this you can assign a reference ID to the child component using the ref attribute. 
 
 ```html
 	<base-input ref="usernameInput"></base-input>
 ```
 
 你已经定义了这个 ref 的组件里，你可以使用：`this.$refs.usernameInput`来访问这个` <base-input> `实例。
+Now in the component where you’ve defined this ref, you can use:`this.$refs.usernameInput`
 
 ##### 示例：
+##### Example
 
 ```html
 //base-input子组件页面
@@ -500,6 +508,7 @@ All props form a one **-line downward binding** between their parent and child p
 
 
 允许父级组件通过下面的代码聚焦` <base-input> ` 里的输入框：
+Thus allowing the parent component to focus the input inside `<base-input>` with:
 
 
 ```html
