@@ -454,59 +454,70 @@ Set the targeting type. The default value is ```relative```.
 ```
 
 
-
-
-
 > Android 兼容性
-
+> Android compatibility
 如果定位元素超过容器边界，在 Android 下，超出部分将不可见，原因在于 Android 端元素 ```overflow``` 默认值为 ```hidden```，但目前 Android 暂不支持设置 ```overflow: visible```。
-
+If the positioning element exceeds the container boundary, under Android, the excess part will not be visible. The reason is that the default value of the Android element ```overflow``` is ```hidden```, but currently Android does not support setting ``` overflow: visible```.
 
 ## Transition 
 
 ```transition```允许 CSS 的属性值在一定的时间区间内平滑地过渡。
+```transition``` allows CSS property values to transition smoothly within a certain time interval.
 #### transition-property
 设置过渡动画的属性名，设置不同样式 ```transition``` 效果的键值对，默认值为空，表示不执行任何过渡效果
-
+Set the attribute name of the transition animation, set the key-value pairs of different styles of ```transition``` effect, the default value is empty, which means that no transition effect will be performed
 
 |参数名				|描述				|
+|Parameter name |Description |
 |--					|--					|
 |width				|宽度参与过渡动画		|
+|width |Width participates in transition animation |
 |height				|高度参与过渡动画		|
+|height |Height participation in transition animation |
 |top				|顶部距离参与过渡动画	|
+|top |Top distance participates in transition animation |
 |bottom				|底部距离参与过渡动画	|
+|bottom |The bottom distance participates in the transition animation |
 |left				|左侧距离参与过渡动画	|
+|left |The left distance participates in the transition animation |
 |right				|右侧距离参与过渡动画	|
+|right |The distance on the right is involved in the transition animation |
 |background-color	|背景颜色参与过渡动画	|
+|background-color |The background color participates in the transition animation |
 |opacity			|不透明度参与过渡动画	|
+|opacity |Opacity participates in transition animation |
 |transform			|变换类型参与过渡动画	|
-
-
+|transform |Transformation type participates in transition animation |
 
 
 #### transition-duration
 指定过渡的持续时间 (单位是毫秒)，默认值是 0，表示没有动画效果。
-
+Specify the duration of the transition (in milliseconds), the default value is 0, which means there is no animation effect.
 #### transition-delay
 指定请求过渡操作到执行过渡之间的时间间隔 (单位是毫秒或者秒)，默认值是 0，表示没有延迟，在请求后立即执行过渡。
-
+Specify the time interval (in milliseconds or seconds) between requesting a transition operation and executing the transition. The default value is 0, which means there is no delay, and the transition will be executed immediately after the request.
 #### transition-timing-function
 描述过渡执行的速度曲线，用于使过渡更为平滑。默认值是 ```ease```。下表列出了所有合法的属性：
-
+Describe the speed curve of the transition execution, used to make the transition smoother. The default value is ```ease```. The following table lists all legal attributes:
 
 |参数名							|描述																																			|
+|Parameter name |Description |
 |--								|--																																				|
 |ease							|transition 过渡逐渐变慢的过渡效果																												|
+|ease |transition The transition effect that gradually slows down the transition |
 |ease-in						|transition 过渡慢速开始，然后变快的过渡效果																									|
+|ease-in |transition Transition effect that starts slowly and then becomes faster |
 |ease-out						|transition 过渡快速开始，然后变慢的过渡效果																									|
+|ease-out |transition Transition that starts quickly and then slows down |
 |ease-in-out					|transition 过渡慢速开始，然后变快，然后慢速结束的过渡效果																						|
+|ease-in-out |transition The transition effect that the transition starts slowly, then becomes faster, and then ends slowly |
 |linear							|transition 过渡以匀速变化																														|
+|linear |transition Transition changes at a constant speed |
 |cubic-bezier(x1, y1, x2, y2)	|使用三阶贝塞尔函数中自定义 transition 变化过程，函数的参数值必须处于 0 到 1 之间。更多关于三次贝塞尔的信息请参阅  [cubic-bezier](https://cubic-bezier.com/?spm=a2c7j.-zh-docs-styles-common-styles.0.0.3f952164z39lZD#.17,.67,.83,.67)和 [Bézier curve](https://en.wikipedia.org/wiki/B%C3%A9zier_curve?spm=a2c7j.-zh-docs-styles-common-styles.0.0.3f952164z39lZD)	|
-
-
+|cubic-bezier(x1, y1, x2, y2) |Using the custom transition process in the third-order Bezier function, the parameter value of the function must be between 0 and 1. For more information about Cubic Bezier, please refer to [cubic-bezier](https://cubic-bezier.com/?spm=a2c7j.-zh-docs-styles-common-styles.0.0.3f952164z39lZD#.17, .67, .83, .67) and [Bézier curve](https://en.wikipedia.org/wiki/B%C3%A9zier_curve?spm=a2c7j.-zh-docs-styles-common-styles.0.0. 3f952164z39lZD) |
 	
 #### 示例
-
+#### Example
 
 ``` html
 <template>
@@ -560,29 +571,41 @@ Set the targeting type. The default value is ```relative```.
 ## Transform
 
 应用于元素的2D或3D转换。这个属性允许你将元素旋转，缩放，移动，倾斜等。
-
+2D or 3D transformation applied to the element. This property allows you to rotate, scale, move, tilt, etc. the element.
 
 |参数名							|描述																																			|
+|Parameter name |Description |
 |--								|--																																				|
 |`translateX({<length/percentage>})`	|X 轴方向平移，支持长度单位或百分比。																												|
+|`translateX({<length/percentage>})` |X-axis translation, support length unit or percentage. |
 |`translateY({<length/percentage>})`	|Y 轴方向平移，支持长度单位或百分比。																	|
+|`translateY({<length/percentage>})` |Y-axis translation, support length unit or percentage. |
 |`translate({<length/percentage>} {<length/percentage>})`	|X 轴和 Y 轴方向同时平移，```translateX``` + ```translateY``` 简写。									|
+|`translate({<length/percentage>} {<length/percentage>})` | Simultaneous translation in X and Y directions, shorthand for ```translateX``` + ```translateY```. |
 |`scaleX(<number>)`				|X 轴方向缩放，值为数值，表示缩放比例，不支持百分比。							|
+|`scaleX(<number>)` |X-axis zoom, the value is a numeric value, indicating the zoom ratio, and percentages are not supported. |
 |`scaleY(<number>)`						|Y 轴方向缩放，值为数值，表示缩放比例，不支持百分比。																													|
+|`scaleY(<number>)` |Zoom in the Y-axis direction. The value is a numeric value, indicating the zoom ratio. Percentage is not supported. |
 |`scale(<number>)`|X 轴和 Y 轴方向同时缩放，```scaleX``` + ```scaleY``` 简写。|
+|`scale(<number>)`|X-axis and Y-axis directions are zoomed at the same time, ```scaleX``` + ```scaleY``` abbreviation. |
 |`rotate(<angle/degree>)`|将元素围绕一个定点（由 ```transform-origin``` 属性指定）旋转而不变形的转换。指定的角度定义了旋转的量度。若角度为正，则顺时针方向旋转，否则逆时针方向旋转。|
+|`rotate(<angle/degree>)`|Transformation that rotates the element around a fixed point (specified by the ```transform-origin``` attribute) without deformation. The specified angle defines the measure of rotation. If the angle is positive, it rotates clockwise, otherwise it rotates counterclockwise. |
 |`rotateX(<angle/degree>)`|X 轴方向的旋转。|
+|`rotateX(<angle/degree>)`|Rotation in the X axis direction. |
 |`rotateY(<angle/degree>)`|Y 轴方向的旋转。|
+|`rotateY(<angle/degree>)`|Rotation in Y axis direction. |
 |`rotateZ(<angle/degree>)`|Z 轴方向的旋转。|
+|`rotateZ(<angle/degree>)`|The rotation in the Z axis direction. |
 |`perspective(<length>)`|指定了观察者与 z=0 平面的距离，使具有三维位置变换的元素产生透视效果。z>0 的三维元素比正常大，而 z<0 时则比正常小，大小程度由该属性的值决定。Android 4.1及以上版本支持。|
+|`perspective(<length>)`| specifies the distance between the observer and the z=0 plane, so that the element with three-dimensional position transformation produces a perspective effect. The three-dimensional element with z>0 is larger than normal, and when z<0, it is smaller than normal. The size is determined by the value of this attribute. Support for Android 4.1 and above. |
 |`transform-origin {length/percentage/关键字(top/left/right/bottom)}:`|设置一个元素变形的原点，仅支持 2D 坐标。|
+|`transform-origin {length/percentage/keyword (top/left/right/bottom)}:`|Set the origin of an element's transformation, only 2D coordinates are supported. |
 
 > 除了```perspective```和```transform-origin```，```transition```支持了```transform```的全部能力。 其中transform的```rotate``` 和```rotatez``` 等效.
-
-
+> Except for ```perspective``` and ```transform-origin```, ```transition``` supports all the capabilities of ```transform```. Among them, ```rotate``` of transform is equivalent to ```rotatez```.
 	
 #### 示例
-
+#### Example
 
 ``` html
 <template>
@@ -691,72 +714,100 @@ Set the targeting type. The default value is ```relative```.
 
 
 ## 伪类
-
+## Pseudo-class
 
 |参数名		|描述								|
+|Parameter name |Description |
 |--			|--									|
 |active		|所有组件都支持						|
+|active |All components are supported |
 |focus		|只有 ```input``` 组件和 ```textarea``` 组件支持|
+|focus |Only supported by ```input``` component and ```textarea``` component|
 |disabled	|只有 ```input``` 组件和 ```textarea``` 组件支持|
+|disabled |Only supported by ```input``` component and ```textarea``` component|
 |enabled	|只有 ```input``` 组件和 ```textarea``` 组件支持|
-
+|enabled |Only supported by ```input``` component and ```textarea``` component|
 **注意**
+**Notice**
 > 同时生效的时候，优先级高覆盖优先级低。
+> When it takes effect at the same time, the priority is high and the coverage priority is low.
 > 例如：```input:active:enabled``` 和 ```input:active``` 同时生效，前者覆盖后者
-
+> For example: ```input:active:enabled``` and ```input:active``` take effect at the same time, the former overrides the latter
 - 互联规则如下所示
+- The interconnection rules are as follows
 
 <img width="400px" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/f3069420-2f17-11eb-8a36-ebb87efcf8c0.png" />
 
 
 ## 线性渐变
+## Linear gradient
 
 所有组件均支持线性渐变。[CSS3 渐变](https://www.w3cschool.cn/css3/oj26bfli.html)
+All components support linear gradients. [CSS3 Gradient](https://www.w3cschool.cn/css3/oj26bfli.html)
 你可以通过  ``` background-image ```属性创建线性渐变。
+You can create a linear gradient with the ``` background-image ``` property.
 ``` javascript
 	background-image:linear-gradient(to bottom right,#AD18F9,#05DFC7);
 ```
 
 只支持两种颜色的渐变，渐变方向如下：
-
+Only two color gradients are supported, and the gradient directions are as follows:
 |渐变方向		|描述				|
+|Gradient direction |Description |
 |--				|--					|
 |to right		|从左向右渐变		|
+|to right |Fade from left to right |
 |to left		|从右向左渐变		|
+|to left |Fade from right to left |
 |to bottom		|从上到下渐变		|
+|to bottom |Gradient from top to bottom |
 |to top			|从下到上渐变		|
+|to top |Gradient from bottom to top |
 |to bottom right|从左上角到右下角	|
+|to bottom right|From the upper left corner to the lower right corner |
 |to top left	|从右下角到左上角	|
-
+|to top left |From bottom right to top left |
 **注意**
-
+**Notice**
 > ```background-image``` 优先级高于 ```background-color```，这意味着同时设置 ```background-image``` 和 ```background-color```，```background-color``` 被覆盖。
+> ```background-image``` has a higher priority than ```background-color```, which means to set both ``background-image``` and ```background-color```, ` ``background-color``` is overwritten.
 > ```background``` 不支持简写。
-> 
+> ```background``` does not support shorthand.
+
 > **目前暂不支持 radial-gradient（径向渐变）。**
+> **Currently, radial-gradient is not supported. **
 
 
 <img width="300px" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/8f70e4e0-308b-11eb-97b7-0dc4655d6e68.PNG" />
 
 
 ## 阴影@boxshadow
+## Shadow@boxshadow
 
 ### IOS平台：阴影```box-shadow```@ios-box-shadow
-
+### IOS platform: shadow ```box-shadow```@ios-box-shadow
 	
 	{box-shadow:inset offset-x offset-y blur-radius color}
 	{box-shadow:投影方式 X轴偏移量 Y轴偏移量 阴影模糊半径  阴影颜色}
+	{box-shadow: projection method X axis offset Y axis offset shadow blur radius shadow color}
 
 
 |参数			|描述																										|
+|Parameter |Description |
 |--				|--																											|
 |inset（可选）	|默认阴影在边框外。使用 ```inset``` 后，阴影在边框内（即使是透明边框），背景之上内容之下。						|
+|inset (optional) |The default shadow is outside the border. After using ```inset```, the shadow is inside the border (even if it is a transparent border), and below the content above the background. |
 |offset-x		|设置水平偏移量，如果是负值则阴影位于元素左边。																|
+|offset-x |Set the horizontal offset, if it is negative, the shadow will be on the left of the element. |
 |offset-y		|设置垂直偏移量，如果是负值则阴影位于元素上面。																|
+|offset-y |Set the vertical offset, if it is a negative value, the shadow is on the element. |
 |blur-radius	|设置模糊半径，px 单位长度值，值越大，模糊面积越大，阴影就越大越淡。不能为负值。默认为0，此时阴影边缘锐利。	|
+|blur-radius | Set the blur radius, px unit length value, the larger the value, the larger the blur area, and the larger and lighter the shadow. Cannot be negative. The default is 0, when the shadow edges are sharp. |
 |color			|设置阴影颜色																								|
+|color | Set shadow color |
 
 示例
+Example
 ``` css
 	.box4 {
 	    box-shadow: inset 3px 5px 20px rgb(255, 69, 0);
@@ -764,118 +815,159 @@ Set the targeting type. The default value is ```relative```.
 ```
 
 **注意**
+**Notice**
 - 目前仅 iOS 支持 ```box-shadow``` 属性，Android 暂不支持，可以使用```elevation```或者图片代替。
+- Currently only iOS supports the ```box-shadow``` attribute, Android does not currently support it, you can use ```elevation``` or pictures instead.
 - 每个元素只支持设置一个阴影效果，不支持多个阴影同时作用于一个元素。
-
-
-
+- Each element supports only one shadow effect, and multiple shadows are not supported to act on one element at the same time.
 
 
 ### Android平台：阴影```elevation```@android-box-shadow
-
+### Android platform: shadow ```elevation```@android-box-shadow
 Android平台weex对阴影样式(box-shadow)支持不完善，如设置圆角边框时阴影样式显示不正常、设置动画时在Android7上显示不正常、在Android10上出现闪烁现象等。
-
+The Android platform weex has incomplete support for box-shadow. For example, the shadow style is displayed abnormally when the rounded border is set, the display is abnormal on Android7 when the animation is set, and the flicker appears on Android10.
 为解决这些问题，从HBuilderX 2.4.7起，新增elevation属性（**组件的属性，不是css样式**）设置组件的层级，Number类型，层级值越大阴影越明显，阴影效果也与组件位置有关，越靠近页面底部阴影效果越明显
-
+In order to solve these problems, starting from HBuilderX 2.4.7, the elevation property (**component property, not css style**) is added to set the level of the component, the Number type, the larger the level value, the more obvious the shadow, and the shadow effect is also related to the component The position is related, the closer to the bottom of the page, the more obvious the shadow effect
 
 	
 用法
+usage
 ``` html
 	<view elevation="5px"></view>
 ```
 
 
 #### 注意
+#### Notice
 - 设置```elevation```属性产生的阴影暂时无法修改颜色
+- The shadow created by setting the ```elevation``` property cannot be modified for the time being
 - 设置```elevation```后当前组件的层级会高于其他未设置elevation组件的层级，都设置```elevation```值域越大则层级越高！组件覆盖的场景需要留意
+- After setting ```elevation```, the level of the current component will be higher than that of other components without elevation. The higher the value range of ```elevation```, the higher the level! The scene covered by the component needs attention
 - 为了避免```elevation```属性的阴影效果与阴影样式(```box-shadow```)冲突，设置```elevation```属性后```box-shadow```样式失效
+- In order to avoid conflicts between the shadow effect of the ```elevation``` property and the shadow style (```box-shadow```), set the ```box-shadow`'' style after the ```elevation``` property Invalidation
 - 使用```elevation```需要阴影元素的父元素大于阴影范围，否则会对阴影进行裁剪
+- Using ```elevation``` requires the parent element of the shadow element to be larger than the shadow range, otherwise the shadow will be clipped
 - IOS不支持```elevation```属性，请使用```box-shadow```设置阴影
-
-
+- IOS does not support the ```elevation``` attribute, please use ```box-shadow``` to set the shadow
 
 ## 文本样式
+## Text style
 
 ### color
 color {color}：文字颜色，支持如下字段：
+color {color}: text color, supports the following fields:
  * RGB（ rgb(255, 0, 0) ） 
  * RGBA（ rgba(255, 0, 0, 0.5) ） 
  * 十六进制（ #ff0000 ）；
+ * Hexadecimal (#ff0000 );
  * 精简写法的十六进制（ #f00 ）
+ * Hexadecimal in short form (#f00)
  * 色值关键字（red）
+ * Color value keyword (red)
 
 > 只有```text```标签可以设置字体颜色
+> Only the ```text``` tag can set the font color
 
 ### font-size
 font-size {number}：文字大小，只有```text```标签可以设置字体大小
+font-size {number}: text size, only ```text``` tag can set the font size
 
 ### font-style
 font-style {string}：字体类别。可选值 ```normal``` | ```italic```，默认为 ```normal```。
+font-style {string}: Font type. Optional value ```normal``` | ```italic```, default is ```normal```.
 
 ### font-weight
 font-weight {string}：字体粗细程度。默认值: ```normal```；
+font-weight {string}: The weight of the font. Default value: ```normal```;
 
 - 可选值: ```normal```, ```bold```, 100, 200, 300, 400, 500, 600, 700, 800, 900
+- Optional values: ```normal```, ```bold```, 100, 200, 300, 400, 500, 600, 700, 800, 900
 - ```normal``` 等同于 400, ```bold``` 等同于 700；
+-```normal``` is equivalent to 400, ```bold``` is equivalent to 700;
 - iOS 支持 9 种 ```font-weight```值；Android 仅支持 400 和 700, 其他值会设为 400 或 700
+- iOS supports 9 kinds of ```font-weight``` values; Android only supports 400 and 700, other values will be set to 400 or 700
 - 类似 ```lighter```, ```bolder``` 这样的值暂时不支持
+- Values like ```lighter```, ```bolder``` are temporarily not supported
 
 ### text-decoration
 ```text-decoration {string}```：字体装饰。默认值为 ```none```。
+```text-decoration {string}```: Font decoration. The default value is ```none```.
 
 |可选值			|描述						|
+|Optional value |Description |
 |--				|--							|
 |none			|默认。定义标准的文本		|
+|none |Default. Defining the standard text |
 |underline		|定义文本下的一条线		|
+|underline |Define a line under the text |
 |line-through	|定义穿过文本下的一条线	|
-
+|line-through |Define a line through the text |
 
 > 只支持 ```text``` 和 ```ricthext```
-> 
+> Only support ```text``` and ```ricthext```
 > 不支持 ```text-decoration:overline```
-
+> Does not support ```text-decoration:overline```
 
 ### text-align
 ```text-align {string}```：对齐方式。默认值为 ```left```。
+```text-align {string}```: Alignment. The default value is ```left```.
 
 |可选值	|描述				|
+|Optional value |Description |
 |--		|--					|
 |left	|把文本排列到左边	|
+|left | Arrange the text to the left |
 |center	|把文本排列到中间	|
+|center | Arrange the text to the middle |
 |right	|把文本排列到右边|
-
+|right |Arrange the text to the right|
 > 不支持```text-align:justify```
+> ```text-align:justify`'' is not supported
 
 
 ### font-family
+
 ```font-family {string}```：设置字体。这个设置不保证在不同平台，设备间的一致性。
+```font-family {string}```: Set the font. This setting does not guarantee consistency between different platforms and devices.
+
 如所选设置在平台上不可用，将会降级到平台默认字体。
+If the selected setting is not available on the platform, it will be downgraded to the platform default font.
 如果需要加载自定义字体，请参考相关[DOM.addRule](/nvue-api?id=addrule)
-
+If you need to load a custom font, please refer to the related [DOM.addRule](/nvue-api?id=addrule)
 ### text-overflow
-```text-overflow {string}```：设置内容超长时的省略样式。
 
+```text-overflow {string}```：设置内容超长时的省略样式。
+```text-overflow {string}```: Set the omission style when the content is too long.
 |可选值		|描述							|
+|Optional value |Description |
 |--			|--								|
 |clip		|修剪文本						|
+|clip | Trim text |
 |ellipsis	|显示省略符号来代表被修剪的文本	|
+|ellipsis |Display ellipsis to represent trimmed text |
 > 只支持 ```text``` 和 ```ricthext```
+> Only support ```text``` and ```ricthext```
 
 ### lines
 ```lines {number}```: 正整数，指定最大文本行数，默认```lines```值为0，表示不限制最大行数```lines```。如果文本不够长，实际展示行数会小于指定行数。
-
+```lines {number}```: Positive integer, specify the maximum number of text lines, the default value of ```lines``` is 0, which means that the maximum number of lines ```lines``` is not limited. If the text is not long enough, the actual number of displayed lines will be less than the specified number of lines.
 ### line-height
 line-height {length}: 正整数，每行文字高度。```line-height```是 top 至 bottom的距离。
+line-height {length}: A positive integer, the height of each line of text. ```line-height``` is the distance from top to bottom.
 ```line-height```与```font-size```没有关系，因为```line-height```被 top 和 bottom 所限制，
+```line-height``` has nothing to do with ```font-size```, because ```line-height``` is limited by top and bottom,
 ```font-size``` 被 glyph 所解析。```line-height```和```font-size```相等一般会导致文字被截断。
-
+```font-size``` is parsed by glyph. The equality of ```line-height``` and ```font-size``` will generally cause the text to be truncated.
 ### word-wrap
 ```word-wrap:<string>```  对nvue来说 ```anywhere``` 表示在以字符为最小元素做截断换行，其它值或不指定该属性，都以英文单词为单位进行换行。
+```word-wrap:<string>``` For nvue, ```anywhere``` means that the character is the smallest element to do truncation and newline, other values or not specifying this attribute, are all in English words as the unit Wrap.
 
 |可选值		|描述								|
+|Optional value |Description |
 |--			|--									|
 |break-word	|在长单词或 URL 地址内部进行换行	|
+|break-word |Wrap a line inside a long word or URL address |
 |normal		|只在允许的断字点换行				|
+|normal |Line breaks only at allowed hyphenation points |
 |anywhere	|以字符为最小元素做截断换行	|
-
-
+|anywhere |Truncate and wrap with characters as the smallest element |
