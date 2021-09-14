@@ -628,18 +628,27 @@ In order to support cross-platform, the framework recommends using Flex layout. 
    ```
 
 ### 字体图标
-
+### Font icon
 ``uni-app`` 支持使用字体图标，使用方式与普通 ``web`` 项目相同，需要注意以下几点：
-
+``uni-app`` supports the use of font icons, which are used in the same way as ordinary ``web`` projects. Please note the following points:
 - 支持 base64 格式字体图标。
+- Support font icons in base64 format.
 - 支持网络路径字体图标。
+- Support network path font icon.
 - 网络路径必须加协议头 ``https``。
+- The network path must add the protocol header ``https``.
 - 从 [http://www.iconfont.cn](http://www.iconfont.cn) 上拷贝的代码，默认是没加协议头的。 
+- The code copied from [http://www.iconfont.cn](http://www.iconfont.cn) has no protocol header by default.
 - 从 [http://www.iconfont.cn](http://www.iconfont.cn) 上下载的字体文件，都是同名字体（字体名都叫iconfont，安装字体文件时可以看到），在nvue内使用时需要注意，此字体名重复可能会显示不正常，可以使用工具修改。
+- The font files downloaded from [http://www.iconfont.cn](http://www.iconfont.cn) are all with the same name (the font names are all called iconfont, which can be seen when installing the font files), When using it in nvue, you need to pay attention, the repeated font name may display abnormally, and you can use the tool to modify it.
 - 使用本地路径图标字体需注意：
+- Note when using local path icon fonts:
     1. 为方便开发者，在字体文件小于 40kb 时，``uni-app`` 会自动将其转化为 base64 格式；
-    2. 字体文件大于等于 40kb，仍转换为 base64 方式使用的话可能有性能问题，如开发者必须使用，则需自己将其转换为 base64 格式使用，或将其挪到服务器上，从网络地址引用；
-    3. 字体文件的引用路径推荐使用以 ~@ 开头的绝对路径。
+    1. For the convenience of developers, when the font file is less than 40kb, ``uni-app`` will automatically convert it to base64 format;
+	2. 字体文件大于等于 40kb，仍转换为 base64 方式使用的话可能有性能问题，如开发者必须使用，则需自己将其转换为 base64 格式使用，或将其挪到服务器上，从网络地址引用；
+    2. If the font file is greater than or equal to 40kb, if it is still converted to base64, it may have performance problems. If the developer must use it, he needs to convert it to base64 by himself, or move it to the server and reference it from the network address;
+	3. 字体文件的引用路径推荐使用以 ~@ 开头的绝对路径。
+    3. It is recommended to use an absolute path starting with ~@ for the reference path of the font file.
    ```css
         @font-face {
             font-family: test1-icon;
@@ -648,7 +657,7 @@ In order to support cross-platform, the framework recommends using Flex layout. 
    ```
 
 `nvue`中不可直接使用css的方式引入字体文件，需要使用以下方式在js内引入。nvue内不支持本地路径引入字体，请使用网络链接或者`base64`形式。**`src`字段的`url`的括号内一定要使用单引号。**
-
+In `nvue`, you cannot directly use css to import font files, you need to use the following methods to import font files in js. Nvue does not support importing fonts from local path, please use network link or `base64` form. **Single quotation marks must be used in the brackets of the `url` in the `src` field. **
 ```js
 var domModule = weex.requireModule('dom');
 domModule.addRule('fontFace', {
@@ -659,7 +668,7 @@ domModule.addRule('fontFace', {
 
 
 **示例：**
-
+**Example:**
 ```html
 <template>
 	<view>
@@ -684,23 +693,26 @@ domModule.addRule('fontFace', {
 
 
 ## ``<template/>`` 和 ``<block/>`` @template-block
-
+## ``<template/>`` and ``<block/>`` @template-block
+ 
 ``uni-app`` 支持在 template 模板中嵌套 ``<template/>`` 和 ``<block/>``，用来进行 [列表渲染](/vue-basics?id=列表渲染) 和 [条件渲染](/vue-basics?id=条件渲染)。
-
+``uni-app`` supports nesting ``<template/>`` and ``<block/>'' in the template template for [list rendering](/vue-basics?id=list rendering) And [conditional rendering](/vue-basics?id=conditional rendering).
  ``<template/>`` 和 ``<block/>`` 并不是一个组件，它们仅仅是一个包装元素，不会在页面中做任何渲染，只接受控制属性。
- 
+ ``<template/>`` and ``<block/>`` are not a component, they are just a packaging element, they will not do any rendering on the page, but only accept control attributes.
  ``<block/>`` 在不同的平台表现存在一定差异，推荐统一使用 ``<template/>``。
- 
+ ``<block/>`` has some differences in performance on different platforms. It is recommended to use ``<template/>`` uniformly.
 **代码示例**
- 
+ **Code Example**
 ```html
 <template>
 	<view>
 		<template v-if="test">
 			<view>test 为 true 时显示</view>
+			<view>Display when test is true</view>
 		</template>
         <template v-else>
         	<view>test 为 false 时显示</view>
+			<view>Display when test is false</view>
         </template>
 	</view>
 </template>
@@ -717,18 +729,25 @@ domModule.addRule('fontFace', {
 ```
 
 ## ES6 支持
+## ES6 support
 uni-app 在支持绝大部分 ES6 API 的同时，也支持了 ES7 的 await/async。
-
+While uni-app supports most ES6 APIs, it also supports ES7 await/async.
 ES6 API 的支持，详见如下表格部分（`x` 表示不支持，无特殊说明则表示支持）：
+ES6 API support, see the following table for details (`x` means not support, no special instructions means support):
 - 因为iOS上不允许三方js引擎，所以iOS上不区分App、H5，各端均仅依赖iOS版本。
+- Because three-party js engines are not allowed on iOS, there is no distinction between App and H5 on iOS, and each terminal only depends on the iOS version.
 - 各端Android版本有差异：
+- There are differences between the Android versions on each end:
 * App端的数据见下表；
+* The data on the App side is shown in the table below;
 * H5端数据见caniuse；
+* See caniuse for H5 end data;
 
 |String|iOS8|iOS9|iOS10|Android|
 |:-|:-|:-|:-|:-|
 |codePointAt|||||
 |normalize|x|x||仅支持 NFD/NFC|
+|normalize|x|x||Only supports NFD/NFC|
 |includes|||||
 |startsWith|||||
 |endsWith|||||
@@ -797,64 +816,89 @@ ES6 API 的支持，详见如下表格部分（`x` 表示不支持，无特殊�
 |Promise||||&nbsp;|
 
 **注意**
+**Notice**
 - App端Android支持不依赖Android版本号，即便是Android4.4也是上表数据。因为uni-app的js代码运行在自带的独立jscore中，没有js的浏览器兼容性问题。uni-app的vue页面在Android低端机上只有css浏览器兼容性问题，因为vue页面仍然渲染在webview中，受Android版本影响，太新的css语法在低版本不支持。
+- App-side Android support does not depend on the Android version number, even Android4.4 is the data in the above table. Because the js code of uni-app runs in its own independent jscore, there is no js browser compatibility problem. Uni-app's vue page only has css browser compatibility issues on Android low-end machines, because the vue page is still rendered in the webview, which is affected by the Android version, and the too new css syntax is not supported in the lower version.
 - 默认不需要在微信工具里继续开启es6转换。但如果用了微信的wxml自定义组件（wxcomponents目录下），uni-app编译器并不会处理这些文件中的es6代码，需要去微信工具里开启转换。从HBuilderX调起微信工具时，如果发现工程下有wxcomponents目录会自动配置微信工程打开es6转换。
-
+- By default, there is no need to continue to enable es6 conversion in the WeChat tool. But if you use WeChat's wxml custom components (under the wxcomponents directory), the uni-app compiler will not process the es6 code in these files, and you need to go to the WeChat tool to start the conversion. When starting the WeChat tool from HBuilderX, if it finds that there is a wxcomponents directory under the project, it will automatically configure the WeChat project to open es6 conversion.
 
 ## NPM支持
-
+## NPM support
 uni-app支持使用**npm**安装第三方包。
-
+uni-app supports the use of **npm** to install third-party packages.
 此文档要求开发者们对**npm**有一定的了解，因此不会再去介绍**npm**的基本功能。如若之前未接触过**npm**，请翻阅[NPM官方文档](https://docs.npmjs.com/getting-started/what-is-npm)进行学习。
-
+This document requires developers to have a certain understanding of **npm**, so the basic functions of **npm** will not be introduced. If you haven't contacted **npm** before, please refer to [NPM official document](https://docs.npmjs.com/getting-started/what-is-npm) to learn.
 **初始化npm工程**
-
+**Initialize npm project**
 若项目之前未使用npm管理依赖（项目根目录下无package.json文件），先在项目根目录执行命令初始化npm工程：
+If the project has not used npm to manage dependencies before (there is no package.json file in the project root directory), first execute the command in the project root directory to initialize the npm project:
 ```shell
 npm init -y
 ```
 
 cli项目默认已经有package.json了。HBuilderX创建的项目默认没有，需要通过初始化命令来创建。
+The cli project already has package.json by default. The project created by HBuilderX is not available by default, and needs to be created through the initialization command.
 
 **安装依赖**
-
+**Installation dependencies**
 在项目根目录执行命令安装npm包：
+Install the npm package by executing the command in the project root directory:
+
 ```shell
 npm install packageName --save
 ```
 
 **使用**
+**use**
 
 安装完即可使用npm包，js中引入npm包：
+After installation, you can use the npm package. The npm package is introduced in js:
+
 ```js
 import package from 'packageName'
 const package = require('packageName')
 ```
 
 **注意**
-
+**Notice**
 * 为多端兼容考虑，建议优先从 [uni-app插件市场](https://ext.dcloud.net.cn/) 获取插件。直接从 npm 下载库很容易只兼容H5端。
+* For multi-terminal compatibility considerations, it is recommended to obtain plug-ins from [uni-app plug-in market](https://ext.dcloud.net.cn/) first. It is easy to download the library directly from npm and only compatible with the H5 end.
 * 非 H5 端不支持使用含有 dom、window 等操作的 vue 组件和 js 模块，安装的模块及其依赖的模块使用的 API 必须是 uni-app 已有的 [API](./api/README)。类似[jQuery](https://www.npmjs.com/package/jquery) 等库只能用于H5端。
+* The non-H5 end does not support the use of vue components and js modules that contain dom, window and other operations. The installed modules and their dependent modules must use the existing [API](./api/README) of uni-app. Libraries like [jQuery](https://www.npmjs.com/package/jquery) can only be used on the H5 side.
 * node_modules 目录必须在项目根目录下。不管是cli项目还是HBuilderX创建的项目。
+* The node_modules directory must be in the project root directory. Whether it is a cli project or a project created by HBuilderX.
 * 关于ui库的获取，详见[多端UI库](https://ask.dcloud.net.cn/article/35489)
-
+* For obtaining the UI library, please refer to [Multi-terminal UI Library](https://ask.dcloud.net.cn/article/35489)
 ## TypeScript 支持
+## TypeScript support
 在 uni-app 中使用 ts 开发，请参考 [Vue.js TypeScript 支持](https://cn.vuejs.org/v2/guide/typescript.html) 说明。
-
+To use ts development in uni-app, please refer to [Vue.js TypeScript Support](https://cn.vuejs.org/v2/guide/typescript.html) instructions.
 
 类型定义文件由 @dcloudio/types 模块提供，安装后请注意配置 tsconfig.json 文件中的 compilerOptions > types 部分。对于缺少或者错误的类型定义，可以自行在本地新增或修改并同时报告给官方请求更新。
+The type definition file is provided by the @dcloudio/types module. After installation, please pay attention to the compilerOptions> types section in the tsconfig.json file. For missing or incorrect type definitions, you can add or modify them locally and report them to the official to request an update at the same time.
+
 
 ### 注意事项
+### Precautions
+
 在 uni-app 中使用 ts 需要注意以下事项。
+Note the following when using ts in uni-app.
+
 #### 在 vue 文件的 script 节点声明 lang="ts"@vue-ts
+#### Declare lang="ts"@vue-ts in the script node of the vue file
+
 声明 `lang="ts"` 后，该 vue 文件 import 进来的所有 vue 组件，均需要使用 ts 编写。
+After declaring `lang="ts"`, all vue components imported from the vue file need to be written in ts.
 
 **示例代码**
+**Sample Code**
 
 改造 uni-badge.vue 
+Transform uni-badge.vue
 ```javascript
 <script lang="ts">
     // 仅展示需要修改的核心代码，完整代码请参考原来的组件。
+	// Only the core code that needs to be modified is displayed. For the complete code, please refer to the original component.
 	import Vue from 'vue';
 	export default Vue.extend({
 		props: {
@@ -893,6 +937,7 @@ const package = require('packageName')
 </script>
 ```
 在 index.vue 中引用 uni-badge 组件
+Reference uni-badge component in index.vue
 ```javascript
 <script lang="ts">
     import Vue from 'vue';
@@ -912,20 +957,27 @@ const package = require('packageName')
 
 ## renderjs
 `renderjs`是一个运行在视图层的js。它只支持app-vue和h5。
-
+`renderjs` is a js running in the view layer. It only supports app-vue and h5.
 `renderjs`的主要作用有2个：
+There are two main functions of `renderjs`:
 - 大幅降低逻辑层和视图层的通讯损耗，提供高性能视图交互能力
+- Significantly reduce the communication loss between the logic layer and the view layer, and provide high-performance view interaction capabilities
 - 在视图层操作dom，运行for web的js库
+- Operate dom in the view layer and run the js library for web
 
 **平台差异说明**
+**Platform difference description**
 
 |App|H5|
 |:-:|:-:|
 |√(2.5.5+，仅支持vue，并要求v3编译器)|√|
+|√(2.5.5+, only supports vue, and requires v3 compiler)|√|
 
 ### 使用方式
+### How to use
 
 设置 script 节点的 lang 为 renderjs
+Set the lang of the script node to renderjs
 ```html
 <script module="test" lang="renderjs">
 	export default {
@@ -940,42 +992,54 @@ const package = require('packageName')
 ```
 
 ### 示例
-
+### Example
 * [通过renderjs，在app和h5端使用完整的 `echarts`](https://ext.dcloud.net.cn/plugin?id=1207)
-
+* [Through renderjs, use the complete `echarts` on the app and h5 side](https://ext.dcloud.net.cn/plugin?id=1207)
 ### 功能详解
+### Detailed function
 - 大幅降低逻辑层和视图层的通讯损耗，提供高性能视图交互能力
-
+- Significantly reduce the communication loss between the logic layer and the view layer, and provide high-performance view interaction capabilities
 逻辑层和视图层分离有很多好处，但也有一个副作用是在造成了两层之间通信阻塞。
-
+The separation of the logic layer and the view layer has many benefits, but there is also a side effect that causes communication blockage between the two layers.
 `renderjs`运行在视图层，可以直接操作视图层的元素，避免通信折损。
-
+`renderjs` runs on the view layer and can directly manipulate the elements of the view layer to avoid communication loss.
 在hello uni-app的canvas示例中，App端使用了`renderjs`，由运行在视图层的`renderjs`直接操作视图层的canvas，实现了流畅canvas动画示例。具体在[hello uni-app](https://m3w.cn/uniapp)示例中体验。
-
+In the canvas example of hello uni-app, the App side uses `renderjs`, and the `renderjs` running on the view layer directly manipulates the canvas of the view layer to achieve a smooth canvas animation example. The specific experience is in the [hello uni-app](https://m3w.cn/uniapp) example.
 - 在视图层操作dom，运行for web的js库
+- Operate dom in the view layer and run the js library for web
 官方不建议在uni-app里操作dom，但如果你想使用一些操作了dom、window的库，其实可以使用`renderjs`来解决。
-
+It is officially not recommended to operate dom in uni-app, but if you want to use some libraries that operate dom and window, you can actually use `renderjs` to solve it.
 在app-vue环境下，视图层由webview渲染，而`renderjs`运行在视图层，自然可以操作dom和window。
-
+In the app-vue environment, the view layer is rendered by the webview, and `renderjs` runs in the view layer, which can naturally manipulate dom and window.
 这是一个基于`renderjs`运行echart完整版的示例：[renderjs版echart](https://ext.dcloud.net.cn/plugin?id=1207)
-
+This is an example of running the full version of echart based on `renderjs`: [renderjs version echart](https://ext.dcloud.net.cn/plugin?id=1207)
 同理，`f2`、`threejs`等库都可以这么用。
+In the same way, libraries such as `f2` and `threejs` can all be used in this way.
+
 
 
 ### 注意事项
-
+### Precautions
 * 目前仅支持内联使用。
+* Currently only supports inline use.
 * 不要直接引用大型类库，推荐通过动态创建 script 方式引用。
+* Do not directly quote large class libraries. It is recommended to use dynamic script creation to quote them.
 * 可以使用 vue 组件的生命周期不可以使用 App、Page 的生命周期
+* The life cycle of vue components can be used, but the life cycle of App and Page cannot be used
 * 视图层和逻辑层通讯方式与 [WXS](frame?id=wxs) 一致，另外可以通过 this.$ownerInstance 获取当前组件的 ComponentDescriptor 实例。
+* The communication method between the view layer and the logic layer is consistent with [WXS](frame?id=wxs), and the ComponentDescriptor instance of the current component can be obtained through this.$ownerInstance.
 * 观测更新的数据在视图层可以直接访问到。
+* Observed and updated data can be directly accessed in the view layer.
 * APP 端视图层的页面引用资源的路径相对于根目录计算，例如：./static/test.js。
+* The path of the page reference resource on the APP side view layer is calculated relative to the root directory, for example: ./static/test.js.
 * APP 端可以使用 dom、bom API，不可直接访问逻辑层数据，不可以使用 uni 相关接口（如：uni.request）
+* The APP can use dom and bom APIs, and cannot directly access the logic layer data, and cannot use uni-related interfaces (such as uni.request)
 * H5 端逻辑层和视图层实际运行在同一个环境中，相当于使用 mixin 方式，可以直接访问逻辑层数据。
-
+* The logic layer of the H5 end and the view layer actually run in the same environment, which is equivalent to using a mixin method to directly access the logic layer data.
 
 ## 致谢
-
+## Thanks
 ```uni-app```使用 ```vue``` 语法，开发多端应用，感谢```Vue```团队！！
-
+```uni-app``` uses ```vue``` syntax to develop multi-terminal applications, thanks to the ```Vue``` team! !
 为了减少开发者的学习成本，```uni-app```的组件和api设计，基本参考了微信小程序，学过微信小程序开发，了解```vue```，就能直接上手```uni-app```；感谢微信小程序团队！
+In order to reduce the learning cost of developers, the components and api design of ```uni-app``` basically refer to WeChat applet. After learning the development of WeChat applet, you can get started directly with the understanding of ```vue```. ```uni-app```; Thanks to the WeChat Mini Program team!
