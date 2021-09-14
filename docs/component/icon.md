@@ -1,8 +1,10 @@
 #### icon
 
 图标。
+icon.
 
 **平台差异说明**
+**Platform difference description**
 
 |App|H5|
 |:-:|:-:|
@@ -11,7 +13,7 @@
 **Tips**
 
 * 由于 icon 组件各端表现存在差异，可以通过使用 [字体图标](/frame?id=字体图标) 的方式来弥补各端差异。
-- Due to differences in each end of the icon component performance, by using the Fonts icon to compensate for differences in the way each end.
+* Due to differences in each end of the icon component performance, by using the Fonts icon to compensate for differences in the way each end.
 
 **属性说明**
 **Property description**
@@ -27,6 +29,7 @@
 | color          | Color    |              | icon color, same as css color |
 
 各平台 type 有效值说明：
+Valid value description of each platform type:
 
 |平台|type 有效值|
 |:-:|:-:|
@@ -34,6 +37,7 @@
 
 
 **示例**
+**Example**
 ```html
 <view class="item" v-for="(value,index) in iconType" :key="index">
     <icon :type="value" size="26"/>
@@ -63,6 +67,7 @@ export default {
 ```
 
 **效果展示**
+**Show results**
 
 <div style="display:flex;align-items: flex-start;justify-content: center;flex-wrap: wrap;">
 		<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/d2562ea0-4f30-11eb-97b7-0dc4655d6e68.png" width="375"/>

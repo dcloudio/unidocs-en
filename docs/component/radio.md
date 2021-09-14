@@ -33,8 +33,10 @@ Single-select items.
 | color          | Color    |          | The color of radio, same as the color of css                 |
 
 **示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/radio/radio)
+ **Example** [View Demo](https://hellouniapp.dcloud.net.cn/pages/component/radio/radio)
  
 以下示例代码，来自于[hello uni-app项目](https://github.com/dcloudio/hello-uniapp)，推荐使用HBuilderX，新建uni-app项目，选择hello uni-app模板，可直接体验完整示例。
+The following sample code comes from [hello uni-app project](https://github.com/dcloudio/hello-uniapp), it is recommended to use HBuilderX, create a new uni-app project, choose hello uni-app template, you can experience the complete Example.
 ```html
 <!-- 本示例未包含完整css，获取外链css请参考上文，在hello uni-app项目中查看 -->
 <template>
@@ -110,8 +112,13 @@ export default {
 
 
 **注意**
+**Notice**
 - 如需调节radio大小，可通过css的scale方法调节，如缩小到70%`style="transform:scale(0.7)"`
+- -If you need to adjust the radio size, you can adjust it through the scale method of CSS, such as reducing it to 70% `style="transform:scale(0.7)"`
 - radio不是checkbox，点击一个已经选中的radio，不会将其取消选中
+-The radio is not a checkbox. Clicking on a radio that has been selected will not deselect it
 
 **扩展**
+**Extensions**
 - uni-ui提供了增强的uni-data-checkbox组件，基于[datacom规范](/component/datacom)，只需传入data数据，即可自动生成一组单选框，使用方式更简洁，并且支持[uni-forms](https://ext.dcloud.net.cn/plugin?id=2773)的表单验证。uni-data-checkbox组件详见[https://ext.dcloud.net.cn/plugin?id=3456](https://ext.dcloud.net.cn/plugin?id=3456)
+-uni-ui provides an enhanced uni-data-checkbox component. Based on the [datacom specification](/component/datacom), you only need to pass in data data to automatically generate a set of radio buttons. The usage is more concise, and Support [uni-forms](https://ext.dcloud.net.cn/plugin?id=2773) form verification. For details of uni-data-checkbox components, please refer to [https://ext.dcloud.net.cn/plugin?id=3456](https://ext.dcloud.net.cn/plugin?id=3456)

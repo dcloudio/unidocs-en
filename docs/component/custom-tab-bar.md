@@ -4,7 +4,7 @@
 Custom tabBar component.
 
 在小程序和App端，为提升性能，在 `pages.json` 里配置固定的原生tabBar。但在H5端，这一设计并不会提升性能。
- to enhance performance, `pages.json`in a fixed configuration native tabBar. 
+On the applet and App side, in order to improve performance, a fixed native tabBar is configured in `pages.json`. But on the H5 side, this design does not improve performance.
 
 同时，H5端尤其是PC宽屏，对tabBar的位置和样式有更灵活的需求，tabBar作为一级导航，更多的时候是在PC网页顶部而不是底部。
 At the same time,  has more flexible requirements for the position and style of the tabBar. As a first-level navigation, the tabBar is more often at the top of the PC web page rather than the bottom.
@@ -19,10 +19,13 @@ The component supports `pages.json`the `tabBar`configuration, which does not sup
 The component supports all `tabBar`relevant the API, such as setting tab logo, a red dot switchTab and the like.
 
 **平台兼容性**
+**Platform compatibility**
 
 __仅 H5 支持__，HBuilderX 2.9.9 + 。
+__Only H5 supports__, HBuilderX 2.9.9+.
 
 **属性说明**
+**Attribute description**
 
 |属性名|类型|默认值|说明|
 |**Attribute name**|type|**Defaults**|**Description**|
@@ -56,6 +59,7 @@ This component requires no configuration list tabBar each tabItem still from `pa
 **Example**
 
 在`hello uni-app`中，在 topWindow 中放置自定义tabBar组件，将页面一级导航放置在网页顶部。
+In `hello uni-app`, place a custom tabBar component in topWindow, and place the page level navigation at the top of the page.
 
 ```html
 <!-- 本示例未包含完整css，获取外链css请参考上文，在hello uni-app项目中的 top-window 查看 -->
@@ -67,15 +71,20 @@ This component requires no configuration list tabBar each tabItem still from `pa
 ```
 
 示例体验：使用PC浏览器打开[https://hellouniapp.dcloud.net.cn/](https://hellouniapp.dcloud.net.cn/)
+Sample experience: Use a PC browser to open [https://hellouniapp.dcloud.net.cn/](https://hellouniapp.dcloud.net.cn/)
 
 源码获取：HBuilderX 2.9.9+起新建uni-app项目，选择hello uni-app模板。
+Source code acquisition: To create a uni-app project starting from HBuilderX 2.9.9+, select the hello uni-app template.
 
 展现效果见下方截图：
+The display effect is shown in the screenshot below:
 
 custom-tab-bar 水平布局（horizontal）：
+custom-tab-bar horizontal layout (horizontal):
 
 ![uniapp](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/5dc930c0-2580-11eb-8a36-ebb87efcf8c0.png)
 
 custom-tab-bar 竖直布局（vertical）：
+custom-tab-bar vertical layout (vertical):
 
 ![uniapp](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/b3b68450-2595-11eb-880a-0db19f4f74bb.png)

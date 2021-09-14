@@ -76,6 +76,7 @@ After the focus of input, textarea, get the cursor position of the input box. No
 |HBuilderX 2.8.12+|HBuilderX 2.8.12+|
 
 **OBJECT 参数说明：**
+**OBJECT parameter description:**
 
 | 参数名 | 类型 | 默认值 | 必填 | 说明 |
 |Parameter|Type|Default Value|Required|Description|

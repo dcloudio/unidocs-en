@@ -1,17 +1,22 @@
 #### audio
 音频。
+Audio.
 
 **平台差异说明**
+**Platform difference description**
 
 |App|H5|
 |:-:|:-:|
 |√|√|
 
 app-nvue也不支持此组件。
+app-nvue also does not support this component.
 
 如果需要带ui的样式，可以自己做，也可以在插件市场搜索相关[插件](https://ext.dcloud.net.cn/search?q=audio)
+If you need a ui style, you can do it yourself, or you can search for related [plugins](https://ext.dcloud.net.cn/search?q=audio) in the plugin market
 
 **属性说明**
+**Attribute description**
 
 |属性名|类型|默认值|说明|
 |**Attribute name**|**Type**|**Defaults**|**Description**|

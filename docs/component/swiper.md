@@ -30,7 +30,9 @@ Pay attention to the difference between sliding switch and scrolling, sliding sw
 |interval|Number|5000|自动切换时间间隔||
 |interval|Number|5000|Automatic switching time interval||
 |duration|Number|500|滑动动画时长|app-nvue不支持|
+|duration|Number|500|sliding animation duration|app-nvue does not support|
 |duration|Number|500|Sliding animation duration|  app-nvue不支持|
+|duration|Number|500|Sliding animation duration| not supported by app-nvue|
 |circular|Boolean|false|是否采用衔接滑动，即播放到末尾后重新回到开头||
 |circular|Boolean|false|Whether to use continuous sliding, that is, play back to the beginning after playing to the end||
 |vertical|Boolean|false|滑动方向是否为纵向||
@@ -65,19 +67,29 @@ The detail returned by the change event contains a source field, which indicates
 **swiper做左右拖动的长列表的专项问题**
 **Swiper does the special problem of dragging the long list left and right**
 - swiper是单页组件，适合做banner图轮播和简单列表左右滑动。
+- swiper is a single page component, suitable for banner image carousel and simple list sliding left and right.
 - 因为性能问题，用swiper做复杂长列表，需要较高的优化技巧以及接受一些限制。
+- Due to performance issues, using swiper to make complex and long lists requires high optimization skills and accepts some restrictions.
 - 这是一个范例，[插件市场新闻模板示例](https://ext.dcloud.net.cn/plugin?id=103)，它在App端使用了nvue的原生渲染，实现高性能的左右拖动长列表；并支持可自定义的任何形式的下拉刷新。它在非App端使用的模式是只缓存左右一共3列的数据，dom中的数据过多时，它会自动释放。就是说App上，只要看过这一页，再进去时内容是还在的。而在非App上，只能做到缓存3页数据，其他页即便看过，再进去也会重新加载。并且非App的这种情况下，不再提供下拉刷新。虽然插件市场也有其他前端模拟的下拉刷新，但性能不佳。
-
+- This is an example, [plugin market news template example](https://ext.dcloud.net.cn/plugin?id=103), which uses nvue's native rendering on the App side to achieve high-performance left and right drag Dynamic length list; and supports any form of customizable pull-down refresh. The mode it uses on the non-App side is to only cache the left and right columns of data. When there is too much data in the dom, it will be automatically released. That is to say, on the App, as long as you have read this page, the content will still be there when you enter it again. On non-Apps, only 3 pages of data can be cached, and other pages will be reloaded even if they are read. And in this case of non-App, pull-down refresh is no longer provided. Although the plug-in market also has other front-end analog pull-down refreshes, the performance is not good.
 **Tips**
 
 - 如果 nvue 页面 ``@animationfinish`` 事件不能返回正确的数据，可同时监听 ``@change`` 事件。
+- If the ``@animationfinish`` event on the nvue page cannot return the correct data, you can monitor the ``@change`` event at the same time.
 - 使用竖向滚动时，需要给 ``<scroll-view>`` 一个固定高度，通过 css 设置 height。
+- -When using vertical scrolling, you need to give ``<scroll-view>`` a fixed height, and set the height through css.
 - 注意：其中只可放置 ``<swiper-item>`` 组件，否则会导致未定义的行为。 
+- Note: Only the ``<swiper-item>`` component can be placed in it, otherwise it will cause undefined behavior.
 - 如果遇到current、current-item-id属性设置不生效的问题参考：[组件属性设置不生效解决办法](/vue-api?id=_4-组件属性设置不生效解决办法)
+- If you encounter the problem that the current and current-item-id attribute settings do not take effect, please refer to: [Solution for component attribute settings not taking effect](/vue-api?id=_4-Solution for component attribute settings not taking effect)
 - banner图的切换效果和指示器的样式，有多种风格可自定义，可在[uni-app插件市场](https://ext.dcloud.net.cn/search?q=%E8%BD%AE%E6%92%AD)搜索
+- The switching effect of the banner image and the style of the indicator, there are a variety of styles that can be customized, which can be found in [uni-app plug-in market](https://ext.dcloud.net.cn/search?q=%E8%BD %AE%E6%92%AD) search
 - 如需banner管理后台，参考uniCloud admin banner插件：[https://ext.dcloud.net.cn/plugin?id=4117](https://ext.dcloud.net.cn/plugin?id=4117)
+- -For banner management background, refer to uniCloud admin banner plugin: [https://ext.dcloud.net.cn/plugin?id=4117](https://ext.dcloud.net.cn/plugin?id=4117 )
 - swiper在App的vue中，不支持内嵌video、map等原生组件。在App nvue2.1.5起支持内嵌原生组件。竖向的swiper内嵌视频可实现抖音、映客等视频垂直拖动切换效果。
+- swiper does not support native components such as embedded video and map in vue of App. From App nvue 2.1.5, it supports embedded native components. The vertical swiper embedded video can realize the vertical drag switching effect of Douyin, Inke and other videos.
 - 同时监听 change transition，开始滑动时触发transition, 放开手后，在ios平台触发顺序为 transition... change，Android为 transition... change transition...
+- Monitor the change transition at the same time, trigger the transition when you start sliding, and after letting go, the trigger sequence on the ios platform is transition... change, and Android is transition... change transition...
  
 #### swiper-item
 仅可放置在 ``<swiper>`` 组件中，宽高自动设置为100%。注意：宽高100%是相对于其父组件，不是相对于子组件，不能被子组件自动撑开。
@@ -89,8 +101,10 @@ It may be placed only in the `<swiper>`assembly, the width and height is automat
 |item-id|String||The identifier of the swiper-item|
 
 **示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/swiper/swiper)
+**Example** [View Demo](https://hellouniapp.dcloud.net.cn/pages/component/swiper/swiper)
 
 以下示例代码，来自于[hello uni-app项目](https://github.com/dcloudio/hello-uniapp)，推荐使用HBuilderX，新建uni-app项目，选择hello uni-app模板，可直接体验完整示例。
+The following sample code comes from [hello uni-app project](https://github.com/dcloudio/hello-uniapp), it is recommended to use HBuilderX, create a new uni-app project, choose hello uni-app template, you can experience the complete Example.
 ```html
 <!-- 本示例未包含完整css，获取外链css请参考上文，在hello uni-app项目中查看 -->
 <template>

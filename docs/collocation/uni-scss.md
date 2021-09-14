@@ -2,10 +2,10 @@
 `uni.scss`The purpose of the file is to facilitate overall control of the style of the application. For example, button color, border style, `uni.scss`a batch of scss variable presets are preset in the file.
 
  ``uni-app`` 官方扩展插件（uni ui）及 [插件市场](https://ext.dcloud.net.cn) 上很多三方插件均使用了这些样式变量，如果你是插件开发者，建议你使用 scss 预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App。
-  `uni-app`The official extension (uni ui)  have used these tripartite plug-style variables, if you are a plugin developer, I suggest you use scss pretreatment, and use these variables (no need to import this file) directly in the plug-in code , It is convenient for users to develop apps with the same overall style by building blocks.
+ ``uni-app`` The official extension (uni ui)  have used these tripartite plug-style variables, if you are a plugin developer, I suggest you use scss pretreatment, and use these variables (no need to import this file) directly in the plug-in code , It is convenient for users to develop apps with the same overall style by building blocks.
 
  ``uni.scss``是一个特殊文件，在代码中无需 import 这个文件即可在scss代码中使用这里的样式变量。uni-app的编译器在webpack配置中特殊处理了这个uni.scss，使得每个scss文件都被注入这个uni.scss，达到全局可用的效果。如果开发者想要less、stylus的全局使用，需要在vue.config.js中自行配置webpack策略。
-  `uni.scss`It is a special file. You can use the style variable in scss code without importing this file in the code. The uni-app compiler specially handles this uni.scss in the webpack configuration, so that every scss file is injected into this uni.scss to achieve a globally available effect. If developers want the global use of less and stylus, they need to configure the webpack strategy in vue.config.js.
+ ``uni.scss``It is a special file. You can use the style variable in scss code without importing this file in the code. The uni-app compiler specially handles this uni.scss in the webpack configuration, so that every scss file is injected into this uni.scss to achieve a globally available effect. If developers want the global use of less and stylus, they need to configure the webpack strategy in vue.config.js.
 
 **注意：** 
 **note:**

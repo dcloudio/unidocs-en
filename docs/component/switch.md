@@ -21,6 +21,7 @@ Switch selector.
 | color          | Color       |          | The color of switch, same as the color of css                ||
 
 **示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/switch/switch)
+**Example** [View Demo](https://hellouniapp.dcloud.net.cn/pages/component/switch/switch)
  
 ```html
 <template>
@@ -66,8 +67,12 @@ export default {
 ![uniapp](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/51f6fb50-4f2f-11eb-b680-7980c8a877b8.png)
 
 示例代码说明：以上示例代码从hello uni-app示例中复制，涉及的css样式在hello uni-app的app.vue和uni.css中
+Sample code description: The above sample code is copied from the hello uni-app example, and the css style involved is in the app.vue and uni.css of the hello uni-app
 
 预览H5效果：使用浏览器的手机模式访问[https://hellouniapp.dcloud.net.cn/pages/component/switch/switch](https://hellouniapp.dcloud.net.cn/pages/component/switch/switch)
+Preview H5 effect: use the mobile phone mode of the browser to access [https://hellouniapp.dcloud.net.cn/pages/component/switch/switch](https://hellouniapp.dcloud.net.cn/pages/component/switch /switch)
 
 **注意**
+**Notice**
 - 如需调节switch大小，可通过css的scale方法调节，如缩小到70%`style="transform:scale(0.7)"`
+- If you need to adjust the switch size, you can adjust it through the CSS scale method, such as reducing it to 70% `style="transform:scale(0.7)"`

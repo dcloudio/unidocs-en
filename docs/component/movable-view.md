@@ -16,8 +16,10 @@ That is, the finger/mouse is held down and `movable-view`dragged or two-finger z
 Of course, you can also use code instead of dragging to trigger `movable-view`the `movable-area`zoom in.。
 
 `movable-view`的规范另见[下文](/component/movable-view?id=movable-view)。
+See also [below](/component/movable-view?id=movable-view) for the specification of `movable-view`.
 
 **平台差异说明**
+**Platform difference description**
 
 |App|H5|
 |:-:|:-:|
@@ -54,8 +56,10 @@ Movable view container, you can drag and slide or pinch to zoom on the page.
 |√|√|
 
 **属性说明**
+**Attribute description**
 
 |属性名|类型|默认值|说明|平台差异说明|
+|Attribute name|Type|Default value|Description|Platform difference description|
 |:-|:-|:-|:-|:-|
 |direction|String|none|movable-view的移动方向，属性值有all、vertical、horizontal、none||
 |direction|String|none|The moving direction of movable-view, the attribute values are all, vertical, horizontal, none||
@@ -100,7 +104,7 @@ In addition to basic events, movable-view provides two special events
 |vtouchmove|The movement after the first finger touch is a vertical movement. If this event is caught, it means that the touchmove event is also caught|
 
 > movable-view 必须设置width和height属性，不设置默认为10px
-> 
+> Movable-view must set width and height attributes, if not set, the default is 10px
 > movable-view 默认为绝对定位，top和left属性为0px
 > Movable-view defaults to absolute positioning, top and left attributes are 0px
 > 
@@ -108,13 +112,19 @@ In addition to basic events, movable-view provides two special events
 > When the movable-view is smaller than the movable-area, the moving range of the movable-view is within the movable-area; when the movable-view is larger than the movable-area, the moving range of the movable-view must include the movable-area (x-axis direction and y (Axial direction is considered separately)
 
 **Tips**
+**Tips**
 - movable-view必须在`<movable-area/>`组件中，并且必须是直接子节点，否则不能移动。
+- The movable-view must be in the `<movable-area/>` component and must be a direct child node, otherwise it cannot be moved.
 - 如果遇到x、y、scale属性设置不生效的问题参考：[组件属性设置不生效解决办法](/vue-api?id=componentsolutions)
+- If you encounter the problem that the settings of x, y, and scale properties do not take effect, please refer to: [Solutions for setting component properties not taking effect](/vue-api?id=componentsolutions)
 - 除了H5端和app-nvue端，其他平台不支持内嵌video、map等原生组件。
+-Except for H5 and app-nvue, other platforms do not support embedded video, map and other native components.
 
 **示例**[查看演示](https://hellouniapp.dcloud.net.cn/pages/component/movable-view/movable-view)
+**Example**[View Demo](https://hellouniapp.dcloud.net.cn/pages/component/movable-view/movable-view)
 
 以下示例代码，来自于[hello uni-app项目](https://github.com/dcloudio/hello-uniapp)，推荐使用HBuilderX，新建uni-app项目，选择hello uni-app模板，可快速体验完整示例。
+The following sample code comes from [hello uni-app project](https://github.com/dcloudio/hello-uniapp), it is recommended to use HBuilderX, create a new uni-app project, choose hello uni-app template, you can quickly experience the complete Example.
 ```html
 <!-- 本示例未包含完整css，获取外链css请参考上文，在hello uni-app项目中查看 -->
 <template>

@@ -21,9 +21,13 @@ Note that `app.json`the content that originally belonged to the location permiss
 |[condition](/collocation/pages?id=condition)|Object|否|启动模式配置||
 |[condition](https://uniapp.dcloud.io/collocation/pages?id=condition) | Object       | no       | Start mode configuration                       |                     |
 |[subPackages](/collocation/pages?id=subPackages)|Object Array|否|分包加载配置||
+|[subPackages](/collocation/pages?id=subPackages)|Object Array|No|Subpackage loading configuration||
 |[leftWindow](/collocation/pages?id=leftwindow)|Object|否|大屏左侧窗口|H5|
+|[leftWindow](/collocation/pages?id=leftwindow)|Object|No|Large screen left window|H5|
 |[topWindow](/collocation/pages?id=topwindow)|Object|否|大屏顶部窗口|H5|
+|[topWindow](/collocation/pages?id=topwindow)|Object|No|Large screen top window|H5|
 |[rightWindow](/collocation/pages?id=rightwindow)|Object|否|大屏右侧窗口|H5|
+|[rightWindow](/collocation/pages?id=rightwindow)|Object|No|Large screen right window|H5|
 
 以下是一个包含了所有配置选项的 `pages.json` ：
 The following is one that includes all configuration options `pages.json`:
@@ -70,6 +74,7 @@ The following is one that includes all configuration options `pages.json`:
 			"collapse-tree-item":"/components/collapse-tree-item"
 		},
 		//横屏配置，全局屏幕旋转设置(仅 APP)，支持 auto / portrait / landscape
+		//Horizontal screen configuration, global screen rotation setting (APP only), support auto / portrait / landscape
 		"pageOrientation": "portrait",
 		"rpxCalcMaxDeviceWidth": 960,
 		"rpxCalcBaseDeviceWidth": 375,
@@ -144,35 +149,55 @@ The following is one that includes all configuration options `pages.json`:
 Used to set the status bar, navigation bar, title, window background color of the application, etc.
 
 |属性|类型|默认值|描述|平台差异说明|
-|Attributes|Types of|Defaults|description|平台差异说明|
+|Attributes|Types of|Defaults|description|Platform difference description|
 |:-|:-|:-|:-|:-|
 |navigationBarBackgroundColor|HexColor|#F7F7F7|导航栏背景颜色（同状态栏背景色）|APP与H5为#F7F7F7|
-|navigationBarBackgroundColor|HexColor|#F7F7F7|Navigation bar background color (same as status bar background color)|APP与H5为#F7F7F7|
+|navigationBarBackgroundColor|HexColor|#F7F7F7|Navigation bar background color (same as status bar background color)|APP and H5 are #F7F7F7|
 |navigationBarTextStyle|String|white|导航栏标题颜色及状态栏前景颜色，仅支持 black/white||
 |navigationBarTextStyle|String|white|Navigation bar title color and status bar foreground color, only black/white supported||
 |navigationBarTitleText|String||导航栏标题文字内容||
+|navigationBarTitleText|String||NavigationBarTitleText||
 |navigationStyle|String|default|导航栏样式，仅支持 default/custom。custom即取消默认的原生导航栏，需看[使用注意](/collocation/pages?id=customnav)|H5、App（2.0.3+）|
+|navigationStyle|String|default|Navigation style, only supports default/custom. custom means to cancel the default native navigation bar, please see [Use Note](/collocation/pages?id=customnav)|H5, App(2.0.3+)|
 |enablePullDownRefresh|Boolean|false|是否开启下拉刷新，详见[页面生命周期](/collocation/frame/lifecycle?id=页面生命周期)。||
-|enablePullDownRefresh|Boolean|false|Whether to enable pull-down refresh，详见[页面生命周期](/collocation/frame/lifecycle?id=页面生命周期)。||
+|enablePullDownRefresh|Boolean|false|Whether to enable pull-down refresh, see [page lifecycle](/collocation/frame/lifecycle?id=page lifecycle) for details. ||
 |onReachBottomDistance|Number|50|页面上拉触底事件触发时距页面底部距离，单位只支持px，详见[页面生命周期](/collocation/frame/lifecycle?id=页面生命周期)||
-|onReachBottomDistance|Number|50|The distance from the bottom of the page when the page pull-down event is triggered, the unit only supports px，详见[页面生命周期](/collocation/frame/lifecycle?id=页面生命周期)||
+|onReachBottomDistance|Number|50|The distance from the bottom of the page when the page pull-up bottoming event is triggered, the unit only supports px, see [page lifecycle](/collocation/frame/lifecycle?id=page lifecycle)||
 |backgroundColorTop|HexColor|#ffffff|顶部窗口的背景色（bounce回弹区域）|仅 iOS 平台|
+|backgroundColorTop|HexColor|#ffffff|Background color of top window (bounce area)|Only iOS platform|
 |backgroundColorBottom|HexColor|#ffffff|底部窗口的背景色（bounce回弹区域）|仅 iOS 平台|
+|backgroundColorBottom|HexColor|#ffffff|The background color of the bottom window (bounce area)|Only iOS platform|
 |titleImage|String||导航栏图片地址（替换当前文字标题）|H5、APP|
+|titleImage|String||Navigation bar picture address (replace the current text title)|H5, APP|
 |transparentTitle|String|none|导航栏整体（前景、背景）透明设置。支持 always 一直透明 / auto 滑动自适应 / none 不透明|H5、APP|
+|transparentTitle|String|none|The overall (foreground, background) transparency settings of the navigation bar. Support always always transparent / auto sliding adaptive / none opaque|H5, APP|
 |titlePenetrate|String|NO|导航栏点击穿透|H5|
+|titlePenetrate|String|NO|Navigation bar click to penetrate|H5|
 |pageOrientation|String|portrait|横屏配置，屏幕旋转设置，仅支持 auto / portrait / landscape 详见 [响应显示区域变化](https://developers.weixin.qq.com/miniprogram/dev/framework/view/resizable.html)|App 2.4.7+|
+|pageOrientation|String|portrait|Horizontal screen configuration, screen rotation setting, only supports auto / portrait / landscape. For details, see [Response to display area changes](https://developers.weixin.qq.com/miniprogram/dev/framework/view /resizable.html)|App 2.4.7+|
 |animationType|String|pop-in|窗口显示的动画效果，详见：[窗口动画](api/router?id=animation)|App|
+|animationType|String|pop-in|The animation effect of window display, please refer to: [Window Animation](api/router?id=animation)|App|
 |animationDuration|Number|300|窗口显示动画的持续时间，单位为 ms|App|
+|animationDuration|Number|300|The duration of the window display animation, the unit is ms|App|
 |app-plus|Object||设置编译到 App 平台的特定样式，配置项参考下方 [app-plus](/collocation/pages?id=app-plus)|App|
+|app-plus|Object||Set the specific styles compiled to the App platform, please refer to the configuration items below [app-plus](/collocation/pages?id=app-plus)|App|
 |h5|Object||设置编译到 H5 平台的特定样式，配置项参考下方 [H5](/collocation/pages?id=h5)|H5|
+|h5|Object||Set the specific style compiled to H5 platform, please refer to the configuration item below [H5](/collocation/pages?id=h5)|H5|
 |leftWindow|Boolean|true|当存在 leftWindow 时，默认是否显示 leftWindow|H5|
+|leftWindow|Boolean|true|When there is leftWindow, whether to display leftWindow|H5| by default
 |topWindow|Boolean|true|当存在 topWindow 时，默认是否显示 topWindow|H5|
+|topWindow|Boolean|true|When topWindow exists, whether to display topWindow|H5| by default
 |rightWindow|Boolean|true|当存在 rightWindow 时，默认是否显示 rightWindow|H5|
+|rightWindow|Boolean|true|When rightWindow exists, whether to display rightWindow|H5| by default
 |rpxCalcMaxDeviceWidth|Number|960|rpx 计算所支持的最大设备宽度，单位 px|App、H5（2.8.12+）|
+|rpxCalcMaxDeviceWidth|Number|960|rpx calculates the maximum device width supported by the calculation, the unit is px|App, H5 (2.8.12+)|
 |rpxCalcBaseDeviceWidth|Number|375|rpx 计算使用的基准设备宽度，设备实际宽度超出 rpx 计算所支持的最大设备宽度时将按基准宽度计算，单位 px|App、H5（2.8.12+）|
+|rpxCalcBaseDeviceWidth|Number|375|rpx The width of the base device used for calculation. When the actual width of the device exceeds the maximum device width supported by rpx calculation, it will be calculated based on the base width. The unit is px|App, H5 (2.8.12+)|
 |rpxCalcIncludeWidth|Number|750|rpx 计算特殊处理的值，始终按实际的设备宽度计算，单位 rpx|App、H5（2.8.12+）|
+|rpxCalcIncludeWidth|Number|750|rpx Calculate the value of special processing, always calculated according to the actual device width, the unit is rpx|App, H5 (2.8.12+)|
 |maxWidth|Number||单位px，当浏览器可见区域宽度大于maxWidth时，两侧留白，当小于等于maxWidth时，页面铺满；不同页面支持配置不同的maxWidth；maxWidth = leftWindow(可选)+page(页面主体)+rightWindow(可选)|H5（2.9.9+）|
+|maxWidth|Number||Unit px, when the width of the visible area of ​​the browser is greater than maxWidth, both sides will be blank, when it is less than or equal to maxWidth, the page is full; different pages support different maxWidth; maxWidth = leftWindow(optional)+ page(page main body)+rightWindow(optional)|H5(2.9.9+)|
+
 
 **注意**
 **note**
@@ -191,6 +216,7 @@ uni-app 2.9+ adds leftWindow, topWindow, and rightWindow configurations. Used to
 Taking the existing mobile application as the mainWindow, new page display windows can be added to the left, top, and right.
 
 整体的宽屏适配思路，参考单独的[宽屏适配指南](https://uniapp.dcloud.net.cn/adapt)
+For the overall widescreen adaptation ideas, please refer to the separate [Widescreen Adaptation Guide](https://uniapp.dcloud.net.cn/adapt)
 
 |属性|类型|默认值|描述|
 | Attributes | Types of | Defaults | description                                    |
@@ -207,21 +233,27 @@ Taking the existing mobile application as the mainWindow, new page display windo
 - 目前 style 节点仅支持配置 width，height 等 css 样式相关属性
 - Currently the style node only supports the configuration of CSS style related attributes such as width and height
 - 如果需求当存在 topwindow 时，自动隐藏页面的 navigationBar，根据需求不同在`App.vue`中配置如下 css：
+- If you need to automatically hide the navigationBar of the page when there is a topwindow, configure the following css in `App.vue` according to different needs:
   - 只需要隐藏某个的页面 navigationBar
+  - Only need to hide a certain page navigationBar
 	```html
 	<!-- 隐藏路径为 pages/component/view/view 页面的 navigationBar -->
+	<!-- The hidden path is the navigationBar of the pages/component/view/view page -->
 	.uni-app--showtopwindow [data-page="pages/component/view/view"] uni-page-head {
 		display: none;
 	}
 	```
   - 需要隐藏大部分页面的 navigationBar，显示某个页面的 navigationBar 
+  - Need to hide the navigationBar of most pages and display the navigationBar of a certain page
 	```html
 	<!-- 隐藏所有页面的 navigationBar -->
+	<!-- Hide navigationBar on all pages -->
 	.uni-app--showtopwindow uni-page-head {
 		display: none;
 	}
 	
 	<!-- 显示路径为 pages/component/view/view 页面的 navigationBar -->
+	<!-- Display the navigationBar whose path is pages/component/view/view page -->
 	.uni-app--showtopwindow [data-page="pages/component/view/view"] uni-page-head {
 		display: block;
 	}
@@ -292,17 +324,20 @@ Through the adjustment of matchMedia, you can adaptively display the specified w
 ```
 
 案例演示：HBuilderX 2.9.9+，新建项目选择hello uni-app或新闻模板，或直接浏览：[https://hellouniapp.dcloud.net.cn/](https://hellouniapp.dcloud.net.cn/)
+Case demonstration: HBuilderX 2.9.9+, select hello uni-app or news template for new project, or browse directly: [https://hellouniapp.dcloud.net.cn/](https://hellouniapp.dcloud.net.cn /)
 
 # leftWindow
 
 与[topWindow](/collocation/pages?id=topwindow)相同
+Same as [topWindow](/collocation/pages?id=topwindow)
 
 # rightWindow
 
 与[topWindow](/collocation/pages?id=topwindow)相同
+Same as [topWindow](/collocation/pages?id=topwindow)
 
 窗口通信参考：[https://uniapp.dcloud.net.cn/api/window/communication](https://uniapp.dcloud.net.cn/api/window/communication)
-
+Window communication reference: [https://uniapp.dcloud.net.cn/api/window/communication](https://uniapp.dcloud.net.cn/api/window/communication)
 
 # pages
 
@@ -315,7 +350,7 @@ Through the adjustment of matchMedia, you can adaptively display the specified w
 |path|String||配置页面路径|
 |path|String||Configure page path|
 |style|Object||配置页面窗口表现，配置项参考下方 [pageStyle](/collocation/pages?id=style)||
-|style|Object||Configure page window performance，配置项参考下方 [pageStyle](/collocation/pages?id=style)||
+|style|Object||Configure the page window performance, the configuration items refer to the following [pageStyle](/collocation/pages?id=style)||
 
 **Tips：**
 
@@ -372,7 +407,7 @@ Used to set the status bar, navigation bar, title, window background color, etc.
 The configuration items in the page will override the same configuration items in globalStyle
 
 |属性|类型|默认值|描述|平台差异说明|
-|Attributes|Types of|Defaults|description|平台差异说明|
+|Attributes|Types of|Defaults|description|Platform difference description|
 |:-|:-|:-|:-|:-|
 |navigationBarBackgroundColor|HexColor|#000000|导航栏背景颜色（同状态栏背景色），如"#000000"||
 |navigationBarBackgroundColor|HexColor|#000000|Navigation bar background color (same as status bar background color), such as "#000000"||
@@ -381,24 +416,37 @@ The configuration items in the page will override the same configuration items i
 |navigationBarTitleText|String||导航栏标题文字内容||
 |navigationBarTitleText|String||Navigation bar title text content||
 |navigationBarShadow|Object||导航栏阴影，配置参考下方 [导航栏阴影](/collocation/pages?id=navigationBarShadow)||
+|navigationBarShadow|Object||NavigationBarShadow, please refer to the configuration below [NavigationBarShadow](/collocation/pages?id=navigationBarShadow)||
 |navigationStyle|String|default|导航栏样式，仅支持 default/custom。custom即取消默认的原生导航栏，需看[使用注意](/collocation/pages?id=customnav)|H5、App（2.0.3+）|
+|navigationStyle|String|default|Navigation style, only supports default/custom. custom means to cancel the default native navigation bar, please see [Use Note](/collocation/pages?id=customnav)|H5, App(2.0.3+)|
 |backgroundTextStyle|String|dark|下拉 loading 的样式，仅支持 dark/light||
 |backgroundTextStyle|String|dark|Drop-down loading style, only supports dark/light||
 |enablePullDownRefresh|Boolean|false|是否开启下拉刷新，详见[页面生命周期](/collocation/frame/lifecycle?id=页面生命周期)。||
-|enablePullDownRefresh|Boolean|false|Whether to enable pull-down refresh，详见[页面生命周期](/collocation/frame/lifecycle?id=页面生命周期)。||
+|enablePullDownRefresh|Boolean|false|Whether to enable pull-down refresh, see [page lifecycle](/collocation/frame/lifecycle?id=page lifecycle) for details. ||
 |onReachBottomDistance|Number|50|页面上拉触底事件触发时距页面底部距离，单位只支持px，详见[页面生命周期](/collocation/frame/lifecycle?id=页面生命周期)||
-|onReachBottomDistance|Number|50|The distance from the bottom of the page when the page pull-down event is triggered, the unit only supports px，详见[页面生命周期](/collocation/frame/lifecycle?id=页面生命周期)||
+|onReachBottomDistance|Number|50|The distance from the bottom of the page when the page pull-up bottoming event is triggered, the unit only supports px, see [page lifecycle](/collocation/frame/lifecycle?id=page lifecycle)||
 |backgroundColorTop|HexColor|#ffffff|顶部窗口的背景色（bounce回弹区域）|仅 iOS 平台|
+|backgroundColorTop|HexColor|#ffffff|Background color of top window (bounce area)|Only iOS platform|
 |backgroundColorBottom|HexColor|#ffffff|底部窗口的背景色（bounce回弹区域）|仅 iOS 平台|
+|backgroundColorBottom|HexColor|#ffffff|The background color of the bottom window (bounce area)|Only iOS platform|
 |titleImage|String||导航栏图片地址（替换当前文字标题）|H5|
+|titleImage|String||Navigation bar picture address (replace the current text title)|H5|
 |transparentTitle|String|none|导航栏透明设置。支持 always 一直透明 / auto 滑动自适应 / none 不透明|H5、APP|
+|transparentTitle|String|none|Navigation bar transparent setting. Support always always transparent / auto sliding adaptive / none opaque|H5, APP|
 |titlePenetrate|String|NO|导航栏点击穿透|H5|
+|titlePenetrate|String|NO|Navigation bar click to penetrate|H5|
 |app-plus|Object||设置编译到 App 平台的特定样式，配置项参考下方 [app-plus](/collocation/pages?id=app-plus)|App|
+|app-plus|Object||Set the specific styles compiled to the App platform, please refer to the configuration items below [app-plus](/collocation/pages?id=app-plus)|App|
 |h5|Object||设置编译到 H5 平台的特定样式，配置项参考下方 [H5](/collocation/pages?id=h5)|H5|
+|h5|Object||Set the specific style compiled to H5 platform, please refer to the configuration item below [H5](/collocation/pages?id=h5)|H5|
 |leftWindow|Boolean|true|当存在 leftWindow时，当前页面是否显示 leftWindow|H5|
+|leftWindow|Boolean|true|When there is a leftWindow, whether the current page displays leftWindow|H5|
 |topWindow|Boolean|true|当存在 topWindow 时，当前页面是否显示 topWindow|H5|
+|topWindow|Boolean|true|When there is a topWindow, whether the current page displays topWindow|H5|
 |rightWindow|Boolean|true|当存在 rightWindow时，当前页面是否显示 rightWindow|H5|
+|rightWindow|Boolean|true|When there is a rightWindow, whether the current page displays rightWindow|H5|
 |maxWidth|Number||单位px，当浏览器可见区域宽度大于maxWidth时，两侧留白，当小于等于maxWidth时，页面铺满；不同页面支持配置不同的maxWidth；maxWidth = leftWindow(可选)+page(页面主体)+rightWindow(可选)|H5（2.9.9+）|
+|maxWidth|Number||Unit px, when the width of the visible area of ​​the browser is greater than maxWidth, both sides will be blank, when it is less than or equal to maxWidth, the page is full; different pages support different maxWidth; maxWidth = leftWindow(optional)+ page(page main body)+rightWindow(optional)|H5(2.9.9+)|
 
 **注意**
 **note**
@@ -416,7 +464,7 @@ The configuration items in the page will override the same configuration items i
       "style": {
         //设置页面标题文字
         // Set the page title text
-        "navigationBarTitleText": "首页",
+        "navigationBarTitleText": "首页(Home)",
         //开启下拉刷新
         //Turn on drop-down refresh
         "enablePullDownRefresh":true
@@ -454,18 +502,21 @@ When navigationStyle is set to custom or titleNView is set to false, the native 
 - 如果原生导航栏不能满足需求，推荐使用uni ui的[自定义导航栏NavBar](https://ext.dcloud.net.cn/plugin?id=52)。这个前端导航栏自动处理了状态栏高度占位问题。
 - If the native navigation bar cannot meet the needs, it is recommended to use uni ui's custom navigation bar NavBar. This front-end navigation bar automatically handles the height occupancy of the status bar.
 - 前端导航栏搭配原生下拉刷新时，会有问题，包括
+- -When the front-end navigation bar is used with native pull-down refresh, there will be problems, including
 	* App和H5下，原生下拉刷新提供了[circle样式](/collocation/pages?id=app-pullToRefresh)，可以指定offset偏移量（pages.json的app-plus下配置），自定义下拉圈出现的位置。在hello uni-app的扩展组件中有示例。
+	* Under App and H5, the native pull-down refresh provides [circle style](/collocation/pages?id=app-pullToRefresh), you can specify the offset (configuration under app-plus in pages.json), and customize the drop-down circle Where it appears. There are examples in the extension component of hello uni-app.
 - 非H5端，前端导航盖不住原生组件。如果页面有video、map等[原生组件](/component/native-component)，滚动时会覆盖住导航栏
 - For non-H5 terminals, the front-end navigation cannot cover native components. If the page has native components such as video, map, it will cover the navigation bar when scrolling
 	* 如果是App下，建议使用[titleNView](/collocation/pages?id=app-titleNView)或[subNVue](/collocation/pages?id=app-subNVues)，体验更好
+	* If it is App, it is recommended to use [titleNView](/collocation/pages?id=app-titleNView) or [subNVue](/collocation/pages?id=app-subNVues) for better experience
 - 前端组件在渲染速度上不如原生导航栏，原生导航可以在动画期间渲染，保证动画期间不白屏，但使用前端导航栏，在新窗体进入的动画期间可能会整页白屏，越低端的手机越明显。
 - The rendering speed of the front-end components is not as good as the native navigation bar. The native navigation can be rendered during the animation to ensure that the screen is not white during the animation. However, when the front-end navigation bar is used, the entire page may be white during the animation when the new form enters. The lower end The more obvious the phone.
 - 以上讨论的是前端自定义导航栏，但在App侧，原生导航栏也提供了更丰富的自定义性
 - The above discussion is the front-end custom navigation bar, but on the App side, the native navigation bar also provides more customization navigation
 	* titleNView：给原生导航栏提供更多配置，包括自定义按钮、滚动渐变效果、搜索框等，详见[titleNView](/collocation/pages?id=app-titleNView)
-  * titleNView: Provides more configurations for the native navigation bar, including custom buttons, scrolling gradient effects, search boxes, etc.
+    * titleNView: Provides more configurations for the native navigation bar, including custom buttons, scrolling gradient effects, search boxes, etc. See [titleNView](/collocation/pages?id=app-titleNView) for details
 	* subNVue：使用nvue原生渲染，所有布局自己开发，具备一切自定义灵活度。详见[subNVue](/collocation/pages?id=app-subNVues)
-  * subNView: Use nvue native rendering, all layouts are developed by yourself, with all customization flexibility. 
+    * subNVue: Use nvue native rendering, all layouts are developed by yourself, with all customization flexibility. See [subNVue](/collocation/pages?id=app-subNVues) for details
 - 页面禁用原生导航栏后，想要改变状态栏的前景字体样式，仍可设置页面的 navigationBarTextStyle 属性（只能设置为 black或white）。如果想单独设置状态栏颜色，App端可使用[plus.navigator.setStatusBarStyle](http://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.setStatusBarStyle)设置。注意部分低端Android手机（4.4）自身不支持设置状态栏前景色。
 - After the native navigation bar is disabled on the page, if you want to change the foreground font style of the status bar, you can still set the navigationBarTextStyle property of the page (only black or white). If you want to set the status bar color separately, you can use plus.navigator.setStatusBarStyle to set the App . Note that some low-end Android phones (4.4) do not support setting the foreground color of the status bar.
  
@@ -475,22 +526,37 @@ In view of the above problems, when native navigation can solve business needs, 
 ### app-plus
 
 配置编译到 App 平台时的特定样式，部分常用配置 H5 平台也支持。以下仅列出常用，更多配置项参考 [WebviewStyles](http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.WebviewStyles)。
+Configure the specific style when compiled to the App platform, and some common configurations are also supported on the H5 platform. The following only lists commonly used, more configuration items refer to [WebviewStyles](http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.WebviewStyles).
 
 |属性|类型|默认值|描述|平台兼容|
+|Attribute|Type|Default Value|Description|Platform Compatibility|
 |:-|:-|:-|:-|:-|
 |background|HexColor|#FFFFFF|窗体背景色。无论vue页面还是nvue页面，在App上都有一个父级原生窗体，该窗体的背景色生效时间快于页面里的css生效时间|App|
+|background|HexColor|#FFFFFF|The background color of the window. Regardless of the vue page or the nvue page, there is a parent native form on the App, and the effective time of the background color of the form is faster than the effective time of the css in the page|App|
 |titleNView|Object||导航栏 ，详见:[导航栏](/collocation/pages?id=app-titleNView)|App、H5|
+|titleNView|Object||Navigation bar, see: [Navigation bar](/collocation/pages?id=app-titleNView)|App、H5|
 |subNVues|Object||原生子窗体，详见:[原生子窗体](/collocation/pages?id=app-subNVues)|App 1.9.10+|
+|subNVues|Object||Native subform, see: [Native subform](/collocation/pages?id=app-subNVues)|App 1.9.10+|
 |bounce|String||页面回弹效果，设置为 "none" 时关闭效果。|App（nvue Android无页面级bounce效果，仅list、recycle-list、waterfall等滚动组件有bounce效果）|
+|bounce|String||Page bounce effect, set to "none" to turn off the effect. |App (nvue Android has no page-level bounce effect, only scroll components such as list, recycle-list, waterfall, etc. have bounce effect)|
 |popGesture|String|close|侧滑返回功能，可选值："close"（启用侧滑返回）、"none"（禁用侧滑返回）|App-iOS|
+|popGesture|String|close|Slide return function, optional values: "close" (enable side slide return), "none" (disable side slide return)|App-iOS|
 |softinputNavBar|String|auto|iOS软键盘上完成工具栏的显示模式，设置为 "none" 时关闭工具栏。|App-iOS|
+|softinputNavBar|String|auto|The display mode of the toolbar is completed on the iOS soft keyboard. When set to "none", the toolbar will be closed. |App-iOS|
 |softinputMode|String|adjustPan|软键盘弹出模式，支持 adjustResize、adjustPan 两种模式|App|
+|softinputMode|String|adjustPan|Soft keyboard pop-up mode, supports adjustResize and adjustPan two modes|App|
 |pullToRefresh|Object||下拉刷新|App|
+|pullToRefresh|Object||Pull to Refresh|App|
 |scrollIndicator|String||滚动条显示策略，设置为 "none" 时不显示滚动条。|App|
+|scrollIndicator|String||Scroll bar display strategy, when set to "none", scroll bar will not be displayed. |App|
 |animationType|String|pop-in|窗口显示的动画效果，详见：[窗口动画](api/router?id=animation)。|App|
+|animationType|String|pop-in|The animation effect of window display, please refer to: [Window Animation](api/router?id=animation). |App|
 |animationDuration|Number|300|窗口显示动画的持续时间，单位为 ms。|App|
+|animationDuration|Number|300|The duration of the window display animation, the unit is ms. |App|
+
 **Tips**
 - `.nvue` 页面仅支持 `titleNView、pullToRefresh、scrollIndicator` 配置，其它配置项暂不支持
+- `.nvue` page only supports `titleNView, pullToRefresh, scrollIndicator` configuration, other configuration items are not currently supported
 
 #### 导航栏@app-titleNView
 #### Navigation Bar@app-titleNView
@@ -500,7 +566,7 @@ In view of the above problems, when native navigation can solve business needs, 
 |backgroundColor|String|#F7F7F7|背景颜色，颜色值格式为"#RRGGBB"。在使用半透明标题栏时，也可以设置rgba格式||
 |backgroundColor|String|#F7F7F7|The background color, the color value format is "#RRGGBB". When using a semi-transparent title bar, you can also set the rgba format||
 |buttons|Array||自定义按钮，详见 [buttons](/collocation/pages?id=app-titlenview-buttons)|纯nvue即render:native时暂不支持|
-|buttons|Array||Custom buttons，详见 [buttons](/collocation/pages?id=app-titlenview-buttons)|纯nvue即render:native时暂不支持|
+|buttons|Array||Custom buttons, see [buttons](/collocation/pages?id=app-titlenview-buttons)|Pure nvue or render:native is not supported temporarily|
 |titleColor|String|#000000|标题文字颜色||
 |titleColor|String|#000000|Title text color||
 |titleOverflow|String|ellipsis|标题文字超出显示区域时处理方式。"clip"-超出显示区域时内容裁剪；"ellipsis"-超出显示区域时尾部显示省略标记（...）。||
@@ -512,15 +578,15 @@ In view of the above problems, when native navigation can solve business needs, 
 |type|String|default|导航栏样式。"default"-默认样式；"transparent"-滚动透明渐变；"float"-悬浮导航栏。|App-nvue 2.4.4+ 支持|
 |type|String|default|Navigation bar style. "default"-default style; "transparent"-scrolling transparent gradient; "float"-floating navigation bar.|App-nvue 2.4.4+ support|
 |tags|Array||原生 View 增强，详见：[5+ View 控件](http://www.html5plus.org/doc/zh_cn/nativeobj.html#plus.nativeObj.ViewDrawTagStyles)||
-|tags|Array||Native View enhancement，详见：[5+ View 控件](http://www.html5plus.org/doc/zh_cn/nativeobj.html#plus.nativeObj.ViewDrawTagStyles)||
+|tags|Array||Native View enhancement, see: [5+ View Control](http://www.html5plus.org/doc/zh_cn/nativeobj.html#plus.nativeObj.ViewDrawTagStyles)||
 |searchInput|Object||原生导航栏上的搜索框配置，详见：[searchInput](/collocation/pages?id=app-titlenview-searchinput)|1.6.0|
-|searchInput|Object||The search box configuration on the native navigation bar，详见：[searchInput](/collocation/pages?id=app-titlenview-searchinput)|1.6.0|
+|searchInput|Object||The search box configuration on the native navigation bar, see: [searchInput](/collocation/pages?id=app-titlenview-searchinput)|1.6.0|
 |homeButton|Boolean|false|标题栏控件是否显示Home按钮||
 |homeButton|Boolean|false|Whether the title bar control displays the Home button||
 |autoBackButton|Boolean|true|标题栏控件是否显示左侧返回按钮|2.6.3|
 |autoBackButton|Boolean|true|Whether the title bar control displays the left back button|2.6.3|
 |backButton|Object||返回按钮的样式，详见：[backButton](/collocation/pages?id=app-titleNView-backButtonStyles)|2.6.3|
-|backButton|Object||The style of the back button，详见：[backButton](/collocation/pages?id=app-titleNView-backButtonStyles)|2.6.3|
+|backButton|Object||Back button style, see: [backButton](/collocation/pages?id=app-titleNView-backButtonStyles)|2.6.3|
 |backgroundImage|String||支持以下类型： 背景图片路径 - 如"/static/img.png"，仅支持本地文件绝对路径，根据实际标题栏宽高拉伸绘制； 渐变色 - 仅支持线性渐变，两种颜色的渐变，如“linear-gradient(to top, #a80077, #66ff00)”， 其中第一个参数为渐变方向，可取值： "to right"表示从左向右渐变， “to left"表示从右向左渐变， “to bottom"表示从上到下渐变， “to top"表示从下到上渐变， “to bottom right"表示从左上角到右下角， “to top left"表示从右下角到左上角|2.6.3|
 |backgroundImage|String||The following types are supported: Background image path-such as "./img/t.png", only supports local file path, relative path, relative to the host location of the current page, drawn according to the actual title bar width and height; gradient color-only Support linear gradient, two-color gradient, such as "linear-gradient(to top, #a80077, #66ff00)", where the first parameter is the direction of the gradient, which can be a value: "to right" means gradient from left to right , "To left" means gradient from right to left, "to bottom" means gradient from top to bottom, "to top" means gradient from bottom to top, "to bottom right" means from upper left corner to lower right corner, "to top" "left" means from the lower right corner to the upper left corner|2.6.3|
 |backgroundRepeat|String||仅在backgroundImage设置为图片路径时有效。 可取值： "repeat" - 背景图片在垂直方向和水平方向平铺； "repeat-x" - 背景图片在水平方向平铺，垂直方向拉伸； “repeat-y” - 背景图片在垂直方向平铺，水平方向拉伸； “no-repeat” - 背景图片在垂直方向和水平方向都拉伸。 默认使用 “no-repeat"|2.6.3|
@@ -573,6 +639,7 @@ In view of the above problems, when native navigation can solve business needs, 
 - App下原生导航栏的按钮如果使用字体图标，注意检查字体库的名字（font-family）是否使用了默认的 iconfont，这个名字是保留字，不能作为外部引入的字体库的名字，需要调整为自定义的名称，否则无法显示。
 - If the buttons of the native navigation bar under the App use font icons, pay attention to check whether the name of the font library (font-family) uses the default iconfont. This name is a reserved word and cannot be used as the name of an externally imported font library. It needs to be adjusted to self The defined name, otherwise it cannot be displayed.
 - 想了解各种导航栏的开发方法，请详读[导航栏开发指南](https://ask.dcloud.net.cn/article/34921)
+- -To understand the development methods of various navigation bars, please read [Navigation Bar Development Guide](https://ask.dcloud.net.cn/article/34921)
 
 ##### 自定义按钮@app-titleNView-buttons
 ##### Custom button@app-titleNView-buttons
@@ -700,12 +767,12 @@ The life cycle of searchInput click input box onNavigationBarSearchInputClicked,
 **Common titleNView configuration code examples**
 
 以下列出部分配置。关于全面的导航栏配置，这里有一个完善的演示工程，演示了导航栏的各种效果，详见：[https://ext.dcloud.net.cn/plugin?id=1765](https://ext.dcloud.net.cn/plugin?id=1765)
-Some configurations are listed below. Regarding the comprehensive navigation bar configuration, here is a complete demonstration project that demonstrates the various effects of the navigation bar. 详见：[https://ext.dcloud.net.cn/plugin?id=1765](https://ext.dcloud.net.cn/plugin?id=1765)
-
+Some configurations are listed below. Regarding the comprehensive navigation bar configuration, here is a complete demonstration project that demonstrates the various effects of the navigation bar. For details, please see: [https://ext.dcloud.net.cn/plugin?id=1765](https:/ /ext.dcloud.net.cn/plugin?id=1765)
 ```javascript
 {
 	"pages": [{
 			//首页
+			//Home
       //Home page
 			"path": "pages/index/index",
 			"style": {
@@ -731,7 +798,7 @@ Some configurations are listed below. Regarding the comprehensive navigation bar
 							{
                 //原生标题栏增加分享按钮，点击事件可通过页面的 onNavigationBarButtonTap 函数进行监听
                 // Add a Share button to the native title bar. Clicking events can be monitored by the onNavigationBarButtonTap function of the page
-								"text": "分享"
+								"text": "分享(share)"
 							}
 						],
             //自定义 backButton
@@ -790,9 +857,13 @@ Some configurations are listed below. Regarding the comprehensive navigation bar
 - buttons 的 text 推荐使用字体图标。如果使用了汉字或英文，推荐把字体改小一点，否则文字长度增加后，距离屏幕右边距太近。
 - It is recommended to use font icons for the text of buttons. If you use Chinese or English, it is recommended to change the font size smaller, otherwise the text length will increase and the distance to the right of the screen will be too close.
 - App平台，buttons动态修改，[详见](https://ask.dcloud.net.cn/article/35374)
+- App platform, buttons are dynamically modified, [see details](https://ask.dcloud.net.cn/article/35374)
 - App平台，buttons角标动态修改，见 hello uni-app 中模板-顶部导航标题栏-导航栏带红点和角标
+- App platform, buttons corner labels are dynamically modified, see template in hello uni-app-top navigation title bar-navigation bar with red dots and corner labels
 - App平台，设置searchInput的文字动态修改，API见[文档](https://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.WebviewObject.setTitleNViewSearchInputText)。注意disable状态无法设置文字、placehold暂不支持动态设置
+- App platform, set the dynamic modification of searchInput text, API see [document](https://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.WebviewObject.setTitleNViewSearchInputText). Note that text cannot be set in the disable state, and placehold does not support dynamic settings for the time being
 - H5平台，如需实现上述动态修改，需在条件编译通过dom操作修改
+- For the H5 platform, if you need to implement the above dynamic modification, you need to modify it through the dom operation in the conditional compilation
 
 
 #### 原生子窗体@app-subNVues
@@ -954,7 +1025,9 @@ Under the App platform, you can customize the partial pull-down refresh configur
 - 如果期望在 App 上开启下拉刷新的话，请配置页面的 `enablePullDownRefresh` 属性为 true。
 - When the native pull-down refresh is turned on, the full-screen high scroll-view should not be used in the page. When the content is dragged down, the pull-down refresh will be triggered first instead of the scroll-view scroll
 - 若仅期望在 App 上开启下拉刷新，则不要配置页面的 `enablePullDownRefresh` 属性，而是配置 `pullToRefresh->support` 为 true。
+- If you only want to enable pull-down refresh on the App, do not configure the `enablePullDownRefresh` property of the page, but set the `pullToRefresh->support` to true.
 - 开启原生下拉刷新时，页面里不应该使用全屏高的scroll-view，向下拖动内容时，会优先触发下拉刷新而不是scroll-view滚动
+- When the native pull-down refresh is enabled, the full-screen high scroll-view should not be used in the page. When dragging the content downwards, the pull-down refresh will be triggered first instead of scroll-view scrolling
 - 原生下拉刷新的起始位置在原生导航栏的下方，如果取消原生导航栏，使用自定义导航栏，原生下拉刷新的位置会在屏幕顶部。如果希望在自定义导航栏下方拉动，只能使用circle方式的下拉刷新，并设置offset参数，将circle圈的起始位置调整到自定义导航栏下方。hello uni-app的扩展组件中有示例。
 - The starting position of the native pull-down refresh is below the native navigation bar. If you cancel the native navigation bar and use a custom navigation bar, the position of the native pull-down refresh will be at the top of the screen. If you want to pull below the custom navigation bar, you can only use the circle method to pull down to refresh, and set the offset parameter to adjust the starting position of the circle circle to the bottom of the custom navigation bar. There are examples in the extension component of hello uni-app.
 - 如果想在app端实现更多复杂的下拉刷新，比如美团、京东App那种拉下一个特殊图形，可以使用nvue的`<refresh>`组件。HBuilderX 2.0.3+起，新建项目选择新闻模板可以体验
@@ -982,7 +1055,7 @@ Under the App platform, you can customize the partial pull-down refresh configur
                         "contentdown": {
                             // 下拉可刷新自定义文本
                             // Drop down to refresh the custom text
-                            "caption": "下拉可刷新自定义文本"
+                            "caption": "下拉可刷新自定义文本(Pull down to refresh custom text)"
                         },
                         "contentover": {
                             // 释放可刷新自定义文本
@@ -990,7 +1063,7 @@ Under the App platform, you can customize the partial pull-down refresh configur
                             "caption": "Releases refreshable custom text"
                         },
                         "contentrefresh": {
-                            "caption": "正在刷新自定义文本"
+                            "caption": "正在刷新自定义文本(Refreshing custom text)"
                         }
                     }
                 }
@@ -1002,21 +1075,25 @@ Under the App platform, you can customize the partial pull-down refresh configur
 
 ### h5
 配置编译到 H5 平台时的特定样式
+Configure specific styles when compiling to H5 platform
 
 |属性|类型|描述|
+|Attribute|Type|Description|
 |:-|:-|:-|
 |titleNView|Object|导航栏|
+|titleNView|Object|Navigation Bar|
 |pullToRefresh|Object|下拉刷新|
+|pullToRefresh|Object|pull to refresh|
 
 #### 导航栏@h5-titleNView
 #### Navigation Bar@h5-titleNView
 |属性|类型|默认值|描述|最低版本|
-|Attributes|Types of|Defaults|description|最低版本|
+|Attribute|Type|Default Value|Description|Minimum Version|
 |:-|:-|:-|:-|:-|
 |backgroundColor|String|#F7F7F7|背景颜色，颜色值格式为"#RRGGBB"。||
 |backgroundColor|String|#F7F7F7|The background color, the color value format is "#RRGGBB".||
 |buttons|Array||自定义按钮，参考 [buttons](collocation/pages?id=h5-titlenview-buttons)||
-|buttons|Array||Custom buttons，参考 [buttons](collocation/pages?id=h5-titlenview-buttons)||
+|buttons|Array||Custom buttons, refer to [buttons](collocation/pages?id=h5-titlenview-buttons)||
 |titleColor|String|#000000|标题文字颜色||
 |titleColor|String|#000000|Title text color||
 |titleText|String||标题文字内容||
@@ -1026,7 +1103,7 @@ Under the App platform, you can customize the partial pull-down refresh configur
 |type|String|default|导航栏样式。"default"-默认样式；"transparent"-透明渐变。||
 |type|String|default|Navigation bar style. "default"-default style; "transparent"-transparent gradient.||
 |searchInput|Object||导航栏上的搜索框样式，详见：[searchInput](/collocation/pages?id=h5-searchInput)|1.6.5|
-|searchInput|Object||The style of the search box on the navigation bar，详见：[searchInput](/collocation/pages?id=h5-searchInput)|1.6.5|
+|searchInput|Object||The search box style on the navigation bar, see: [searchInput](/collocation/pages?id=h5-searchInput)|1.6.5|
 
 ##### 自定义按钮@h5-titleNView-buttons
 ##### Custom button@h5-titleNView-buttons
@@ -1034,7 +1111,7 @@ Under the App platform, you can customize the partial pull-down refresh configur
 |Attributes|Types of|Defaults|description|
 |:-|:-|:-|:-|
 |type|String|none|按钮样式，可取值见：[buttons 样式](collocation/pages?id=h5-titlenview-buttons-type)|
-|type|String|none|Button style，可取值见：[buttons 样式](collocation/pages?id=h5-titlenview-buttons-type)|
+|type|String|none|Button style, see: [buttons style](collocation/pages?id=h5-titlenview-buttons-type)|
 |color|String|默认与标题文字颜色一致|按钮上文字颜色|
 |color|String|The default color is the same as the title text|Text color on button|
 |background|String|默认值为灰色半透明|按钮的背景颜色，仅在标题栏type=transparent时生效|
@@ -1129,28 +1206,41 @@ The h5 platform pulls down to refresh the animation, only the circle type.
 #### navigationBarShadow
 
 |属性|类型|描述|
+|Attribute|Type|Description|
 |:-|:-|:-|
 |colorType|String|阴影的颜色，支持：grey、blue、green、orange、red、yellow|
+|colorType|String|Shadow color, support: grey, blue, green, orange, red, yellow|
 
 **注意事项**
+**Precautions**
 
 - `titleImage`仅支持https地址，设置了`titleImage`会替换页面文字标题
+- `titleImage` only supports https addresses, setting `titleImage` will replace the page text title
 - `backgroundImageUrl`支持网络地址和本地地址，尽量使用绝对地址
+- `backgroundImageUrl` supports network address and local address, try to use absolute address
 - 部分配置可能会只在真机运行的时候生效，支付宝未来应该会改善
+- Some configurations may only take effect when the real machine is running, Alipay should improve in the future
 
 ## FAQ
 - Q：如何取消原生导航栏？或自定义导航
+- Q: How to cancel the native navigation bar? Or custom navigation
 - A：参考[导航栏开发指南](http://ask.dcloud.net.cn/article/34921)
+- A: Refer to [Navigation Bar Development Guide](http://ask.dcloud.net.cn/article/34921)
 
 # easycom
 
 > `HBuilderX 2.5.5`起支持`easycom`组件模式。
+> `HBuilderX 2.5.5` supports `easycom` component mode.
+> `HBuilderX 2.5.5`Starting to support `easycom`component mode.
 > `HBuilderX 2.5.5`Starting to support `easycom`component mode.
 
 传统vue组件，需要安装、引用、注册，三个步骤后才能使用组件。`easycom`将其精简为一步。
-Traditional vue components need to be installed, referenced, and registered, and the components can be used after three steps. `easycom`Reduce it to one step. As long as the components are installed in the components directory of the project and conform to the `components/component name/component name.vue`directory structure. You can use it directly on the page without quoting or registering. as follows:
+Traditional vue components need to be installed, referenced, and registered, and the components can be used after three steps. `easycom` reduces it to one step.
 只要组件安装在项目的components目录下，并符合`components/组件名称/组件名称.vue`目录结构。就可以不用引用、注册，直接在页面中使用。
+As long as the components are installed in the components directory of the project and conform to the `components/component name/component name.vue` directory structure. You can use it directly on the page without quoting or registering.
+
 如下：
+as follows:
 ```html
 <template>
 	<view class="container">
@@ -1191,7 +1281,7 @@ Download components that conform to the directory structure in the `components/ 
 |Attributes			|Types of		|Defaults	|description																																											|
 |:-				|:-			|:-			|:-																																												|
 |autoscan	|Boolean|true		|是否开启自动扫描，开启后将会自动扫描符合`components/组件名称/组件名称.vue`目录结构的组件	|
-|autoscan	|Boolean|true		|Whether to enable automatic scanning, `components/组件名称/组件名称.vue`the components that conform to the directory structure will be automatically scanned after opening	|
+|autoscan |Boolean|true |Whether to turn on automatic scanning, after turning it on, it will automatically scan components that conform to the `components/component name/component name.vue` directory structure |
 |custom		|Object	|-			|以正则方式自定义组件匹配规则。如果`autoscan`不能满足需求，可以使用`custom`自定义匹配规则	|
 |custom		|Object	|-			|Customize component matching rules in a regular manner. If you `autoscan`can’t meet your needs, you can use `custom`custom matching rules	|
 
@@ -1247,12 +1337,13 @@ Providing tabBar configuration in pages.json is not only to facilitate rapid dev
 - tabbar 切换第一次加载时可能渲染不及时，可以在每个tabbar页面的onLoad生命周期里先弹出一个等待雪花（hello uni-app使用了此方式）
 - The tabbar switch may not render in time when it is loaded for the first time. You can pop up a waiting snowflake in the onLoad life cycle of each tabbar page (hello uni-app uses this method)
 - tabbar 的页面展现过一次后就保留在内存中，再次切换 tabbar 页面，只会触发每个页面的onShow，不会再触发onLoad。
+- After the tabbar page is displayed once, it remains in the memory. Switching the tabbar page again will only trigger the onShow of each page, and will not trigger the onLoad again.
 
 **属性说明：**
 **Property description:**
 
 |属性|类型|必填|默认值|描述|平台差异说明|
-|Attributes|Types of|Required|Defaults|description|平台差异说明|
+|Attributes|Types of|Required|Defaults|description|Platform difference description|
 |:-|:-|:-|:-|:-|:-|
 |color|HexColor|是||tab 上的文字默认颜色||
 |color|HexColor|Yes||Default color of text on tab||
@@ -1261,15 +1352,21 @@ Providing tabBar configuration in pages.json is not only to facilitate rapid dev
 |backgroundColor|HexColor|是||tab 的背景色||
 |backgroundColor|HexColor|Yes||tab background color||
 |borderStyle|String|否|black|tabbar 上边框的颜色，可选值 black/white|App 2.3.4+ 支持其他颜色值、H5 3.0.0+|
-|borderStyle|String|no|black|The color of the upper border of the tabbar, optional black/white|App 2.3.4+ 支持其他颜色值、H5 3.0.0+|
+|borderStyle|String|No|black|The color of the upper border of the tabbar, optional black/white|App 2.3.4+ supports other color values, H5 3.0.0+|
 |blurEffect|String|否|none|iOS 高斯模糊效果，可选值 dark/extralight/light/none（参考:[使用说明](https://ask.dcloud.net.cn/article/36617)）|App 2.4.0+ 支持、H5 3.0.0+（只有最新版浏览器才支持）|
-|blurEffect|String|no|none|iOS Gaussian blur effect, optional value dark/extralight/light/none|App 2.4.0+ 支持、H5 3.0.0+（只有最新版浏览器才支持）|
+|blurEffect|String|No|none|iOS Gaussian blur effect, optional value dark/extralight/light/none (reference: [Instructions for use](https://ask.dcloud.net.cn/article/36617))| App 2.4.0+ support, H5 3.0.0+ (only the latest version of the browser is supported)|
 |list|Array|是||tab 的列表，详见 list 属性说明，最少2个、最多5个 tab||
+|list|Array| is a list of ||tab, see the list attribute description for details, at least 2 tabs and at most 5 tabs||
 |fontSize|String|否|10px|文字默认大小|App 2.3.4+、H5 3.0.0+|
+|fontSize|String|No|10px|default text size|App 2.3.4+, H5 3.0.0+|
 |iconWidth|String|否|24px|图标默认宽度（高度等比例缩放）|App 2.3.4+、H5 3.0.0+|
+|iconWidth|String|No|24px|Default icon width (height is scaled proportionally)|App 2.3.4+, H5 3.0.0+|
 |spacing|String|否|3px|图标和文字的间距|App 2.3.4+、H5 3.0.0+|
+|spacing|String|No|3px|Spacing between icon and text|App 2.3.4+, H5 3.0.0+|
 |height|String|否|50px|tabBar 默认高度|App 2.3.4+、H5 3.0.0+|
+|height|String|No|50px|tabBar default height|App 2.3.4+, H5 3.0.0+|
 |midButton|Object|否||中间按钮 仅在 list 项为偶数时有效|App 2.3.4+、H5 3.0.0+|
+|midButton|Object|No||The middle button is only valid when the list item is an even number|App 2.3.4+, H5 3.0.0+|
 
 其中 list 接收一个数组，数组中的每个项都是一个对象，其属性值如下：
 Among them, list receives an array, each item in the array is an object, and its attribute values are as follows:
@@ -1325,6 +1422,7 @@ midButton does not have a pagePath, it needs to listen to the click event and ha
 - 如果是需要先登录、后进入tab页面，不需要把登录页设为首页，首页仍然是tabbar页，可参考HBuilderX新建uni-app项目时的登录模板
 - If you need to log in first and then enter the tab page, you don’t need to set the login page as the home page. The home page is still the tabbar page. You can refer to the login template when creating a uni-app project in HBuilderX.
 - 前端弹出遮罩层挡不住tabbar的问题，跨端处理方式时动态隐藏tabbar。App端可以使用plus.nativeObj.view或subNVue做弹出和遮罩，可参考这个[底部原生图标分享菜单例子](https://ext.dcloud.net.cn/plugin?id=69)
+- The front-end pop-up mask layer cannot block the problem of the tabbar, and the tabbar is dynamically hidden during cross-end processing. On the App side, you can use plus.nativeObj.view or subNVue for pop-up and masking. You can refer to this [Example of native icon sharing menu at the bottom](https://ext.dcloud.net.cn/plugin?id=69)
 - PC宽屏上，当页面存在topWindow或leftWindow或rightWindow等多窗体结构时，tabBar自动隐藏（HBuilderX 2.9.9），请使用 [custom-tab-bar组件](https://uniapp.dcloud.io/component/custom-tab-bar) 配置 tabBar 的位置。
 - On PC widescreen, when the page has multiple window structures such as topWindow, leftWindow, or rightWindow, the tabBar is automatically hidden (HBuilderX 2.9.9). 
 
@@ -1340,12 +1438,12 @@ midButton does not have a pagePath, it needs to listen to the click event and ha
 		"pagePath": "pages/component/index",
 		"iconPath": "static/image/icon_component.png",
 		"selectedIconPath": "static/image/icon_component_HL.png",
-		"text": "组件"
+		"text": "组件(compnents)"
 	}, {
 		"pagePath": "pages/API/index",
 		"iconPath": "static/image/icon_API.png",
 		"selectedIconPath": "static/image/icon_API_HL.png",
-		"text": "接口"
+		"text": "接口(interface)"
 	}]
 }
 ```
@@ -1362,43 +1460,57 @@ But note that except for the H5 end, the performance experience of the custom ta
 - H5端的自定义tabBar组件：H5端不存在原生tabBar性能更高的概念，并且宽屏下常见的tabBar在顶部而不是底部，此时可以使用 [custom-tab-bar组件](https://uniapp.dcloud.io/component/custom-tab-bar) 来自定义
 - Custom tabBar component on H5 side: There is no concept of higher performance of native tabBar on H5 side, and the common tabBar in widescreen is at the top instead of the bottom. At this time, you can use custom-tab-bar component to
 - 普通自定义tabBar：使用view自行绘制tabBar。如果页面是多页方式，切换tabBar将无法保持底部tabBar一直显示。所以这种情况建议使用单页方式。单页方式，如果是复杂页面，应用性能会下降明显，需减少页面复杂度。如果是App端，nvue单页的性能会显著高于vue页面
+- Ordinary custom tabBar: Use view to draw tabBar by yourself. If the page is in multi-page mode, switching tabBar will not keep the bottom tabBar always displayed. Therefore, it is recommended to use the single-page method in this case. Single page mode, if it is a complex page, the application performance will decrease significantly, and the page complexity needs to be reduced. If it is the App side, the performance of the nvue single page will be significantly higher than the vue page
 - 原生的tabbar有且只有一个且在首页。二级页如需的tab，需自行编写view来实现。一般二级页面更适合的导航是 [segement组件](https://ext.dcloud.net.cn/plugin?id=54)
 - There is one and only one native tabbar and it is on the homepage. If you need a tab for the secondary page, you need to write a view to achieve it. Generally, the more suitable navigation for secondary pages is the segment component
 
 
 # condition
 启动模式配置，仅开发期间生效，用于模拟直达页面的场景，如：用户点击所打开的页面。
+The startup mode configuration takes effect only during the development period, and is used to simulate the scene of the direct page, such as: the user clicks on the opened page.
 
 **属性说明：**
+**Attribute description:**
 
 |属性|类型|是否必填|描述|
+|Attribute|Type|Is it required|Description|
 |:-|:-|:-|:-|
 |current|Number|是|当前激活的模式，list节点的索引值|
+|current|Number|is the currently active mode, the index value of the list node|
 |list|Array|是|启动模式列表|
+|list|Array|Yes|Startup mode list|
+
 
 **list说明：**
+**list description:**
 
 |属性|类型|是否必填|描述|
+|Attribute|Type|Is it required|Description|
 |:-|:-|:-|:-|
 |name|String|是|启动模式名称|
+|name|String|is|startup mode name|
 |path|String|是|启动页面路径|
+|path|String|Yes|Start page path|
 |query|String|否|启动参数，可在页面的 [onLoad](/collocation/frame/lifecycle?id=页面生命周期) 函数里获得|
+|query|String|No|The startup parameters can be obtained in the [onLoad](/collocation/frame/lifecycle?id=page lifecycle) function of the page|
 
 **注意：** 在 App 里真机运行可直接打开配置的页面，微信开发者工具里需要手动改变编译模式，如下图：
+**Note:** You can directly open the configuration page when running on the real machine in the App. You need to manually change the compilation mode in the WeChat developer tool, as shown in the figure below:
 
 <div style="text-align:center;">
 	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/a4ceac70-4f2e-11eb-b680-7980c8a877b8.png" />
 </div>
 
 **代码示例：**
+**Code example:**
 
 ```javascript
-"condition": { //模式配置，仅开发期间生效
-	"current": 0, //当前激活的模式（list 的索引项）
+"condition": { //模式配置，仅开发期间生效 (Mode configuration, effective only during development)
+	"current": 0, //当前激活的模式（list 的索引项）(Currently active mode (index item of list))
 	"list": [{
-			"name": "swiper", //模式名称
-			"path": "pages/component/swiper/swiper", //启动页面，必选
-			"query": "interval=4000&autoplay=false" //启动参数，在页面的onLoad函数里面得到。
+			"name": "swiper", //模式名称(Pattern name)
+			"path": "pages/component/swiper/swiper", //启动页面，必选(Start page, required)
+			"query": "interval=4000&autoplay=false" //启动参数，在页面的onLoad函数里面得到。(The startup parameters are obtained in the onLoad function of the page.)
 		},
 		{
 			"name": "test",
@@ -1411,26 +1523,39 @@ But note that except for the H5 end, the performance experience of the custom ta
 # subPackages
 
 所谓的主包，即放置默认启动页面/TabBar 页面，以及一些所有分包都需用到公共资源/JS 脚本；而分包则是根据pages.json的配置进行划分。
+The so-called main package is to place the default startup page/TabBar page, and some common resources/JS scripts are required for all sub-packages; and the sub-packages are divided according to the configuration of pages.json.
 
 App默认为整包。其目的不用于下载提速，而用于首页是vue时的启动提速。App下开启分包，除在pages.json中配置分包规则外，还需要在manifest中设置在app端开启分包设置，详见：[https://uniapp.dcloud.io/collocation/manifest?id=app-vue-optimization](https://uniapp.dcloud.io/collocation/manifest?id=app-vue-optimization)
+App defaults to the whole package. Its purpose is not to speed up the download, but to speed up the startup when the home page is vue. To enable subcontracting under the app, in addition to configuring subcontracting rules in pages.json, you also need to set in the manifest to enable subcontracting settings on the app side. For details, see: [https://uniapp.dcloud.io/collocation/manifest? id=app-vue-optimization](https://uniapp.dcloud.io/collocation/manifest?id=app-vue-optimization)
 
 subPackages 节点接收一个数组，数组每一项都是应用的子包，其属性值如下：
+The subPackages node receives an array. Each item in the array is a subpackage of the application. Its attribute values ​​are as follows:
 
 |属性|类型|是否必填|描述|
+|Attribute|Type|Is it required|Description|
 |:-|:-|:-|:-|
 |root|String|是|子包的根目录|
+|root|String|is the root directory of the sub-package|
 |pages|Array|是|子包由哪些页面组成，参数同 [pages](/collocation/pages?id=pages)|
+|pages|Array|Yes|Which pages the sub-package consists of, the parameters are the same as [pages](/collocation/pages?id=pages)|
 
 **注意：** 
+**Notice:** 
 
 - ```subPackages``` 里的pages的路径是 ``root`` 下的相对路径，不是全路径。
+- The path of pages in ```subPackages``` is the relative path under ``root``, not the full path.
 - 分包下支持独立的 ```static``` 目录，用来对静态资源进行分包。
+- Support independent ```static``` directory under subcontracting, which is used to subcontract static resources.
 - `uni-app`内支持分包优化，即将静态资源或者js文件放入分包内不占用主包大小。详情请参考：[关于分包优化的说明](/collocation/manifest?id=关于分包优化的说明)
+- Support sub-package optimization in `uni-app`, that is, putting static resources or js files into sub-packages does not occupy the size of the main package. For details, please refer to: [Instructions on subcontracting optimization](/collocation/manifest?id=Instructions on subcontracting optimization)
 - 针对`vendor.js`过大的情况可以使用运行时压缩代码
+- For cases where `vendor.js` is too large, you can use runtime compression code
 
 **使用方法：**
+**Instructions:**
 
 假设支持分包的 ```uni-app``` 目录结构如下：
+Assume that the ```uni-app``` directory structure that supports sub-package is as follows:
 <pre v-pre="" data-lang="">
 	<code class="lang-" style="padding:0">
 ┌─pages               
@@ -1455,6 +1580,7 @@ subPackages 节点接收一个数组，数组每一项都是应用的子包，�
 </pre>
 
 则需要在 pages.json 中填写
+You need to fill in pages.json
 
 ```javascript
 {

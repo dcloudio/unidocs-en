@@ -34,15 +34,20 @@ Slide the selector.
 |@changing|EventHandle||拖动过程中触发的事件，event.detail = {value: value}|
 | @changing       | EventHandle |                                            | Event triggered during dragging, event.detail = {value: value} |
 
-<!-- |color|Color|#e9e9e9|背景条的颜色（请使用 backgroundColor）|
-|selected-color|Color|#1aad19|已选择的颜色（请使用 activeColor）| -->
+<!-- |color|Color|#e9e9e9|背景条的颜色（请使用 backgroundColor）|-->
+<!-- |color|Color|#e9e9e9|The color of the background bar (please use backgroundColor)|-->
+<!-- |selected-color|Color|#1aad19|已选择的颜色（请使用 activeColor）| -->
+<!-- |selected-color|Color|#1aad19|Selected color (please use activeColor)| -->
 **Tips**
 
 - 如需要区间滑块，即一根横条上使用2个滑块选择一段范围，可见[插件市场](https://ext.dcloud.net.cn/search?q=%E5%8C%BA%E9%97%B4%E6%BB%91%E5%9D%97)
+- If you need an interval slider, use 2 sliders on a horizontal bar to select a range, see [Plugin Market](https://ext.dcloud.net.cn/search?q=%E5%8C%BA %E9%97%B4%E6%BB%91%E5%9D%97)
 
 **示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/slider/slider)
+ **Example** [View Demo](https://hellouniapp.dcloud.net.cn/pages/component/slider/slider)
  
 以下示例代码，来自于[hello uni-app项目](https://github.com/dcloudio/hello-uniapp)，推荐使用HBuilderX，新建uni-app项目，选择hello uni-app模板，可直接体验完整示例。
+The following sample code comes from [hello uni-app project](https://github.com/dcloudio/hello-uniapp), it is recommended to use HBuilderX, create a new uni-app project, choose hello uni-app template, you can experience the complete Example.
 ```html
 <!-- 本示例未包含完整css，获取外链css请参考上文，在hello uni-app项目中查看 -->
 <template>
@@ -91,3 +96,4 @@ export default {
 
 **Tips**
 - 2.6.3以前，在PC端使用`slider`，需配置[H5模版](https://uniapp.dcloud.io/collocation/manifest?id=h5-template)，并引入[touch-emulator.js](https://github.com/dcloudio/touchemulator)
+- Before 2.6.3, to use `slider` on the PC side, you need to configure [H5 template](https://uniapp.dcloud.io/collocation/manifest?id=h5-template) and introduce [touch-emulator.js ](https://github.com/dcloudio/touchemulator)

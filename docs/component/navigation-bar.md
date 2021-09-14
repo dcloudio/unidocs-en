@@ -4,12 +4,14 @@
 The page navigation bar configuration node is used to specify some properties of the navigation bar. It can only be the first node in the page-meta component, and it needs to be used together.
 
 **平台差异说明**
+**Platform difference description**
 
 |App|H5|
 |:-:|:-:|
 |√ 2.6.7+|2.6.3+|
 
 从HBuilderX 2.9.3起，编译到所有平台均支持`navigation-bar`，但编译到微信时，受微信基础库版本限制；编译到其他平台不受平台版本限制。
+Starting from HBuilderX 2.9.3, all platforms support `navigation-bar` when compiled to WeChat, but when compiled to WeChat, it is limited by the WeChat base library version; when compiled to other platforms, it is not restricted by the platform version.
 
 **属性说明**
 **Property description**

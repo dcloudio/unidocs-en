@@ -19,11 +19,15 @@ Currently controls can be bound to include: `<button>`, `<checkbox>`, `<radio>`,
 | for            | String   | The id of the bound control |
 
 **注：**
+**Note:**
 - app-nvue平台 暂不支持for属性
+- app-nvue platform does not support the for attribute
 
 **示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/label/label)
+**Example** [View Demo](https://hellouniapp.dcloud.net.cn/pages/component/label/label)
  
 以下示例代码，来自于[hello uni-app项目](https://github.com/dcloudio/hello-uniapp)，推荐使用HBuilderX，新建uni-app项目，选择hello uni-app模板，可直接体验完整示例。
+The following sample code comes from [hello uni-app project](https://github.com/dcloudio/hello-uniapp), it is recommended to use HBuilderX, create a new uni-app project, choose hello uni-app template, you can experience the complete Example.
 ```html
 <!-- 本示例未包含完整css，获取外链css请参考上文，在hello uni-app项目中查看 -->
 <template>

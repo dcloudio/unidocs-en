@@ -1,20 +1,28 @@
 #### editor
 
 富文本编辑器，可以对图片、文字格式进行编辑和混排。
+Rich text editor, you can edit and mix pictures and text formats.
 
 在web开发时，可以使用`contenteditable`来实现内容编辑。但这是一个dom API，在非H5平台无法使用。于是uni-app的App-vue提供了`editor`组件来实现这个功能，并且在uni-app的H5平台也提供了兼容。从技术本质来讲，这个组件仍然运行在视图层webview中，利用的也是浏览器的`contenteditable`功能。
+In web development, you can use `contenteditable` to achieve content editing. But this is a dom API and cannot be used on non-H5 platforms. So the App-vue of uni-app provides the `editor` component to achieve this function, and it also provides compatibility on the H5 platform of uni-app. Technically speaking, this component is still running in the view layer webview, using the browser's `contenteditable` function.
 
 编辑器导出内容支持带标签的 `html`和纯文本的 `text`，编辑器内部采用 `delta` 格式进行存储。
+The export content of the editor supports tagged `html` and plain text `text`, and the editor uses the `delta` format for storage.
 
 通过`setContents`接口设置内容时，解析插入的 `html` 可能会由于一些非法标签导致解析错误，建议开发者在应用内使用时通过 delta 进行插入。
+When setting content through the `setContents` interface, parsing the inserted `html` may cause parsing errors due to some illegal tags. It is recommended that developers insert it through 'delta' when using in-app.
 
 富文本组件内部引入了一些基本的样式使得内容可以正确的展示，开发时可以进行覆盖。需要注意的是，在其它组件或环境中使用富文本组件导出的html时，需要额外引入[这段样式](https://github.com/dcloudio/uni-app/blob/master/src/core/view/components/editor/editor.css)，并维护`<ql-container><ql-editor></ql-editor></ql-container>`的结构，参考：[使用 editor 组件导出的 html](https://ask.dcloud.net.cn/article/36205)。
+Some basic styles are introduced into the rich text component so that the content can be displayed correctly and can be overwritten during development. It should be noted that when using the html exported by the rich text component in other components or environments, you need to additionally introduce [this style](https://github.com/dcloudio/uni-app/blob/master/src/core /view/components/editor/editor.css), and maintain the structure of `<ql-container><ql-editor></ql-editor></ql-container>`, reference: [html exported using editor component ](https://ask.dcloud.net.cn/article/36205).
 
 图片控件仅初始化时设置有效。
+The picture control is only valid when it is initialized.
 
 相关 api：[editorContext](/api/media/editor-context)
+Related api: [editorContext](/api/media/editor-context)
 
 **平台差异说明**
+**Platform difference description**
 
 |App				|H5		|
 |:-:				|:-:		|
@@ -22,7 +30,7 @@
 
 
 editor组件目前只有H5、App的vue页面支持，其他端平台自身未提供editor组件，只能使用web-view加载web页面，也可搜索[插件市场](https://ext.dcloud.net.cn/search?q=%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91) 获取简单的markdown富文本编辑器
-
+The editor component is currently only supported by the vue page of H5 and App. The other end platforms do not provide the editor component. You can only use the web-view to load the web page. You can also search for [plugin market](https://ext.dcloud.net.cn) /search?q=%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91) Get a simple markdown rich text editor
 | 属性 | 类型 | 默认值 | 必填 | 说明 |
 | Attributes       | Types of    | Defaults | Required | Description                                                  |
 | --- | --- | --- | --- | --- |
@@ -98,6 +106,7 @@ Inline styles can only be set on inline elements or block-level elements, not bo
 
 
 **示例代码** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/editor/editor)
+**Sample Code** [View Demo](https://hellouniapp.dcloud.net.cn/pages/component/editor/editor)
 
 ```html
 <template>

@@ -14,13 +14,18 @@ image.
 |fade-show|Boolean|true|图片显示动画效果|仅App-nvue 2.3.4+ Android有效|
 |fade-show|Boolean|true|Picture shows animation effect|Only App-nvue 2.3.4+ Android is valid|
 |draggable|boolean|true|鼠标长按是否能拖动图片|仅 H5 平台 3.1.1+ 有效|
+|draggable|boolean|true|Whether the mouse long press can drag the picture|Only H5 platform 3.1.1+ is valid|
 |@error|HandleEvent||当错误发生时，发布到 AppService 的事件名，事件对象event.detail = {errMsg: 'something wrong'}||
+|@error|HandleEvent||When an error occurs, the name of the event posted to AppService, event object event.detail = {errMsg:'something wrong'}||
 |@load|HandleEvent||当图片载入完毕时，发布到 AppService 的事件名，事件对象event.detail = {height:'图片高度px', width:'图片宽度px'}|&nbsp;|
+|@load|HandleEvent||When the image is loaded, the event name posted to AppService, event object event.detail = {height:'image height px', width:'image width px'}|&nbsp;|
 
 **Tips**
 
 - `<image>` 组件默认宽度 300px、高度 225px；`app-nvue平台，暂时默认为屏幕宽度`
+- `<image>` component default width 300px, height 225px; `app-nvue platform, temporarily defaults to screen width`
 - `<image>` The default component width is 300px, height is 225px;`app-nvue平台，暂时默认为屏幕宽度`
+- `<image>` The default component width is 300px, height is 225px; `app-nvue platform, temporarily defaults to the screen width`
 - `src` 仅支持相对路径、绝对路径，支持 base64 码；
 - `src` Only support relative path, absolute path, support base64 code;
 - 页面结构复杂，css样式太多的情况，使用 image 可能导致样式生效较慢，出现 “闪一下” 的情况，此时设置 `image{will-change: transform}` ,可优化此问题。
@@ -31,6 +36,9 @@ image.
 - Images in webp format are built-in support on Android. Different platforms on iOS are different. The details are as follows: under app-vue, iOS does not support; under app-nvue, iOS supports; 
 - svg 格式的图片在不同的平台支持情况不同。具体为：app-nvue 不支持 svg 格式的图片，小程序上只支持网络地址。
 - svg format images are supported differently on different platforms. Specifically: app-nvue does not support pictures in svg format, and only network addresses are supported on the applet.
+
+
+
 
 
 **mode 有效值：**
@@ -72,6 +80,7 @@ There are 14 modes in mode, 5 of which are zoom modes and 9 are crop modes.
 |Crop|bottom right|Do not zoom the picture, only display the lower right area of the picture|
 
 **示例：** [查看示例](https://hellouniapp.dcloud.net.cn/pages/component/image/image)
+**Example:** [View example](https://hellouniapp.dcloud.net.cn/pages/component/image/image)
  
 ```html
 <template>
@@ -141,53 +150,67 @@ export default {
 ```
 
 原图
+Original image
 
 ![uniapp](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/6acec660-4f31-11eb-a16f-5b3e54966275.jpg)
 
 scaleToFill：不保持纵横比缩放图片，使图片完全适应
+scaleToFill: Scale the picture without maintaining the aspect ratio, so that the picture is fully adapted
 
 ![uniapp](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/6b971f70-4f31-11eb-bd01-97bc1429a9ff.png)
 
 aspectFit：保持纵横比缩放图片，使图片的长边能完全显示出来
+aspectFit: Keep the aspect ratio to zoom the picture, so that the long side of the picture can be fully displayed
 
 ![uniapp](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/6c4e3a70-4f31-11eb-8ff1-d5dcf8779628.png)
 
 aspectFill：保持纵横比缩放图片，只保证图片的短边能完全显示出来
+aspectFill: Maintain the aspect ratio to zoom the picture, and only ensure that the short side of the picture can be fully displayed
 
 ![uniapp](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/6cfbdf90-4f31-11eb-8ff1-d5dcf8779628.png)
 
 top：不缩放图片，只显示图片的顶部区域
+top: Do not zoom the picture, only display the top area of ​​the picture
 
 ![uniapp](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/6dd1f440-4f31-11eb-8ff1-d5dcf8779628.png)
 
 bottom：不缩放图片，只显示图片的底部区域
+bottom: Do not zoom the picture, only display the bottom area of ​​the picture
 
 ![uniapp](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/649ee9a0-4f31-11eb-8a36-ebb87efcf8c0.png)
 
 center：不缩放图片，只显示图片的中间区域
+center: Do not zoom the picture, only display the middle area of ​​the picture
 
 ![uniapp](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/65495a70-4f31-11eb-8a36-ebb87efcf8c0.png)
 
 left：不缩放图片，只显示图片的左边区域
+left: Do not zoom the picture, only display the left area of ​​the picture
 
 ![uniapp](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/66211cd0-4f31-11eb-bd01-97bc1429a9ff.png)
 
 right：不缩放图片，只显示图片的右边边区域
+right: Do not zoom the picture, only display the area on the right side of the picture
 
 ![uniapp](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/66e55730-4f31-11eb-8a36-ebb87efcf8c0.png)
 
 top left：不缩放图片，只显示图片的左上边区域
+top left: Do not zoom the picture, only display the upper left area of ​​the picture
 
 ![uniapp](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/67b614b0-4f31-11eb-bd01-97bc1429a9ff.png)
 
 top right：不缩放图片，只显示图片的右上边区域
+top right: Do not zoom the picture, only display the upper right area of ​​the picture
 
 ![uniapp](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/6869fb60-4f31-11eb-a16f-5b3e54966275.png)
 
 bottom left：不缩放图片，只显示图片的左下边区域
+bottom left: Do not zoom the picture, only display the lower left area of ​​the picture
 
 ![uniapp](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/693ed790-4f31-11eb-8a36-ebb87efcf8c0.png)
 
 bottom right：不缩放图片，只显示图片的右下边区域
+bottom right: Do not zoom the picture, only display the lower right area of ​​the picture
 
 ![uniapp](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/6a042360-4f31-11eb-a16f-5b3e54966275.png)
+

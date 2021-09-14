@@ -1,11 +1,15 @@
 
 ```uni-app``` 是一个使用 [Vue.js](https://vuejs.org/) 开发所有前端应用的框架，开发者编写一套代码，可发布到iOS、Android、PC或Mobile Web（响应式）、以及各种小程序多个平台。
+```uni-app``` is a framework that uses [Vue.js](https://vuejs.org/) to develop all front-end applications. Developers write a set of codes that can be published to iOS, Android, PC or Mobile Web (responsive), and various small programs on multiple platforms.
 
 `DCloud`公司拥有900万开发者，他们创建了数百万的应用。
+The `DCloud` company has 9 million developers who have created millions of applications.
 
 uni-app内置了一套完善的跨平台ui组件，App引擎内置了各种常见原生能力封装，生态中有5千多个扩展插件。
+uni-app has built-in a complete set of cross-platform ui components, the App engine has built-in various common native capability packages, and there are more than 5,000 extension plug-ins in the ecosystem.
 
 `uni-app`在手，做啥都不愁。不管领导安排什么样的项目，你都可以快速交付，不需要转换开发思维、不需要更改开发习惯。
+With `uni-app` in hand, you don't have to worry about what you do. No matter what kind of project the leader arranges, you can deliver it quickly, without changing development thinking or changing development habits.
 
 <div class="quick">
     <h3 id="快速体验"><a href="/README?id=%e5%bf%ab%e9%80%9f%e4%bd%93%e9%aa%8c" data-id="快速体验" class="anchor"><span>快速体验</span></a></h3>
@@ -34,8 +38,10 @@ uni-app内置了一套完善的跨平台ui组件，App引擎内置了各种常�
 
 
 ### 为什么要选择uni-app？
+### Why choose uni-app?
 
 ```uni-app```在开发者数量、案例、跨端抹平度、扩展灵活性、性能体验、周边生态、学习成本、开发成本等8大关键指标上拥有更强的优势。
+```uni-app``` has a stronger advantage in 8 key indicators such as the number of developers, cases, cross-end smoothness, expansion flexibility, performance experience, surrounding ecology, learning costs, and development costs.
 <!-- ![](https://img-cdn-qiniu.dcloud.net.cn/uniapp/doc/uni20190418.png) -->
 <div class="uniapp-home-content">
     <div class="uniapp-home-content-item">
@@ -100,17 +106,29 @@ uni-app内置了一套完善的跨平台ui组件，App引擎内置了各种常�
 </div>
 
 ### 功能框架
+### Functional framework
 
 从下面```uni-app```功能框架图可看出，```uni-app```在跨平台的过程中，不牺牲平台特色，可优雅的调用平台专有能力，真正做到海纳百川、各取所长。
+From the following ``uni-app``` function framework diagram, it can be seen that ``uni-app``` does not sacrifice platform features in the process of cross-platform, and can elegantly call the platform's proprietary capabilities and truly do Go to the sea to meet all the rivers, and learn from each other's strengths.
 
 ![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/87a0a0d0-60aa-11eb-8ff1-d5dcf8779628.png)
 
 ### 一套代码，运行到多个平台
+### One set of code, run to multiple platforms
 
 ```uni-app```实现了一套代码，同时运行到多个平台；如下图所示，一套代码，同时运行到iOS模拟器、Android模拟器、H5、微信开发者工具、支付宝小程序Studio、百度开发者工具、字节跳动开发者工具、QQ开发者工具（底部8个终端选项卡代表8个终端模拟器）：
+```uni-app``` implements a set of code that runs to multiple platforms at the same time; as shown in the figure below, a set of code runs to iOS simulator, Android emulator, H5, WeChat developer tools, and Alipay at the same time Mini Program Studio, Baidu Developer Tools, ByteDance Developer Tools, QQ Developer Tools (the 8 terminal tabs at the bottom represent 8 terminal emulators):
 
 ![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/efd8e280-60a9-11eb-a16f-5b3e54966275.jpg)
 
 实际运行效果如下（点击图片可放大）：
+The actual running effect is as follows (click on the picture to enlarge it):
 
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/ec6e95dd-77ad-4d14-aafa-ca503f5b9e53.jpg)
+
+
+
+
+
+
+

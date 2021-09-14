@@ -40,6 +40,7 @@ Keep the current page, jump to a page in the app, and use `uni.navigateBack`it t
 
 
 **示例**
+**Example**
 
 ```javascript
 //在起始页面跳转到test.vue页面并传递参数
@@ -64,6 +65,7 @@ export default {
 
 ```javascript
 // 2.8.9+ 支持
+//2.8.9+ support
 uni.navigateTo({
   url: 'pages/test?id=1',
   events: {
@@ -89,7 +91,7 @@ uni.navigateTo({
 onLoad: function(option) {
   console.log(option.query)
   // #ifdef APP-NVUE
-  const eventChannel = this.$scope.eventChannel; // 兼容APP-NVUE
+  const eventChannel = this.$scope.eventChannel; // 兼容APP-NVUE(Compatible with APP-NVUE)
   // #endif
   // #ifndef APP-NVUE
   const eventChannel = this.getOpenerEventChannel();
@@ -119,11 +121,16 @@ onLoad: function (option) {
 }
 ```
 **注意：**
+**Notice:**
 
 * 页面跳转路径有层级限制，不能无限制跳转新页面
+* There are hierarchical restrictions on the page jump path, and you cannot jump to a new page without restrictions
 * 跳转到 tabBar 页面只能使用 switchTab 跳转
+* Jump to the tabBar page can only use switchTab to jump
 * 路由API的目标页面必须是在pages.json里注册的vue页面。如果想打开web url，在App平台可以使用 [plus.runtime.openURL](http://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.openURL)或web-view组件；H5平台使用 window.open；小程序平台使用web-view组件（url需在小程序的联网白名单中）。在hello uni-app中有个组件ulink.vue已对多端进行封装，可参考。
+* The target page of the routing API must be the vue page registered in pages.json. If you want to open the web url, you can use [plus.runtime.openURL](http://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.openURL) or web-view component on the App platform; H5 The platform uses window.open; the applet platform uses the web-view component (url needs to be in the whitelist of the applet). There is a component ulink.vue in hello uni-app that has encapsulated multiple terminals, you can refer to it.
 * APP-NVUE平台暂不支持以`this.getOpenerEventChannel()`方式获取`eventChannel`，请换用`this.$scope.eventChannel`来获取，具体方式请参考上述示例。
+* The APP-NVUE platform does not currently support the method of `this.getOpenerEventChannel()` to obtain the `eventChannel`, please use `this.$scope.eventChannel` instead, please refer to the above example for the specific method.
 
 #### uni.redirectTo(OBJECT)
 
@@ -134,7 +141,7 @@ Close the current page and jump to a page in the app.
 **OBJECT parameter description**
 
 |参数|类型|必填|说明|
-|**Parameters**|**Type**|**Required**|**Description**|
+|Parameters|Type|Required|Description|
 |:-|:-|:-|:-|
 |url|String|是|需要跳转的应用内非 tabBar 的页面的路径，路径后可以带参数。参数与路径之间使用?分隔，参数键与参数值用=相连，不同参数用&分隔；如 'path?key=value&key2=value2'|
 |url|String| Yes          | The path of the non-tabBar page in the application that needs to be jumped. Parameters can be included after the path. Use? To separate parameter and path, parameter key and parameter value are connected with =, and different parameters are separated by &; such as'path?key=value&key2=value2' |
@@ -166,8 +173,9 @@ uni.redirectTo({
 Close all pages and open a page within the app.
 
 **注意：**
+**Notice:**
 如果调用了 [uni.preloadPage(OBJECT)](https://uniapp.dcloud.net.cn/api/preload-page) 不会关闭，仅触发生命周期 `onHide`
-**Note: If** [uni.preloadPage(OBJECT)](https://uniapp.dcloud.net.cn/api/preload-page) is called, it does not close, triggering only the lifecycle `onHide`
+If [uni.preloadPage(OBJECT)](https://uniapp.dcloud.net.cn/api/preload-page) is called, it will not be closed, only the life cycle `onHide` will be triggered
 
 
 **OBJECT参数说明**
@@ -212,15 +220,16 @@ Tips：
 Jump to the tabBar page and close all other non-tabBar pages. 
 
 **注意：**
+**Notice:**
 如果调用了 [uni.preloadPage(OBJECT)](https://uniapp.dcloud.net.cn/api/preload-page) 不会关闭，仅触发生命周期 `onHide`
-**Note: If** [uni.preloadPage(OBJECT)](https://uniapp.dcloud.net.cn/api/preload-page) is called, it does not close, triggering only the lifecycle `onHide`
-
+If [uni.preloadPage(OBJECT)](https://uniapp.dcloud.net.cn/api/preload-page) is called, it will not be closed, only the life cycle `onHide` will be triggered
 
 **OBJECT参数说明**
 **OBJECT parameter description** 
 | parameter | Types of | Required | Description|
 
 |参数|类型|必填|说明|
+|Parameter|Type|Required|Description|
 |:-|:-|:-|:-|
 |url|String|是|需要跳转的 tabBar 页面的路径（需在 pages.json 的 tabBar 字段定义的页面），路径后不能带参数|
 |url|String| Yes      | The path of the tabBar page to be jumped to (the page defined in the tabBar field of pages.json), no parameters can be included after the path |
@@ -240,10 +249,10 @@ pages.json
   "tabBar": {
     "list": [{
       "pagePath": "pages/index/index",
-      "text": "首页"
+      "text": "首页(Home)"
     },{
       "pagePath": "pages/other/other",
-      "text": "其他"
+      "text": "其他(other)"
     }]
   }
 }
@@ -302,8 +311,9 @@ uni.navigateBack({
 
 #### EventChannel@event-channel
 2.8.9+ 支持
+2.8.9+ support
 页面间事件通信通道
-2.8.9+ Support event communication channel between pages 
+Event communication channel between pages
 
 **方法**
 **Method**
@@ -383,11 +393,11 @@ trigger event parameters
 
 Tips：
 * ``navigateTo``, ``redirectTo`` 只能打开非 tabBar 页面。
-* `navigateTo`, `redirectTo`Only non-tabBar pages can be opened.
+* ``navigateTo``, ``redirectTo``Only non-tabBar pages can be opened.
 * ``switchTab`` 只能打开 ``tabBar`` 页面。
-* `switchTab`You can only open `tabBar`the page.
+* ``switchTab``You can only open ``tabBar``the page.
 * ``reLaunch`` 可以打开任意页面。
-* `reLaunch` Any page can be opened.
+* ``reLaunch``Any page can be opened.
 * 页面底部的 ``tabBar`` 由页面决定，即只要是定义为 ``tabBar`` 的页面，底部都有 ``tabBar``。
 * Bottom of the page `tabBar`by the page decision, that is, as long as it is defined as `tabBar`a page, at the bottom there `tabBar`.
 * 不能在 ```App.vue``` 里面进行页面跳转。
@@ -429,7 +439,7 @@ uni.navigateBack({
 });
 ```
 ##### 组件
-##### ##### Component
+##### Component
 open-type 有效值
 Open-type valid value
 
@@ -456,7 +466,7 @@ The animation of the window display is configured in pages.json
 Show animation and turn off animation, there will be the default corresponding rules. However, if the type of animation that closes the window is configured through an API or component, the default type is not used. 
 
 |显示动画|关闭动画|显示动画描述（关闭动画与之相反）|
-| **The animation is displayed** | **Turn off the animation** | **Show animation description (turn off animation to the opposite)** |
+|The animation is displayed|Turn off the animation|Show animation description (turn off animation to the opposite)|
 |:-|:-|:-|
 |slide-in-right|slide-out-right|新窗体从右侧进入|
 |slide-in-right|slide-out-right| The new form enters from the right|
@@ -486,6 +496,7 @@ For detailed window animation instructions, please refer to:
 - Animation of window closure:[AnimationTypeClose](http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.AnimationTypeClose)
 
 **注意**
+**Notice**
 - 纯nvue项目（render为native），窗体动画默认进入动画为popin，返回为pop-out。如果想修改动画类型，只能通过uni.navigateTo API修改，在组件或pages.json里配置动画类型无效
 - For pure nvue projects (render is native), the default entry animation of the window animation is popin, and the return is pop-out. If you want to modify the animation type, you can only modify it through uni.navigateTo API, and the animation type configuration in the component or pages.json is invalid
 - 非纯nvue项目，App端窗体动画，默认进入动画为slider-in-right，默认返回动画为pop-out

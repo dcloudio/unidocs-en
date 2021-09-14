@@ -7,7 +7,7 @@ button.
 **Property description**
 
 |属性名|类型|默认值|说明|平台差异说明|
-|**Attribute name**|**Types of**|**Defaults**|**Description**|**Platform difference description**|
+|Attribute name|Types of|Defaults|Description|Platform difference description|
 |:-|:-|:-|:-|:-|
 |size|String|default|按钮的大小||
 |size|String|default|Button size||
@@ -18,20 +18,28 @@ button.
 |disabled|Boolean|false|是否禁用||
 |disabled|Boolean|false|Whether to disable||
 |loading|Boolean|false|名称前是否带 loading 图标|App-nvue 平台，在 ios 上为雪花，Android上为圆圈|
+|loading|Boolean|false|Whether there is a loading icon before the name|App-nvue platform, it is snowflake shape on ios, and circle shape on Android|
 |form-type|String||用于 ``<form>`` 组件，点击分别会触发 ``<form>`` 组件的 submit/reset 事件||
+|form-type|String||For the ``<form>`` component, click will trigger the submit/reset event of the ``<form>`` component||
 |open-type|String||开放能力||
+|open-type|String||Open Capability||
 |hover-class|String|button-hover|指定按钮按下去的样式类。当 hover-class="none" 时，没有点击态效果|App-nvue 平台暂不支持|
+|hover-class|String|button-hover|Specifies the style class of the button to be pressed. When hover-class="none", there is no click state effect|App-nvue platform does not support temporarily now|
 |hover-start-time|Number|20|按住后多久出现点击态，单位毫秒||
+|hover-start-time|Number|20|How long does the click state appear after holding down, in milliseconds||
 |hover-stay-time|Number|70|手指松开后点击态保留时间，单位毫秒||
+|hover-stay-time|Number|70|The retention time of the click state after releasing the finger, in milliseconds||
 
 
 - **注意：``button-hover`` 默认为 ``{background-color: rgba(0, 0, 0, 0.1); opacity: 0.7;}``**
+- -**Note: ``button-hover`` defaults to ``{background-color: rgba(0, 0, 0, 0.1); opacity: 0.7;}''**
 
  
 **size 有效值**
+**size valid value**
 
 |值|说明|
-|**value**|**Description**|
+|value|Description|
 |:-|:-|
 |default|默认大小|
 |default|Default size|
@@ -65,8 +73,10 @@ button.
 **open-type 有效值**
 
 |值|说明|平台差异说明|
+|Value|Description|Platform difference description|
 |:-|:-|:-|
 |feedback|打开“意见反馈”页面，用户可提交反馈内容并上传日志|App|
+|feedback|Open the "Feedback" page, users can submit feedback content and upload logs|App|
 
 
 **button点击**
@@ -101,13 +111,17 @@ The button component has no url attribute. If you want to jump to the page, you 
 
 
 **注意** 
+**Notice**
 
 - 在 App 中，开发者登录 [DCloud开发者中心](https://dev.dcloud.net.cn/) 后点击应用名称，进入左侧菜单“用户反馈”页面获取反馈内容。
+- In the App, the developer logs in to [DCloud Developer Center](https://dev.dcloud.net.cn/), clicks on the application name, and enters the "User Feedback" page of the left menu to get feedback.
 - 点击 share 分享按钮时会触发 [onShareAppMessage](/api/plugins/share)
 
 **示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/button/button)
+**Example** [View Demo](https://hellouniapp.dcloud.net.cn/pages/component/button/button)
 
 以下示例代码，来自于[hello uni-app项目](https://github.com/dcloudio/hello-uniapp)，推荐使用HBuilderX，新建uni-app项目，选择hello uni-app模板，可直接体验完整示例。
+The following sample code comes from [hello uni-app project](https://github.com/dcloudio/hello-uniapp), it is recommended to use HBuilderX, create a new uni-app project, choose hello uni-app template, you can experience the complete Example.
 ```html
 <!-- 本示例未包含完整css，获取外链css请参考上文，在hello uni-app项目中查看 -->
 <template>

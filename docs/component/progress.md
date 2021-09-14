@@ -31,6 +31,7 @@ progress bar.
 
 
 **示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/progress/progress)
+**Example** [View Demo](https://hellouniapp.dcloud.net.cn/pages/component/progress/progress)
 
 以下示例代码，来自于[hello uni-app项目](https://github.com/dcloudio/hello-uniapp)，推荐使用HBuilderX，新建uni-app项目，选择hello uni-app模板，可直接体验完整示例。
 The following sample code comes from the [hello uni-app project](https://github.com/dcloudio/hello-uniapp) . It is recommended to use HBuilderX to create a new uni-app project and choose the hello uni-app template to directly experience the complete example.

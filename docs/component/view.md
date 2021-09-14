@@ -7,10 +7,13 @@ View container.
 It is similar to the div in traditional html and is used to wrap the content of various elements.
 
 如果使用[nvue](https://uniapp.dcloud.io/nvue-outline)，则需注意，包裹文字应该使用`<text>`组件。
+If you use [nvue](https://uniapp.dcloud.io/nvue-outline), please note that the package text should use the `<text>` component.
 
 **属性说明**
+**Attribute description**
 
 |属性名|类型|默认值|说明|
+|Attribute name|Type|Default value|Description|
 |:-|:-|:-|:-|
 |hover-class|String|none|指定按下去的样式类。当 hover-class="none" 时，没有点击态效果|
 |hover-class|String|none|Specifies the style class to be pressed. When hover-class="none", there is no click state effect|
@@ -22,6 +25,7 @@ It is similar to the div in traditional html and is used to wrap the content of 
 |hover-stay-time|Number|400|Retention time of the click state after releasing the finger, in milliseconds|
 
 **示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/view/view)
+**Example** [View Demo](https://hellouniapp.dcloud.net.cn/pages/component/view/view)
 
 以下示例代码，来自于[hello uni-app项目](https://github.com/dcloudio/hello-uniapp)，推荐使用HBuilderX，新建uni-app项目，选择hello uni-app模板，可快速体验完整示例。
 For the following sample code, it is recommended to use HBuilderX to create a new uni-app project and select the hello uni-app template to quickly experience the complete example.

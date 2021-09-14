@@ -35,10 +35,13 @@ Compared with `picker`components, it `picker-view`has more flexibility. When you
 `<picker-view />`The subassembly may be placed only in the `<picker-view />`height level of the child nodes will be automatically set to the height of the picker-view is consistent with the selected frame.
 
 **注意：**nvue页面子节点未继承 picker-view 的选中框的高度，需要自己设置高度并居中。
+**Note: ** The child nodes of the nvue page do not inherit the height of the picker-view check box, you need to set the height yourself and center it.
 
 **示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/picker-view/picker-view)
+**Example** [View Demo](https://hellouniapp.dcloud.net.cn/pages/component/picker-view/picker-view)
 
 以下示例代码，来自于[hello uni-app项目](https://github.com/dcloudio/hello-uniapp)，推荐使用HBuilderX，新建uni-app项目，选择hello uni-app模板，可直接体验完整示例。
+The following sample code comes from [hello uni-app project](https://github.com/dcloudio/hello-uniapp), it is recommended to use HBuilderX, create a new uni-app project, choose hello uni-app template, you can experience the complete Example.
 
 
 ```html
@@ -122,7 +125,11 @@ Compared with `picker`components, it `picker-view`has more flexibility. When you
 ![uniapp](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/433a97b0-4f30-11eb-b680-7980c8a877b8.png)
 
 **Tips**
+**Tips**
 - 在2.6.3版本以前，如果需要在PC端使用`picker-view`，需配置[H5模版](https://uniapp.dcloud.io/collocation/manifest?id=h5-template)，并引入[touch-emulator.js](https://github.com/dcloudio/touchemulator)
+-Before version 2.6.3, if you need to use `picker-view` on the PC side, you need to configure [H5template](https://uniapp.dcloud.io/collocation/manifest?id=h5-template) and import [touch-emulator.js](https://github.com/dcloudio/touchemulator)
 
 **扩展**
+**Extensions**
 - uni ui提供了增强版`<uni-data-picker>`组件，详见：[https://ext.dcloud.net.cn/plugin?id=3796](https://ext.dcloud.net.cn/plugin?id=3796)
+-uni ui provides an enhanced version of `<uni-data-picker>` component, see: [https://ext.dcloud.net.cn/plugin?id=3796](https://ext.dcloud.net .cn/plugin?id=3796)

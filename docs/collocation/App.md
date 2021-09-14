@@ -10,7 +10,7 @@ The application life cycle can only be `App.vue`monitored in , and monitoring on
 ### Application life cycle
 
 ``uni-app`` 支持 onLaunch、onShow、onHide 等应用生命周期函数，详情请参考[应用生命周期](/collocation/frame/lifecycle?id=应用生命周期)
-`uni-app`Support application life cycle functions such as onLaunch, onShow, onHide, etc. 
+``uni-app`` supports application lifecycle functions such as onLaunch, onShow, onHide, etc. For details, please refer to [application lifecycle](/collocation/frame/lifecycle?id=application lifecycle)
 
 ```html
 <script>  
@@ -33,6 +33,7 @@ The application life cycle can only be `App.vue`monitored in , and monitoring on
 - **应用生命周期仅可在`App.vue`中监听，在其它页面监听无效**。
 - **The application life cycle can only be `App.vue`monitored in , and monitoring on other pages is invalid** .
 - onlaunch里进行页面跳转，如遇白屏报错，请参考[https://ask.dcloud.net.cn/article/35942](https://ask.dcloud.net.cn/article/35942)
+- Page jump in onlaunch, if you encounter a white screen error, please refer to [https://ask.dcloud.net.cn/article/35942](https://ask.dcloud.net.cn/article/35942)
 - `App.vue` 不能写模板
 - `App.vue` Cannot write templates
 

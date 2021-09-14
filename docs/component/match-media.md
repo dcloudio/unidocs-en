@@ -10,6 +10,7 @@ Similar to the use of media queries to adapt to large and small screens in web d
 For example, placing a sidebar in the match-media component and setting the media query rule to display on widescreen can achieve the effect of displaying the sidebar on the widescreen of the PC, but not displaying the sidebar on the narrow screen of the mobile phone.
 
 **平台兼容性**
+**Platform compatibility**
 
 |app|
 |:-|
@@ -17,9 +18,10 @@ For example, placing a sidebar in the match-media component and setting the medi
 
 
 **属性说明**
+**Attribute description**
 
 |属性名|类型|默认值|必填|说明|
-|**Attribute name**|**Type**|**Defaults**|**Required**|**Description**|
+|Attribute name|Type|Defaults|Required|Description|
 |:-|:-|:-|:-|:-|
 |min-width|number||否|页面最小宽度（ px 为单位）|
 |min-width|number||no|Minimum page width (in px)|
