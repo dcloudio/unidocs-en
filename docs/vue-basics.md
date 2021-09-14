@@ -1437,17 +1437,17 @@ You can form a v-model command `input`, `textarea`and `select`create a two-way d
 
 
 ## 计算属性和侦听器
-## Computed attributes and listeners
+## Computed Properties and Watchers
 
 ### 计算属性computed
-### Calculated attribute
+### computed property
 
 每一个计算属性都包含一个 `getter` 和一个 `setter` ，默认是利用 `getter` 来读取。所有 `getter` 和 `setter` 的 `this` 上下文自动地绑定为 Vue 实例。
 Each contains a calculated attribute `getter`and a `setter`default is to use `getter`to read. All `getter`and `setter`the `this`context is automatically bound instance Vue.
 
 
 #### 计算属性的 getter 
-#### Getter of calculated property
+#### Getter of computed property
 
 
 在模板中绑定表达式是非常便利的，但是它们实际上只用于简单的操作。在模板中放入太多的逻辑会让模板过重且难以维护。例如：
@@ -1464,7 +1464,7 @@ Binding expressions in templates is very convenient, but they are actually only 
 Here are the variables you want to display `message`flip string. When you want to include more inverted strings here in the template, it will be more difficult to handle.
 
 所以，对于任何复杂逻辑，你都应当使用**计算属性**。
-Therefore, for any complex logic, you should use **calculated attributes** .
+Therefore, for any complex logic, you should use **computed property** .
 
 
 
@@ -1565,7 +1565,7 @@ Now run `fullName = 'John Doe'`time, `setter`will be called `firstName`and `last
 
 
 ### 计算属性缓存 vs 方法
-### Calculated attribute cache vs method
+### Computed Caching vs Methods
 
 我们可以通过在表达式中调用方法来达到同样的效果：
 We can achieve the same effect by calling methods in expressions:
