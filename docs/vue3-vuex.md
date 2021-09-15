@@ -13,15 +13,17 @@
 ### Vuex 是什么？
 
 Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。
+Vuex is a state management pattern + library for Vue.js applications. It serves as a centralized store for all the components in an application, with rules ensuring that the state can only be mutated in a predictable fashion.
 
 uni-app 内置了 [Vuex](https://vuex.vuejs.org/zh/) 。
 
 
 
 ### 什么是“状态管理模式”？
+### What is a "State Management Pattern"?
 
 让我们从一个简单的 Vue 计数应用开始：
-
+Let's start with a simple Vue counter app:
 
 ```html
 <!-- view 视图-->
@@ -50,12 +52,17 @@ uni-app 内置了 [Vuex](https://vuex.vuejs.org/zh/) 。
 
 
 这个状态自管理应用包含以下几个部分：
+It is a self-contained app with the following parts:
 
 - state，驱动应用的数据源；
+- The state, the source of truth that drives our app;
 - view，以声明方式将 state 映射到视图；
+- The view, a declarative mapping of the state;
 - actions，响应在 view 上的用户输入导致的状态变化。
+- The actions, the possible ways the state could change in reaction to user inputs from the view.
 
 以下是一个表示“单向数据流”理念的简单示意：
+This is a simple representation of the concept of "one-way data flow":
 
 
 <img width="300px" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/b0ed6b40-45ec-11eb-bf0a-894cbc80c40a.png" />
@@ -63,22 +70,29 @@ uni-app 内置了 [Vuex](https://vuex.vuejs.org/zh/) 。
 
 
 但是，当我们的应用遇到**多个组件共享状态**时，单向数据流的简洁性很容易被破坏：
+However, the simplicity quickly breaks down when we have multiple components that share a common state:
 
 - 多个视图依赖于同一状态。
+- Multiple views may depend on the same piece of state.
 - 来自不同视图的行为需要变更同一状态。
+- Actions from different views may need to mutate the same piece of state.
 
 因此，我们把组件的共享状态抽取出来，以一个全局单例模式管理。在这种模式下，我们的组件树构成了一个巨大的“视图”，不管在树的哪个位置，任何组件都能获取状态或者触发行为！这就是vuex的产生。
+So why don't we extract the shared state out of the components, and manage it in a global singleton? With this, our component tree becomes a big "view", and any component can access the state or trigger actions, no matter where they are in the tree!This is the emergence of vuex.
 
 通过定义和隔离状态管理中的各种概念并通过强制规则维持视图和状态间的独立性，我们的代码将会变得更结构化且易维护。这就是 Vuex 背后的基本思想。
+By defining and separating the concepts involved in state management and enforcing rules that maintain independence between views and states, we give our code more structure and maintainability.This is the basic idea behind vuex.
 
 
 Vuex 是专门为 Vue.js 设计的状态管理库，以利用 Vue.js 的细粒度数据响应机制来进行高效的状态更新。
+Vuex is a library implementation tailored specifically for Vue.js to take advantage of its granular reactivity system for efficient updates.
 
 
 <img width="300px" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/b1ba7f40-45ec-11eb-8a36-ebb87efcf8c0.png" />
 
 
 如果你想交互式地学习 Vuex，可以看这个 [Scrimba 上的 Vuex 课程](https://scrimba.com/learn/vuex)，它将录屏和代码试验场混合在了一起，你可以随时暂停并尝试。
+If you want to learn Vuex in an interactive way you can check out this [Vuex course on Scrimba](https://scrimba.com/learn/vuex) (opens new window), which gives you a mix of screencast and code playground that you can pause and play around with anytime.
 
 
 
@@ -152,7 +166,8 @@ Vuex 是专门为 Vue.js 设计的状态管理库，以利用 Vue.js 的细粒�
 ## 核心概念
 
 
-每一个 `Vuex` 应用的核心就是 `store`（仓库），它包含着你的应用中大部分的状态 (`state`)。
+每一个 `Vuex` 应用的核心就是 `store`（仓库）。`“store”`基本上就是一个容器，它包含着你的应用中大部分的状态 (`state`)。
+At the center of every Vuex application is the store. A "store" is basically a container that holds your application state.
 
 状态管理有5个核心：`state`、`getter`、`mutation`、`action`、`module`。
 
@@ -164,11 +179,15 @@ Vuex 是专门为 Vue.js 设计的状态管理库，以利用 Vue.js 的细粒�
 
 
 - `Vuex` 使用单一状态树，用一个对象就包含了全部的应用层级状态。它便作为一个“唯一数据源”而存在。这也意味着，每个应用将仅仅包含一个 store 实例。
+- Vuex uses a single state tree - that is, this single object contains all your application level state and serves as the "single source of truth." This also means usually you will have only one store for each application.
 - 单一状态树让我们能够直接地定位任一特定的状态片段，在调试的过程中也能轻易地取得整个当前应用状态的快照。
-- 不可直接对 `state` 进行更改，需要通过 `Mutation` 方法来更改。
+- A single state tree makes it straightforward to locate a specific piece of state, and allows us to easily take snapshots of the current app state for debugging purposes.
+- 你不能直接改变 `store` 中的状态。改变 `store` 中的状态的唯一途径就是显式地提交 `(commit) mutation`。
+- You cannot directly mutate the store's state. The only way to change a store's state is by explicitly committing mutations.
 
 
 由于 `Vuex` 的状态存储是响应式的，从 `store` 实例中读取状态最简单的方法就是在计算属性中返回某个状态：
+Using store state in a component simply involves returning the state within a computed property, because the store state is reactive. 
 
 ```js
 // 创建一个 Counter 组件
@@ -183,15 +202,18 @@ const Counter = {
 
 
 每当 `store.state.count` 变化的时候, 都会重新求取计算属性，并且触发更新相关联的 DOM。
+Whenever store.state.count changes, it will cause the computed property to re-evaluate, and trigger associated DOM updates.
 
 然而，这种模式导致组件依赖全局状态单例。在模块化的构建系统中，在每个需要使用 `state` 的组件中需要频繁地导入，并且在测试组件时需要模拟状态。
+However, this pattern causes the component to rely on the global store singleton. When using a module system, it requires importing the store in every component that uses store state, and also requires mocking when testing the component.
 
 
 
 Vuex 通过 store 选项，提供了一种机制将状态从根组件“注入”到每一个子组件中（需调用 Vue.use(Vuex)）：
+Vuex provides a mechanism to "inject" the store into all child components from the root component with the store option (enabled by Vue.use(Vuex)):
 
 
-1.在 `uni-app` 项目根目录下，新建 `store` 目录，在此目录下新建 `index.js` 文件。在 `index.js` 文件配置如下：
+1. 在 `uni-app` 项目根目录下，新建 `store` 目录，在此目录下新建 `index.js` 文件。在 `index.js` 文件配置如下：
 
 ```js
 <!-- 页面路径：store/index.js -->
@@ -207,7 +229,7 @@ export default store
 ```
 
 
-2.在 `main.js` 中导入文件。
+2. 在 `main.js` 中导入文件。
 
 ```js
 <!-- 页面路径：main.js -->
@@ -226,7 +248,7 @@ export function createApp() {
 **获取state**
 
 
-1.通过属性访问，需要在根节点注入 `store` 。
+1. 通过属性访问，需要在根节点注入 `store` 。
 
 ```html
 <!-- 页面路径：pages/index/index.vue -->
@@ -250,7 +272,7 @@ export function createApp() {
 </script>
 ```
 
-2.在组件中使用，通过 `this.$store` 访问到 `state` 里的数据。
+2. 在组件中使用，通过 `this.$store` 访问到 `state` 里的数据。
 
 ```html
 <!-- 页面路径：pages/index/index.vue -->
@@ -276,10 +298,12 @@ export function createApp() {
 
 #### mapState
 
-3.通过 `mapState` 辅助函数获取。
+3. 通过 `mapState` 辅助函数获取。
 
 当一个组件需要获取多个状态的时候，将这些状态都声明为计算属性会有些重复和冗余。
+When a component needs to make use of multiple store state properties or getters, declaring all these computed properties can get repetitive and verbose.
 为了解决这个问题，我们可以使用 **mapState 辅助函数** 帮助我们生成计算属性，让你少按几次键：
+To deal with this we can make use of the mapState helper which generates computed getter functions for us, saving us some keystrokes:
 
 
 ```html
@@ -307,6 +331,7 @@ export function createApp() {
 
 
 - 当映射的计算属性的名称与 `state` 的子节点名称相同时，我们也可以给 `mapState` 传一个字符串数组。
+- We can also pass a string array to mapState when the name of a mapped computed property is the same as a state sub tree name.
 
 ```html
 <!-- 页面路径：pages/index/index.vue -->
@@ -332,6 +357,7 @@ export function createApp() {
 
 
 - 为了能够使用 `this` 获取组件自己的data数据，必须使用常规函数。
+- to access local state with `this`, a normal function must be used
 
 ```html
 <!-- 页面路径：pages/index/index.vue -->
@@ -363,8 +389,10 @@ export function createApp() {
 
 
 - 使用对象展开运算符
+- Object Spread Operator
 
-`mapState` 函数返回的是一个对象。使用对象展开运算符将多个对象合并为一个，以使我们可以将最终对象传给 `computed` 属性。极大地简化写法：
+`mapState` 函数返回的是一个对象。我们如何将它与局部计算属性混合使用呢？通常，我们需要使用一个工具函数将多个对象合并为一个，以使我们可以将最终对象传给 `computed` 属性。但是自从有了[对象展开运算符](https://github.com/tc39/proposal-object-rest-spread) (opens new window)，我们可以极大地简化写法：
+Note that mapState returns an object. How do we use it in combination with other local computed properties? Normally, we'd have to use a utility to merge multiple objects into one so that we can pass the final object to computed. However with the [Object Spread Operator](https://github.com/tc39/proposal-object-rest-spread) (opens new window), we can greatly simplify the syntax:
 
 ```html
 <!-- 页面路径：pages/index/index.vue -->
@@ -382,6 +410,7 @@ export function createApp() {
 		},
 		computed: {
 			//使用对象展开运算符将此对象混入到外部对象中
+			// mix this into the outer object with the object spread operator
 			...mapState({
 				username: state => state.username,
 				age: state => state.age,
@@ -475,7 +504,8 @@ export default store
 **获取getters**
 
 
-1.通过属性访问，`Getter` 会暴露为 `store.getters` 对象，你可以以属性的形式访问这些值。
+1. 通过属性访问，`Getter` 会暴露为 `store.getters` 对象，你可以以属性的形式访问这些值。
+1. Property-Style Access,The getters will be exposed on the `store.getters` object, and you access values as properties:
 
 
 ```html
@@ -502,10 +532,11 @@ export default store
 ```
 
 注意，`getter` 在通过属性访问时是作为 `Vue` 的响应式系统的一部分缓存其中的。
+Note that getters accessed as properties are cached as part of Vue's reactivity system.
 
 
 
-2.通过 `this.$store` 访问。
+2. 通过 `this.$store` 访问。
 
 ```html
 <!-- 页面路径：pages/index/index.vue -->
@@ -530,11 +561,14 @@ export default store
 ```
 
 
-3.通过方法访问。
+3. 通过方法访问。
+3. Method-Style Access
 
 你也可以通过让 `getter` 返回一个函数，来实现给 `getter` 传参。在你对 `store` 里的数组进行查询时非常有用。
+You can also pass arguments to getters by returning a function. This is particularly useful when you want to query an array in the store:
 
 注意，`getter` 在通过方法访问时，每次都会去进行调用，而不会缓存结果。
+Note that getters accessed via methods will run each time you call them, and the result is not cached.
 
 ```html
 <!-- 页面路径：pages/index/index.vue -->
@@ -561,9 +595,10 @@ export default store
 #### mapGetters
 
 
-4.通过 `mapGetters` 辅助函数访问。
+4. 通过 `mapGetters` 辅助函数访问。
 
 `mapGetters` 辅助函数仅仅是将 `store` 中的 `getter` 映射到局部计算属性：
+The mapGetters helper simply maps store getters to local computed properties:
 
 
 ```html
@@ -578,6 +613,7 @@ export default store
 	export default {
 		computed: {
 			// 使用对象展开运算符将 getter 混入 computed 对象中
+			// mix the getters into computed with object spread operator
 			...mapGetters([
 				'doneTodos',
 				'doneTodosCount',
@@ -590,6 +626,7 @@ export default store
 
 
 如果你想将一个 `getter` 属性另取一个名字，使用对象形式：
+If you want to map a getter to a different name, use an object:
 
 ```html
 <!-- 页面路径：pages/index/index.vue -->
@@ -618,11 +655,13 @@ export default store
 
 
 **Vuex中store数据改变的唯一方法就是mutation**
+**The only way to actually change state in a Vuex store is by committing a mutation.**
 
 
 通俗的理解，`mutations` 里面装着改变数据的方法集合，处理数据逻辑的方法全部放在 `mutations` 里，使数据和视图分离。
 
 Vuex 中的 `mutation` 非常类似于事件：每个 `mutation` 都有一个字符串的 事件类型 (type) 和 一个 回调函数 (handler)。这个回调函数就是我们实际进行状态更改的地方，并且它会接受 `state` 作为第一个参数：
+Vuex mutations are very similar to events: each mutation has a string type and a handler. The handler function is where we perform actual state modifications, and it will receive the state as the first argument:
 
 
 ```js
@@ -635,6 +674,7 @@ const store = createStore({
 	mutations: {
 		add(state) {
 			// 变更状态
+			// mutate state
 			state.count += 2
 		}
 	}
@@ -644,6 +684,7 @@ export default store
 
 
 你不能直接调用一个 mutation handler。这个选项更像是事件注册：“当触发一个类型为 add 的 `mutation` 时，调用此函数”，要唤醒一个 mutation handler，你需要以相应的 type 调用 `store.commit` 方法。
+You cannot directly call a mutation handler. Think of it more like event registration: "When a mutation with type increment is triggered, call this handler." To invoke a mutation handler, you need to call store.commit with its type:
 
 
 **注意**：`store.commit` 调用 `mutation`（需要在根节点注入 store）。
@@ -678,6 +719,7 @@ export default {
 **传入参数**
 
 你可以向 `store.commit` 传入额外的参数，即 `mutation` 的 载荷（payload）：
+You can pass an additional argument to store.commit, which is called the payload for the mutation:
 
 还是以累加器的例子来实现 `mutation` 函数的传参，来动态定义累加的数量。
 
@@ -775,9 +817,11 @@ export default store
 **提交方式**
 
 
-1.对象风格的提交方式
+1. 对象风格的提交方式
+1. Object-Style Commit
 
-我们修改组件中 `store.commit` 提交方式：
+提交 `mutation` 的另一种方式是直接使用包含 `type` 属性的对象：
+An alternative way to commit a mutation is by directly using an object that has a type property:
 
 ```html
 <!-- 页面路径：pages/index/index.vue -->
@@ -808,7 +852,8 @@ export default store
 ```
 
 
-当使用对象风格的提交方式，整个对象都作为载荷传给 mutation 函数，因此 handler 保持不变：
+当使用对象风格的提交方式，整个对象都作为载荷传给 `mutation` 函数，因此 `handler` 保持不变：
+When using object-style commit, the entire object will be passed as the payload to mutation handlers, so the handler remains the same:
 
 ```js
 	mutations: {
@@ -871,18 +916,24 @@ export default store
 
 
 
-**遵守规则**
+**Mutation 需遵守 Vue 的响应规则**
+**Mutations Follow Vue's Reactivity Rules**
 
 
 既然 `Vuex` 的 `store` 中的状态是响应式的，那么当我们变更状态时，监视状态的 `Vue` 组件也会自动更新。这也意味着 `Vuex` 中的 `mutation` 也需要与使用 `Vue` 一样遵守一些注意事项：
+Since a Vuex store's state is made reactive by Vue, when we mutate the state, Vue components observing the state will update automatically. This also means Vuex mutations are subject to the same reactivity caveats when working with plain Vue:
 
 - 最好提前在你的 `store` 中初始化好所有所需属性。
+- Prefer initializing your store's initial state with all desired fields upfront.
 
 - 当需要在对象上添加新属性时，你应该
+- When adding new properties to an Object, you should either:
 
 	- 使用 `Vue.set(obj, 'newProp', 123)`, 或者
+	- Use Vue.set(obj, 'newProp', 123), or
 
 	- 以新对象替换老对象。例如，利用对象展开运算符我们可以这样写：
+	- Replace that Object with a fresh one. For example, using the object spread syntax (opens new window)we can write it like this:
 
 ```js
 	state.obj = { ...state.obj, newProp: 123 }
@@ -891,8 +942,10 @@ export default store
 
 
 **Mutation 必须是同步函数**
+**Mutations Must Be Synchronous**
 
 一条重要的原则就是要记住** mutation 必须是同步函数**
+One important rule to remember is that **mutation handler functions must be synchronous**. 
 
 我们要通过提交 `mutation` 的方式来改变状态数据，是因为我们想要更明确地追踪到状态的变化。如果是类似下面这样异步的话：
 
@@ -915,12 +968,16 @@ export default store
 
 
 `action` 类似于 `mutation` ，不同在于：
+Actions are similar to mutations, the differences being that:
 
 - action 提交的是 `mutation`，通过 `mutation` 来改变 `state` ，而不是直接变更状态。
+- Instead of mutating the state, actions commit mutations.
 - action 可以包含任意异步操作。
+- Actions can contain arbitrary asynchronous operations.
 
 
 让我们来注册一个简单的 `action` ：
+Let's register a simple action:
 
 ```js
 <!-- 页面路径：store/index.js -->
@@ -945,9 +1002,11 @@ export default store
 ```
 
 `action` 函数接受一个与 `store` 实例具有相同方法和属性的 `context` 对象，因此你可以调用 `context.commit` 提交一个 `mutation`，或者通过 `context.state` 和 `context.getters` 来获取 `state` 和 `getters`。
+Action handlers receive a context object which exposes the same set of methods/properties on the store instance, so you can call context.commit to commit a mutation, or access the state and getters via context.state and context.getters. 
 
 
 实践中，我们会经常用到 ES2015 的参数解构来简化代码（特别是我们需要调用 `commit` 很多次的时候）：
+In practice, we often use ES2015 argument destructuring (opens new window)to simplify the code a bit (especially when we need to call commit multiple times):
 
 
 ```js
@@ -963,8 +1022,10 @@ export default store
 
 
 **分发 Action**
+**Dispatching Actions**
 
-1.`actions` 通过 `store.dispatch` 方法触发。
+1. `actions` 通过 `store.dispatch` 方法触发。
+1. Actions are triggered with the store.dispatch method:
 
 ```html
 <!-- 页面路径：pages/index/index.vue -->
@@ -995,6 +1056,7 @@ export default store
 
 
 - `actions` 支持以载荷形式分发:
+- Actions support dispatch with a payload:
 
 
 ```js
@@ -1038,6 +1100,7 @@ export default store
 		methods: {
 			add () {
 				// 以载荷形式分发
+				//dispatch with a payload
 				store.dispatch('addCountAction', {amount: 10})
 			}
 		}
@@ -1047,11 +1110,13 @@ export default store
 
 
 - `actions` 支持以对象形式分发:
+- Actions support dispatch with an object:
 
 ```js
 	methods: {
 		add () {
 			// 以对象形式分发
+			// dispatch with an object
 			store.dispatch({
 				type: 'addCountAction',
 				amount: 5
@@ -1065,6 +1130,7 @@ export default store
 `action` 可以执行任意的同步和异步操作
 
 我们可以在 `action` 内部执行异步操作：
+We can perform asynchronous operations inside an action:
 
 
 ```js
@@ -1094,6 +1160,7 @@ export default store
 
 
 来看一个更加实际的购物车示例，涉及到**调用异步 API** 和**分发多重 mutation**：
+A more practical example of real-world actions would be an action to checkout a shopping cart, which involves **calling an async API** and **committing multiple mutations**:
 
 
 ```js
@@ -1116,16 +1183,20 @@ export default store
 ```
 
 注意我们正在进行一系列的异步操作，并且通过提交 `mutation` 来记录 `action` 产生的状态变更。
+Note we are performing a flow of asynchronous operations, and recording the side effects (state mutations) of the action by committing them.
 
 
 #### mapActions 
 
-2.通过 `mapActions` 辅助函数分发。
+2. 通过 `mapActions` 辅助函数分发。
 
 创建组件方法分发 `action`。
+Dispatching Actions in Components
 
 - 你在组件中使用 `this.$store.dispatch('xxx')` 分发 `action`
+- You can dispatch actions in components with this.$store.dispatch('xxx')
 - 或者使用 `mapActions` 辅助函数将组件的 `methods` 映射为 `store.dispatch` 调用（需要先在根节点注入 `store` ）
+- or use the mapActions helper which maps component methods to store.dispatch calls (requires root store injection)
 
 
 ```html
@@ -1182,11 +1253,14 @@ export default store
 
 
 **组合 Action**
+**Composing Actions**
 
 
 `action` 通常是异步的，那么如何知道 `action` 什么时候结束呢？更重要的是，我们如何才能组合多个 `action`，以处理更加复杂的异步流程？
+Actions are often asynchronous, so how do we know when an action is done? And more importantly, how can we compose multiple actions together to handle more complex async flows?
 
 首先，你需要明白 `store.dispatch` 可以处理被触发的 `action` 的处理函数返回的 `Promise`，并且 `store.dispatch` 仍旧返回 `Promise` ：
+The first thing to know is that store.dispatch can handle Promise returned by the triggered action handler and it also returns Promise:
 
 
 ```js
@@ -1202,7 +1276,8 @@ export default store
 	}
 ```
 
-现在你可以在组件中使用：
+现在你可以：
+Now you can do:
 
 ```js
 	store.dispatch('actionA').then(() => {
@@ -1212,6 +1287,7 @@ export default store
 
 
 在另外一个 `action` 中也可以：
+And also in another action:
 
 
 ```js
@@ -1227,6 +1303,7 @@ export default store
 
 
 最后，如果我们利用 `async / await`，我们可以如下组合 `action` ：
+Finally, if we make use of async / await (opens new window), we can compose our actions like this:
 
 
 ```js
@@ -1244,16 +1321,19 @@ export default store
 
 
 > 一个 `store.dispatch` 在不同模块中可以触发多个 `action` 函数。在这种情况下，只有当所有触发函数完成后，返回的 `Promise` 才会执行。
+> > It's possible for a `store.dispatch` to trigger multiple action handlers in different modules. In such a case the returned value will be a Promise that resolves when all triggered handlers have been resolved.
 
 
 
 ### Module
 
 由于使用单一状态树，应用的所有状态会集中到一个比较大的对象。当应用变得非常复杂时，`store` 对象就有可能变得相当臃肿。
+Due to using a single state tree, all states of our application are contained inside one big object. However, as our application grows in scale, the store can get really bloated.
 
 为了解决以上问题，`Vuex` 允许我们将 `store` 分割成模块（module）。每个模块拥有自己的 `state`、`mutation`、`action`、`getter`、甚至是嵌套子模块——从上至下进行同样方式的分割：
+To help with that, Vuex allows us to divide our store into modules. Each module can contain its own state, mutations, actions, getters, and even nested modules - it's fractal all the way down:
 
-1.在 `store` 文件夹下新建 `modules` 文件夹，并在下面新建 `moduleA.js` 和 `moduleB.js` 文件用来存放 `vuex` 的 `modules` 模块。
+1. 在 `store` 文件夹下新建 `modules` 文件夹，并在下面新建 `moduleA.js` 和 `moduleB.js` 文件用来存放 `vuex` 的 `modules` 模块。
 
 
 ```html
@@ -1277,7 +1357,7 @@ export default store
 ```
 
 
-2.在 `main.js` 文件中引入 `store`。
+2. 在 `main.js` 文件中引入 `store`。
 
 ```js
 <!-- 页面路径：main.js -->
@@ -1293,7 +1373,7 @@ export default store
 ```
 
 
-3.在项目根目录下，新建 `store` 文件夹，并在下面新建 `index.js` 文件，作为模块入口，引入各子模块。
+3. 在项目根目录下，新建 `store` 文件夹，并在下面新建 `index.js` 文件，作为模块入口，引入各子模块。
 
 ```js
 <!-- 页面路径：store/index.js -->
@@ -1308,7 +1388,7 @@ export default createStore({
 })
 ```
 
-4.子模块 `moduleA` 页面内容。
+4. 子模块 `moduleA` 页面内容。
 
 ```js
 <!-- 子模块moduleA路径：store/modules/moduleA.js -->
@@ -1328,7 +1408,7 @@ export default {
 }
 ```
 
-5.子模块 `moduleB` 页面内容。
+5. 子模块 `moduleB` 页面内容。
 
 ```js
 <!-- 子模块moduleB路径：store/modules/moduleB.js -->
@@ -1362,7 +1442,7 @@ export default {
 ```
 
 
-6.在页面中引用组件 myButton ，并通过 `mapState` 读取 `state` 中的初始数据。
+6. 在页面中引用组件 myButton ，并通过 `mapState` 读取 `state` 中的初始数据。
 
 
 ```html
@@ -1391,7 +1471,7 @@ export default {
 </script>
 ```
 
-7.在组件 `myButton`中，通过 `mutations` 操作刷新当前时间。
+7. 在组件 `myButton`中，通过 `mutations` 操作刷新当前时间。
 
 ```html
 <!-- 组件路径：components/myButton/myButton.vue -->

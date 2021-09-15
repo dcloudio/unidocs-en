@@ -378,11 +378,11 @@ Since onError is not a complete life cycle, only a method of catching errors is 
 ### 4. 组件属性设置不生效解决办法@componentsolutions
 ### 4. Component property settings do not take effect
 
-当重复设置某些属性为相同的值时，不会同步到view层。 例如：每次将scroll-view组件的scroll-top属性值设置为0，只有第一次能顺利返回顶部。 这和props的单向数据流特性有关，组件内部scroll-top的实际值改动后，其绑定的属性并不会一同变化。
-When some properties are repeatedly set to the same value, they are not synchronized to the View layer. For example, every time you set the scroll-top property of a scroll-view component to 0, it only gets back to the top the first time. This is due to the props unidirectional data flow feature. When the actual value of scroll top inside the component changes, the binding properties do not change with it.
+当重复设置某些属性为相同的值时，不会同步到`view`层。 例如：每次将`scroll-view`组件的`scroll-top`属性值设置为0，只有第一次能顺利返回顶部。 这和`props`的单向数据流特性有关，组件内部`scroll-top`的实际值改动后，其绑定的属性并不会一同变化。
+When some properties are repeatedly set to the same value, they are not synchronized to the View layer. For example, every time you set the `scroll-top` property of a `scroll-view` component to 0, it only gets back to the top the first time. This is due to the props unidirectional data flow feature. When the actual value of scroll top inside the component changes, the binding properties do not change with it.
 
-解决办法有两种（以scroll-view组件为例）：
-There are two solutions (take the scroll-view component as an example):
+解决办法有两种（以`scroll-view`组件为例）：
+There are two solutions (take the `scroll-view` component as an example):
 
 1. 监听scroll事件，记录组件内部变化的值，在设置新值之前先设置为记录的当前值
 1. Monitor the scroll event, record the value of the internal change of the component, and set the current value of the record before setting the new value

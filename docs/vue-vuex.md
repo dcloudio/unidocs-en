@@ -207,7 +207,7 @@ Vuex 通过 store 选项，提供了一种机制将状态从根组件“注入�
 Vuex provides a mechanism to "inject" the store into all child components from the root component with the store option (enabled by Vue.use(Vuex)):
 
 
-1.在 `uni-app` 项目根目录下，新建 `store` 目录，在此目录下新建 `index.js` 文件。在 `index.js` 文件配置如下：
+1. 在 `uni-app` 项目根目录下，新建 `store` 目录，在此目录下新建 `index.js` 文件。在 `index.js` 文件配置如下：
 
 ```js
 <!-- 页面路径：store/index.js -->
@@ -227,7 +227,7 @@ export default store
 ```
 
 
-2.在 `main.js` 中导入文件。
+2. 在 `main.js` 中导入文件。
 
 ```js
 <!-- 页面路径：main.js -->
@@ -249,7 +249,7 @@ app.$mount()
 **获取state**
 
 
-1.通过属性访问，需要在根节点注入 `store` 。
+1. 通过属性访问，需要在根节点注入 `store` 。
 
 ```html
 <!-- 页面路径：pages/index/index.vue -->
@@ -273,7 +273,7 @@ app.$mount()
 </script>
 ```
 
-2.在组件中使用，通过 `this.$store` 访问到 `state` 里的数据。
+2. 在组件中使用，通过 `this.$store` 访问到 `state` 里的数据。
 
 ```html
 <!-- 页面路径：pages/index/index.vue -->
@@ -299,7 +299,7 @@ app.$mount()
 
 #### mapState
 
-3.通过 `mapState` 辅助函数获取。
+3. 通过 `mapState` 辅助函数获取。
 
 当一个组件需要获取多个状态的时候，将这些状态都声明为计算属性会有些重复和冗余。
 When a component needs to make use of multiple store state properties or getters, declaring all these computed properties can get repetitive and verbose.
@@ -515,7 +515,7 @@ export default store
 
 
 1. 通过属性访问，`Getter` 会暴露为 `store.getters` 对象，你可以以属性的形式访问这些值。
-1. Property-Style Access,The getters will be exposed on the store.getters object, and you access values as properties:
+1. Property-Style Access,The getters will be exposed on the `store.getters` object, and you access values as properties:
 
 
 ```html

@@ -10,7 +10,7 @@
 - 一个组件包括开始标签和结束标签，标签上可以写属性，并对属性赋值。内容则写在两个标签之内。
 - A component includes a start tag and an end tag. Attributes can be written on the label and assigned values to the attributes. The content is written in two labels.
 	- 根节点为 `<template>`，这个 `<template>` 下只能且必须有一个根 `<view>` 组件。这是[vue单文件组件规范](https://cn.vuejs.org/v2/guide/single-file-components.html)。
-	- Root is `<template>`, this `<template>`case can only and must have a root `<view>`component. This is the [vue single file component specification] .
+	- Root is `<template>`, this `<template>`case can only and must have a root `<view>`component. This is the [vue single file component specification](https://cn.vuejs.org/v2/guide/single-file-components.html) .
 	- 一个组件的 data 选项必须是一个函数。
 	- The data option of a component must be a function.
 
@@ -20,7 +20,7 @@
 		<view>
 			<view>{{userName}}</view>
 		</view>
-	</template>
+	</template> 
 	<script>
 		export default {
 			data() {
@@ -70,8 +70,9 @@
 ## Registered
 
 在注册一个组件的时候，我们始终需要给它一个名字。
-When registering a component, we always need to give it a name. There are two ways to define component names:
+When registering a component, we always need to give it a name. 
 定义组件名的方式有两种：
+There are two ways to define component names:
 
 - 使用 kebab-case
 
@@ -80,8 +81,7 @@ When using kebab-case (name separated by dashes) to define a component, you must
 
 - 使用 PascalCase
 
-当使用 PascalCase (首字母大写命名) 定义一个组件时，你在引用这个自定义元素时两种命名法都可以使用。
-也就是说 `<my-component-name>` 和 `<MyComponentName>` 都是可接受的。
+当使用 PascalCase (首字母大写命名) 定义一个组件时，你在引用这个自定义元素时两种命名法都可以使用。也就是说 `<my-component-name>` 和 `<MyComponentName>` 都是可接受的。
 When defining a component using PascalCase (name with initial capital letters), you can use both nomenclatures when referencing this custom element. Both `<my-component-name>`and `<MyComponentName>`are acceptable.
 
 
@@ -169,7 +169,7 @@ The following two ways to import a corner label component library[https://ext.dc
 对于 `components` 对象中的每个 property 来说，其 property 名就是自定义元素的名字，其 property 值就是这个组件的选项对象。
 For the `components`object of each property, its property name is the name of the custom elements, objects whose property value is the option of this component.
 
-在对象中放一个类似 uniBadge  的变量名其实是 uniBadge : uniBadge  的缩写，即这个变量名同时是：
+在对象中放一个类似 `uniBadge`  的变量名其实是 `uniBadge : uniBadge`  的缩写，即这个变量名同时是：
 Putting a variable name similar to uniBadge in the object is actually uniBadge: short for uniBadge, that is, the variable name is also:
 
 - 用在模板中的自定义元素的名称
@@ -193,7 +193,7 @@ Putting a variable name similar to uniBadge in the object is actually uniBadge: 
 	</template>
 	<script>
 		// 这里不用import引入，也不需要在components内注册uni-badge组件。template里就可以直接用
-		          // There is no need to import or register a uni-badge component in Components. Template can be used directly
+		// There is no need to import or register a uni-badge component in Components. Template can be used directly
 		export default {
 			data() {
 				return {
@@ -206,7 +206,7 @@ Putting a variable name similar to uniBadge in the object is actually uniBadge: 
 - **easycom是自动开启的**，不需要手动开启，有需求时可以在 `pages.json` 的 `easycom` 节点进行个性化设置，[详见](https://uniapp.dcloud.io/collocation/pages?id=easycom)。
 - **[Easycom](https://uniapp.dcloud.io/collocation/pages?id=easycom) is automatically turned on** , you do not need to manually open ,when there is a demand `pages.json`of `easycom`nodes personalize .
 
-- 不管components目录下安装了多少组件，easycom打包后会自动剔除没有使用的组件，对组件库的使用尤为友好。
+- 不管`components`目录下安装了多少组件，`easycom`打包后会自动剔除没有使用的组件，对组件库的使用尤为友好。
 - No matter how many components are installed in the components directory, easycom will automatically remove unused components after packaging, which is particularly friendly to the use of component libraries.
 
 
@@ -233,11 +233,11 @@ Component is a very important part of the technology in `vue`.Components allow U
 |type	| `String` 、 `Number` 、 `Boolean` 、 `Array` 、 `Object` 、 `Date` 、 `Function` 、 `Symbol` ，任何自定义构造函数、或上述内容组成的数组	|会检查一个 `prop` 是否是给定的类型，否则抛出警告	|
 | type      | `String`, `Number`, `Boolean`, `Array`, `Object`, `Date`, `Function`, `Symbol`Array, any custom constructor, or the above composition | A checks `prop`whether the given type, otherwise throws a warning |
 |default	|any	|为该 `prop` 指定一个默认值。如果该 `prop` 没有被传入，则换做用这个值。对象或数组的默认值必须从一个工厂函数返回。	|
-| default   | any                                                          | For `prop`a default value specified. If this `prop`is not passed, then the change to do with this value. The default value of the object or array must be returned from a factory function. |
+| default   | any | For `prop`a default value specified. If this `prop`is not passed, then the change to do with this value. The default value of the object or array must be returned from a factory function. |
 |required	|Boolean	|定义该 `prop` 是否是必填项|
-| required  | Boolean                                                      | The definition of `prop`whether it is required               |
+| required  | Boolean | The definition of `prop`whether it is required |
 |validator	|Function	|自定义验证函数会将该 `prop` 的值作为唯一的参数代入。在非生产环境下，如果该函数返回一个 `false` 的值 (也就是验证失败)，一个控制台警告将会被抛出|
-| validator | Function                                                     | The custom authentication function `prop`value as the only parameter is substituted. In a non-production environment, if the function returns a `falsy`value (that is, authentication fails), a warning will be thrown console |
+| validator | Function | The custom authentication function `prop`value as the only parameter is substituted. In a non-production environment, if the function returns a `falsy`value (that is, authentication fails), a warning will be thrown console |
 
 ##### 示例：
 ##### Example
