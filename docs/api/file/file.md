@@ -10,6 +10,7 @@ Save the file locally.
 |√|x|
 
 **注意：saveFile 会把临时文件移动，因此调用成功后传入的 tempFilePath 将不可用。**
+**Note: saveFile will move temporary files, so the tempFilePath passed in after the call is successful will not be available.**
 
 **OBJECT 参数说明：**
 **OBJECT parameter description:**
@@ -308,5 +309,8 @@ uni.downloadFile({
 **Tips**
 
 - App端，io操作还可以用更强大的plus.io API。[https://www.html5plus.org/doc/zh_cn/io.html](https://www.html5plus.org/doc/zh_cn/io.html)
+- App side, io operation can also use more powerful plus.io API. [https://www.html5plus.org/doc/zh_cn/io.html](https://www.html5plus.org/doc/zh_cn/io.html)
 - App端，打开各种格式的文件，如office、pdf等，还可以用更强大的三方插件，详见[插件市场](https://ext.dcloud.net.cn/search?q=pdf)
+- On the App side, open files in various formats, such as office, pdf, etc., and you can also use more powerful third-party plug-ins. For details, see [Plugin Market](https://ext.dcloud.net.cn/search?q=pdf )
 - 选择文件上传，uni-app有自带的api：[uni.chooseImage](https://uniapp.dcloud.io/api/media/image?id=chooseimage)和[uni.chooseVideo](https://uniapp.dcloud.io/api/media/video?id=choosevideo)。App端如需选择非媒体文件，可在插件市场搜索[文件选择](https://ext.dcloud.net.cn/search?q=文件选择)，其中Android端可以使用Native.js，无需原生插件，而iOS端需要原生插件。
+- Choose file upload, uni-app has its own api: [uni.chooseImage](https://uniapp.dcloud.io/api/media/image?id=chooseimage) and [uni.chooseVideo](https:/ /uniapp.dcloud.io/api/media/video?id=choosevideo). If you need to select non-media files on the App side, you can search for [file selection](https://ext.dcloud.net.cn/search?q=file selection) in the plug-in market. Native.js can be used on the Android side without native Plug-ins, and native plug-ins are required for iOS.

@@ -19,13 +19,14 @@ The core of Vue.js is a system that allows the use of concise template syntax to
 
 
 我们提供了免费视频教程，在看此文档同时建议结合 [vue入门视频教程](https://learning.dcloud.io/#/?vid=0) ，帮助你更加快速掌握。
-
+We provide free video tutorials. While reading this document, it is recommended to combine [Vue Getting Started Video Tutorial](https://learning.dcloud.io/#/?vid=0) to help you master it more quickly.
 
 
  **致谢**
+**Thanks**
 
 本文大部分内容来源于vue官网，但结合 `uni-app` 做了部分调整，以更有利于开发者快速上手。感谢Vue团队！
-
+Most of the content in this article comes from the official website of vue, but some adjustments have been made in conjunction with `uni-app` to make it easier for developers to get started quickly. Thanks to the Vue team!
 
 ## vue相比传统js的开发优势
 ## Vue development advantages over traditional js
@@ -38,6 +39,7 @@ Vue is a single-page application, which makes the page partially refresh, withou
 
 
 **vue的优势：**
+**Advantages of vue:**
 
 - 轻量级渐进式框架
 - Lightweight Progressive Framework
@@ -48,10 +50,11 @@ Vue is a single-page application, which makes the page partially refresh, withou
 - 组件化
 - Componentization
 - 虚拟DOM
+- Virtual DOM
 - 运行速度快，易于上手
+- Fast running speed, easy to use
 - 便于与第三方库或既有项目整合
-
-
+- Easy to integrate with third-party libraries or existing projects
 
 ### 文件类型变化
 ### File type changes
@@ -61,7 +64,7 @@ Vue is a single-page application, which makes the page partially refresh, withou
 - 现在是.vue文件，开发是vue，经过编译后，运行时已经变成了js文件。
 - Now it is a .vue file, and development is a vue. After compilation, the runtime has become a js file.
 - 现代前端开发，很少直接使用HTML，基本都是开发、编译、运行。所以 `uni-app` 有编译器、运行时的概念。
-
+- Modern front-end development rarely uses HTML directly, and basically develops, compiles, and runs. So `uni-app` has the concepts of compiler and runtime.
 
 ### 文件内代码架构的变化
 ### Changes in the code structure within the file
@@ -123,13 +126,15 @@ Vue is a single-page application, which makes the page partially refresh, withou
 **js要require进来，变成了对象**。
 **js needs to come in and become an object** . 
 在hello uni-app的 `common` 目录有一个工具类 `util.js` ，可以在hello uni-app中搜索这个例子查看。hello uni-app示例代码可从 [github](https://github.com/dcloudio/hello-uniapp) 获取。
-
+There is a tool class `util.js` in the `common` directory of hello uni-app. You can search for this example in hello uni-app. The hello uni-app sample code can be obtained from [github](https://github.com/dcloudio/hello-uniapp).
 
 ```html
 	<script>  
-		var util = require('../../../common/util.js');  //require这个js模块  
+		var util = require('../../../common/util.js');  
+		//require这个js模块  
 		//Require this js module  
-		var formatedPlayTime = util.formatTime(playTime); //调用js模块的方法  
+		var formatedPlayTime = util.formatTime(playTime); 
+		//调用js模块的方法  
 		//Call the method of the JS module 
 	</script>
 ```
@@ -139,7 +144,8 @@ In this `util.js`, the prior should `function`method for encapsulating as an obj
 
 ```js
 	function formatTime(time) {  
-		return time;//这里没写逻辑  
+		return time;
+		//这里没写逻辑  
 		//There's no logic here 
 	}  
 	module.exports = {  
@@ -149,16 +155,19 @@ In this `util.js`, the prior should `function`method for encapsulating as an obj
 
 
 当然还有一些高级的用法
+Of course there are some advanced usages
 
 ```js
 	<!-- 直接使用js模块的属性。在hello uni-app有示例   -->
+	<!-- Use the attributes of the js module directly. There are examples in hello uni-app -->
 	var dateUtils = require('../../../common/util.js').dateUtils; 
 	<!-- 将js导入并重命名为echarts，然后使用echarts.来继续执行方法。在hello uni-app有示例 -->
+	<!-- Import and rename js to echarts, and then use echarts. to continue executing the method. There are examples in hello uni-app -->
 	import * as echarts from '/components/echarts/echarts.simple.min.js'; 
 ```
 
 **css外部文件导入**。全局样式，在根目录下的 `app.vue` 里写入，每个页面都会加载 `app.vue` 里的样式。
-
+**Import css external files**. Global styles are written in `app.vue` in the root directory, and every page will load the styles in `app.vue`.
 
 ```html
 	<style>  
@@ -187,7 +196,7 @@ So what is the difference between a label and a component, isn't it all surround
 - But the components can be freely expanded. Similarly, you can encapsulate a piece of js into a function or module, and you can also encapsulate a ui control into a component.
 
 `uni-app` 提供了一批[内置组件](https://uniapp.dcloud.io/component/README)。
-
+`uni-app` provides a batch of [built-in components](https://uniapp.dcloud.io/component/README).
 
 ### js的变化
 ### js changes
@@ -221,14 +230,17 @@ So what is the difference between a label and a component, isn't it all surround
 	- 前端改用 [MVVM](https://baike.baidu.com/item/MVVM/96310?fr=aladdin) (Model-View-ViewModel的简写)模式，简单来说，Model:代表数据模型，View:只专注视图UI处理，ViewModel:只处理业务和数据。它的核心是 MVVM 中的 VM，也就是 ViewModel。 ViewModel负责连接 View 和 Model，保证视图和数据的一致性，这种轻量级的架构让前端开发更加高效、便捷，大幅减少代码行数，同时差量渲染性能更好。
 	- The front end uses the [MVVM](short for Model-View-ViewModel) mode. Simply put, Model: represents the data model, View: only focuses on view UI processing, and ViewModel: only processes business and data. Its core is the VM in MVVM, which is the ViewModel. ViewModel is responsible for connecting View and Model to ensure the consistency of views and data. This lightweight architecture makes front-end development more efficient and convenient, greatly reducing the number of lines of code, and better differential rendering performance.
 	- `uni-app` 使用vue的数据绑定方式解决js和 DOM 界面交互的问题。
-
+	-`uni-app` uses vue's data binding method to solve the problem of interaction between js and DOM interface.
 
 ```html
 	<template>  
 		<view>  
-			<text>{{textvalue}}</text><!-- 这里演示了组件值的绑定 -->  
+			<text>{{textvalue}}</text>
+			<!-- 这里演示了组件值的绑定 -->  
 			<!--  This demonstrates the binding of component values- -->
-			<button :type="buttontype" @click="changetextvalue()">修改为789</button><!-- 这里演示了属性和事件的绑定 -->  
+			<button :type="buttontype" @click="changetextvalue()">修改为789</button>
+			<button :type="buttontype" @click="changetextvalue()">modified to 789</button><!-- Here is a demonstration of the binding of attributes and events -->
+			<!-- 这里演示了属性和事件的绑定 -->  
 			<!-- This demonstrates the binding of properties and events -->  
 		</view>  
 	</template>  
@@ -241,13 +253,15 @@ So what is the difference between a label and a component, isn't it all surround
 				};  
 			},  
 			onLoad() {  
-				this.textvalue="456"//这里修改textvalue的值，其实123都来不及显示就变成了456  
+				this.textvalue="456"
+				//这里修改textvalue的值，其实123都来不及显示就变成了456  
 				// change the value of textValue, 123 becomes 456 and 123 is not displayed
 			},  
 			methods: {  
 				changetextvalue() {  
-					this.textvalue="789"//这里修改textvalue的值，页面自动刷新为789 
-					 //you change the value of textValue, and the page automatically refreshes to 789
+					this.textvalue="789"
+					//这里修改textvalue的值，页面自动刷新为789 
+					//you change the value of textValue, and the page automatically refreshes to 789
 				}  
 			}  
 		}  
@@ -257,17 +271,22 @@ So what is the difference between a label and a component, isn't it all surround
 
 
 ## 在 uni-app 中使用差异
+## Use differences in uni-app
 
 `uni-app` 在发布到H5时支持所有vue的语法；发布到App时，由于平台限制，无法实现全部vue语法，但 `uni-app` 仍是对vue语法支持度最高的跨端框架。
+`uni-app` supports all vue syntax when it is released to H5; when it is released to App, due to platform limitations, it is impossible to implement all vue syntax, but `uni-app` is still the cross-end framework with the highest support for vue syntax.
 
 相比Web平台， Vue.js 在 `uni-app` 中使用差异主要集中在两个方面：
+Compared with the Web platform, the differences in the use of Vue.js in `uni-app` are mainly concentrated in two aspects:
 
 - 新增：`uni-app` 除了支持Vue实例的生命周期，还支持[应用生命周期](/collocation/frame/lifecycle?id=应用生命周期)以及[页面生命周期](/collocation/frame/lifecycle?id=页面生命周期)。
+- New addition: `uni-app` not only supports the lifecycle of Vue instances, but also supports [application lifecycle](/collocation/frame/lifecycle?id=application lifecycle) and [page lifecycle](/collocation/frame/ lifecycle?id=page lifecycle).
 - 受限：相比web平台，在App端部分功能受限，[具体见](/vue-api)。
+- Restricted: Compared with the web platform, some functions on the App side are restricted, [see details](/vue-api).
 - uni-app 完整支持 Vue 模板语法。
+- uni-app fully supports Vue template syntax.
 - App端可以使用更多的vue特性，[详见](https://ask.dcloud.net.cn/article/36599)。
-
-
+- App can use more vue features, [see details](https://ask.dcloud.net.cn/article/36599).
 
 
 
@@ -307,9 +326,10 @@ The content in {{msg}} will be replaced with the value of msg on the correspondi
 
 
 #### 使用 JavaScript 表达式
-
+#### Using JavaScript expressions
 
 迄今为止，在我们的模板中，我们一直都只绑定简单的 `property` 键值。但实际上，对于所有的数据绑定，Vue.js 都提供了完全的 `JavaScript` 表达式支持。
+So far, in our templates, we have only bound simple `property` keys. But in fact, for all data binding, Vue.js provides full `JavaScript` expression support.
 
 ```html
 <template>
@@ -317,7 +337,8 @@ The content in {{msg}} will be replaced with the value of msg on the correspondi
       <view>{{ number + 1 }}</view>
       <view>{{ ok ? 'YES' : 'NO' }}</view>
       <!-- 把一个字符串分割成字符串数组,颠倒其元素的顺序,把数组中的所有元素放入一个字符串 -->
-      <view>{{ message.split('').reverse().join('') }}</view>
+	  <!-- Split a string into a string array, reverse the order of its elements, and put all the elements in the array into a string -->
+	  <view>{{ message.split('').reverse().join('') }}</view>
     </view>
 </template>
 <script>
@@ -340,6 +361,7 @@ The content in {{msg}} will be replaced with the value of msg on the correspondi
   <view>
       <view v-for="(item,index) in 10">
       <!-- 通过%运算符求余数，实现隔行换色的效果 -->
+	  <!-- Find the remainder through the% operator to achieve the effect of interlaced color change -->
       <view :class="'list-' + index%2">{{index%2}}</view>
     </view>
   </view>
@@ -363,14 +385,17 @@ The content in {{msg}} will be replaced with the value of msg on the correspondi
 
 
 这些表达式会在所属 Vue 实例的数据作用域下作为 `JavaScript` 被解析。有个限制就是，每个绑定都只能包含单个表达式，所以下面的例子都不会生效。
+These expressions will be parsed as JavaScript in the data scope of the Vue instance to which they belong. One limitation is that each binding can only contain a single expression, so the following examples will not work.
 
 
 ```html
 <template>
   <view>
     <!-- 这是语句，不是表达式 -->
+	<!-- This is a statement, not an expression -->
     <view>{{ var a = 1 }}</view>
     <!-- 流控制也不会生效，请使用三元表达式 -->
+	<!-- Flow control will not take effect, please use a ternary expression -->
     <view>{{ if (ok) { return message } }}</view>
   </view>
 </template>
@@ -388,6 +413,7 @@ The content in {{msg}} will be replaced with the value of msg on the correspondi
 
 
 > 模板表达式都被放在沙盒中，只能访问**全局变量的一个白名单**：
+> Template expressions are all placed in the sandbox, and can only access a whitelist of **global variables**:
 > - `Infinity`
 > - `undefined`
 > - `NaN`
@@ -413,14 +439,15 @@ The content in {{msg}} will be replaced with the value of msg on the correspondi
 > - `Intl`
 > 
 > 你不应该在模板表达式中试图访问用户定义的全局变量。
-
+> You should not try to access user-defined global variables in template expressions.
 
 
 
 ### 指令
-
+### Instructions
 
 [观看本节视频讲解](https://learning.dcloud.io/#/?vid=6)
+[Watch this video explanation](https://learning.dcloud.io/#/?vid=6)
 
 指令是带有 v- 前缀的特殊属性。
 Instructions are special attributes prefixed with v-.
@@ -516,6 +543,7 @@ Update elements `innerHTML`.
 
 
 跨端的富文本处理方案详见：[https://ask.dcloud.net.cn/article/35772](https://ask.dcloud.net.cn/article/35772)
+For cross-terminal rich text processing solutions, please refer to: [https://ask.dcloud.net.cn/article/35772](https://ask.dcloud.net.cn/article/35772)
 
 ```html
 	<template>
@@ -578,9 +606,10 @@ data must be declared as a function that returns an initial data object (note th
 
 
 [观看本节视频讲解](https://learning.dcloud.io/#/?vid=7)
+[Watch this video explanation](https://learning.dcloud.io/#/?vid=7)
 
 为节约性能，我们将 `Class` 与 `Style` 的表达式通过 `compiler` 硬编码到 `uni-app` 中，支持语法和转换效果见下：
-
+To save performance, we hard-code the expressions of `Class` and `Style` into `uni-app` through `compiler`. The supported syntax and conversion effects are as follows:
 
 ### 对象语法
 ### Object syntax
@@ -770,14 +799,15 @@ Non-H5 end (non-custom pattern compiler component) **temporarily supported** on 
 
 
 [观看本节视频讲解](https://learning.dcloud.io/#/?vid=8)
-
+[Watch this video explanation](https://learning.dcloud.io/#/?vid=8)
 
 ### v-if和v-else
+### v-if and v-else
 
 `v-if` 指令用于条件性地渲染一块内容。这块内容只会在指令的表达式返回 `truthy` 值的时候被渲染。
-使用 `v-else` 指令来表示 v-if 的“else 块”。
 `v-if`Instructions are used to conditionally render a piece of content. This content will only return instruction in an expression `truthy`is rendered value of the time.
- Use `v-else`instructions represent the v-if "else block."
+使用 `v-else` 指令来表示 v-if 的“else 块”。
+Use `v-else`instructions represent the v-if "else block."
 
 > 在 JavaScript 中，truthy（真值）指的是在布尔值上下文中，转换后的值为真的值。所有值都是真值，除非它们被定义为 假值（即除 false、0、""、null、undefined 和 NaN 以外皆为真值）。
 > In JavaScript, truthy means that the converted value is true in the context of Boolean values. All values are true values unless they are defined as false values (that is, all true values except false, 0, "", null, undefined, and NaN).
@@ -786,7 +816,9 @@ Non-H5 end (non-custom pattern compiler component) **temporarily supported** on 
 	<template>
 		<view>
 			<view v-if="seen">现在你看到我了</view>
+			<view v-if="seen">Now you see me</view>
 			<view v-else>你看不到我了</view>
+			<view v-else>You can't see me anymore</view>
 		</view>
 	</template>
 	<script>
@@ -847,7 +879,9 @@ Because `v-if`a command, so it must be added to an element. But what if you want
 ```html
 <template v-if="seen">
 	<view>标题</view>
+	<view>Title</view>
 	<view>内容：现在你看到我了</view>
+	<view>Content: Now you see me</view>
 </template>
 ```
 
@@ -904,7 +938,7 @@ In contrast, `v-show`it is much simpler, no matter what the initial conditions a
 ## List rendering
 
 [观看本节视频讲解](https://learning.dcloud.io/#/?vid=9)
-
+[Watch this video explanation](https://learning.dcloud.io/#/?vid=9)
 
 ### 在 v-for 里使用数组
 ### Use arrays in v-for
@@ -913,6 +947,7 @@ v-for 指令可以实现基于一个数组来渲染一个列表。
 The v-for instruction can render a list based on an array.
 
 - `v-for` 指令需要使用 `item in items` 形式的特殊语法，其中 `items` 是源数据数组，而 `item` 则是被迭代的数组元素的别名。
+-The `v-for` instruction needs to use a special syntax of the form `item in items`, where `items` is the source data array, and `item` is the alias of the array element to be iterated.
 	- 第一个参数 `item` 则是被迭代的数组元素的别名。
 	- The first parameter `item`is the alias iterated array elements.
 	- 第二个参数，即当前项的索引 `index` ，是可选的。
@@ -1100,6 +1135,7 @@ On the custom component, you can use it like any ordinary element `v-for`.
 
 
 [观看本节视频讲解](https://learning.dcloud.io/#/?vid=10)
+[Watch this video explanation](https://learning.dcloud.io/#/?vid=10)
 
 ### 监听事件
 ### Listen for events
@@ -1169,9 +1205,10 @@ Example:
 
 
 ### 内联处理器中的方法
+### Methods in the inline processor
 
 除了直接绑定到一个方法，也可以在内联 `JavaScript` 语句中调用方法：
-
+In addition to directly binding to a method, you can also call a method in an inline `JavaScript` statement:
 
 ```html
 	<template>
@@ -1194,6 +1231,7 @@ Example:
 ```
 
 有时也需要在内联语句处理器中访问原始的 DOM 事件。可以用特殊变量 `$event` 把它传入方法：
+Sometimes it is also necessary to access the original DOM event in the inline statement processor. It can be passed to the method with the special variable `$event`:
 
 ```html
 	<template>
@@ -1208,8 +1246,10 @@ Example:
 			methods: {
 				warn(message, event) {
 					// 现在我们可以访问原生事件对象
+					// Now we can access the native event object
 					if (event) {
 						//可访问 event.target等原生事件对象
+						//Access to native event objects such as event.target
 					}
 					uni.showToast({
 						title: message
@@ -1219,9 +1259,6 @@ Example:
 		}
 	</script>
 ```
-
-
-
 
 
 ### 事件修饰符
@@ -1271,14 +1308,16 @@ v-on provides event modifiers:
 ```
 
 - 按键修饰符：`uni-app` 运行在手机端，没有键盘事件，所以不支持按键修饰符。
-
+- Key modifiers: `uni-app` runs on the mobile phone and has no keyboard events, so key modifiers are not supported.
 
 
 
 ### 事件映射表
+### Event mapping table
 
 ```js
 // 事件映射表，左侧为 WEB 事件，右侧为 ``uni-app`` 对应事件
+// Event mapping table, the left side is WEB events, the right side is ``uni-app`` corresponding events
 	{
 		click: 'tap',
 		touchstart: 'touchstart',
@@ -1286,7 +1325,8 @@ v-on provides event modifiers:
 		touchcancel: 'touchcancel',
 		touchend: 'touchend',
 		tap: 'tap',
-		longtap: 'longtap', //推荐使用longpress代替
+		longtap: 'longtap', 
+		//推荐使用longpress代替
 		//LongPress is recommended instead
 		input: 'input',
 		change: 'change',
@@ -1309,7 +1349,7 @@ v-on provides event modifiers:
 ## Form control binding
 
 [观看本节视频讲解](https://learning.dcloud.io/#/?vid=11)
-
+[Watch this video explanation](https://learning.dcloud.io/#/?vid=11)
 
 ### v-model
 
@@ -1339,12 +1379,16 @@ You can form a v-model command `input`, `textarea`and `select`create a two-way d
 ```
 
 ### uni-app表单组件
+### uni-app form component
 
 建议开发过程中直接使用 `uni-app`：[表单组件](https://uniapp.dcloud.io/component/button)。
+It is recommended to use `uni-app` directly in the development process: [Form component](https://uniapp.dcloud.io/component/button).
 
 ##### 用法示例：
+##### Usage example:
 
 - H5 的 `select` 标签用 `picker` 组件进行代替
+- The `select` tag of H5 is replaced by the `picker` component
 
 ```html
 	<template>
@@ -1352,6 +1396,9 @@ You can form a v-model command `input`, `textarea`and `select`create a two-way d
 			<picker @change="bindPickerChange" :value="index" :range="array">
 				<view class="picker">
 					当前选择：{{array[index]}}
+				</view>
+				<view class="picker">
+				Current selection: {{array[index]}}
 				</view>
 			</picker>
 		</view>
@@ -1374,6 +1421,7 @@ You can form a v-model command `input`, `textarea`and `select`create a two-way d
 ```
 
 - 表单元素 `radio` 用 `radio-group` 组件进行代替
+- Form element `radio` is replaced with `radio-group` component
 
 ```html
 	<template>
@@ -1420,6 +1468,7 @@ You can form a v-model command `input`, `textarea`and `select`create a two-way d
 			methods: {
 				radioChange(e) {
 					console.log('radio发生change事件，携带value值为：', e.target.value)
+					console.log('Radio has a change event, carrying value value:', e.target.value)
 				}
 			}
 		}
@@ -1487,6 +1536,7 @@ Therefore, for any complex logic, you should use **calculated attributes** .
 ```
 
 结果：
+result:
 
 ```html
 	Original message: "Hello"
@@ -1662,7 +1712,7 @@ The above code is imperative and repetitive. Compare it with the version of the 
 ### Listener watch
 
 - 类型：{ [key: string]: string | Function | Object | Array }
-
+- Type: {[key: string]: string | Function | Object | Array}
 
 
 - 一个对象，键是需要观察的表达式，值是对应回调函数。值也可以是方法名，或者包含选项的对象。Vue 实例将会在实例化时调用 `$watch()` ，遍历 `watch` 对象的每一个 `property` 。
@@ -1691,6 +1741,7 @@ The above code is imperative and repetitive. Compare it with the version of the 
 			/* Watch is used to respond to changes in data */
 			word(newVal, oldVal) {
 				console.log('最新值是：'+newVal,"原来的值是："+ oldVal);
+				console.log('The latest value is:'+newVal,"The original value is:"+oldVal);
 			}
 		},
 	}

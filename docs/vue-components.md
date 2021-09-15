@@ -1,4 +1,5 @@
 [观看本节视频讲解](https://learning.dcloud.io/#/?vid=12)
+[Watch this video explanation](https://learning.dcloud.io/#/?vid=12)
 
 ## 概念
 ## Concept
@@ -15,6 +16,7 @@
 	- The data option of a component must be a function.
 
 下面是一个基本组件示例，在根`<view>`组件下再次引入一个`<view>`组件，并给组件的text区绑定一个data。
+The following is an example of a basic component. Introduce a `<view>` component again under the root `<view>` component, and bind a data to the text area of the component.
 ```html
 	<template>
 		<view>
@@ -33,23 +35,28 @@
 ```
 
 基础组件是内置在uni-app框架中的，包括view、text、input、button、video等几十个基础组件，列表详见：[uni-app基础组件](https://uniapp.dcloud.net.cn/component/README?id=%e5%9f%ba%e7%a1%80%e7%bb%84%e4%bb%b6)
+The basic components are built into the uni-app framework, including dozens of basic components such as view, text, input, button, video, etc. For a list, see: [uni-app basic components](https://uniapp.dcloud.net .cn/component/README?id=%e5%9f%ba%e7%a1%80%e7%bb%84%e4%bb%b6)
 
 但仅有基础组件是不够用的，实际开发中会有很多封装的组件。
+But only basic components are not enough, there will be many packaged components in actual development.
 
 比如我们需要一个五角星点击评分的组件，在DCloud的插件市场里可以获取到：[https://ext.dcloud.net.cn/plugin?id=33](https://ext.dcloud.net.cn/plugin?id=33)
+For example, we need a five-pointed star click and score component, which can be obtained in the DCloud plug-in market: [https://ext.dcloud.net.cn/plugin?id=33](https://ext.dcloud.net .cn/plugin?id=33)
 
 把这个uni-rate组件导入到你的uni-app项目下，在需要的vue页面里引用它，就可以在指定的地方显示出这个五角星组件。
+Import this uni-rate component into your uni-app project, reference it in the required vue page, and you can display the five-pointed star component in the specified place.
 
 ```html
 	<!-- 在index.vue页面引用 uni-rate 组件-->
+	<!-- Quote the uni-rate component on the index.vue page -->
 	<template>
 		<view>
-			<uni-rate></uni-rate><!-- 这里会显示一个五角星，并且点击后会自动亮星 -->
+			<uni-rate></uni-rate>
+			<!-- 这里会显示一个五角星，并且点击后会自动亮星 -->
+			<!-- A five-pointed star will be displayed here, and the star will be automatically lit after clicking -->
 		</view>
 	</template>
 ```
-
-
 
 
 ## 优势
@@ -64,44 +71,47 @@
 - 组件化开发能大幅度提高应用开发效率、测试性、复用性等。
 - Component development can greatly improve application development efficiency, testability, reusability, etc.
 
-
-
 ## 注册
 ## Registered
 
 在注册一个组件的时候，我们始终需要给它一个名字。
 When registering a component, we always need to give it a name. There are two ways to define component names:
 定义组件名的方式有两种：
+There are two ways to define component names:
 
 - 使用 kebab-case
+- Use kebab-case
 
 当使用 kebab-case (短横线分隔命名) 定义一个组件时，你也必须在引用这个自定义元素时使用 kebab-case，例如 `<my-component-name>`。
 When using kebab-case (name separated by dashes) to define a component, you must also use kebab-case when referencing this custom element, for example `<my-component-name>`.
 
 - 使用 PascalCase
+- Use PascalCase
 
 当使用 PascalCase (首字母大写命名) 定义一个组件时，你在引用这个自定义元素时两种命名法都可以使用。
+When defining a component using PascalCase (name with initial capital letters), you can use both nomenclatures when referencing this custom element.
 也就是说 `<my-component-name>` 和 `<MyComponentName>` 都是可接受的。
-When defining a component using PascalCase (name with initial capital letters), you can use both nomenclatures when referencing this custom element. Both `<my-component-name>`and `<MyComponentName>`are acceptable.
-
+This means that both `<my-component-name>` and `<MyComponentName>` are both acceptable.
 
 在uni-app工程根目录下的 `components` 目录，创建并存放自定义组件：
+Create and store custom components in the `components` directory under the root directory of the uni-app project:
 
 ```html
-│─components            	符合vue组件规范的uni-app组件目录
-│  └─componentA         	符合‘components/组件名称/组件名称.vue’目录结构，easycom方式可直接使用组件
-│  		└─componentA.vue    可复用的componentA组件
-│  └─component-a.vue      可复用的component-a组件
+│─components            	符合vue组件规范的uni-app组件目录(Uni-app component directory that complies with the vue component specification)
+│  └─componentA         	符合‘components/组件名称/组件名称.vue’目录结构，easycom方式可直接使用组件(Comply with the directory structure of ‘components/component name/component name.vue’, easycom way can directly use components)
+│  		└─componentA.vue    可复用的componentA组件(Reusable componentA component)
+│  └─component-a.vue      可复用的component-a组件(Reusable component-a component)
 ```
-
 
 
 ### 全局注册
 ### Global registration
 
 `uni-app` 支持配置全局组件，需在 `main.js` 里进行全局注册，注册后就可在所有页面里使用该组件。
+`uni-app` supports the configuration of global components, which needs to be registered globally in `main.js`. After registration, the component can be used in all pages.
 
 **注意**
+**Notice**
 
 - Vue.component 的第一个参数必须是静态的字符串。
 - The first parameter of Vue.component must be a static string.
@@ -152,15 +162,18 @@ The following two ways to import a corner label component library[https://ext.dc
 	<!-- Introduce the uni-badge component in index.vue -->
 	<template>
 		<view>
-			<uni-badge text="1"></uni-badge><!-- 3.使用组件 -->
+			<uni-badge text="1"></uni-badge>
+			<!-- 3.使用组件 -->
 			<!-- 3. Use components -->
 		</view>
 	</template>
 	<script>
-		import uniBadge from '@/components/uni-badge/uni-badge.vue';//1.导入组件（这步属于传统vue规范，但在uni-app的easycom下可以省略这步）
+		import uniBadge from '@/components/uni-badge/uni-badge.vue';
+		//1.导入组件（这步属于传统vue规范，但在uni-app的easycom下可以省略这步）
 		//1. Import components (This step belongs to the traditional VUE specification）
 		export default {
-			components:{uniBadge }//2.注册组件（这步属于传统vue规范，但在uni-app的easycom下可以省略这步） 
+			components:{uniBadge }
+			//2.注册组件（这步属于传统vue规范，但在uni-app的easycom下可以省略这步） 
 			//2. Registration of Components (This step belongs to the traditional VUE specification） 
 		}
 	</script>
@@ -215,11 +228,10 @@ Putting a variable name similar to uniBadge in the object is actually uniBadge: 
 Component is a very important part of the technology in `vue`.Components allow UI-related wheels to be easily manufactured and shared, which in turn makes development efficiency for `vue`users significantly higher.
 
 `uni-app` 搭建了组件的插件市场，有很多现成的组件，若下载符合components/组件名称/组件名称.vue目录结构的组件，均可直接使用。[uni-app插件市场](https://ext.dcloud.net.cn/)
-
-
+`uni-app` has built a component plug-in market. There are many ready-made components. If you download components that conform to the components/component name/component name.vue directory structure, you can use them directly. [uni-app plug-in market](https://ext.dcloud.net.cn/)
 
 > `uni-app`只支持 vue单文件组件（.vue 组件）。其他的诸如：动态组件，自定义 `render` ，和 `<script type="text/x-template">` 字符串模版等，在非H5端不支持。
-
+> `uni-app` only supports vue single file components (.vue components). Others such as dynamic components, custom `render`, and `<script type="text/x-template">` string templates, etc., are not supported on non-H5 end.
 
 ## props
 
@@ -435,50 +447,58 @@ All props form a one **-line downward binding** between their parent and child p
 
 
 被用来给元素或子组件注册引用信息，引用信息将会注册在父组件的 `$refs` 对象上。
+It is used to register reference information for the element or child component, and the reference information will be registered on the `$refs` object of the parent component.
 
 如果在普通的 DOM 元素上使用，引用指向的就是 DOM 元素；如果用在子组件上，引用就指向组件实例：
+If used on ordinary DOM elements, the reference points to the DOM element; if used on child components, the reference points to the component instance:
 
 ```html
 
 //非H5端不支持通过this.$refs.content来获取view实例
+//The non-H5 end does not support obtaining view instances through this.$refs.content
 <view ref="content">hello</view>
 
 //支持通过this.$refs.child来获取child-component实例
+//Support to obtain child-component instance through this.$refs.child
 <child-component ref="child"></child-component>
 
 ```
 
 
 当 `ref` 和 `v-for` 一起用于元素或组件的时候，引用信息将是包含 DOM 节点或组件实例的数组。
-
-
+When `ref` and `v-for` are used together with an element or component, the reference information will be an array containing DOM nodes or component instances.
 
 **关于 ref 注册时间的重要说明：**
+**Important note about ref registration time:**
 
 因为 `ref` 本身是作为渲染结果被创建的，在初始渲染的时候你不能访问它们，它们还不存在！`$refs` 也不是响应式的，因此你不应该用它在模板中做数据绑定。
-
+Because the `ref` itself is created as a rendering result, you can't access them during the initial rendering, they don't exist yet! `$refs` is also not reactive, so you should not use it for data binding in templates.
 
 
 
 #### 子组件ref
-
-
+#### Subcomponent ref
 尽管存在 prop 和事件，有的时候你仍可能需要在 JavaScript 里直接访问一个子组件。
+Despite the existence of props and events, sometimes you may still need to directly access a child component in JavaScript.
 访问子组件实例或子元素，通过 ref 为子组件赋予一个 ID 引用，在vue的js中可通过`this.$refs.XXX`来获取到组件对象。
+Access the sub-component instance or sub-element, assign an ID reference to the sub-component through ref, and get the component object through `this.$refs.XXX` in Vue js.
 
 ```html
 	<base-input ref="usernameInput"></base-input>
 ```
 
 你已经定义了这个 ref 的组件里，你可以使用：`this.$refs.usernameInput`来访问这个` <base-input> `实例。
+In the component where you have defined this ref, you can use: `this.$refs.usernameInput` to access this instance of `<base-input>`.
 
 ##### 示例：
+##### Example:
 
 ```html
 //base-input子组件页面
+//base-input subcomponent page
 <template>
 	<view>
-		<input :focus="isFocus" type="text" placeholder="请输入内容" />
+		<input :focus="isFocus" type="text" placeholder="请输入内容(Please enter content)" />
 	</view>
 </template>
 <script>
@@ -500,21 +520,24 @@ All props form a one **-line downward binding** between their parent and child p
 
 
 允许父级组件通过下面的代码聚焦` <base-input> ` 里的输入框：
-
+Allow the parent component to focus on the input box in `<base-input>` with the following code:
 
 ```html
 //index 父组件页面
+//index parent component page
 <template>
 	<view>
 		<base-input ref="usernameInput"></base-input>
 		<button type="default" @click="getFocus">获取焦点</button> 
+		<button type="default" @click="getFocus">Get focus</button>
 	</view>
 </template>
 <script>
 	export default {
 		methods:{
 			getFocus(){
-				//通过组件定义的ref调用focus方法
+				//通过组件定义的ref调用focus方法	
+				//Call the focus method through the ref defined by the component
 				this.$refs.usernameInput.focus()
 			}
 		}
@@ -524,14 +547,10 @@ All props form a one **-line downward binding** between their parent and child p
 
 
 **注意**
+**Notice**
 
 > 非H5端只能用于获取自定义组件，不能用于获取内置组件实例（如：view、text）
-
-
-
-
-
-
+> The non-H5 terminal can only be used to obtain custom components, and cannot be used to obtain built-in component instances (such as view, text)
 
 
 
@@ -542,11 +561,12 @@ All props form a one **-line downward binding** between their parent and child p
 ### Bind native events to components
 
 你可能有很多次想要在一个组件的根元素上直接监听一个原生事件。
+You may want to listen to a native event directly on the root element of a component many times.
 这时，你可以使用 @事件的 `.native` 修饰符：
-You may want to listen to a native event directly on the root element of a component many times. At this point, you can use `v-on`a `.native`modifier:
+At this time, you can use the `.native` modifier of @event:
 
 - 注意：在app和h5端表现不一致，h5端获取到的是浏览器原生事件。
-
+- Note: The performance of the app and the h5 side are inconsistent, and the h5 side obtains the browser native events.
 ```html
 	<template>
 		<view>
@@ -589,11 +609,12 @@ You may want to listen to a native event directly on the root element of a compo
 
 
 ### .sync 修饰符
+### .sync modifier
 
 当一个子组件改变了一个 `prop` 的值时，这个变化也会同步到父组件中所绑定。
+When a child component changes the value of a `prop`, the change will also be synchronized to the parent component.
 `.sync` 它会被扩展为一个自动更新父组件属性的 `v-on` 监听器。
-When a child component changes the value of a `prop`, the change is synchronized with the binding in the parent component. `.sync`It is extended as a `v-on` listener that automatically updates the properties of the parent component.
-
+`.sync` It will be expanded into a `v-on` listener that automatically updates the properties of the parent component.
 
 ```html
 	<!-- 父组件 -->
@@ -645,6 +666,7 @@ When a child component changes the value of a `prop`, the change is synchronized
 
 
 ## 插槽
+## Slot
 
 Vue 实现了一套内容分发的 API，将 `slot` 元素作为承载分发内容的出口。
 Vue implements a content distribution API, using `slot`elements as outlets for hosting content distribution.
@@ -1046,9 +1068,9 @@ The internal working principle of scoped slots is to wrap the contents of your s
 ```
 
 这意味着 `v-slot` 的值实际上可以是任何能够作为函数定义中的参数的 `JavaScript` 表达式。
+This means that the value of `v-slot` can actually be any `JavaScript` expression that can be used as a parameter in a function definition.
 所以在支持的环境下 ( [单文件组件](https://cn.vuejs.org/v2/guide/single-file-components.html) 或 [现代浏览器](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment))，你也可以使用 [ES2015 解构](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) 来传入具体的插槽 `prop`，如下：
-This means that the value of a  `v-slot` can actually be any`JavaScript` expression that can be used as a parameter in a function definition. So with the support of the environment ( single file component ), you can also use the ES2015 deconstructed to pass specific slot `prop`, as follows:
-
+So in a supported environment ([Single File Component](https://cn.vuejs.org/v2/guide/single-file-components.html) or [Modern Browser](https://developer.mozilla. org/zh-CN/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)), you can also use [ES2015 Deconstruction](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference /Operators/Destructuring_assignment) to pass in the specific slot `prop`, as follows:
 ```html
 	<current-user v-slot="{ user }">
 		{{ user.firstName }}

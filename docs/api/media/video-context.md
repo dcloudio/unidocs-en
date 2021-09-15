@@ -3,6 +3,7 @@
 Create and return a video context videoContext object. In the custom component, the second component parameters into the this example, the operation to the component  ``<video>`` assembly. 
 
 **平台差异说明**
+**Platform difference description**
 
 |App|H5|
 |:-:|:-:|
