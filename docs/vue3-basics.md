@@ -15,7 +15,7 @@ Vue (pronounced /vjuː/, like view) is a progressive framework for building user
 
 
 `Vue.js` 的核心是一个允许采用简洁的模板语法来声明式地将数据渲染进 `DOM` 的系统，**只关注视图层，易于上手**。所有东西都是响应式的。
-
+The core of Vue.js is a system that allows the use of concise template syntax to declaratively render data into the DOM. It only focuses on the view layer and is easy to use. Everything is responsive.
 
 
  **致谢**
