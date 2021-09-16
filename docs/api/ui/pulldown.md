@@ -89,13 +89,19 @@ export default {
 
 ### FAQ
 Q：如何暂时禁用掉下拉刷新，待需要的时候再重新开启？
+Q: How to temporarily disable pull-down refresh, and then restart it when needed?
 
 A：`App` 平台下可以处理此类场景，详细参考：[uni-app 中实现动态禁用/开启下拉刷新](https://ask.dcloud.net.cn/article/35134)
+A: This type of scenario can be handled under the `App` platform. For details, refer to: [Dynamic disable/enable pull-down refresh in uni-app](https://ask.dcloud.net.cn/article/35134)
 
 Q：自定义title如何让下拉刷新在title之下
+Q: How to customize the title to make the pull-down refresh under the title
 
 A：App和H5端使用circle方式的下拉刷新，设offset在title高度之下。hello uni-app的模板-导航栏中有示例。
+A: App and H5 end use circle method to pull down to refresh, set offset below title height. There are examples in the template-navigation bar of hello uni-app.
 
 Q：如何自定义下拉刷新样式
+Q: How to customize the pull-down refresh style
 
 A：App端原生的下拉刷新有2种样式可选择，下拉漏出雪花和下拉circle圈。如果使用nvue，可以使用[refresh组件](https://uniapp.dcloud.io/component/refresh)自定义下拉刷新，都是原生渲染。如果想使用scroll-view在前端实现自定义下拉刷新，需要注意列表不可太长和太复杂，否则会有性能问题。[插件市场](https://ext.dcloud.net.cn/)搜索下拉刷新有示例。
+A: There are 2 styles to choose from the native drop-down refresh on the App side, the drop-down leakage of snowflakes and the drop-down circle circle. If you use nvue, you can use [refresh component](https://uniapp.dcloud.io/component/refresh) to customize the pull-down refresh, all of which are native rendering. If you want to use scroll-view to implement custom pull-down refresh on the front end, you need to pay attention to the list not being too long and too complicated, otherwise there will be performance problems. [Plug-in market](https://ext.dcloud.net.cn/) Search and pull down to refresh there are examples.

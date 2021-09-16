@@ -84,4 +84,6 @@ Cancel the timer set by setInterval.
 | intervalID | Number   | Yes      | ID of the timer to be cancelled |
 
 ## 注意事项
+## Precautions
 * App 端返回的定时器编号可能为 String 类型，使用时无需主动转换为 Number 类型
+* The timer number returned by the App may be of type String, so there is no need to actively convert to Number type when using it

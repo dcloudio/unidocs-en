@@ -8,6 +8,7 @@ Create a live-player context livePlayerContext object. Note that it is live broa
 |App|H5|
 |:-:|:-:|
 |见下|x|
+|See below|x|
 
 App平台的直播播放，不使用此API，而直接使用video的API。
 The live broadcast of the App platform does not use this API, but directly uses the video API.

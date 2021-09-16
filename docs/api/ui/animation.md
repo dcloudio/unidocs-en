@@ -4,14 +4,18 @@
 Create an animation instance animation . Call the method of the instance to describe the animation. Finally, the animation data is exported to the animation property of the component through the export method of the animation instance.
 
 **平台差异说明**
+**Platform difference description**
 
 |App|H5|
 |:-:|:-:|
 |√|HBuilderX 2.0.4+|
 
 **注意:**
+**Notice:**
 - export 方法每次调用后会清掉之前的动画操作
+- The export method will clear the previous animation operation after each call
 - nvue 暂不支持
+- nvue does not currently support
 
 **OBJECT参数说明：**
 **OBJECT parameter description:**
@@ -204,17 +208,20 @@ export default{
   methods:{
     rotateAndScale: function () {
       // 旋转同时放大
+	  // Rotate and zoom in at the same time
       this.animation.rotate(45).scale(2, 2).step()
       this.animationData = this.animation.export()
     },
     rotateThenScale: function () {
       // 先旋转后放大
+	  // Rotate first and then zoom in
       this.animation.rotate(45).step()
       this.animation.scale(2, 2).step()
       this.animationData = this.animation.export()
     },
     rotateAndScaleThenTranslate: function () {
       // 先旋转同时放大，然后平移
+	  // Rotate and zoom in at the same time, then translate
       this.animation.rotate(45).scale(2, 2).step()
       this.animation.translate(100, 100).step({ duration: 1000 })
       this.animationData = this.animation.export()

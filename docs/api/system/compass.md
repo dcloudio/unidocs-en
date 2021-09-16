@@ -16,6 +16,7 @@ Monitor compass data, frequency: 5 beats per second,Interface calls automaticall
 - H5 Obtain disk information,It needs to be deployed on **HTTPS** service,Local Preview (localhost) can still use HTTP.
 
 **示例**
+**Example**
 
 ```javascript
 uni.onCompassChange(function (res) {

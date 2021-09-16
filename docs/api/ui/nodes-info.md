@@ -27,7 +27,9 @@ The selector changes the selection for the custom components `component`within, 
 const query = uni.createSelectorQuery().in(this);
 query.select('#id').boundingClientRect(data => {
   console.log("得到布局位置信息" + JSON.stringify(data));
+  console.log("Get layout location information" + JSON.stringify(data));
   console.log("节点离页面顶部的距离为" + data.top);
+  console.log("The distance between the node and the top of the page is" + data.top);
 }).exec();
 ```
 
@@ -158,6 +160,7 @@ Add the scroll position query request of the node. In pixels. Node must be `scro
 Add the Context object query request of the node. Support  [`VideoContext`](/api/media/video-context),[`CanvasContext`](/api/canvas/CanvasContext), [`MapContext`](/api/location/map) ,acquisition.
 
 **平台差异说明**
+**Platform difference description**
 
 |App|H5|
 |:-:|:-:|
@@ -179,6 +182,7 @@ Add the Context object query request of the node. Support  [`VideoContext`](/api
 ```javascript
 uni.createSelectorQuery().selectViewport().scrollOffset(res => {
   console.log("竖直滚动位置" + res.scrollTop);
+  console.log("Vertical scroll position" + res.scrollTop);
 }).exec();
 
 let view = uni.createSelectorQuery().in(this).select(".test");
@@ -188,18 +192,23 @@ view.fields({
   scrollOffset: true
 }, data => {
   console.log("得到节点信息" + JSON.stringify(data));
+  console.log("Get node information" + JSON.stringify(data));
   console.log("节点的宽为" + data.width);
+  console.log("The width of the node is" + data.width);
 }).exec();
 
 view.boundingClientRect(data => {
   console.log("得到布局位置信息" + JSON.stringify(data));
+  console.log("Get layout location information" + JSON.stringify(data));
   console.log("节点离页面顶部的距离为" + data.top);
+  console.log("The distance between the node and the top of the page is" + data.top);
 }).exec();
 ```
 
 **注意**
+**Notice**
 - nvue 暂不支持 uni.createSelectorQuery，暂时使用下面的方案
-
+- nvue does not support uni.createSelectorQuery temporarily, use the following scheme temporarily
 ```html
 <template>
   <view class="wrapper">
@@ -216,6 +225,7 @@ view.boundingClientRect(data => {
 
 <script>
   // 注意平台差异
+  // Pay attention to platform differences
   // #ifdef APP-NVUE
   const dom = weex.requireModule('dom')
   // #endif

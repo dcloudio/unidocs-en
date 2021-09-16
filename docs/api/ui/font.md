@@ -4,16 +4,22 @@
 Load web fonts dynamically, the file address must be the download type.
 
 注意: 
+Notice: 
 
 1. 引入中文字体，体积过大时会发生错误，建议抽离出部分中文，减少体积，或者用图片替代
+1. Introduce Chinese fonts, errors will occur when the volume is too large, it is recommended to extract part of the Chinese, reduce the volume, or replace it with pictures
 2. App支持网络或本地的字体（本地字体需使用[平台绝对路径](http://www.html5plus.org/doc/zh_cn/io.html#plus.io.convertLocalFileSystemURL)）。
+2. App supports network or local fonts (local fonts need to use [platform absolute path](http://www.html5plus.org/doc/zh_cn/io.html#plus.io.convertLocalFileSystemURL)).
 3. 工具里提示 Faild to load font可以忽略
+3. The tool prompts Faild to load font can be ignored
 
 **平台差异说明**
+**Platform difference description**
 
 |5+App|H5|
 |:-:|:-:|
 |1.9.0+ [自定义组件编译模式](https://ask.dcloud.net.cn/article/35843)|2.3.4+|
+|1.9.0+ [Custom component compilation mode](https://ask.dcloud.net.cn/article/35843)|2.3.4+|
 
 **参数说明**
 **Parameter Description**
@@ -65,3 +71,4 @@ uni.loadFontFace({
 **Tips**
 
 插件市场有加载字体的例子：[https://ext.dcloud.net.cn/plugin?id=954](https://ext.dcloud.net.cn/plugin?id=954)
+There are examples of loading fonts in the plug-in market: [https://ext.dcloud.net.cn/plugin?id=954](https://ext.dcloud.net.cn/plugin?id=954)

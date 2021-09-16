@@ -2,8 +2,10 @@ subNvue，是 vue 页面的原生子窗体，把weex渲染的原生界面当做 
 subNvue is the native sub-form of the vue page. The native interface rendered by weex is used as the sub-form of the vue page to overlay the page. It is not a full-screen page, it provides a more powerful and flexible solution for the hierarchical coverage and native interface customization in the vue page of the App platform. It is not a component, but a native child form.
 
 它的设计背景和用途详见：[subNVue 原生子窗体开发指南](https://ask.dcloud.net.cn/article/35948)
+For its design background and usage, please refer to: [subNVue Native Subform Development Guide](https://ask.dcloud.net.cn/article/35948)
 
 > subNvue 自1.9.10 起支持 ，仅支持 app 平台
+> subNvue has been supported since 1.9.10 and only supports app platform
 
 ### uni.getSubNVueById(subNvueId)@app-getsubnvuebyid
 
@@ -26,7 +28,7 @@ const subNVue = uni.getSubNVueById('popup');
 
 #### 返回值
 返回一个 [subNVue](/api/window/subNVues?id=subnvue) 对象
-Return a subNVue object
+Return a [subNVue](/api/window/subNVues?id=subnvue) object
 
 
 ### uni.getCurrentSubNVue()@app-getCurrentSubNVue
@@ -42,29 +44,42 @@ const subNVue = uni.getCurrentSubNVue();
 ```
 
 #### 返回值
+#### return value
 返回一个 [subNVue](/api/window/subNVues?id=subnvue) 对象
+Return a [subNVue](/api/window/subNVues?id=subnvue) object
+
 
 
 #### subNVue 对象的方法列表@subNVue
+#### Method list of subNVue object @subNVue
 
 |方法			|说明				|
+|Method |Description |
 |---			|---				|
 |show			| 显示原生子窗体		|
+|show | Show native child form |
 |hide			| 隐藏原生子窗体		|
+|hide | Hide native child form |
 |setStyle		| 设置原生子窗体的样式	|
-
+|setStyle | Set the style of the native child form |
 
 ### subNVue.show (aniShow,duration,showedCB)
 显示原生子窗体
+Show native child form
 
 |参数		|类型|默认值	|说明								|
+|Parameter |Type|Default value |Description|
 |---		|---	|---		|---																|
 |aniShow	|String| auto	|显示原生子窗体的动画效果 ，如果没有指定窗口动画类型，则使用默认值“auto”，即自动选择上一次显示窗口的动画效果，如果之前没有显示过，则使用“none”动画效果。[详见动画类型](/api/window/subNVues?id=动画类型)|
+|aniShow |String| auto |Display the animation effect of the native child form. If the window animation type is not specified, the default value "auto" is used, that is, the animation effect of the last displayed window is automatically selected. If it has not been displayed before, use "None" animation effect. [See animation type for details](/api/window/subNVues?id=Animation type)|
 |duration	|Number| 600	|显示原生子窗体的动画持续时间，单位为ms，如果没有设置则使用默认窗口动画时间 600ms。|
+|duration |Number| 600 |Display the animation duration of the native child form, the unit is ms, if not set, the default window animation time of 600ms will be used. |
 |showedCB	|Function|		|显示完成的回调函数，当指定原生子窗体显示动画执行完毕时触发回调函数，窗口无动画效果（如"none"动画效果）时也会触发此回调。	|
+|showedCB |Function| |Display the completed callback function. The callback function is triggered when the specified native subform display animation is completed. The callback function is also triggered when the window has no animation effect (such as "none" animation effect). |
 
 
 **代码示例**
+**Code Example**
 
 ```javascript
 subNVue.show('slide-in-left',200,()=>{
@@ -112,6 +127,7 @@ Set the style of the native child form
 |position|String|absolute|原生子窗体的排版位置，排版位置决定原生子窗体在父窗口中的定位方式。 可取值："static"，原生子窗体在页面中正常定位，如果页面存在滚动条则随窗口内容滚动；"absolute"，原生子窗体在页面中绝对定位，如果页面存在滚动条不随窗口内容滚动；"dock"，原生子窗体在页面中停靠，停靠的位置由dock属性值决定。 默认值为"absolute"。|
 | position   | String   | absolute         | The layout position of the native child form. The layout position determines the positioning method of the native child form in the parent window. Possible values: "static", the native subform is positioned normally on the page, if the page has a scroll bar, it will scroll with the window content; "absolute", the native subform is absolutely positioned on the page, if the page has a scroll bar, it will not follow the window Content scrolling; "dock", the native child form is docked in the page, and the docking position is determined by the value of the dock property. The default value is "absolute". |
 |dock|String|bottom|原生子窗体的停靠方式,仅当原生子窗体 "position" 属性值设置为 "dock" 时才生效，可取值："top"，原生子窗体停靠则页面顶部；"bottom"，原生子窗体停靠在页面底部；"right"，原生子窗体停靠在页面右侧；"left"，原生子窗体停靠在页面左侧。 默认值为"bottom"。|
+|dock|String|bottom|The docking method of the native subform, it takes effect only when the native subform "position" property value is set to "dock", the possible value is "top", the page is docked when the native subform is docked Top; "bottom", the native child form is docked at the bottom of the page; "right", the native child form is docked on the right side of the page; "left", the native child form is docked on the left side of the page. The default value is "bottom". |
 |mask|HexColor|rgba(0,0,0,0.5)|原生子窗体的遮罩层,仅当原生子窗体 "type" 属性值设置为 "popup" 时才生效，可取值： rgba格式字符串，定义纯色遮罩层样式，如"rgba(0,0,0,0.5)"，表示黑色半透明；|
 | mask       | HexColor | rgba (0,0,0,0.5) | The mask layer of the native subform will only take effect when the "type" attribute value of the native subform is set to "popup". Values are: rgba format string, which defines the solid color mask layer style, such as "rgba(0 ,0,0,0.5)", which means black translucent; |
 |width|String|100%|原生子窗体的宽度,支持百分比、像素值，默认为100%。未设置width属性值时，可同时设置left和right属性值改变窗口的默认宽度。|
@@ -182,7 +198,10 @@ subNvue.onMessage(function(data){
 
 
 ### 动画类型
+### Animation type
+
 显示动画与关闭动画，会有默认的对应规则。但是如果通过 API 原生子窗体的关闭动画类型，则不会使用默认的类型。
+There will be default corresponding rules for displaying animation and closing animation. However, if the close animation type of the native child form is passed through the API, the default type will not be used.
 
 |显示动画|关闭动画|显示动画描述（关闭动画与之相反）|
 | Show animation  | Close animation  | Show animation description (the opposite of closing animation) |

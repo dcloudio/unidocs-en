@@ -4,6 +4,7 @@
 Dynamically set the content of a tabBar
 
 **平台差异说明**
+**Platform difference description**
 
 |App|H5|
 |:-:|:-:|
@@ -50,6 +51,7 @@ uni.setTabBarItem({
 Dynamically set the overall style of tabBar
 
 **平台差异说明**
+**Platform difference description**
 
 |App|H5|
 |:-:|:-:|
@@ -122,12 +124,14 @@ uni.setTabBarStyle({
 Hide tabBar
 
 **平台差异说明**
+**Platform difference description**
 
 |App|H5|
 |:-:|:-:|
 |√|√|
 
 **OBJECT参数说明：**
+**OBJECT parameter description:**
 
 |属性|类型|默认值|必填|说明|
 | Attributes | Types of | Defaults | Required | Description    |
@@ -152,6 +156,7 @@ Show tabBar
 |√|√|
 
 **OBJECT参数说明：**
+**OBJECT parameter description:**
 
 |属性|类型|默认值|必填|说明|
 | Attributes | Types of | Defaults | Required | Description  |
@@ -175,6 +180,7 @@ Add text to the upper right corner of an item in the tabBar.
 |√|√|
 
 **OBJECT参数说明：**
+**OBJECT parameter description:**
 
 |参数|类型|必填|说明|
 | parameter | Types of | Required | Description                                                  |
@@ -205,6 +211,7 @@ uni.setTabBarBadge({
 Remove the text in the upper right corner of a tabBar item.
 
 **平台差异说明**
+**Platform difference description**
 
 |App|H5|
 |:-:|:-:|
@@ -230,6 +237,7 @@ Remove the text in the upper right corner of a tabBar item.
 Display the red dot in the upper right corner of an item in the tabBar.
 
 **平台差异说明**
+**Platform difference description**
 
 |App|H5|
 |:-:|:-:|
@@ -255,6 +263,7 @@ Display the red dot in the upper right corner of an item in the tabBar.
 Hide the red dot in the upper right corner of a tabBar item.
 
 **平台差异说明**
+**Platform difference description**
 
 |App|H5|
 |:-:|:-:|
@@ -280,6 +289,7 @@ Hide the red dot in the upper right corner of a tabBar item.
 Listen to the click event of the middle button
 
 **平台差异说明**
+**Platform difference description**
 
 |App|H5|
 |:-:|:-:|
@@ -288,6 +298,10 @@ Listen to the click event of the middle button
 
 **Tip**
 - tabbar是原生的，层级高于前端元素
+- The tabbar is native and the level is higher than the front-end elements
 - [uni-app插件市场](https://ext.dcloud.net.cn/search?q=%E5%BA%95%E9%83%A8%E5%9B%BE%E6%A0%87%E8%8F%9C%E5%8D%95)有封装的前端tabbar，但性能不如原生tabbar
+- [uni-app plug-in market](https://ext.dcloud.net.cn/search?q=%E5%BA%95%E9%83%A8%E5%9B%BE%E6%A0%87% E8%8F%9C%E5%8D%95) has encapsulated front-end tabbar, but the performance is not as good as native tabbar
 - 如果想要一个中间带+号的tabbar，在HBuilderX中新建uni-app项目、选择 底部选项卡 模板
+- If you want a tabbar with a + sign in the middle, create a uni-app project in HBuilderX and select the bottom tab template
 - 以上大部分操作 tabbar 的 API 需要在 tabbar 渲染后才能使用，避免在 tabbar 未初始化前使用
+- Most of the above APIs for tabbar operations can only be used after the tabbar is rendered. Avoid using it before the tabbar is initialized.

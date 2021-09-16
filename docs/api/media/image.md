@@ -96,6 +96,7 @@ If you need a richer camera API on the App side (such as directly calling the fr
 |type|String|File type, only supported by H5|
 
 **示例**
+**Example**
 
 ```javascript
 uni.chooseImage({
@@ -240,6 +241,7 @@ uni.chooseImage({
 Get picture information.
 
 **平台差异说明**
+**Platform difference description**
 
 |App|H5|
 |:-:|:-:|
@@ -301,6 +303,7 @@ Get picture information.
 |right-mirrored|Same as right, but flipped vertically|
 
 **示例**
+**Example**
 
 ```javascript
 uni.chooseImage({
@@ -356,6 +359,7 @@ Save the picture to the system album.
 |errMsg|String|Call result|
 
 **注意**
+**Notice**
 
 - 可以通过用户授权API来判断用户是否给应用授予相册的访问权限[https://uniapp.dcloud.io/api/other/authorize](https://uniapp.dcloud.io/api/other/authorize)
 - You can use the user authorization API to determine whether the user grants the app permission to access the album [https://uniapp.dcloud.io/api/other/authorize](https://uniapp.dcloud.io/api/other/authorize)

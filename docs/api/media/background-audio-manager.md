@@ -96,6 +96,7 @@ errCode Description
 |-1|unknown mistake|
 
 **示例**
+**Example**
 
 ```javascript
 const bgAudioManager = uni.getBackgroundAudioManager();

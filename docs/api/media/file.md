@@ -5,8 +5,11 @@ Select the file locally.
 本API主要用于选择非媒体文件，如果选择的文件是媒体文件，另有3个专用API：
 This API is mainly used to select non-media files. If the selected file is a media file, there are 3 dedicated APIs:
 - [图片选择](https://uniapp.dcloud.io/api/media/image?id=chooseimage)
+- [Image selection](https://uniapp.dcloud.io/api/media/image?id=chooseimage)
 - [视频选择](https://uniapp.dcloud.io/api/media/video?id=choosevideo)
+- [Video Selection](https://uniapp.dcloud.io/api/media/video?id=choosevideo)
 - [多媒体文件选择(含图片视频)](https://uniapp.dcloud.io/api/media/video?id=choosemedia)
+- [Multimedia file selection (including pictures and videos)](https://uniapp.dcloud.io/api/media/video?id=choosemedia)
 
 **平台差异说明**
 **Platform difference description**
@@ -20,6 +23,7 @@ This API is mainly used to select non-media files. If the selected file is a med
 - App端如果想选择下载到`_doc`、`_downloads`、`_documents`等plus.io控制的目录下的文件，可通过[plus.io Api](https://www.html5plus.org/doc/zh_cn/io.html)，自己做选择框。
 - App end if you want to choose to download `_doc`, `_downloads`, `_documents`file directories, etc. plus.io control, by [plus.io Api](https://www.html5plus.org/doc/zh_cn/io.html), make their own selection box.
 - 选择文件大多为了上传，uni ui封装了更完善的[uni-file-picker组件](https://ext.dcloud.net.cn/plugin?id=4079)，文件选择、上传到uniCloud的免费存储和cdn中，一站式集成。强烈推荐使用。
+- Most files are selected for uploading, uni ui encapsulates a more complete [uni-file-picker component](https://ext.dcloud.net.cn/plugin?id=4079), file selection and upload to uniCloud are free One-stop integration in storage and cdn. It is highly recommended.
 
 **OBJECT 参数说明**
 **OBJECT parameter description**

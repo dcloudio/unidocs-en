@@ -1,5 +1,4 @@
 节点布局交叉状态 API 可用于监听两个或多个组件节点在布局位置上的相交状态。这一组API常常可以用于推断某些节点是否可以被用户看见、有多大比例可以被用户看见。
-
 The Node Layout Intersection State API can be used to monitor the intersection state of two or more component nodes in the layout position. This set of APIs can often be used to infer whether certain nodes can be seen by users and what percentage of them can be seen by users.
 
 ### uni.createIntersectionObserver([this], [options])
@@ -7,8 +6,10 @@ The Node Layout Intersection State API can be used to monitor the intersection s
 Creates and returns an `IntersectionObserver`object instance.
 
 **this说明：**
+**this description:**
 
 自定义组件实例。
+Custom component instance.
 
 **options 的可选参数为：**
 **The optional parameters of options are:**
@@ -94,10 +95,12 @@ uni.createIntersectionObserver(this).relativeTo('.scroll',{bottom: 100}).observe
 <template>
 	<view class="container">
 		<text>{{appear ? '小球出现' : '小球消失'}}</text>
+		<text>{{appear?'Small ball appears':'Small ball disappears'}}</text>
 		<view class="page-section">
 			<scroll-view class="scroll-view" scroll-y>
 				<view class="scroll-area">
-					<text class="notice">向下滚动让小球出现</text>
+					<text class="notice">向下滚动让小球出现</text>	
+					<text class="notice">Scroll down to make the ball appear</text>
 					<view class="ball"></view>
 				</view>
 			</scroll-view>

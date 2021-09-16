@@ -14,8 +14,7 @@ The editorContext instance corresponding to the editor component can be obtained
 
 
 `editorContext` 通过 `id` 跟一个 [`<editor>`](/component/editor) 组件绑定，操作对应的 [`<editor>`](/component/editor) 组件。
-`editorContext` 通过 `id` 跟一个 [`<editor>`](/component/editor) 组件绑定，操作对应的 [`<editor>`](/component/editor) 组件。
-
+`editorContext` is bound to a [`<editor>`](/component/editor) component through the `id`, and operates the corresponding [`<editor>`](/component/editor) component.
 
 **平台差异说明**
 **Platform difference description**
@@ -91,9 +90,9 @@ Insert dividing line
 Insert a picture.
 
 微信小程序平台地址为临时文件时，获取的编辑器html格式内容中 `<img>` 标签增加属性 data-local，delta 格式内容中图片 attributes 属性增加 data-local 字段，该值为传入的临时文件地址。
+When the WeChat applet platform address is a temporary file, the attribute data-local is added to the `<img>` tag in the html format content of the obtained editor, and the data-local field is added to the image attributes attribute in the delta format content. This value is the temporary value passed in File address.
 开发者可选择在提交阶段上传图片到服务器，获取到网络地址后进行替换。替换时对于html内容应替换掉 `<img>` 的 src 值，对于 delta 内容应替换掉 `insert { image: abc }` 值。
-Developers can choose to upload pictures to the server during the submission stage, and replace them after obtaining the network address. For html content should be replaced when replacing `<img>` the src value, should replace the content for delta `insert { image: abc }`values.
-
+Developers can choose to upload pictures to the server during the submission stage, and replace them after obtaining the network address. When replacing, the src value of `<img>` should be replaced for html content, and the value of `insert {image: abc }` should be replaced for delta content.
 
 **OBJECT 参数说明**
 **OBJECT parameter description**

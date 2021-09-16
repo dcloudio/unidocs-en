@@ -85,3 +85,4 @@ console.log(currentWebview.isVisible());//查询当前webview是否可见
 ```
 
 uni-app自带的web-view组件，是页面中新插入的一个子webview。获取该对象的方法见：[https://ask.dcloud.net.cn/article/35036](https://ask.dcloud.net.cn/article/35036)
+The web-view component that comes with uni-app is a new sub-webview inserted in the page. For the method of obtaining this object, please refer to: [https://ask.dcloud.net.cn/article/35036](https://ask.dcloud.net.cn/article/35036)

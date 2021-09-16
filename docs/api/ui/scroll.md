@@ -4,11 +4,12 @@
 Scroll the page to the target position.
 
 **平台差异说明**
+**Platform difference description**
 
 |App|H5|
 |:-:|:-:|
 |√(nvue不支持)|√|
-
+|√(nvue not supported)|√|
 
 **OBJECT参数说明**
 **OBJECT parameter description**
