@@ -30,7 +30,7 @@ Vue (pronounced /vjuː/, like view) is a progressive framework for building user
 - 更快，性能比Vue2快1.2~2倍(diff方法优化、静态提升、时间侦听器缓存、[ssr渲染](https://uniapp.dcloud.io/collocation/ssr))
 - 更小，按需编译，体积比Vue2更小
 - 组合API，加强API设计一致性，实现逻辑模块化和重用
-- 加强TypeScripe支持
+- 加强TypeScript支持
 - 暴露了自定义渲染API
 - 提高自身可维护性
 
@@ -410,8 +410,10 @@ These expressions will be evaluated as JavaScript in the data scope of the curre
 	<template>
 	  <view>
 		 <!-- 这是语句，不是表达式 -->
+		 <!-- this is a statement, not an expression: -->
 		 <view>{{ var a = 1 }}</view>
 		 <!-- 流控制也不会生效，请使用三元表达式 -->
+		 <!-- flow control won't work either, use ternary expressions -->
 		 <view>{{ if (ok) { return message } }}</view>
 	  </view>
 	</template>
@@ -522,6 +524,7 @@ v-on directive, which listens to DOM events。v-on is abbreviated as '@':
 Render the element and component once only. On subsequent re-renders, the element/component and all its children will be treated as static content and skipped. This can be used to optimize update performance.
 
 和前端框架中的理解不同，客户端里要实现复用的逻辑，会标记模板节点的状态，添加了 `v-once` 能保证节点只渲染一次，但是并不一定能优化渲染性能，反而可能会拖慢客户端复用节点时的比对效率。
+Unlike front-end framework in understanding the client in order to achieve a logical multiplexing state flag template node will be added to the `v-once`guarantee rendering node only once, but not necessarily be able to optimize the rendering performance, but might slow down the client Comparison efficiency when multiplexing nodes.
 
 ```html
 	<!-- 单个元素 -->
@@ -1296,9 +1299,9 @@ This can be fixed by moving v-for to a wrapping `<template>` tag:
 
 
 ### 监听事件
+### Listening to Events
 
-我们可以使用 `v-on` 指令 (通常缩写为 @ 符号，下文简称为：@事件) 来监听 DOM 事件，并在触发事件时执行一些 `JavaScript`。
-用法为 `v-on:click="methodName"` 或使用快捷方式 `@click="methodName"`
+我们可以使用 `v-on` 指令 (通常缩写为 @ 符号，下文简称为：@事件) 来监听 DOM 事件，并在触发事件时执行一些 `JavaScript`。用法为 `v-on:click="methodName"` 或使用快捷方式 `@click="methodName"`
 We can use the `v-on` directive, which we typically shorten to the @ symbol, to listen to DOM events and run some JavaScript when they're triggered. The usage would be `v-on:click="methodName`" or with the shortcut, `@click="methodName"`
 
 ```html
@@ -1407,6 +1410,7 @@ Sometimes we also need to access the original DOM event in an inline statement h
 					// now we have access to the native event
 					if (event) {
 						//可访问 event.target等原生事件对象
+						//You can access native event objects such as event.target
 						console.log("event: ",event);
 					}
 					uni.showToast({

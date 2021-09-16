@@ -1,10 +1,13 @@
 
 # 状态管理Vuex 
+# State Management Vuex
 
 ## 介绍
+## Introduction
 
 
 ### Vuex 是什么？
+### What is Vuex？
 
 Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。
 Vuex is a state management pattern + library for Vue.js applications. It serves as a centralized store for all the components in an application, with rules ensuring that the state can only be mutated in a predictable fashion.
@@ -159,11 +162,13 @@ If you want to learn Vuex in an interactive way you can check out this [Vuex cou
 
 
 ## 核心概念
+## Core Concepts
 
 每一个 `Vuex` 应用的核心就是 `store`（仓库）。`“store”`基本上就是一个容器，它包含着你的应用中大部分的状态 (`state`)。
 At the center of every Vuex application is the store. A "store" is basically a container that holds your application state. 
 
 状态管理有5个核心：`state`、`getter`、`mutation`、`action`、`module`。
+State management has five cores：`state`、`getter`、`mutation`、`action`、`module`。
 
 
 
@@ -1207,15 +1212,20 @@ A more practical example of real-world actions would be an action to checkout a 
 	actions: {
 		checkout ({ commit, state }, products) {
 			// 把当前购物车的物品备份起来
+			// save the items currently in the cart
 			const savedCartItems = [...state.cart.added]
 			// 发出结账请求，然后乐观地清空购物车
+			// send out checkout request, and optimistically clear the cart
 			commit(types.CHECKOUT_REQUEST)
 			// 购物 API 接受一个成功回调和一个失败回调
+			// the shop API accepts a success callback and a failure callback
 			shop.buyProducts(
 				products,
 				// 成功操作
+				// handle success
 				() => commit(types.CHECKOUT_SUCCESS),
 				// 失败操作
+				// handle failure
 				() => commit(types.CHECKOUT_FAILURE, savedCartItems)
 			)
 		}

@@ -75,11 +75,13 @@ When registering a component, we always need to give it a name.
 There are two ways to define component names:
 
 - 使用 kebab-case
+- With kebab-case
 
 当使用 kebab-case (短横线分隔命名) 定义一个组件时，你也必须在引用这个自定义元素时使用 kebab-case，例如 `<my-component-name>`。
 When using kebab-case (name separated by dashes) to define a component, you must also use kebab-case when referencing this custom element, for example `<my-component-name>`.
 
 - 使用 PascalCase
+- With PascalCase
 
 当使用 PascalCase (首字母大写命名) 定义一个组件时，你在引用这个自定义元素时两种命名法都可以使用。也就是说 `<my-component-name>` 和 `<MyComponentName>` 都是可接受的。
 When defining a component using PascalCase (name with initial capital letters), you can use both nomenclatures when referencing this custom element. Both `<my-component-name>`and `<MyComponentName>`are acceptable.
@@ -102,6 +104,7 @@ When defining a component using PascalCase (name with initial capital letters), 
 `uni-app` 支持配置全局组件，需在 `main.js` 里进行全局注册，注册后就可在所有页面里使用该组件。
 
 **注意**
+**note**
 
 - Vue.component 的第一个参数必须是静态的字符串。
 - The first parameter of Vue.component must be a static string.
@@ -468,9 +471,9 @@ because the refs themselves are created as a result of the render function, you 
 #### Child Component Refs
 
 
-尽管存在 prop 和事件，有的时候你仍可能需要在 JavaScript 里直接访问一个子组件。
-访问子组件实例或子元素，通过 ref 为子组件赋予一个 ID 引用，在vue的js中可通过`this.$refs.XXX`来获取到组件对象。
-Despite the existence of props and events, sometimes you might still need to directly access a child component in JavaScript. To achieve this you can assign a reference ID to the child component using the ref attribute. 
+尽管存在 `prop` 和事件，有的时候你仍可能需要在 `JavaScript` 里直接访问一个子组件。为了达到这个目的，你可以通过 `ref` 这个 `attribute` 为子组件赋予一个 ID 引用。例如：
+Despite the existence of props and events, sometimes you might still need to directly access a child component in `JavaScript`. To achieve this you can assign a reference ID to the child component using the `ref attribute`. For example:
+
 
 ```html
 	<base-input ref="usernameInput"></base-input>
@@ -548,11 +551,10 @@ Thus allowing the parent component to focus the input inside `<base-input>` with
 ## Custom event
 
 ### 将原生事件绑定到组件
-### Bind native events to components
+### Binding Native Events to Components
 
-你可能有很多次想要在一个组件的根元素上直接监听一个原生事件。
-这时，你可以使用 @事件的 `.native` 修饰符：
-You may want to listen to a native event directly on the root element of a component many times. At this point, you can use `v-on`a `.native`modifier:
+你可能有很多次想要在一个组件的根元素上直接监听一个原生事件。这时，你可以使用 `v-on` 的 `.native` 修饰符：
+here may be times when you want to listen directly to a native event on the root element of a component. In these cases, you can use the `.native` modifier for `v-on`:
 
 - 注意：在app和h5端表现不一致，h5端获取到的是浏览器原生事件。
 
@@ -598,9 +600,9 @@ You may want to listen to a native event directly on the root element of a compo
 
 
 ### .sync 修饰符
+### .sync Modifier
 
-当一个子组件改变了一个 `prop` 的值时，这个变化也会同步到父组件中所绑定。
-`.sync` 它会被扩展为一个自动更新父组件属性的 `v-on` 监听器。
+当一个子组件改变了一个 `prop` 的值时，这个变化也会同步到父组件中所绑定。`.sync` 它会被扩展为一个自动更新父组件属性的 `v-on` 监听器。
 When a child component changes the value of a `prop`, the change is synchronized with the binding in the parent component. `.sync`It is extended as a `v-on` listener that automatically updates the properties of the parent component.
 
 
@@ -1054,8 +1056,7 @@ The internal working principle of scoped slots is to wrap the contents of your s
 	}
 ```
 
-这意味着 `v-slot` 的值实际上可以是任何能够作为函数定义中的参数的 `JavaScript` 表达式。
-所以在支持的环境下 ( [单文件组件](https://cn.vuejs.org/v2/guide/single-file-components.html) 或 [现代浏览器](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment))，你也可以使用 [ES2015 解构](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) 来传入具体的插槽 `prop`，如下：
+这意味着 `v-slot` 的值实际上可以是任何能够作为函数定义中的参数的 `JavaScript` 表达式。所以在支持的环境下 ( [单文件组件](https://cn.vuejs.org/v2/guide/single-file-components.html) 或 [现代浏览器](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment))，你也可以使用 [ES2015 解构](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) 来传入具体的插槽 `prop`，如下：
 This means that the value of a  `v-slot` can actually be any`JavaScript` expression that can be used as a parameter in a function definition. So with the support of the environment ( single file component ), you can also use the ES2015 deconstructed to pass specific slot `prop`, as follows:
 
 ```html

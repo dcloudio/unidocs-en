@@ -13,6 +13,7 @@ app.config = {...}
 
 
 |应用配置|描述	|H5		|App端|说明	|
+| Application Config  | description     |H5		|App端|说明	|
 |--	|--	|--	|--	|--	|
 |errorHandler	|指定一个处理函数，来处理组件渲染方法执行期间以及侦听器抛出的未捕获错误。[详情](https://vue3js.cn/docs/zh/api/application-config.html#errorhandler)	|√	|√	||
 |errorHandler	|Assign a handler for uncaught errors during component render function and watchers. [details](https://vue3js.cn/docs/zh/api/application-config.html#errorhandler)	|√	|√	||
@@ -50,6 +51,7 @@ In addition, since the `createApp` method returns the application instance itsel
 
 
 |应用 API|描述	|H5		|App端|
+| Application API  | description     |H5		|App端|
 |--	|--	|--	|--	|
 |component	|注册或检索全局组件。[详情](https://vue3js.cn/docs/zh/api/application-api.html#component)	|√	|√	|
 |component	|Register or retrieve a global component. [details](https://vue3js.cn/docs/zh/api/application-api.html#component)	|√	|√	|
@@ -70,6 +72,7 @@ In addition, since the `createApp` method returns the application instance itsel
 ## Global API
 
 |全局 API|描述	|H5		|App端|
+| Global API  | description     |H5		|App端|
 |--	|--	|--	|--	|
 |createApp	|返回一个提供应用上下文的应用实例。应用实例挂载的整个组件树共享同一个上下文。[详情](https://vue3js.cn/docs/zh/api/global-api.html#createapp)	|√	|√	|
 |createApp	|Returns an application instance which provides an application context. The entire component tree mounted by the application instance share the same context.[details](https://vue3js.cn/docs/zh/api/global-api.html#createapp)	|√	|√	|
@@ -100,6 +103,7 @@ In addition, since the `createApp` method returns the application instance itsel
 
 
 |Data|描述	|H5		|App端|
+| Data | description     |H5		|App端|
 |--	|--	|--	|--	|
 |data	|返回组件实例的 `data` 对象的函数。[详情](https://vue3js.cn/docs/zh/api/options-data.html)	|√	|√	|
 |data	|The function that returns a data object for the component instance. [details](https://vue3js.cn/docs/zh/api/options-data.html)	|√	|√	|
@@ -120,6 +124,7 @@ In addition, since the `createApp` method returns the application instance itsel
 
 
 |DOM|描述	|H5		|App端|说明	|
+| DOM | description     |H5		|App端|说明	|
 |--	|--	|--	|--	|--	|
 |template	|一个字符串模板作为 `component` 实例的标识使用。[详情](https://vue3js.cn/docs/zh/api/options-dom.html#template)	|√	|x	| uni-app使用的vue是只包含运行时的版本		|
 |template	|A string template to be used as the markup for the `component` instance.[details](https://vue3js.cn/docs/zh/api/options-dom.html#template)	|√	|x	| uni-app使用的vue是只包含运行时的版本		|
@@ -133,6 +138,7 @@ In addition, since the `createApp` method returns the application instance itsel
 
 
 |生命周期钩子|描述	|H5		|App端|
+| Lifecycle hooks | description     |H5		|App端|
 |--	|--	|--	|--	|
 |beforeCreate	|在实例初始化之后，数据观测` (data observer) `和 `event/watcher` 事件配置之前被调用。[详情](https://vue3js.cn/docs/zh/api/options-lifecycle-hooks.html#beforecreate)	|√	|√	|
 |beforeCreate	|Called synchronously immediately after the instance has been initialized, before data observation and event/watcher setup.[details](https://vue3js.cn/docs/zh/api/options-lifecycle-hooks.html#beforecreate)	|√	|√	|
@@ -167,6 +173,7 @@ In addition, since the `createApp` method returns the application instance itsel
 
 
 |资源|描述	|H5		|App端|
+| Assets | description     |H5		|App端|
 |--	|--	|--	|--	|
 |directives	|包含组件实例可用指令的哈希表。[详情](https://vue3js.cn/docs/zh/api/options-assets.html#directives)	|√	|√	|
 |directives	|A hash of directives to be made available to the component instance.[details](https://vue3js.cn/docs/zh/api/options-assets.html#directives)	|√	|√	|
@@ -179,6 +186,7 @@ In addition, since the `createApp` method returns the application instance itsel
 
 
 |组合|描述	|H5		|App端|
+| Composition | description     |H5		|App端|
 |--	|--	|--	|--	|
 |mixins	|接收一个混入对象的数组。这些混入对象可以像正常的实例对象一样包含实例选项，这些选项将会被合并到最终的选项中，使用特定的选项合并逻辑。[详情](https://vue3js.cn/docs/zh/api/options-composition.html#mixins)	|√	|√	|
 |mixins	|The mixins option accepts an array of mixin objects. These mixin objects can contain instance options like normal instance objects, and they will be merged against the eventual options using the certain option merging logic. [details](https://vue3js.cn/docs/zh/api/options-composition.html#mixins)	|√	|√	|
@@ -196,6 +204,7 @@ In addition, since the `createApp` method returns the application instance itsel
 
 
 |杂项|描述	|H5		|App端|
+| Misc | description     |H5		|App端|
 |--	|--	|--	|--	|
 |name	|允许组件模板递归地调用自身。注意，组件在全局用 `Vue.createApp({}).component({})` 注册时，全局 `ID` 自动作为组件的 `name`。[详情](https://vue3js.cn/docs/zh/api/options-misc.html#name)	|√	|√	|
 |name	|Allow the component to recursively invoke itself in its template. Note that when a component is registered globally with app.component, the global ID is automatically set as its name.[details](https://vue3js.cn/docs/zh/api/options-misc.html#name)	|√	|√	|
@@ -211,6 +220,7 @@ In addition, since the `createApp` method returns the application instance itsel
 
 
 |实例 property|描述	|H5		|App端|说明	|
+| Instance Properties | description     |H5		|App端|说明	|
 |--	|--	|--	|--	|--	|
 |$data	|组件实例观察的数据对象。组件实例代理了对其 `data` 对象 `property` 的访问。[详情](https://vue3js.cn/docs/zh/api/instance-properties.html#data)	|√	|√	||
 |$data	|The data object that the component instance is observing. The component instance proxies access to the properties on its data object.[details](https://vue3js.cn/docs/zh/api/instance-properties.html#data)	|√	|√	||
@@ -236,6 +246,7 @@ In addition, since the `createApp` method returns the application instance itsel
 ## Instance Methods
 
 |实例方法|描述	|H5		|App端|
+| Instance Methods | description     |H5		|App端|
 |--	|--	|--	|--	|
 |$watch	|侦听组件实例上的响应式 `property` 或函数计算结果的变化。[详情](https://vue3js.cn/docs/zh/api/instance-methods.html#watch)	|√	|√	|
 |$watch	|Watch a reactive property or a computed function on the component instance for changes.[details](https://vue3js.cn/docs/zh/api/instance-methods.html#watch)	|√	|√	|
@@ -252,7 +263,8 @@ In addition, since the `createApp` method returns the application instance itsel
 ## 指令
 ## Directives
 
-|Vue 指令		|描述						|H5		|App端|说明	|
+| 指令		|描述						|H5		|App端|说明	|
+| Directives | description     |H5		|App端|说明	|
 | --				| --						| --	|--		| --	|
 |v-text	| 更新元素的 [`textContent`](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent)。 [详情](https://vue3js.cn/docs/zh/api/directives.html#v-text) 	|√	|√	|		|
 |v-text	| Updates the element's [`textContent`](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent) (opens new window). [details](https://vue3js.cn/docs/zh/api/directives.html#v-text) 	|√	|√	|		|
@@ -290,6 +302,7 @@ In addition, since the `createApp` method returns the application instance itsel
 ## Special Attributes
 
 |特殊属性		|描述						|H5		|App端|说明	|
+| Special Attributes | description     |H5		|App端|说明	|
 | --				| --						| --	|--		| --	|
 |key	| `key` 的特殊 `attribute` 主要用在 `Vue` 的虚拟 `DOM` 算法，在新旧 `nodes` 对比时辨识 `VNodes`。 [详情](https://vue3js.cn/docs/zh/api/special-attributes.html#key) 	|√	| √	| 	|
 |key	| The `key` special `attribute` is primarily used as a hint for Vue's virtual DOM algorithm to identify `VNodes` when diffing the new list of `nodes` against the old list.  [details](https://vue3js.cn/docs/zh/api/special-attributes.html#key) 	|√	| √	| 	|
@@ -304,6 +317,7 @@ In addition, since the `createApp` method returns the application instance itsel
 ## Built-In Components
 
 |内置组件		|描述						|H5		|App端|
+| Built-In Components | description     |H5		|App端|
 | --				| --						| --	|--		|
 |component	| 渲染一个“元组件”为动态组件。依 `is` 的值，来决定哪个组件被渲染。 [详情](https://vue3js.cn/docs/zh/api/built-in-components.html#component) 	|√	| √	|		|
 |component	| A "meta component" for rendering dynamic components. The actual component to render is determined by the is prop. [details](https://vue3js.cn/docs/zh/api/built-in-components.html#component) 	|√	| √	|		|
@@ -328,6 +342,7 @@ In addition, since the `createApp` method returns the application instance itsel
 ### Basic Reactivity APIs
 
 |响应性基础 API|描述	|H5		|App端|
+| Basic Reactivity APIs | description     |H5		|App端|
 |--	|--	|--	|--	|
 |reactive	|返回对象的响应式副本。[详情](https://vue3js.cn/docs/zh/api/basic-reactivity.html#reactive)	|√	|√	|
 |reactive	|Returns a reactive copy of the object.[details](https://vue3js.cn/docs/zh/api/basic-reactivity.html#reactive)	|√	|√	|
@@ -354,6 +369,7 @@ In addition, since the `createApp` method returns the application instance itsel
 ### Refs
 
 |Refs|描述	|H5		|App端|
+| Refs | description     |H5		|App端|
 |--	|--	|--	|--	|
 |ref	|接受一个内部值并返回一个响应式且可变的 `ref` 对象。`ref` 对象具有指向内部值的单个 property `.value`。[详情](https://vue3js.cn/docs/zh/api/refs-api.html#ref)	|√	|√	|
 |ref	|Takes an inner value and returns a reactive and mutable ref object. The ref object has a single property .value that points to the inner value.[details](https://vue3js.cn/docs/zh/api/refs-api.html#ref)	|√	|√	|
@@ -377,6 +393,7 @@ In addition, since the `createApp` method returns the application instance itsel
 ### Computed 与 watch
 
 |Computed 与 watch|描述	|H5		|App端|
+| Computed 与 watch | description     |H5		|App端|
 |--	|--	|--	|--	|
 |computed	|使用 `getter` 函数，并为从 `getter` 返回的值返回一个不变的响应式 `ref` 对象。[详情](https://vue3js.cn/docs/zh/api/computed-watch-api.html#computed)	|√	|√	|
 |computed	|Takes a `getter` function and returns an immutable reactive ref object for the returned value from the getter.[details](https://vue3js.cn/docs/zh/api/computed-watch-api.html#computed)	|√	|√	|
@@ -392,6 +409,7 @@ In addition, since the `createApp` method returns the application instance itsel
 ## Composition API
 
 |组合式 API|描述	|H5		|App端|
+| Composition API | description     |H5		|App端|
 |--	|--	|--	|--	|
 |setup	|一个组件选项，在创建组件之前执行，一旦 `props` 被解析，并作为组合式 `API` 的入口点。[详情](https://vue3js.cn/docs/zh/api/composition-api.html#setup)	|√	|√	|
 |setup	|A component option that is executed before the component is created, once the `props` are resolved. It serves as the entry point for composition APIs.[详情](https://vue3js.cn/docs/zh/api/composition-api.html#setup)	|√	|√	|

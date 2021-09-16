@@ -79,11 +79,13 @@ When registering a component, we always need to give it a name.
 There are two ways to define component names:
 
 - 使用 kebab-case
+- With kebab-case
 
 当使用 `kebab-case` (短横线分隔命名) 定义一个组件时，你也必须在引用这个自定义元素时使用 `kebab-case`，例如 `<my-component-name>`。
 When using kebab-case (name separated by dashes) to define a component, you must also use kebab-case when referencing this custom element, for example `<my-component-name>`.
 
 - 使用 PascalCase
+- With PascalCase
 
 当使用 `PascalCase` (首字母大写命名) 定义一个组件时，你在引用这个自定义元素时两种命名法都可以使用。也就是说 `<my-component-name>` 和 `<MyComponentName>` 都是可接受的。
 When defining a component using PascalCase (name with initial capital letters), you can use both nomenclatures when referencing this custom element. Both `<my-component-name>`and `<MyComponentName>`are acceptable.

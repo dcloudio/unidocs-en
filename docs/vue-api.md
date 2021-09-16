@@ -118,9 +118,11 @@
 
 
 ## 生命周期
+## Lifecycle Hooks
 
 
-|生命周期钩子	|描述	|H5	|App端|
+|生命周期	|描述	|H5	|App端|
+|Lifecycle Hooks	|description	|H5	|App端|
 | --			| --	| --|--		| 
 |beforeCreate		| 在实例初始化之后,进行数据侦听和事件/侦听器的配置之前同步调用。 [详情](https://cn.vuejs.org/v2/api/#beforeCreate)	|√	|√		|	
 |beforeCreate		| Called synchronously immediately after the instance has been initialized, before data observation and event/watcher setup. [details](https://cn.vuejs.org/v2/api/#beforeCreate)	|√	|√		|	
