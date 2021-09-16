@@ -29,28 +29,45 @@ If you need a richer camera API on the App side (such as directly calling the fr
 |complete|Function| no       | The callback function for the end of the interface call (the call will be executed if it succeeds or fails) |&nbsp;|
 
 **crop 参数说明**
+**crop parameter description**
 
 |参数名|类型|必填|说明|
+|Parameter name|Type|Required|Description|
 |:-|:-|:-|:-|
 |quality|Number|否|取值范围为1-100，数值越小，质量越低（仅对jpg格式有效）。默认值为80。|
+|quality|Number|No|The value range is 1-100, the smaller the value, the lower the quality (only valid for jpg format). The default value is 80. |
 |width|Number|是|裁剪的宽度，单位为px，用于计算裁剪宽高比。|
+|width|Number| is the width of the crop, the unit is px, which is used to calculate the crop aspect ratio. |
 |height|Number|是|裁剪的高度，单位为px，用于计算裁剪宽高比。|
+|height|Number| is the height of the crop, the unit is px, which is used to calculate the crop aspect ratio. |
 |resize|Boolean|否|是否将width和height作为裁剪保存图片真实的像素值。默认值为true。注：设置为false时在裁剪编辑界面显示图片的像素值，设置为true时不显示|
+|resize|Boolean|No|Whether to use width and height as cropping to save the real pixel value of the picture. The default value is true. Note: when set to false, display the pixel value of the picture in the crop editing interface, when set to true, it will not be displayed|
+
 
 **Tips**
 
 - count 值在 H5 平台的表现，基于浏览器本身的规范。目前测试的结果来看，只能限制单选/多选，并不能限制数量。并且，在实际的手机浏览器很少有能够支持多选的。
+- The performance of the count value on the H5 platform is based on the browser's own specifications. According to the current test results, only single-selection/multi-selection can be restricted, not the number. Moreover, there are few actual mobile browsers that can support multiple selections.
+- The performance of the count value on the H5 platform is based on the browser's own specifications. According to the current test results, only single selection/multiple selection can be restricted, but the number cannot be restricted. Moreover, few browsers on actual mobile phones can support multiple selection.
 - The performance of the count value on the H5 platform is based on the browser's own specifications. According to the current test results, only single selection/multiple selection can be restricted, but the number cannot be restricted. Moreover, few browsers on actual mobile phones can support multiple selection.
 - sourceType 在H5端对应`input`的`capture`属性，设置为`['album']`无效，依然可以使用相机。
+- The sourceType corresponds to the `capture` property of `input` on the H5 side. It is invalid to set it to `['album']`, and the camera can still be used.
+- In H5 sourceType end corresponding to `input`the `capture`attribute is set to `['album']`invalid, you can still use the camera.
 - In H5 sourceType end corresponding to `input`the `capture`attribute is set to `['album']`invalid, you can still use the camera.
 - 可以通过用户授权API来判断用户是否给应用授予相册或摄像头的访问权限[https://uniapp.dcloud.io/api/other/authorize](https://uniapp.dcloud.io/api/other/authorize)
+- You can use the user authorization API to determine whether the user grants the app the permission to access the photo album or camera [https://uniapp.dcloud.io/api/other/authorize](https://uniapp.dcloud.io/api/other /authorize)
+- You can use the user authorization API to determine whether the user grants the app the permission to access the photo album or camera
 - You can use the user authorization API to determine whether the user grants the app the permission to access the photo album or camera
 - App端如需选择非媒体文件，可在插件市场搜索[文件选择](https://ext.dcloud.net.cn/search?q=文件选择)，其中Android端可以使用Native.js，无需原生插件，而iOS端需要原生插件。
+- If you need to select non-media files on the App side, you can search for [file selection](https://ext.dcloud.net.cn/search?q=file selection) in the plug-in market, and Native.js can be used on the Android side, no Native plugins, and native plugins are required for iOS.
 - If you need to select non-media files on the App side, you can search for file options in the plug-in market . Among them, Native.js can be used on the Android side without native plug-ins, while the iOS side requires native plug-ins.
+- If you need to select non-media files on the App side, you can search for file options in the plug-in market. Among them, Native.js can be used on the Android side without native plug-ins, while the iOS side requires native plug-ins.
 - 选择照片大多为了上传，uni ui封装了更完善的[uni-file-picker组件](https://ext.dcloud.net.cn/plugin?id=4079)，文件选择、上传到uniCloud的免费存储和cdn中，一站式集成。强烈推荐使用。
+- Most photos are selected for uploading, uni ui encapsulates a more complete [uni-file-picker component](https://ext.dcloud.net.cn/plugin?id=4079), file selection and upload to uniCloud are free One-stop integration in storage and cdn. It is highly recommended.
 
 
 **注：文件的临时路径，在应用本次启动期间可以正常使用，如需持久保存，需在主动调用 [uni.saveFile](api/file/file?id=savefile)，在应用下次启动时才能访问得到。**
+**Note: The temporary path of the file can be used normally during the current start of the application. If you need to save it for a long time, you need to call [uni.saveFile](api/file/file?id=savefile) actively, and then start the application next time. It can be accessed only when.**
 
 **success 返回参数说明**
 **success return parameter description**
@@ -82,9 +99,15 @@ If you need a richer camera API on the App side (such as directly calling the fr
 
 ```javascript
 uni.chooseImage({
-	count: 6, //默认9
-	sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
-	sourceType: ['album'], //从相册选择
+	count: 6, 
+	//默认9
+	//Default 9
+	sizeType: ['original', 'compressed'], 
+	//可以指定是原图还是压缩图，默认二者都有
+	//You can specify whether it is the original image or the compressed image, the default is both
+	sourceType: ['album'], 
+	//从相册选择
+	//Select from album
 	success: function (res) {
 		console.log(JSON.stringify(res.tempFilePaths));
 	}
@@ -175,21 +198,25 @@ A set of pictures `[A, B1, C, B2, D]`, where the picture links of B1 and B2 are 
 |tapIndex|Number|The index value of the user clicked button list|
 
 **示例**
+**Example**
 
 ```javascript
 // 从相册选择6张图
+// Select 6 pictures from the album
 uni.chooseImage({
 	count: 6,
 	sizeType: ['original', 'compressed'],
 	sourceType: ['album'],
 	success: function(res) {
 		// 预览图片
+		// preview picture
 		uni.previewImage({
 			urls: res.tempFilePaths,
 			longPressActions: {
-				itemList: ['发送给朋友', '保存图片', '收藏'],
+				itemList: ['发送给朋友(Send to a friend)', '保存图片(Save picture)', '收藏(Favorite)'],
 				success: function(data) {
 					console.log('选中了第' + (data.tapIndex + 1) + '个按钮,第' + (data.index + 1) + '张图片');
+					console.log('Selected the first' + (data.tapIndex + 1) +'button, the first' + (data.index + 1) +'picture');
 				},
 				fail: function(err) {
 					console.log(err.errMsg);
@@ -296,7 +323,7 @@ uni.chooseImage({
 Save the picture to the system album.
 
 **平台差异说明**
-**平台差异说明**
+**Platform difference description**
 
 |App|H5|
 |:-:|:-:|
@@ -359,6 +386,7 @@ uni.chooseImage({
 Compressed picture interface, optional compression quality
 
 **平台差异说明**
+**Platform difference description**
 
 |App|H5|
 |:-:|:-:|

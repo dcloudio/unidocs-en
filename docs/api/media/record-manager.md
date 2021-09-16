@@ -3,6 +3,7 @@
 Get the **globally unique** recording manager `recorderManager`.
 
 **平台差异说明**
+**Platform difference description**
 
 |App|H5|
 |:-:|:-:|
@@ -93,8 +94,11 @@ Get the **globally unique** recording manager `recorderManager`.
 <template>
 	<view>
 		<button @tap="startRecord">开始录音</button>
+		<button @tap="startRecord">Start recording</button>
 		<button @tap="endRecord">停止录音</button>
+		<button @tap="endRecord">Stop recording</button>
 		<button @tap="playVoice">播放录音</button>
+		<button @tap="playVoice">Play recording</button>
 	</view>
 </template>
 ```
@@ -122,15 +126,18 @@ export default {
 	methods: {
 		startRecord() {
 			console.log('开始录音');
+			console.log('Start recording');
 
 			recorderManager.start();
 		},
 		endRecord() {
 			console.log('录音结束');
+			console.log('End of recording');
 			recorderManager.stop();
 		},
 		playVoice() {
 			console.log('播放录音');
+			console.log('Play recording');
 
 			if (this.voicePath) {
 				innerAudioContext.src = this.voicePath;

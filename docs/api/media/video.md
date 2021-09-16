@@ -8,6 +8,7 @@ If you select and upload non-image and video files, please refer to: [https://un
 If you select and upload non-image and video files, please refer to: [https://uniapp.dcloud.io/api/media/file](https://uniapp.dcloud.io/api/media/file).
 
 **平台差异说明**
+**Platform difference description**
 
 |App|H5|
 |:-:|:-:|
@@ -56,6 +57,7 @@ If you select and upload non-image and video files, please refer to: [https://un
 |name|String| File name including extension            | Only H5 support  |
 
 **注意：**
+**Notice:**
 * app安卓端选择的视频最大只支持180MB，如需突破该限制请使用原生插件https://ext.dcloud.net.cn/search?q=%E6%96%87%E4%BB%B6%E9%80%89%E6%8B%A9 
 * The video selected by the app on the Android side only supports up to 180MB. If you want to break through this limit, please use the native plug-in
 * 文件的临时路径，在应用本次启动期间可以正常使用，如需持久保存，需在主动调用 [uni.saveFile](api/file/file?id=savefile)，在应用下次启动时才能访问得到。
@@ -69,8 +71,10 @@ If you select and upload non-image and video files, please refer to: [https://un
 * 如需上传到cdn，可使用uniCloud.uploadFile API，uniCloud提供了免费cdn给开发者使用，详见[https://uniapp.dcloud.io/uniCloud/storage?id=uploadfile](https://uniapp.dcloud.io/uniCloud/storage?id=uploadfile)
 * If you need to upload to CDN, you can use uniCloud.uploadFile API. UniCloud provides free CDN for developers to use
 * 选择视频大多为了上传，uni ui封装了更完善的[uni-file-picker组件](https://ext.dcloud.net.cn/plugin?id=4079)，文件选择、上传到uniCloud的免费存储和cdn中，一站式集成。强烈推荐使用。
-
+* Most videos are selected for uploading, uni ui encapsulates a more complete [uni-file-picker component](https://ext.dcloud.net.cn/plugin?id=4079), file selection and upload to uniCloud are free One-stop integration in storage and cdn. It is highly recommended.
+* 
 **示例**
+**Example**
 
 ```html
 <template>
@@ -110,6 +114,7 @@ export default {
 Save the video to the system album. 
 
 **平台差异说明**
+**Platform difference description**
 
 |App|H5|
 |:-:|:-:|
@@ -192,6 +197,7 @@ export default {
 Get video details 
 
 **平台差异说明**
+**Platform difference description**
 
 |App|H5|
 |:-:|:-:|
@@ -262,10 +268,10 @@ Get video details
 ### uni.compressVideo(OBJECT)
 
 压缩视频接口。开发者可指定压缩质量 quality 进行压缩。当需要更精细的控制时，可指定 bitrate、fps、和 resolution，当 quality 传入时，这三个参数将被忽略。原视频的相关信息可通过 getVideoInfo 获取。
-
 Compressed video interface. Developers can specify compression quality quality for compression. When finer control is needed, bitrate, fps, and resolution can be specified. When quality is passed in, these three parameters will be ignored. The relevant information of the original video can be obtained through getVideoInfo.
 
 **平台差异说明**
+**Platform difference description**
 
 |App|H5|
 |:-:|:-:|

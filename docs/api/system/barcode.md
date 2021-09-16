@@ -42,6 +42,7 @@ Turn up the client scan interface, scan code after successful return the corresp
 |path|When the code scanned is the valid QR code of the current application,This field will be returned, the content is carried by the two-dimensional code path. |
 
 **示例**
+**Example**
 
 ```javascript
 // 允许从相机和相册扫码
@@ -49,7 +50,9 @@ Turn up the client scan interface, scan code after successful return the corresp
 uni.scanCode({
 	success: function (res) {
 		console.log('条码类型：' + res.scanType);
+		console.log('Barcode Type:' + res.scanType);
 		console.log('条码内容：' + res.result);
+		console.log('Barcode content:' + res.result);
 	}
 });
 
@@ -59,7 +62,9 @@ uni.scanCode({
 	onlyFromCamera: true,
 	success: function (res) {
 		console.log('条码类型：' + res.scanType);
+		console.log('Barcode Type:' + res.scanType);
 		console.log('条码内容：' + res.result);
+		console.log('Barcode content:' + res.result);
 	}
 });
 
@@ -69,7 +74,9 @@ uni.scanCode({
 	scanType: ['barCode'],
 	success: function (res) {
 		console.log('条码类型：' + res.scanType);
+		console.log('Barcode Type:' + res.scanType);
 		console.log('条码内容：' + res.result);
+		console.log('Barcode content:' + res.result);
 	}
 });
 ```

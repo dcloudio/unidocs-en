@@ -19,6 +19,7 @@ Get the network type.
 **success Return parameter description**
 
 |参数|说明|
+|Parameters|Description|
 |:-|:-|
 |networkType|网络类型|
 |networkType|network type|

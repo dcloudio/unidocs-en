@@ -84,6 +84,7 @@ Obtain the content corresponding to the specified key asynchronously from the lo
 |data|Any|key corresponding content|
 
 **示例**
+**Example**
 
 ```javascript
 uni.getStorage({
@@ -98,12 +99,16 @@ uni.getStorage({
 从本地缓存中同步获取指定 key 对应的内容。
 
 **参数说明**
+**Parameter Description**
 
 |参数|类型|必填|说明|
+|Parameter|Type|Required|Description|
 |:-|:-|:-|:-|
 |key|String|是|本地缓存中的指定的 key|
+|key|String|is the specified key in the local cache|
 
 **示例**
+**Example**
 
 ```javascript
 try {
@@ -121,6 +126,7 @@ try {
 Asynchronously obtain the relevant information of the current storage.
 
 **平台差异说明**
+**Platform difference description**
 
 |App|H5|
 |:-:|:-:|
@@ -167,14 +173,17 @@ uni.getStorageInfo({
 
 #### uni.getStorageInfoSync()
 同步获取当前 storage 的相关信息。
+Synchronously obtain the relevant information of the current storage.
 
 **平台差异说明**
+**Platform difference description**
 
 |App|H5|
 |:-:|:-:|
 |HBuilderX 2.0.3+|√|
 
 **示例**
+**Example**
 
 ```javascript
 try {
@@ -269,14 +278,21 @@ try {
 ```
 
 **注意**
+**Notice**
 
 uni-app的Storage在不同端的实现不同：
+The storage of uni-app is implemented differently on different ends:
 - H5端为localStorage，浏览器限制5M大小，是缓存概念，可能会被清理
+- The H5 end is localStorage, the browser limits the size of 5M, which is a cache concept and may be cleaned up
 - App端为原生的plus.storage，无大小限制，不是缓存，是持久化的
+- App side is native plus.storage, no size limit, not cache, but persistent
 - 非App平台清空Storage会导致uni.getSystemInfo获取到的deviceId改变
-
+- Clearing Storage on non-App platforms will cause the deviceId obtained by uni.getSystemInfo to change
 除此之外，其他数据存储方案：
+In addition, other data storage solutions:
 - H5端还支持websql、indexedDB、sessionStorage
+- H5 also supports websql, indexedDB, sessionStorage
 - App端还支持[SQLite](https://www.html5plus.org/doc/zh_cn/sqlite.html)、[IO文件](https://www.html5plus.org/doc/zh_cn/io.html)等本地存储方案。
-
+- App also supports [SQLite](https://www.html5plus.org/doc/zh_cn/sqlite.html), [IO file](https://www.html5plus.org/doc/zh_cn/io.html ) And other local storage solutions.
 从HBuilderX2.6.6+起，App-Android平台对本地storage数据存储进行了性能优化，它的具体优化方式和升级注意事项，详见：[https://ask.dcloud.net.cn/article/37071](https://ask.dcloud.net.cn/article/37071)
+Starting from HBuilderX2.6.6+, the App-Android platform has optimized the performance of local storage data storage. For specific optimization methods and upgrade considerations, please see: [https://ask.dcloud.net.cn/article/37071 ](https://ask.dcloud.net.cn/article/37071)

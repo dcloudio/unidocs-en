@@ -41,6 +41,7 @@ The background audio is not the background music of the game, but similar to QQ 
 |webUrl|String|页面链接，原生音频播放器中的分享功能，分享出去的卡片简介，也将使用该值。|否|
 |webUrl|String|The page link, the sharing function in the native audio player, and the shared card profile will also use this value.|no|
 |protocol|String|音频协议。默认值为 'http'，设置 'hls' 可以支持播放 HLS 协议的直播音频，App平台暂不支持|否|
+|protocol|String|Audio protocol. The default value is'http', setting'hls' can support playing live audio of HLS protocol, App platform does not support temporarily|No|
 
 **backgroundAudioManager 对象的方法列表**
 **List of methods of the backgroundAudioManager object**

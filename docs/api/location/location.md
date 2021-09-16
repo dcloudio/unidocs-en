@@ -71,13 +71,16 @@ Get the current geographic location and speed.
 | cityCode   | String | City code                     | Such as "010", if this information cannot be obtained, undefined will be returned |
 
 **示例**
+**Example**
 
 ```javascript
 uni.getLocation({
 	type: 'wgs84',
 	success: function (res) {
 		console.log('当前位置的经度：' + res.longitude);
+		console.log('The longitude of the current position:' + res.longitude);
 		console.log('当前位置的纬度：' + res.latitude);
+		console.log('The latitude of the current position:' + res.latitude);
 	}
 });
 ```
@@ -170,9 +173,13 @@ Open the map and select a location.
 uni.chooseLocation({
 	success: function (res) {
 		console.log('位置名称：' + res.name);
+		console.log('Location name:' + res.name);
 		console.log('详细地址：' + res.address);
+		console.log('Detailed address:' + res.address);
 		console.log('纬度：' + res.latitude);
+		console.log('Latitude:' + res.latitude);
 		console.log('经度：' + res.longitude);
+		console.log('longitude:' + res.longitude);
 	}
 });
 ```

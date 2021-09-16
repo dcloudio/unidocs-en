@@ -25,6 +25,7 @@ Screen brightness setting.
 |complete|Function|no|The callback function for the end of the interface call (the call will be executed if it succeeds or fails)|
 
 **示例**
+**Example**
 
 ```javascript
 uni.setScreenBrightness({
@@ -43,6 +44,7 @@ uni.setScreenBrightness({
 Get screen brightness value.
 
 **平台差异说明**
+**Platform difference description**
 
 
 |App|H5|
@@ -66,6 +68,7 @@ Get screen brightness value.
 **success Return parameter description**
 
 |参数|类型|说明|
+|Parameter|Type|Description|
 |:-|:-|:-|
 |value|Number|屏幕亮度值，范围 0~1，0 最暗，1 最亮。|
 |value|Number|Screen brightness values, ranging from 0 to 1, where 0 is darkest and 1 is brightest.|
@@ -77,6 +80,7 @@ Get screen brightness value.
 uni.getScreenBrightness({
 	success: function (res) {
 		console.log('屏幕亮度值：' + res.value);
+		console.log('Screen brightness value:' + res.value);
 	}
 });
 ```

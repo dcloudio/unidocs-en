@@ -63,6 +63,7 @@ Get the contents of the system clipboard.
 |data|String|The contents of the clipboard|
 
 **示例**
+**Example**
 
 ```javascript
 uni.getClipboardData({
@@ -78,3 +79,4 @@ uni.getClipboardData({
 - 设置剪贴板内容后，App平台默认会自动弹出轻提示。如不希望在App平台弹出提示，可使用Native.js自行操作剪贴板，插件市场有封装好的示例[https://ext.dcloud.net.cn/plugin?id=712](https://ext.dcloud.net.cn/plugin?id=712)。也可以在设置剪切板后立即uni.hideToast()。
 - After setting the clipboard contents,Mini program platform will automatically pop up light prompts.APP platform keep the same policy to mini program. If you do not want the prompt to pop up on the APP platform,You can use Native.js to operate the clipboard by yourself.It can also be uni.hideToast() set immediately after the clipboard is set.
 - H5的复制粘贴，可去插件市场搜索[剪贴板](https://ext.dcloud.net.cn/search?q=%E5%89%AA%E8%B4%B4%E6%9D%BF)
+- To copy and paste H5, you can go to the plug-in market to search for [clipboard](https://ext.dcloud.net.cn/search?q=%E5%89%AA%E8%B4%B4%E6%9D%BF )

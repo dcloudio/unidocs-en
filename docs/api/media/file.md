@@ -106,7 +106,9 @@ This API is mainly used to select non-media files. If the selected file is a med
 
 ```javascript
 uni.chooseFile({
-  count: 6, //默认100
+  count: 6, 
+  //默认100
+  //Default 100
   extension:['.zip','.doc'],
 	success: function (res) {
 		console.log(JSON.stringify(res.tempFilePaths));
@@ -114,11 +116,13 @@ uni.chooseFile({
 });
 
 // 选择图片文件
+// Select picture file
 uni.chooseFile({
   count: 10,
   type: 'image',
   success (res) {
     // tempFilePath可以作为img标签的src属性显示图片
+	// tempFilePath can be used as the src attribute of the img tag to display pictures
     const tempFilePaths = res.tempFiles
   }
 })

@@ -106,6 +106,7 @@ Get System Information.
 
 
 **示例**
+**Example**
 
 ```javascript
 uni.getSystemInfo({
@@ -206,6 +207,7 @@ Get system information synchronization interface.
 |bottom	|Number	|Safety zone bottom insertion position			|
 
 **示例**
+**Example**
 
 ```javascript
 try {
@@ -224,15 +226,20 @@ try {
 
 
 **获取设备标记**
+**Get device mark**
 
 H5、iOS，属于对用户隐私保护比较严格的平台，在这些平台很难获取有效的设备唯一标记。
+H5 and iOS are platforms with strict protection of user privacy, and it is difficult to obtain a valid device unique mark on these platforms.
 
 Android已经改进用户隐私保护，在很多新手机上，获取imei等信息时需要弹框让用户授权。而Android10已经无法获取imei了。
 Android has improved user privacy protections,On a lot of new devices,When obtaining information such as IMEI, pop-up box is required for user authorization.IMEI is no longer available for Android 10.
 
 - H5平台：
+- H5 platform:
 常用的方式是uv，即在uni.storage里存一个随机数，本质是存在浏览器的localstorage里。将随机数发给服务器，进行用户身份识别和统计。当然如果用户浏览器清空了localstorage、更换了浏览器、或使用隐私模式，那么就统计数据就会有误差。
+The commonly used method is uv, that is, storing a random number in uni.storage, which is essentially stored in the browser's localstorage. Send the random number to the server for user identification and statistics. Of course, if the user's browser empties the localstorage, changes the browser, or uses the privacy mode, there will be errors in the statistical data.
 - App iOS平台：
+- App iOS platform:
 iOS并不提供imei的获取API，可通过[plus.device.getInfo](http://www.html5plus.org/doc/zh_cn/device.html#plus.device.getInfo) 可以获得设备的唯一标识（uuid），这个id其实也是一种随机数概念，类似于h5的uv计算，卸载app重装会发生变化；
 iOS does not provide a API to get IMEI, Can use [plus.device.getInfo](http://www.html5plus.org/doc/zh_cn/device.html#plus.device.getInfo). you can obtain the unique identity of the device (UUID),In fact, this ID is also a random number concept, similar to the UV calculation of H5. Uninstall APP and reinstall will change.
 
@@ -240,6 +247,7 @@ iOS还有一个叫`idfa`的广告识别符，可通过Native.js获取，详见�
 iOS also has an AD identifier called `idfa`,It is available through native.js. Details: [idfa Introduction](https://ask.dcloud.net.cn/article/36107)。
 
 - App Android平台：
+- App Android platform:
 Android也可以使用UUID，同iOS。
 Android can use UUID, like iOS.
 
