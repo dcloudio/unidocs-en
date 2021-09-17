@@ -149,9 +149,13 @@ message|string|Failure description
 	<view>
 		<barcode id='1' class="barcode" autostart="true" ref="barcode" background="rgb(0,0,0)" frameColor="#1C86EE" scanbarColor="#1C86EE" :filters="fil" @marked="success1" @error="fail1"></barcode>
 		<button class="btn" @click="toStart">开始扫码识别</button>
+		<button class="btn" @click="toStart">Start scanning code recognition</button>
 		<button class="btn" @click="tocancel">取消扫码识别</button>
+		<button class="btn" @click="tocancel">Cancel scan code recognition</button>
 		<button class="btn" @click="toFlash">开启闪光灯</button>
+		<button class="btn" @click="toFlash">Turn on the flash</button>
 		<button class="btn" @click="toscan">预览</button>
+		<button class="btn" @click="toscan">Preview</button>
 	</view>
 </template>
 

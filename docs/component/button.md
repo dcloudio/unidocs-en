@@ -32,7 +32,7 @@ button.
 
 
 - **注意：``button-hover`` 默认为 ``{background-color: rgba(0, 0, 0, 0.1); opacity: 0.7;}``**
-- -**Note: ``button-hover`` defaults to ``{background-color: rgba(0, 0, 0, 0.1); opacity: 0.7;}''**
+- **Note: ``button-hover`` defaults to ``{background-color: rgba(0, 0, 0, 0.1); opacity: 0.7;}''**
 
  
 **size 有效值**
@@ -71,6 +71,8 @@ button.
 |reset|Reset Form|
 
 **open-type 有效值**
+**open-type valid value**
+
 
 |值|说明|平台差异说明|
 |Value|Description|Platform difference description|
@@ -93,7 +95,9 @@ The button component has no url attribute. If you want to jump to the page, you 
 	<view>
 		<navigator url="/pages/about/about"><button type="default">Jump to the about page through the navigator component</button></navigator>
 		<button type="default" @click="goto('/pages/about/about')">Jump to the about page by function</button>
-		<button type="default" @click="navigateTo('/pages/about/about')">Jump to about page</button><!-- 这种写法只有h5平台支持，不跨端，不推荐使用 -->
+		<button type="default" @click="navigateTo('/pages/about/about')">Jump to about page</button>
+		<!-- 这种写法只有h5平台支持，不跨端，不推荐使用 -->
+		<!-- This writing method is only supported by the h5 platform, not cross-terminal, it is not recommended to use -->
 	</view>
 </template>
 <script>
@@ -116,6 +120,7 @@ The button component has no url attribute. If you want to jump to the page, you 
 - 在 App 中，开发者登录 [DCloud开发者中心](https://dev.dcloud.net.cn/) 后点击应用名称，进入左侧菜单“用户反馈”页面获取反馈内容。
 - In the App, the developer logs in to [DCloud Developer Center](https://dev.dcloud.net.cn/), clicks on the application name, and enters the "User Feedback" page of the left menu to get feedback.
 - 点击 share 分享按钮时会触发 [onShareAppMessage](/api/plugins/share)
+- [OnShareAppMessage](/api/plugins/share) will be triggered when the share button is clicked
 
 **示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/button/button)
 **Example** [View Demo](https://hellouniapp.dcloud.net.cn/pages/component/button/button)

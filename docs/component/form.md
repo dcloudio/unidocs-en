@@ -88,6 +88,7 @@ The following sample code comes from [hello uni-app project](https://github.com/
 			},
 			formReset: function(e) {
 				console.log('清空数据')
+				console.log('Empty data')
 			}
 		}
 	}

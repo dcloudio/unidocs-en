@@ -24,9 +24,11 @@ canvas.
 * canvas 标签默认宽度 300px、高度 225px，动态修改 canvas 大小后需要重新绘制。
 * The canvas tag has a default width of 300px and a height of 225px. It needs to be redrawn after dynamically changing the canvas size.
 * h5、app-vue 中单个尺寸过大的 canvas 在 iOS/Safari 无法绘制（具体限制尺寸未公布）。
+* In h5 and app-vue, a single canvas whose size is too large cannot be drawn on iOS/Safari (the specific size limit has not been announced).
 * 同一页面中的 canvas-id 不可重复，如果使用一个已经出现过的 canvas-id，该 canvas 标签对应的画布将被隐藏并不再正常工作。
 *  The canvas-id in the same page cannot be repeated. If a canvas-id that has already appeared is used, the canvas corresponding to the canvas tag will be hidden and no longer work normally.
 * 解决 canvas 层级过高无法覆盖，参考 [native-component](/component/native-component)。
+* To solve the problem that the canvas level is too high to cover, please refer to [native-component](/component/native-component).
 * app-vue 中的 canvas 仍然是 webview 的 canvas。app-nvue下如需使用canvas，需下载插件，详见文档底部章节。
 *  The canvas in app-vue is still the canvas of webview. If you need to use canvas under app-nvue, you need to download the plug-in, see the chapter at the bottom of the document for details.
 * app-vue的canvas虽然是webview自带的canvas，但却比nvue的原生canvas性能更高。注意并非原生=更快。canvas动画的流畅，关键不在于渲染引擎的速度，而在于减少从逻辑层向视图层频繁通信造成的折损。
@@ -35,6 +37,7 @@ canvas.
 * Small programs and app-nvue, because of communication blockage, it is difficult to draw very smooth canvas animation. h5 and app-vue do not have this problem. But note that if you want to draw canvas animation smoothly under app-vue, you need to use [renderjs](https://uniapp.dcloud.io/frame?id=renderjs) technology to put the js logic that operates the canvas in the view layer to run, avoiding frequent communication between the logic layer and the view layer. The canvas example of hello uni-app is very typical. Running the example on the same mobile phone shows that it is very smooth on both the h5 and app sides, while the applet terminal cannot achieve such smooth animation because it does not have renderjs technology.
 
 **示例：** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/canvas/canvas)
+**Example:** [View Demo](https://hellouniapp.dcloud.net.cn/pages/component/canvas/canvas)
  
 ```html
 <template>

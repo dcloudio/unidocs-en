@@ -32,6 +32,7 @@ uni.request({
     success: (res) => {
         console.log(res.data);
         // 打印： {code:1,...} Print: {code:1,...}
+		// Print: {code:1,...} Print: {code:1,...}
     }
 });
 
@@ -77,6 +78,6 @@ uni.removeInterceptor('request')
 ```
 
 ##### 拦截器的适用场景非常多，比如路由拦截，权限引导等。
-##### ##### There are many applicable scenarios for interceptors, such as route interception, authority guidance, etc.
+##### There are many applicable scenarios for interceptors, such as route interception, authority guidance, etc.
 > 你可以参考插件市场,拦截器应用示例：图片选择api时无权限，引导用户快捷打开系统设置：[https://ext.dcloud.net.cn/plugin?id=5095](https://ext.dcloud.net.cn/plugin?id=5095)
 > You can refer to the plug-in market, an example of interceptor application: when the picture selects the api, there is no permission, and the user is guided to quickly open the system settings: [https://ext.dcloud.net.cn/plugin?id=5095](https:// ext.dcloud.net.cn/plugin?id=5095)

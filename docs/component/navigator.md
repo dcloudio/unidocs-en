@@ -54,17 +54,17 @@ The function of this component has API method, see also: API>Routing and page ju
 **注意**
 **Notice**
 - 跳转tabbar页面，必须设置open-type="switchTab"
-- -To jump to the tabbar page, open-type="switchTab" must be set
+- To jump to the tabbar page, open-type="switchTab" must be set
 - navigator-hover 默认为 {background-color: rgba(0, 0, 0, 0.1); opacity: 0.7;}, ``<navigator>`` 的子节点背景色应为透明色。
-- -navigator-hover defaults to {background-color: rgba(0, 0, 0, 0.1); opacity: 0.7;}, the background color of the child nodes of ``<navigator>'' should be transparent.
+- navigator-hover defaults to {background-color: rgba(0, 0, 0, 0.1); opacity: 0.7;}, the background color of the child nodes of ``<navigator>'' should be transparent.
 - navigator-`open-type`属性 如果使用对应的值，则对应值的功能会高于对应跳转路径。
-- -navigator-`open-type` attribute If the corresponding value is used, the function of the corresponding value will be higher than the corresponding jump path.
+- navigator-`open-type` attribute If the corresponding value is used, the function of the corresponding value will be higher than the corresponding jump path.
 - app-nvue 平台只有纯nvue项目（render为native）才支持 `<navigator>`。非render为native的情况下，nvue暂不支持navigator组件，请使用API跳转。
-- -App-nvue platform supports `<navigator>` only for pure nvue projects (render is native). If the non-render is native, nvue does not support the navigator component, please use the API to jump.
+- App-nvue platform supports `<navigator>` only for pure nvue projects (render is native). If the non-render is native, nvue does not support the navigator component, please use the API to jump.
 - app下退出应用，Android平台可以使用[plus.runtime.quit](https://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.quit)。iOS没有退出应用的概念。
-- -To exit the application under the app, you can use [plus.runtime.quit](https://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.quit) on the Android platform. iOS has no concept of exiting the app.
+- To exit the application under the app, you can use [plus.runtime.quit](https://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.quit) on the Android platform. iOS has no concept of exiting the app.
 - [uLink组件](https://ext.dcloud.net.cn/plugin?id=1182)是navigator组件的增强版，样式上自带下划线，功能上支持打开在线网页、其他App的schema、mailto发邮件、tel打电话。
--[uLink component](https://ext.dcloud.net.cn/plugin?id=1182) is an enhanced version of the navigator component, with its own underline on the style, and functionally supports opening online web pages, schemas and mailto of other apps Send email, tel call.
+- [uLink component](https://ext.dcloud.net.cn/plugin?id=1182) is an enhanced version of the navigator component, with its own underline on the style, and functionally supports opening online web pages, schemas and mailto of other apps Send email, tel call.
 
 **示例** [查看示例](https://hellouniapp.dcloud.net.cn/pages/component/navigator/navigator)
 **Example** [View example](https://hellouniapp.dcloud.net.cn/pages/component/navigator/navigator)

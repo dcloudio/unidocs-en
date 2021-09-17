@@ -19,7 +19,7 @@ If you need a ui style, you can do it yourself, or you can search for related [p
 **Attribute description**
 
 |属性名|类型|默认值|说明|
-|**Attribute name**|**Type**|**Defaults**|**Description**|
+|Attribute name|Type|Defaults|Description|
 |:-|:-|:-|:-|
 |id|String||audio 组件的唯一标识符|
 |id|String||Unique identifier of the audio component|
@@ -41,8 +41,8 @@ If you need a ui style, you can do it yourself, or you can search for related [p
 |@play|EventHandle||Trigger play event when start/continue playing|
 |@pause|EventHandle||当暂停播放时触发 pause 事件|
 |@pause|EventHandle||The pause event is triggered when the playback is paused|
-|@timeupdate|EventHandle||The timeupdate event is triggered when the playback progress changes, detail = {currentTime, duration}|
 |@timeupdate|EventHandle||当播放进度改变时触发 timeupdate 事件，detail = {currentTime, duration}|
+|@timeupdate|EventHandle||The timeupdate event is triggered when the playback progress changes, detail = {currentTime, duration}|
 |@ended|EventHandle||当播放到末尾时触发 ended 事件|
 |@ended|EventHandle||Triggers the end event when playing to the end|
 
@@ -61,7 +61,7 @@ If you need a ui style, you can do it yourself, or you can search for related [p
 |4|Inappropriate resources|
 
 **示例：** [查看示例](https://hellouniapp.dcloud.net.cn/pages/component/audio/audio)
- 
+**Example:** [View example](https://hellouniapp.dcloud.net.cn/pages/component/audio/audio)
 ```html
 <template>
 	<view>

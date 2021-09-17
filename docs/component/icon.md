@@ -32,6 +32,7 @@ icon.
 Valid value description of each platform type:
 
 |平台|type 有效值|
+|platform|type valid value|
 |:-:|:-:|
 |App、H5|success, success_no_circle, info, warn, waiting, cancel, download, search, clear|
 

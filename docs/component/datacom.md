@@ -16,7 +16,9 @@ For example, [uni-data-checkbox](https://ext.dcloud.net.cn/plugin?id=3456) compo
 ```html
 <template>
     <!-- 传入符合 datacom 规范的数据，即可渲染出一组 checkbox -->
+	<!-- Pass in data that meets the datacom specification, and a set of checkboxes can be rendered -->
     <!-- 使用 v-model 双向绑定 checkbox 的选中值 -->
+	<!-- Use v-model to bind the selected value of checkbox in two directions -->
     <uni-data-checkbox v-model="value" :localdata="options" multiple></uni-data-checkbox>
 </template>
 <script>
@@ -220,7 +222,9 @@ For the complete JSON Schema definition, please refer to: [https://gitee.com/dcl
 ```html
 	<template>
 		<!-- 传入符合 datacom 规范的数据，即可渲染出一组 checkbox -->
+		<!-- Pass in data that meets the datacom specification, and a set of checkboxes can be rendered -->
 		<!-- 使用 v-model 双向绑定 checkbox 的选中值 -->
+		<!-- Use v-model to bind the selected value of checkbox in two directions -->
 		<uni-data-checkbox v-model="value" :localdata="options" multiple></uni-data-checkbox>
 	</template>
 	<script>
@@ -291,7 +295,9 @@ For the complete JSON Schema definition, please refer to: [https://gitee.com/dcl
 ```html
 	<template>
 	  <!-- 传入符合 datacom 规范的数据，即可渲染出一个选择器  -->
+	  <!-- Pass in data that meets the datacom specification, and a selector can be rendered -->
 	  <!-- 使用 v-model 双向绑定 picker 的选中值 -->
+	  <!-- Use v-model to bind the selected value of picker in two directions -->
 	  <uni-data-picker v-model="value" :localdata="items"></uni-data-checkbox>
 	</template>
 	<script>
@@ -328,7 +334,9 @@ The example of localdata has been exemplified above, let’s take a look at how 
 ```html
 	<template>
 		<!-- 传入符合 datacom 规范的数据，即可渲染出一组 checkbox -->
+		<!-- Pass in data that meets the datacom specification, and a set of checkboxes can be rendered -->
 		<!-- 使用 v-model 双向绑定 checkbox 的选中值 -->
+		<!-- Use v-model to bind the selected value of checkbox in two directions -->
 		<uni-data-checkbox v-model="value" collection="" where="" field="" multiple></uni-data-checkbox>
 	</template>
 	<script>
@@ -606,8 +614,12 @@ For example, to develop a datacom component named uni-data-jql:
 		<view v-else-if="mixinDatacomErrorMessage">
 			请求错误：{{mixinDatacomErrorMessage}}
 		</view>
+		<view v-else-if="mixinDatacomErrorMessage">
+			Request error: {{mixinDatacomErrorMessage}}
+		</view>
 		<view else="mixinDatacomResData">
 			<!-- 需要自行处理数据及相关UI展现 -->
+			<!-- Need to process data and related UI display by yourself -->
 			{{mixinDatacomResData}}
 		</view>
 	</view>
@@ -621,21 +633,33 @@ For example, to develop a datacom component named uni-data-jql:
 		},
 		created() {
 			// 调用 uniCloud.mixinDatacom 中的方法加载数据
+			// Call the method in uniCloud.mixinDatacom to load the data
 			this.mixinDatacomEasyGet()
 		},
 		methods: {
 			// 当组件属性发生变化时
+			// When the component properties change
 			onMixinDatacomPropsChange(needReset, changed) {
 				// needReset=true 需要重置已加载数据和分页信息，例如 collection，orderby
+				// needReset=true need to reset the loaded data and paging information, such as collection, orderby
 				// changed，变化的属性名，类型为 Array，例如 ['collection', 'orderby']
+				// changed, changed attribute name, type is Array, for example ['collection','orderby']
 				if (needReset) {
 					// 清空已加载的数据
+					// Clear the loaded data
 					this.mixinDatacomResData = []
 
 					// 重置分页数据，如果没有分页不需要处理
-					this.mixinDatacomPage.size = this.pageSize // 重置分页大小
-					this.mixinDatacomPage.current = 0 // 重置当前分页
-					this.mixinDatacomPage.count = 0 // 重置数据总数
+					// Reset the paging data, if there is no paging, no need to process
+					this.mixinDatacomPage.size = this.pageSize 
+					// 重置分页大小
+					// Reset page size
+					this.mixinDatacomPage.current = 0 
+					// 重置当前分页
+					// Reset the current page
+					this.mixinDatacomPage.count = 0 
+					// 重置数据总数
+					// Reset the total number of data
 				}
 			}
 		}
@@ -657,9 +681,11 @@ Need to write more code to handle various states. If the package of `mixinDataco
 		<view v-if="mixinDatacomLoading">Loading...</view>
 		<view v-else-if="mixinDatacomErrorMessage">
 			请求错误：{{mixinDatacomErrorMessage}}
+			Request error: {{mixinDatacomErrorMessage}}
 		</view>
 		<view else="mixinDatacomResData">
 			<!-- 需要自行处理数据及相关UI展现 -->
+			<!-- Need to process data and related UI display by yourself -->
 			{{mixinDatacomResData}}
 		</view>
 	</view>
@@ -694,17 +720,28 @@ Need to write more code to handle various states. If the package of `mixinDataco
 				})
 			},
 			// 当组件属性发生变化时
+			// When the component properties change
 			onMixinDatacomPropsChange(needReset, changed) {
 				// needReset=true 需要重置已加载数据和分页信息，例如 collection，orderby
+				// needReset=true need to reset the loaded data and paging information, such as collection, orderby
 				// changed，变化的属性名，类型为 Array，例如 ['collection', 'orderby']
+				// changed, changed attribute name, type is Array, for example ['collection','orderby']
 				if (needReset) {
 					// 清空已加载的数据
+					// Clear the loaded data
 					this.mixinDatacomResData = []
 
 					// 重置分页数据，如果没有分页不需要处理
-					this.mixinDatacomPage.size = this.pageSize // 重置分页大小
-					this.mixinDatacomPage.current = 0 // 重置当前分页
-					this.mixinDatacomPage.count = 0 // 重置数据总数
+					// Reset the paging data, if there is no paging, no need to process
+					this.mixinDatacomPage.size = this.pageSize 
+					// 重置分页大小
+					// Reset page size
+					this.mixinDatacomPage.current = 0 
+					// 重置当前分页
+					// Reset the current page
+					this.mixinDatacomPage.count = 0 
+					// 重置数据总数
+					// Reset the total number of data
 				}
 			}
 		}
@@ -725,10 +762,15 @@ After making this uni-data-jql component, you can use it on the page:
 
 <script>
 	// jql.vue 组件
-	import UniData from "./jql.vue" // 如果符合easycom规范，无需本代码
+	// jql.vue component
+	import UniData from "./jql.vue" 
+	// 如果符合easycom规范，无需本代码
+	// If it complies with the easycom specification, this code is not needed
 	export default {
 		components: {
-			UniData // 如果符合easycom规范，无需本代码
+			UniData 
+			// 如果符合easycom规范，无需本代码
+			// If it complies with the easycom specification, this code is not needed
 		},
 		data() {
 			return {}
@@ -830,18 +872,34 @@ export default {
 	},
 	data() {
 		return {
-			mixinDatacomLoading: false, // 网络请求状态
-			mixinDatacomHasMore: false, // 是否有更多数据
-			mixinDatacomResData: [], // 请求返回的数据，调用 loadData 后会更新
-			mixinDatacomErrorMessage: '', // 请求出错时的错误消息
-			mixinDatacomPage: {} // 分页信息，详情见 created 生命周期
+			mixinDatacomLoading: false, 
+			// 网络请求状态
+			// network request status
+			mixinDatacomHasMore: false, 
+			// 是否有更多数据
+			// Is there more data
+			mixinDatacomResData: [], 
+			// 请求返回的数据，调用 loadData 后会更新
+			// The data returned by the request will be updated after calling loadData
+			mixinDatacomErrorMessage: '', 
+			// 请求出错时的错误消息
+			// Error message when the request is wrong
+			mixinDatacomPage: {} 
+			// 分页信息，详情见 created 生命周期
+			// Paging information, see created life cycle for details
 		}
 	},
 	created() {
 		this.mixinDatacomPage = {
-			current: this.pageCurrent, // 当前页面，初始化设置 props中的 pageCurrent
-			size: this.pageSize, // 页面大小，初始化设置 props中的 pageSize
-			count: 0, // 数据总数，getcount=true时有效
+			current: this.pageCurrent, 
+			// 当前页面，初始化设置 props中的 pageCurrent
+			// Current page, initialize pageCurrent in props
+			size: this.pageSize, 
+			// 页面大小，初始化设置 props中的 pageSize
+			// Page size, initialize pageSize in props
+			count: 0, 
+			// 数据总数，getcount=true时有效
+			// Total number of data, valid when getcount=true
 		}
 		this.$watch(() => {
 			var al = [];
@@ -879,10 +937,14 @@ export default {
 	},
 	methods: {
 		// props发生变化时被调用，在组件中覆盖此方法
+		// Called when props change, override this method in the component
 		// 非 pageCurrent，pageSize 改变时 needReset=true,需要重置数据
+		// Not pageCurrent, when pageSize changes needReset=true, data needs to be reset
 		// changed，发生变化的属性名，类型为Array，例如 ['collection', 'action']
+		// changed, the name of the attribute that changed, the type is Array, for example ['collection','action']
 		onMixinDatacomPropsChange(needReset, changed) {},
 		// 加载数据
+		// Download Data
 		mixinDatacomEasyGet({
 			getone = false,
 			success,
@@ -918,6 +980,7 @@ export default {
 			})
 		},
 		// 调用 uniClientDB 查询数据
+		// Call uniClientDB to query data
 		mixinDatacomGet(options = {}) {
 			let db = uniCloud.database()
 

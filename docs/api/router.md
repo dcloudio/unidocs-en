@@ -91,7 +91,9 @@ uni.navigateTo({
 onLoad: function(option) {
   console.log(option.query)
   // #ifdef APP-NVUE
-  const eventChannel = this.$scope.eventChannel; // 兼容APP-NVUE(Compatible with APP-NVUE)
+  const eventChannel = this.$scope.eventChannel; 
+  // 兼容APP-NVUE(Compatible with APP-NVUE)
+  // Compatible with APP-NVUE (Compatible with APP-NVUE)
   // #endif
   // #ifndef APP-NVUE
   const eventChannel = this.getOpenerEventChannel();
@@ -99,7 +101,7 @@ onLoad: function(option) {
   eventChannel.emit('acceptDataFromOpenedPage', {data: 'test'});
   eventChannel.emit('someEvent', {data: 'test'});
   // 监听acceptDataFromOpenerPage事件，获取上一页面通过eventChannel传送到当前页面的数据
-    // Listens for the AcceptDataFromEnerPage event to retrieve the data from the previous page sent to the current page via EventChannel
+  // Listens for the AcceptDataFromEnerPage event to retrieve the data from the previous page sent to the current page via EventChannel
   eventChannel.on('acceptDataFromOpenerPage', function(data) {
     console.log(data)
   })

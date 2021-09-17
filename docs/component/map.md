@@ -313,7 +313,9 @@ The latitude and longitude of the map component is required. If the latitude and
 export default {
 	data() {
 		return {
-      id:0, // 使用 marker点击事件 需要填写id
+      id:0, 
+	  // 使用 marker点击事件 需要填写id
+	  // Use marker click event to fill in id
 			title: 'map',
 			latitude: 39.909,
 			longitude: 116.39742,

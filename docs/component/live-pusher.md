@@ -9,6 +9,7 @@ Real-time audio and video recording, also known as live streaming.
 |App|H5|
 |:-:|:-:|
 |√(仅nvue)|x|
+|√(nvue only)|x|
 
 如app平台的vue页面需要支持直播推流，需编写条件编译代码，使用 `plus.video.LivePusher`，[业务指南](https://ask.dcloud.net.cn/article/13416)、[规范文档](http://www.html5plus.org/doc/zh_cn/video.html#plus.video.LivePusher)。还是推荐直接使用nvue里的`live-pusher`组件。
 If the vue page of the app platform needs to support live streaming, you need to write conditional compilation code, use `plus.video.LivePusher`, [Business Guide](https://ask.dcloud.net.cn/article/13416), [ Specification document](http://www.html5plus.org/doc/zh_cn/video.html#plus.video.LivePusher). It is recommended to use the `live-pusher` component in nvue directly.
@@ -116,13 +117,20 @@ message|string| Specific network status information
         aspect="9:16" @statechange="statechange" @netstatus="netstatus" @error = "error"
         ></live-pusher>
         <button class="btn" @click="start">开始推流</button>
-        <button class="btn" @click="pause">暂停推流</button>
-        <button class="btn" @click="resume">resume</button>
-        <button class="btn" @click="stop">停止推流</button>
-        <button class="btn" @click="snapshot">快照</button>
-        <button class="btn" @click="startPreview">开启摄像头预览</button>
-        <button class="btn" @click="stopPreview">关闭摄像头预览</button>
-        <button class="btn" @click="switchCamera">切换摄像头</button>
+        <button class="btn" @click="start">Start streaming</button>
+		<button class="btn" @click="pause">暂停推流</button>
+        <button class="btn" @click="pause">Pause streaming</button>
+		<button class="btn" @click="resume">resume</button>
+		<button class="btn" @click="stop">停止推流</button>
+        <button class="btn" @click="stop">Stop streaming</button>
+		<button class="btn" @click="snapshot">快照</button>
+        <button class="btn" @click="snapshot">Snapshot</button>
+		<button class="btn" @click="startPreview">开启摄像头预览</button>
+        <button class="btn" @click="startPreview">Open camera preview</button>
+		<button class="btn" @click="stopPreview">关闭摄像头预览</button>
+        <button class="btn" @click="stopPreview">Close camera preview</button>
+		<button class="btn" @click="switchCamera">切换摄像头</button>
+		<button class="btn" @click="switchCamera">Switch camera</button>
     </view>
 </template>
 ```
@@ -135,6 +143,7 @@ message|string| Specific network status information
         },
         onReady() {
             // 注意：需要在onReady中 或 onLoad 延时
+			// Note: need to delay in onReady or onLoad
             this.context = uni.createLivePusherContext("livePusher", this);
         },
         methods: {

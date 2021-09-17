@@ -34,9 +34,10 @@ Multiple selection items.
 **Example** [View Demo](https://hellouniapp.dcloud.net.cn/pages/component/checkbox/checkbox)
  
 以下示例代码，来自于[hello uni-app项目](https://github.com/dcloudio/hello-uniapp)，推荐使用HBuilderX，新建uni-app项目，选择hello uni-app模板，可直接体验完整示例。
-以下示例代码，来自于[hello uni-app项目](https://github.com/dcloudio/hello-uniapp)，推荐使用HBuilderX，新建uni-app项目，选择hello uni-app模板，可直接体验完整示例。
+The following sample code comes from [hello uni-app project](https://github.com/dcloudio/hello-uniapp), it is recommended to use HBuilderX, create a new uni-app project, select the hello uni-app template, and you can directly experience the complete Example.
 ```html
 <!-- 本示例未包含完整css，获取外链css请参考上文，在hello uni-app项目中查看 -->
+<!-- This example does not include the complete css, please refer to the above to obtain the external css, check it in the hello uni-app project -->
 <template>
 	<view>
 		<view class="uni-padding-wrap uni-common-mt">

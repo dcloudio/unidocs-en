@@ -69,11 +69,16 @@ Input box.
 
 ```html
         <!-- 错误写法 -->
+		<!-- Wrong wording -->
 	<input :type="isText?'text':'number'" placeholder="请输入内容" />
+	<input :type="isText?'text':'number'" placeholder="Please enter the content" />
 	
         <!-- 正确写法 -->
+		<!-- Correct writing -->
 	<input v-if="isText" type="text" placeholder="请输入文本" />
+	<input v-if="isText" type="text" placeholder="Please enter text" />
 	<input v-else  type="number"  placeholder="请输入数字" />
+	<input v-else type="number" placeholder="Please enter a number" />
 ```
 
 
@@ -160,6 +165,8 @@ this.$scope.$getAppWebview().setStyle({
 	softinputNavBar: 'none'
 })
 //this.$scope.$getAppWebview()相当于html5plus里的plus.webview.currentWebview()。在uni-app里vue页面直接使用plus.webview.currentWebview()无效，非v3编译模式使用this.$mp.page.$getAppWebview()
+//this.$scope.$getAppWebview() is equivalent to plus.webview.currentWebview() in html5plus. It is invalid to use plus.webview.currentWebview() directly on the vue page in uni-app, and use this.$mp.page.$getAppWebview() in non-v3 compilation mode
+
 ```
 
 如果是nvue页面，iOS默认就没有键盘上方的横条，无需任何设置。
@@ -216,12 +223,13 @@ On the app platform, there are [searchinput](/collocation/pages?id=app-titlenvie
 - The native input box is also affected by the configured `adjustPan|adjustResize` mode
 
 **input示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/input/input)
- **input example** [View demo](https://hellouniapp.dcloud.net.cn/pages/component/input/input)
+**input example** [View demo](https://hellouniapp.dcloud.net.cn/pages/component/input/input)
  
 以下示例代码，来自于[hello uni-app项目](https://github.com/dcloudio/hello-uniapp)，推荐使用HBuilderX，新建uni-app项目，选择hello uni-app模板，可直接体验完整示例。
 The following sample code comes from [hello uni-app project](https://github.com/dcloudio/hello-uniapp), it is recommended to use HBuilderX, create a new uni-app project, choose hello uni-app template, you can experience the complete Example.
 ```html
-<!-- 本示例未包含完整css，获取外链css请参考上文，在hello uni-app项目中查看 -->
+<!-- 本示例未包含完整css，获取	外链css请参考上文，在hello uni-app项目中查看 -->
+<!-- This example does not include the complete css, please refer to the above to obtain the external css, check it in the hello uni-app project -->
 <template>
 	<view>
 		<view class="uni-common-mt">

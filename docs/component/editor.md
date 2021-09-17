@@ -59,7 +59,10 @@ The editor component is currently only supported by the vue page of H5 and App. 
 The editor supports some HTML tags and inline styles, but does not support **class** and **id**
 
 #### 支持的标签
+#### Supported tags
+
 #### [Supported tags](https://uniapp.dcloud.io/component/editor?id=支持的标签)
+#### [Supported tags](https://uniapp.dcloud.io/component/editor?id=supported tags)
 
 不满足的标签会被忽略，`<div>`会被转行为`<p>`储存。
 Unsatisfied tags will be ignored and `<div>`will be transferred to `<p>`store.
@@ -73,7 +76,9 @@ Unsatisfied tags will be ignored and `<div>`will be transferred to `<p>`store.
 | Block element        | `<p> <h1> <h2> <h3> <h4> <h5> <h6> <hr> <ol> <ul> <li>`      |
 
 #### 支持的内联样式
+#### Supported inline styles
 #### [Supported inline styles](https://uniapp.dcloud.io/component/editor?id=支持的内联样式)
+#### [Supported inline styles](https://uniapp.dcloud.io/component/editor?id=Supported inline styles)
 
 内联样式仅能设置在行内元素或块级元素上，不能同时设置。例如 font-size` 归类为行内元素属性，在 p 标签上设置是无效的。
 Inline styles can only be set on inline elements or block-level elements, not both. For example, font-size` is classified as an inline element attribute, and setting it on the p tag is invalid.
@@ -89,19 +94,19 @@ Inline styles can only be set on inline elements or block-level elements, not bo
 **注意事项**
 **Precautions**
 
-* 插入的 html 中事件绑定会被移除
+- 插入的 html 中事件绑定会被移除
 - Event bindings in the inserted html will be removed
-* formats 中的 color 属性会统一以 hex 格式返回
+- formats 中的 color 属性会统一以 hex 格式返回
 - The color attribute in formats will be returned in hex format
-* 粘贴时仅纯文本内容会被拷贝进编辑器
+- 粘贴时仅纯文本内容会被拷贝进编辑器
 - Only the plain text content will be copied into the editor when pasting
-* 插入 html 到编辑器内时，编辑器会删除一些不必要的标签，以保证内容的统一。例如`<p><span>xxx</span></p>`会改写为`<p>xxx</p>`
+- 插入 html 到编辑器内时，编辑器会删除一些不必要的标签，以保证内容的统一。例如`<p><span>xxx</span></p>`会改写为`<p>xxx</p>`
 - When inserting html into the editor, the editor will delete some unnecessary tags to ensure the unity of the content. For example, it `<p><span>xxx</span></p>`will be rewritten as`<p>xxx</p>`
-* 编辑器聚焦时页面会被上推，系统行为以保证编辑区可见
+- 编辑器聚焦时页面会被上推，系统行为以保证编辑区可见
 - The page will be pushed up when the editor is focused, the system acts to ensure that the editing area is visible
-* H5端会动态引入依赖 [quill.min.js](https://unpkg.com/quill@1.3.7/dist/quill.min.js)、[image-resize.min.js](https://unpkg.com/quill-image-resize-mp@3.0.1/image-resize.min.js)，依赖从 [unpkg.com](https://unpkg.com) 加载，如过依赖加载较慢，可以下载下来放在自己的服务器或 CDN 服务商，然后在 [自定义模板](/collocation/manifest?id=h5-template) head 内引入。
+- H5端会动态引入依赖 [quill.min.js](https://unpkg.com/quill@1.3.7/dist/quill.min.js)、[image-resize.min.js](https://unpkg.com/quill-image-resize-mp@3.0.1/image-resize.min.js)，依赖从 [unpkg.com](https://unpkg.com) 加载，如过依赖加载较慢，可以下载下来放在自己的服务器或 CDN 服务商，然后在 [自定义模板](/collocation/manifest?id=h5-template) head 内引入。
 - H5 end will depend on the introduction of dynamic [quill.min.js](https://unpkg.com/quill@1.3.7/dist/quill.min.js) , [Image-resize.min.js](https://unpkg.com/quill-image-resize-mp@3.0.1/image-resize.min.js) , dependent from [unpkg.com](https://unpkg.com/) load, such as over-reliance slow to load, you can download it on your own server or CDN service provider, then [self](https://uniapp.dcloud.io/collocation/manifest?id=h5-template) Import in the [definition template](https://uniapp.dcloud.io/collocation/manifest?id=h5-template) head.
-* 不能直接插入视频，编辑时可以采用视频封面占位，并在图片属性中保存视频信息，预览时再还原为视频。
+- 不能直接插入视频，编辑时可以采用视频封面占位，并在图片属性中保存视频信息，预览时再还原为视频。
 - You can’t directly insert the video. You can use the video cover to occupy the space when editing, and save the video information in the image properties, and then restore it to the video when previewing.
 
 

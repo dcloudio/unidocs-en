@@ -107,6 +107,7 @@ subNVue是原生渲染的nvue子窗体，把一个nvue页面以半屏的方式�
 subNVue is a natively rendered nvue sub-form, which overlays an nvue page on the vue page in a half-screen manner. It solves the shortcomings of plus.nativeObj.view and provides a powerful solution to hierarchical problems. For a detailed introduction of subNVue, please see: [https://ask.dcloud.net.cn/article/35948](https://ask.dcloud.net.cn/article/35948)
 
 - [弹出部分区域透明的nvue页面](https://ext.dcloud.net.cn/plugin?id=953)
+- [Pop up part of the transparent nvue page](https://ext.dcloud.net.cn/plugin?id=953)
 
 uni-app支持在App端弹出半透明的nvue窗体。即看起来是在本窗体弹出一个元素，但实际上是弹出了一个部分区域蒙灰透明的新窗体。这样的窗体比subnvue有个优势就是可以全局复用。具体参考这个[插件](https://ext.dcloud.net.cn/plugin?id=953)
 uni-app supports the pop-up of semi-transparent nvue windows on the App side. That is to say, it looks like an element pops up in this form, but in fact a new form with a gray and transparent part of the area pops up. Such a form has an advantage over subnvue that it can be reused globally. For details, please refer to this [plugin](https://ext.dcloud.net.cn/plugin?id=953)

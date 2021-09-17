@@ -30,17 +30,17 @@ Starting from HBuilderX 2.6.3, all platforms support `page-meta`.
 |:-|:-|:-|:-|:-|:-|
 |page-style|string|""|否|页面根节点样式，页面根节点是所有页面节点的祖先节点，相当于 HTML 中的 body 节点|H5 2.6.7、App 2.6.7|
 |page-style|string|""|No|Page root node style, the page root node is the ancestor node of all page nodes, which is equivalent to the body node in HTML|H5 2.6.7, App 2.6.7|
-|root-font-size|string|""|No|The root font size of the page, all rem units in the page, will use this font size as a reference value, that is, 1rem is equal to this font size|H5 2.6.7, App 2.6 .7|
 |root-font-size|string|""|否|页面的根字体大小，页面中的所有 rem 单位，将使用这个字体大小作为参考值，即 1rem 等于这个字体大小|H5 2.6.7、App 2.6.7|
+|root-font-size|string|""|No|The root font size of the page, all rem units in the page, will use this font size as a reference value, that is, 1rem is equal to this font size|H5 2.6.7, App 2.6 .7|
 |enable-pull-down-refresh|Boolean|""|否|是否开启下拉刷新|App 2.6.7|
 |enable-pull-down-refresh|Boolean|""|No|Whether to enable pull-down refresh|App 2.6.7|
 
 **注意**
 **Notice**
 - `<page-meta>` 目前支持的配置仅为上表所列，并不支持所有 page.json 的配置
-- -`<page-meta>` currently supports only the configurations listed in the table above, and does not support all page.json configurations
+- `<page-meta>` currently supports only the configurations listed in the table above, and does not support all page.json configurations
 - `<page-meta>` 与 pages.json 的设置相冲突时，会覆盖 page.json 的配置
--When `<page-meta>` conflicts with the settings of pages.json, the settings of page.json will be overwritten
+- When `<page-meta>` conflicts with the settings of pages.json, the settings of page.json will be overwritten
 
 #### 示例代码
 #### Sample code

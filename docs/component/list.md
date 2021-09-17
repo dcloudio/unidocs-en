@@ -15,6 +15,7 @@ The `<list>` component is the core component that provides the vertical list fun
 <template>
   <list>
     <!-- 注意事项: 不能使用 index 作为 key 的唯一标识 -->
+	<!-- Note: You cannot use index as the unique identifier of the key -->
     <cell v-for="(item, index) in dataList" :key="item.id">
       <text>{{item.name}}</text>
     </cell>
@@ -140,6 +141,7 @@ If the list is scrolled to the bottom, this event will be triggered immediately,
     },
     methods: {
         // 重置 loadmore
+		// reset loadmore
         resetLoadMore() {
             this.$refs["list"].resetLoadmore();
         }
@@ -197,6 +199,7 @@ headerHeight|float|0|Yes|The distance between the top of the header to be sucked
 ```html
 <template>
 		<!-- ios 需要配置 fixFreezing="true" -->
+		<!-- ios need to configure fixFreezing="true" -->
     <view class="uni-swiper-page">
         <list ref="list" fixFreezing="true">
         </list>
@@ -211,6 +214,7 @@ headerHeight|float|0|Yes|The distance between the top of the header to be sucked
     },
     methods: {
         // 重置 loadmore
+		// reset loadmore
         setSpecialEffects() {
             this.$refs["list"].setSpecialEffects({id:"scroller", headerHeight:150});
         },

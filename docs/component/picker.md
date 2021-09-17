@@ -270,14 +270,14 @@ Preview H5 effect: use the mobile phone mode of the browser to access [https://h
 **注意**
 **Notice**
 - 在picker内容还在滚动时或滚动回弹动画还未结束时，点确定关闭弹出的picker，数据无法及时更新。需等待一下，或手动触停滚动再点确定。所有平台均如此
-- -When the picker content is still scrolling or the scrolling rebound animation has not ended, click OK to close the pop-up picker, and the data cannot be updated in time. You need to wait for a while, or manually stop scrolling and click OK. This is true for all platforms
+- When the picker content is still scrolling or the scrolling rebound animation has not ended, click OK to close the pop-up picker, and the data cannot be updated in time. You need to wait for a while, or manually stop scrolling and click OK. This is true for all platforms
 
 **扩展**
 **Extensions**
 - uni ui提供了增强版`<uni-data-picker>`组件，详见：[https://ext.dcloud.net.cn/plugin?id=3796](https://ext.dcloud.net.cn/plugin?id=3796)
-- -uni ui provides an enhanced version of `<uni-data-picker>` component, see: [https://ext.dcloud.net.cn/plugin?id=3796](https://ext.dcloud.net .cn/plugin?id=3796)
+- uni ui provides an enhanced version of `<uni-data-picker>` component, see: [https://ext.dcloud.net.cn/plugin?id=3796](https://ext.dcloud.net .cn/plugin?id=3796)
 - 该组件优势如下：
-- -The advantages of this component are as follows:
+- The advantages of this component are as follows:
   * 符合[datacom](/component/datacom)规范，只需传入data，就可以自动生成界面
   * Conforms to the [datacom](/component/datacom) specification, you only need to pass in data, and the interface can be automatically generated
   * 符合[uni-forms](https://ext.dcloud.net.cn/plugin?id=2773)，表单校验规范
