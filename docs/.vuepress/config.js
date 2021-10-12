@@ -56,7 +56,8 @@ const config = {
     docsRepo: 'dcloudio/unidocs-en',
     docsBranch: 'main',
     docsDir: 'docs',
-    editLinks: true
+    editLinks: true,
+    smoothScroll: true
   },
   markdown: {
     slugify(str) {
