@@ -2,6 +2,7 @@ const path = require('path')
 const fs = require('fs')
 const { slugify } = require('@vuepress/shared-utils')
 const parse = require('../../scripts/parse')
+const convertRouterLinkPlugin = require('./link')
 
 function parseBar(file, options) {
   const text = parse(fs.readFileSync(file, { encoding: 'utf8' })).target.join('\n')
@@ -64,7 +65,15 @@ const config = {
       const array = str.split('@')
       return array.length > 1 ? array[array.length - 1] : slugify(str)
     },
-    extractHeaders: ['h1', 'h2', 'h3', 'h4']
+    extractHeaders: ['h1', 'h2', 'h3', 'h4'],
+    chainMarkdown(config) {
+      config
+        .plugin('convert-router-link')
+        .use(convertRouterLinkPlugin, [{
+          target: '_blank',
+          rel: 'noopener noreferrer'
+        }])
+    }
   },
   chainWebpack(config) {
     config.module.rule('markdown').use('translate').loader(path.resolve(path.join(__dirname, '../../scripts/translate-loader.js'))).before()
