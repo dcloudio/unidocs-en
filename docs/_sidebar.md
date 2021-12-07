@@ -32,4 +32,3 @@
 * [uni小程序sdk](https://nativesupport.dcloud.net.cn/README)
 * [选型评估指南](select.md)
 * [应用市场上架](store.md)
-* [常见问题](faq.md)
