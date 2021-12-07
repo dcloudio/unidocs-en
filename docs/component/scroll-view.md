@@ -2,61 +2,34 @@
 
 可滚动视图区域。用于区域滚动。
 
-Scrollable view area. Used for area scrolling.
-
 需注意在webview渲染的页面中，区域滚动的性能不及页面滚动。
-It should be noted that in the page rendered by webview, the performance of area scrolling is not as good as page scrolling.
 
 **属性说明**
-**Property description**
 
 |属性名					|类型		|默认值	|说明																							|平台差异说明	|
-| Attribute name          | Types of    | Defaults | Description                                                  | Platform difference description |
 |:-						|:-			|:-		|:-																								|:-			|
 |scroll-x				|Boolean	|false	|允许横向滚动																					|			|
-| scroll-x                | Boolean     | false    | Allow horizontal scrolling                                   |                                 |
 |scroll-y				|Boolean	|false	|允许纵向滚动																					|			|
-| scroll-y                | Boolean     | false    | Allow vertical scrolling                                     |                                 |
 |upper-threshold		|Number		|50		|距顶部/左边多远时（单位px），触发 scrolltoupper 事件											|			|
-| upper-threshold         | Number      | 50       | How far from the top/left (in px), the scrolltoupper event is triggered |                                 |
 |lower-threshold		|Number		|50		|距底部/右边多远时（单位px），触发 scrolltolower 事件											|			|
-| lower-threshold         | Number      | 50       | How far from the bottom/right side (in px), the scrolltolower event is triggered |                                 |
 |scroll-top				|Number		|		|设置竖向滚动条位置																				|			|
-| scroll-top              | Number      |          | Set the vertical scroll bar position                         |                                 |
 |scroll-left			|Number		|		|设置横向滚动条位置																				|			|
-| scroll-left             | Number      |          | Set the horizontal scroll bar position                       |                                 |
 |scroll-into-view		|String		|		|值应为某子元素id（id不能以数字开头）。设置哪个方向可滚动，则在哪个方向滚动到该元素				|			|
-| scroll-into-view        | String      |          | The value should be a child element id (id cannot start with a number). Set which direction to scroll, then scroll to the element in which direction |                                 |
 |scroll-with-animation	|Boolean	|false	|在设置滚动条位置时使用动画过渡																	|			|
-| scroll-with-animation   | Boolean     | false    | Use animated transitions when setting the scroll bar position |                                 |
 |enable-back-to-top		|Boolean	|false	|iOS点击顶部状态栏、安卓双击标题栏时，滚动条返回顶部，只支持竖向								|app-nvue	|
-| enable-back-to-top      | Boolean     | false    | When iOS clicks the top status bar, Android double-clicks the title bar, the scroll bar returns to the top, only supports vertical |app-nvue|
 |show-scrollbar         |Boolean	|false	|控制是否出现滚动条| App-nvue 2.1.5+ |
-| show-scrollbar          | Boolean     | false    | Control whether the scroll bar appears|App-nvue 2.1.5+ |
 |refresher-enabled		|Boolean	|false	|开启自定义下拉刷新|app-vue 2.5.12+|
-| refresher-enabled       | Boolean     | false    | Turn on custom pull-down refresh|app-vue 2.5.12+|
 |refresher-threshold	|number		|45		|设置自定义下拉刷新阈值|app-vue 2.5.12+|
-| refresher-threshold     | number      | 45       | Set a custom pull-down refresh threshold|app-vue 2.5.12+|
 |refresher-default-style|string		|"black"|设置自定义下拉刷新默认样式，支持设置 black，white，none，none 表示不使用默认样式|app-vue 2.5.12+|
-| refresher-default-style | string      | "black"  | Set a custom pull-down refresh default style, support setting black, white, none, none means not to use the default style |   app-vue 2.5.12+|
 |refresher-background	|string		|"#FFF" |设置自定义下拉刷新区域背景颜色|app-vue 2.5.12+|
-| refresher-background    | string      | "#FFF"   | Set a custom pull-down refresh area background color|app-vue 2.5.12+|
 |refresher-triggered	|boolean	|false	|设置当前下拉刷新状态，true 表示下拉刷新已经被触发，false 表示下拉刷新未被触发|app-vue 2.5.12+|
-| refresher-triggered     | boolean     | false    | Set the current pull-down refresh state, true means pull-down refresh has been triggered, false means pull-down refresh has not been triggered     |app-vue 2.5.12+|
 |@scrolltoupper			|EventHandle|		|滚动到顶部/左边，会触发 scrolltoupper 事件														|			|
-| @scrolltoupper          | EventHandle |          | Scroll to the top/left, the scrolltoupper event will be triggered |                                 |
 |@scrolltolower			|EventHandle|		|滚动到底部/右边，会触发 scrolltolower 事件														|			|
-| @scrolltolower          | EventHandle |          | Scroll to the bottom/right, the scrolltolower event will be triggered |                                 |
 |@scroll				|EventHandle|		|滚动时触发，event.detail = {scrollLeft, scrollTop, scrollHeight, scrollWidth, deltaX, deltaY}	|&nbsp;|
-| @scroll                 | EventHandle |          | Triggered when scrolling, event.detail = {scrollLeft, scrollTop, scrollHeight, scrollWidth, deltaX, deltaY} |                                 |
 |@refresherpulling		|EventHandle|		|自定义下拉刷新控件被下拉|app-vue 2.5.12+|
-| @refresherpulling       | EventHandle |          | Custom pull-down refresh control is pulled down|app-vue 2.5.12+|
 |@refresherrefresh		|EventHandle|		|自定义下拉刷新被触发|app-vue 2.5.12+|
-| @refresherrefresh       | EventHandle |          | Custom pull-down refresh is triggered|app-vue 2.5.12+|
 |@refresherrestore		|EventHandle|		|自定义下拉刷新被复位|app-vue 2.5.12+|
-| @refresherrestore       | EventHandle |          | Custom pull-down refresh is reset|app-vue 2.5.12+|
 |@refresherabort		|EventHandle|		|自定义下拉刷新被中止|app-vue 2.5.12+|
-| @refresherabort         | EventHandle |          | Custom pull-down refresh was aborted|app-vue 2.5.12+|
 
 使用竖向滚动时，需要给 ``<scroll-view>`` 一个固定高度，通过 css 设置 height；使用横向滚动时，需要给``<scroll-view>``添加``white-space: nowrap;``样式。
  
@@ -71,7 +44,7 @@ It should be noted that in the page rendered by webview, the performance of area
 		<view class="uni-padding-wrap uni-common-mt">
 			<view class="uni-title uni-common-mt">
 				Vertical Scroll
-				<text>\n Vertical scroll</text>
+				<text>\n纵向滚动</text>
 			</view>
 			<view>
 				<scroll-view :scroll-top="scrollTop" scroll-y="true" class="scroll-Y" @scrolltoupper="upper" @scrolltolower="lower"
@@ -82,11 +55,11 @@ It should be noted that in the page rendered by webview, the performance of area
 				</scroll-view>
 			</view>
 			<view @tap="goTop" class="uni-link uni-center uni-common-mt">
-				Click here to return to the top
+				点击这里返回顶部
 			</view>
 			<view class="uni-title uni-common-mt">
 				Horizontal Scroll
-				<text>\n horizontal scroll</text>
+				<text>\n横向滚动</text>
 			</view>
 			<view>
 				<scroll-view class="scroll-view_H" scroll-x="true" @scroll="scroll" scroll-left="120">
@@ -128,7 +101,7 @@ export default {
             });
             uni.showToast({
                 icon:"none",
-                title:"Vertical scroll scrollTop value has been modified to 0"
+                title:"纵向滚动 scrollTop 值已被修改为 0"
             })
         }
     }
@@ -136,10 +109,8 @@ export default {
 ```
 
 **自定义下拉刷新**
-**Custom pull to refresh**
 
 注意自定义下拉刷新的性能不及pages.json中配置的原生下拉刷新。
-Note that the performance of custom pull-down refresh is not as good as the native pull-down refresh configured in pages.json.
 ```html
 <template>
     <view>
@@ -178,7 +149,7 @@ Note that the performance of custom pull-down refresh is not as good as the nati
                 }, 3000)
             },
             onRestore() {
-                this.triggered = 'restore'; // Need to reset
+                this.triggered = 'restore'; // 需要重置
                 console.log("onRestore");
             },
             onAbort() {

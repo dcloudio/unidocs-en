@@ -1,34 +1,23 @@
 #### checkbox-group
 多项选择器，内部由多个 checkbox 组成。
-Multiple selector, composed of multiple checkboxes inside.
 
 **属性说明**
-**Property description**
 
 |属性名|类型|默认值|说明|
-|**Attribute name**|type|**Defaults**|Describe|
 |:-|:-|:-|:-|
 |@change|EventHandle||``<checkbox-group>``中选中项发生改变是触发 change 事件，detail = {value:[选中的checkbox的value的数组]}|
-|@change|EventHandle||`<checkbox-group>`The change of the selected item in the middle triggers the change event, detail = {value:[array of value of the selected checkbox]}|
 
 #### checkbox
 多选项目。
-Multiple selection items.
 
 **属性说明**
-**Property description**
 
 |属性名|类型|默认值|说明|
-|**Attribute name**|type|**Defaults**|**Description**|
 |:-|:-|:-|:-|
 |value|String||``<checkbox>`` 标识，选中时触发 ``<checkbox-group>`` 的 change 事件，并携带 ``<checkbox>`` 的 value。|
-|value|String||`<checkbox>`Identify, select trigger `<checkbox-group>`the change event and carry `<checkbox>`the value.|
 |disabled|Boolean|false|是否禁用|
-|disabled|Boolean|false|Whether to disable|
 |checked|Boolean|false|当前是否选中，可用来设置默认选中|
-|checked|Boolean|false|Whether currently selected, can be used to set the default selected|
 |color|Color||checkbox的颜色，同css的color|
-|color|Color||The color of the checkbox, same as the color of css|
 
 **示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/checkbox/checkbox)
  
@@ -38,25 +27,25 @@ Multiple selection items.
 <template>
 	<view>
 		<view class="uni-padding-wrap uni-common-mt">
-			<view class="uni-title uni-common-mt">Default style</view>
+			<view class="uni-title uni-common-mt">默认样式</view>
 			<view>
 				<checkbox-group>
 					<label>
-						<checkbox value="cb" checked="true" />Selected
+						<checkbox value="cb" checked="true" />选中
 					</label>
 					<label>
-						<checkbox value="cb" />Unselected
+						<checkbox value="cb" />未选中
 					</label>
 				</checkbox-group>
 			</view>
-			<view class="uni-title uni-common-mt">Checkboxes of different colors and sizes</view>
+			<view class="uni-title uni-common-mt">不同颜色和尺寸的checkbox</view>
 			<view>
 				<checkbox-group>
 					<label>
-						<checkbox value="cb" checked="true" color="#FFCC33" style="transform:scale(0.7)" />seleced
+						<checkbox value="cb" checked="true" color="#FFCC33" style="transform:scale(0.7)" />选中
 					</label>
 					<label>
-						<checkbox value="cb" color="#FFCC33" style="transform:scale(0.7)" />Unselected
+						<checkbox value="cb" color="#FFCC33" style="transform:scale(0.7)" />未选中
 					</label>
 				</checkbox-group>
 			</view>
@@ -64,8 +53,8 @@ Multiple selection items.
 		
 		<view class="uni-padding-wrap">
 			<view class="uni-title uni-common-mt">
-				Recommended display style
-				<text>\nUse uni-list layout</text>
+				推荐展示样式
+				<text>\n使用 uni-list 布局</text>
 			</view>
 		</view>
 		<view class="uni-list">
@@ -84,31 +73,31 @@ Multiple selection items.
 	export default {
 		data() {
 			return {
-				title: 'checkbox',
+				title: 'checkbox 复选框',
 				items: [{
 						value: 'USA',
-						name: 'United States'
+						name: '美国'
 					},
 					{
 						value: 'CHN',
-						name: 'China',
+						name: '中国',
 						checked: 'true'
 					},
 					{
 						value: 'BRA',
-						name: 'Brazil'
+						name: '巴西'
 					},
 					{
 						value: 'JPN',
-						name: 'Japan'
+						name: '日本'
 					},
 					{
 						value: 'ENG',
-						name: 'England'
+						name: '英国'
 					},
 					{
 						value: 'FRA',
-						name: 'France'
+						name: '法国'
 					}
 				]
 			}

@@ -1,24 +1,16 @@
 #### switch
 
 开关选择器。
-Switch selector.
 
 **属性说明**
-**Property description**
 
 |属性名|类型|默认值|说明|平台差异说明|
-| Attribute name | Types of    | Defaults | Description|Platform difference description|
 |:-|:-|:-|:-|:-|
 |checked|Boolean|false|是否选中||
-| checked        | Boolean     | false    | Whether selected                                             ||
 |disabled|Boolean|false|是否禁用||
-| disabled       | Boolean     | false    | Whether to disable                                           ||
 |type|String|switch|样式，有效值：switch, checkbox||
-| type           | String      | switch   | Style, valid values: switch, checkbox                        ||
 |@change|EventHandle||checked 改变时触发 change 事件，event.detail={ value:checked}||
-| @change        | EventHandle |          | The change event is triggered when checked changes, event.detail={ value:checked} ||
 |color|Color||switch 的颜色，同 css 的 color|&nbsp;|
-| color          | Color       |          | The color of switch, same as the color of css                ||
 
 **示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/switch/switch)
  
@@ -26,20 +18,20 @@ Switch selector.
 <template>
 	<view>
 		<view class="uni-padding-wrap uni-common-mt">
-			<view class="uni-title">Default style</view>
+			<view class="uni-title">默认样式</view>
 			<view>
 				<switch checked @change="switch1Change" />
 				<switch @change="switch2Change" />
 			</view>
-			<view class="uni-title">Recommended display style</view>
+			<view class="uni-title">推荐展示样式</view>
 		</view>
 		<view class="uni-list">
 			<view class="uni-list-cell uni-list-cell-pd">
-				<view class="uni-list-cell-db">Opening</view>
+				<view class="uni-list-cell-db">开启中</view>
 				<switch checked />
 			</view>
 			<view class="uni-list-cell uni-list-cell-pd">
-				<view class="uni-list-cell-db">shut down</view>
+				<view class="uni-list-cell-db">关闭</view>
 				<switch />
 			</view>
 		</view>
@@ -54,10 +46,10 @@ export default {
     },
     methods: {
         switch1Change: function (e) {
-            console.log('A change event occurs in switch1, and the carry value is', e.target.value)
+            console.log('switch1 发生 change 事件，携带值为', e.target.value)
         },
         switch2Change: function (e) {
-            console.log('switch2 has a change event, and the value carried is', e.target.value)
+            console.log('switch2 发生 change 事件，携带值为', e.target.value)
         }
     }
 }

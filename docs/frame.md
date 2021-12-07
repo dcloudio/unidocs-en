@@ -1,14 +1,13 @@
 
-```uni-app``` 使用vue的语法+标签和API。
+`uni-app` 使用`Vue`的语法。
 
 ## 开发规范
 
-为了实现多端兼容，综合考虑编译速度、运行性能等因素，```uni-app``` 约定了如下开发规范：
+为了实现多端兼容，综合考虑编译速度、运行性能等因素，`uni-app` 约定了如下开发规范：
 
 - 页面文件遵循 [Vue 单文件组件 (SFC) 规范](https://vue-loader.vuejs.org/zh/spec.html)
-- 组件标签规范，详见[uni-app 组件规范](component/README.md)
-- 接口能力（JS API）规范，详见[uni-app接口规范](api/README.md)
-- 数据绑定及事件处理同 ```Vue.js``` 规范，同时补充了App及页面的生命周期
+- 组件标签采用自定义规范，详见[uni-app 组件规范](component/README.md)
+- 数据绑定及事件处理同 `Vue.js` 规范，同时补充了App及页面的生命周期
 - 为兼容多端运行，建议使用flex布局进行开发
 
 ## 目录结构
@@ -17,8 +16,7 @@
 
 <pre v-pre="" data-lang="">
 	<code class="lang-" style="padding:0">
-┌─uniCloud              云空间目录，阿里云为uniCloud-aliyun,腾讯云为uniCloud-tcb（详见<a href="https://uniapp.dcloud.io/uniCloud/quickstart?id=%e7%9b%ae%e5%bd%95%e7%bb%93%e6%9e%84">uniCloud</a>）
-│─components            符合vue组件规范的uni-app组件目录
+┌─components            符合vue组件规范的uni-app组件目录
 │  └─comp-a.vue         可复用的a组件
 ├─hybrid                App端存放本地html文件的目录，<a href="/component/web-view">详见</a>
 ├─platforms             存放各平台专用页面的目录，<a href="/platform?id=%E6%95%B4%E4%BD%93%E7%9B%AE%E5%BD%95%E6%9D%A1%E4%BB%B6%E7%BC%96%E8%AF%91">详见</a>
@@ -115,7 +113,6 @@ background-image: url(../../static/logo.png);
 
 - 引入字体图标请参考，[字体图标](frame?id=字体图标)
 - `@`开头的绝对路径以及相对路径会经过base64转换规则校验
-- 不支持本地图片的平台，小于40kb，一定会转base64。（共四个平台mp-weixin, mp-qq, mp-toutiao, app v2）
 - h5平台，小于4kb会转base64，超出4kb时不转。
 - 其余平台不会转base64
 
@@ -243,7 +240,7 @@ vue页面支持下面这些普通H5单位，但在nvue里不支持：
 
 nvue还不支持百分比单位。
 
-App端，在 pages.json 里的 titleNView 或页面里写的 plus api 中涉及的单位，只支持 px。**注意此时不支持 rpx**
+App端，在 pages.json 里的 titleNView 中涉及的单位，只支持 px。**注意此时不支持 rpx**
 
 nvue中，uni-app 模式（[nvue 不同编译模式介绍](https://ask.dcloud.net.cn/article/36074)）可以使用 px 、rpx，表现与 vue 中一致。weex 模式目前遵循weex的单位，它的单位比较特殊：
 
@@ -261,7 +258,7 @@ nvue中，uni-app 模式（[nvue 不同编译模式介绍](https://ask.dcloud.ne
 
 `uni-app` 在 App 端、H5 端都支持了 `rpx`，并且可以配置不同屏幕宽度的计算方式，具体参考：[rpx计算配置](https://uniapp.dcloud.io/collocation/pages?id=globalstyle)。
 
-rpx 是相对于基准宽度的单位，可以根据屏幕宽度进行自适应。```uni-app``` 规定屏幕基准宽度 750rpx。
+rpx 是相对于基准宽度的单位，可以根据屏幕宽度进行自适应。`uni-app` 规定屏幕基准宽度 750rpx。
 
 开发者可以通过设计稿基准宽度计算页面元素 rpx 值，设计稿 1px 与框架样式 1rpx 转换公式如下：
 
@@ -284,7 +281,7 @@ rpx 是相对于基准宽度的单位，可以根据屏幕宽度进行自适应�
 - rpx不支持动态横竖屏切换计算，使用rpx建议锁定屏幕方向
 - 设计师可以用 iPhone6 作为视觉稿的标准。
 - 如果设计稿不是750px，HBuilderX提供了自动换算的工具，详见：[https://ask.dcloud.net.cn/article/35445](https://ask.dcloud.net.cn/article/35445)。
-- App端，在 pages.json 里的 titleNView 或页面里写的 plus api 中涉及的单位，只支持 px，不支持 rpx。
+- App端，在 pages.json 里的 titleNView 中涉及的单位，只支持 px，不支持 rpx。
 - 早期 uni-app 提供了 upx ，目前已经推荐统一改为 rpx 了，[详见](http://ask.dcloud.net.cn/article/36130)
 
 ### 样式导入
@@ -330,7 +327,7 @@ rpx 是相对于基准宽度的单位，可以根据屏幕宽度进行自适应�
 |::before|view::before|在 view 组件前边插入内容，**仅 vue 页面生效**|
 
 **注意：** 
-- 在 ```uni-app``` 中不能使用 ```*``` 选择器。
+- 在 `uni-app` 中不能使用 ```*``` 选择器。
 - ```page``` 相当于 ```body``` 节点，例如：
 
   ```css
@@ -354,7 +351,7 @@ uni-app 提供内置 CSS 变量
 
 |CSS变量|描述|App|H5|
 |:-|:-|:-|:-|
-|--status-bar-height|系统状态栏高度|[系统状态栏高度](http://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.getStatusbarHeight)、nvue注意见下|0|
+|--status-bar-height|系统状态栏高度|系统状态栏高度、nvue注意见下|0|
 |--window-top|内容区域距离顶部的距离|0|NavigationBar 的高度|
 |--window-bottom|内容区域距离底部的距离|0|TabBar 的高度|
 
@@ -629,7 +626,6 @@ ES6 API 的支持，详见如下表格部分（`x` 表示不支持，无特殊�
 
 **注意**
 - App端Android支持不依赖Android版本号，即便是Android4.4也是上表数据。因为uni-app的js代码运行在自带的独立jscore中，没有js的浏览器兼容性问题。uni-app的vue页面在Android低端机上只有css浏览器兼容性问题，因为vue页面仍然渲染在webview中，受Android版本影响，太新的css语法在低版本不支持。
-- 默认不需要在微信工具里继续开启es6转换。但如果用了微信的wxml自定义组件（wxcomponents目录下），uni-app编译器并不会处理这些文件中的es6代码，需要去微信工具里开启转换。从HBuilderX调起微信工具时，如果发现工程下有wxcomponents目录会自动配置微信工程打开es6转换。
 
 
 ## NPM支持
@@ -752,7 +748,7 @@ const package = require('packageName')
 
 |App|H5|
 |:-:|:-:|
-|√(2.5.5+，仅支持vue，并要求v3编译器)|√|
+|√(2.5.5+，仅支持vue)|√|
 
 ### 使用方式
 
@@ -807,5 +803,5 @@ const package = require('packageName')
 
 ## 致谢
 
-```uni-app```使用 ```vue``` 语法，开发多端应用，感谢```Vue```团队！！
+`uni-app`使用 ```vue``` 语法，开发多端应用，感谢```Vue```团队！！
 

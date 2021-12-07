@@ -47,16 +47,11 @@ App的js运行在jscore下而不是浏览器里，没有浏览器专用的js对�
 6. 很多人在H5端联网时使用本地测试服务地址(localhost或127.0.0.1)，这样的联网地址手机App端是无法访问的，请使用手机可访问的IP进行联网
 
 ### App正常，但H5异常的可能性
-2. App端使用了App特有的API和功能，比如plus、Native.js、subNVue、原生插件等
+* App端使用了App特有的API和功能，比如subNVue、原生插件等
 
 
 ### App正常，H5异常的可能性
-1. 代码中使用了App端特有的plus、Native.js、subNVue、原生插件等功能
-
-### App(v2)与App(v3)差异说明
-
-1. App(v2)默认template中使用了未定义或未初始化的数据，运行不会报错，且不影响后续节点渲染。App(v3)运行时，会直接告警，并报错（标准的vue渲染逻辑，同H5），且影响后续节点数据的渲染，错误信息通常显示为`undefined is not an object, evaluating(xxx.xxx.xxx)`
-2. App(v2)默认隔离组件样式（组件间样式不会互相影响），App(v3)版本默认不隔离。目前发现开发者v2升级v3反馈的样式问题大多由此导致，v3版本将于`2.6.14-alpha`进行调整默认隔离组件间样式。
+1. 代码中使用了App端特有的subNVue、原生插件等功能
 
 ### 使用 Vue.js 的注意
 
@@ -95,7 +90,6 @@ App的js运行在jscore下而不是浏览器里，没有浏览器专用的js对�
 	- 没有这些浏览器自带对象并不影响业务开发，uni提供的api足够完成业务。
 	- uni的api在编译到web平台运行时，其实也会转为浏览器的js api。
   - App端若要使用操作window、document的库，需要通过renderjs来实现。
-	- uni的api是多端可用的。在条件编译区，每个平台的专有api也可以使用，比如wx.、plus.等api可以分别在微信下和app下使用。
 2. Tag注意
 	- uni-app的tag，和HTML的tag不一样，比如div要改成view，span要改成text、a要改成navigator。
 	- 出于降低h5应用向uni-app迁移成本的考虑，写成div、span也可以运行在app上，但仍然建议养成新习惯。
@@ -111,7 +105,7 @@ App的js运行在jscore下而不是浏览器里，没有浏览器专用的js对�
 	- 
 6. 每个页面支持使用原生title，首页支持使用原生底部tab，这些是要在pages.json里配置，这些并不是vue页面的一部分。当然vue里的js api也可以动态修改原生title
 6. 虽然使用vue，但在app里，不是spa而是mpa
-7. 位置坐标系统一为国测局坐标系gcj02，这种坐标系可以被多端支持。老版5+的百度定位和百度地图使用的是百度私有坐标系bd09ll，这种坐标系需要转换。新版uni-app里的百度地图已经默认改为gcj02。高德地图不受影响，一直是gcj02
+7. 位置坐标系统一为国测局坐标系gcj02，这种坐标系可以被多端支持。
 
 ### H5 开发注意
 

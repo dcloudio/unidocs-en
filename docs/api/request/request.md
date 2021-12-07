@@ -1,41 +1,28 @@
 ### uni.request(OBJECT)
 发起网络请求。
-Initiate a network request.
 
 
 **OBJECT 参数说明**
-**OBJECT parameter description**
 
 |参数名|类型|必填|默认值|说明|平台差异说明|
-| parameter name | Types  | Required | Defaults | Description  | Platform difference description |
 |:-|:-|:-|:-|:-|:-|
 |url|String|是||开发者服务器接口地址||
-| url     | String   | Yes      | | Developer server interface address  |    |
-|data|Object/String/ArrayBuffer|否||请求的参数|App（自定义组件编译模式）不支持ArrayBuffer类型|
-| data     | Object/String | no       |     | Requested parameters    |   App（自定义组件编译模式）不支持ArrayBuffer类型     |
+|data|Object/String/ArrayBuffer|否||请求的参数|App不支持ArrayBuffer类型|
 |header|Object|否||设置请求的 header，header 中不能设置 Referer。|App、H5端会自动带上cookie，且H5端不可手动修改|
-| header   | Object        | no       |          | Set the requested header. Referer cannot be set in the header. |  App、H5端会自动带上cookie，且H5端不可手动修改                               |
 |method|String|否|GET|有效值详见下方说明||
-| method    | String   | no       | GET      | See the description below for valid values | |
 |timeout|Number|否|60000|超时时间，单位 ms|H5(HBuilderX 2.9.9+)、APP(HBuilderX 2.9.9+)|
 |dataType|String|否|json	|如果设为 json，会尝试对返回的数据做一次 JSON.parse||
-| dataType       | String        | no       | json     | If set to json, it will try to do a JSON.parse on the returned data |     |
 |responseType|String|否|text	|设置响应的数据类型。合法值：text、arraybuffer||
 |sslVerify|Boolean|否|true|验证 ssl 证书|仅App安卓端支持（HBuilderX 2.3.3+）|
 |withCredentials|Boolean|否|false|跨域请求时是否携带凭证（cookies）|仅H5支持（HBuilderX 2.6.15+）|
 |firstIpv4|Boolean|否|false|DNS解析时优先使用ipv4|仅 App-Android 支持 (HBuilderX 2.8.0+)|
 |success|Function|否||收到开发者服务器成功返回的回调函数||
-| success        | Function      | no       |          | Receive the callback function successfully returned by the developer server |                                 |
 |fail|Function|否||接口调用失败的回调函数||
-| fail           | Function      | no       |          | Callback function for interface call failure                 |                                 |
 |complete|Function|否||接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
-| complete       | Function      | no       |          | The callback function for the end of the interface call (the call will be executed if it succeeds or fails) |         |
 
 **method 有效值**
 
-必须大写
-Must be capitalized.
-有效值在不同平台差异说明不同。
+必须大写，有效值在不同平台差异说明不同。
 
 |method|App|H5|
 |:-:|:-:|:-:|
@@ -49,46 +36,32 @@ Must be capitalized.
 |TRACE|x|√|
 
 **success 返回参数说明**
-**success return parameter description**
 
 |参数|类型|说明|
-| parameter  | Types   | Description   |
 |:-|:-|:-|
 |data|Object/String/ArrayBuffer|开发者服务器返回的数据|
-| data       | Object/String/ArrayBuffer | Data returned by the developer server                        |
 |statusCode|Number|开发者服务器返回的 HTTP 状态码|
-| statusCode | Number                    | HTTP status code returned by the developer server            |
 |header|Object|开发者服务器返回的 HTTP Response Header|
-| header     | Object                    | HTTP Response Header returned by the developer server        |
 |cookies|``Array.<string>``|开发者服务器返回的 cookies，格式为字符串数组|
-| cookies    | `Array.<string>`          | Cookies returned by the developer server, in the format of a string array |
 
 **data 数据说明**
-**data data description**
 
 最终发送给服务器的数据是 String 类型，如果传入的 data 不是 String 类型，会被转换成 String。转换规则如下：
-The final data sent to the server is of type String. If the incoming data is not of type String, it will be converted to String. The conversion rules are as follows:
 
 - 对于 ``GET`` 方法，会将数据转换为 query string。例如 ``{ name: 'name', age: 18 }`` 转换后的结果是 ``name=name&age=18``。
-- - For the `GET`method, it converts the data query string. For example `{ name: 'name', age: 18 }`the result of transformation is `name=name&age=18`.
 - 对于 ``POST`` 方法且 ``header['content-type']`` 为 ``application/json`` 的数据，会进行 JSON 序列化。
-- - For the `POST`method and `header['content-type']`of `application/json`the data, will JSON serialization.
 - 对于 ``POST`` 方法且 ``header['content-type']`` 为 ``application/x-www-form-urlencoded`` 的数据，会将数据转换为 query string。 
-- - For the `POST`method and `header['content-type']`for the `application/x-www-form-urlencoded`data, converts the data query string.
 
 **示例**
-**Example**
 
 ```javascript
 uni.request({
     url: 'https://www.example.com/request', //仅为示例，并非真实接口地址。
-	 //Example only, not the real interface address.
     data: {
         text: 'uni.request'
     },
     header: {
         'custom-header': 'hello' //自定义请求头信息
-		  //Customize request header information
     },
     success: (res) => {
         console.log(res.data);
@@ -98,15 +71,12 @@ uni.request({
 ```
 
 **返回值**
-**return value**
 
 如果希望返回一个 `requestTask` 对象，需要至少传入 success / fail / complete 参数中的一个。例如：
-If you want to return an `requestTask`object that need to pass at least a success / fail / complete parameters. E.g:
 
 ```javascript
 var requestTask = uni.request({
 	url: 'https://www.example.com/request', //仅为示例，并非真实接口地址。
-	//Example only, not the real interface address.
 	complete: ()=> {}
 });
 requestTask.abort();
@@ -157,3 +127,54 @@ requestTask.abort();
 - 部分安卓设备，真机运行或debug模式下的网速，低于release模式很多。
 - 使用一些比较小众的证书机构（如：CFCA OV OCA）签发的 ssl 证书在安卓设备请求会失败，因为这些机构的根证书不在系统内置根证书库，可以更换其他常见机构签发的证书（如：Let's Encrypt），或者配置 sslVerify 为 false 关闭 ssl 证书验证（不推荐）。
 - 单次网络请求数据量建议控制在50K以下（仅指json数据，不含图片），过多数据应分页获取，以提升应用体验。
+
+### uni.configMTLS(OBJECT)
+
+https 请求配置自签名证书
+
+|App|H5|
+|:-:|:-:|
+|√`(3.2.7+)`|x|
+
+**OBJECT 参数说明**
+
+|参数|类型|必填|说明|
+|:--|:--|:--|:--|
+|certificates|Array&lt;`certificate`&gt;|是| `certificates` 为数组，支持为多个域名配置自签名证书|
+|success|Function(`callbackObject`)|否|接口调用成功的回调函数|
+|fail|Function(`callbackObject`)|否|接口调用失败的回调函数|
+|complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
+
+**certificate 参数说明**
+证书配置项
+
+|参数|类型|必填|说明|
+|:--|:--|:--|:--|
+| host | String |是| 对应请求的域名（注意：不要协议部分） |
+| client | String |否| 客户端证书（服务器端需要验证客户端证书时需要配置此项，格式要求请参考下面的证书格式说明，注意 `iOS` 平台客户端证书只支持 `.p12` 类型的证书）|
+| clientPassword | String |否| 客户端证书对应的密码（客户端证书存在时必须配置此项）|
+| server |Array&lt;String&gt;|否| 服务器端证书（客户端需要对服务器端证书做校验时需要配置此项，格式要求请参考下面的证书格式说明，注意 `iOS` 平台服务器端证书只支持 `.cer` 类型的证书）|
+
+**证书格式说明**
+  1. 文件路径形式：可将证书文件放到工程的 ‘static’ 目录中，然后填写文件路径，示例：`'/static/client.p12'`
+  2. `Base64String`：将证书文件的二进制转换为 `Base64String` 字符串，然后在字符串前面添加`'data:cert/pem;base64,'`前缀，示例：`'data:cert/pem;base64,xxx'` xxx 代表真实的证书 base64String 
+
+**callbackObject 参数说明**
+
+|属性|类型 |说明|
+|:--|:--|:--|
+|code|Number| 成功返回 0,失败返回相应 code 码|
+
+**示例**
+```js
+uni.configMTLS({
+    certificates: [{
+        'host': 'www.test.com',
+        'client': '/static/client.p12',
+        'clientPassword': '123456789',
+        'server': ['/static/server.cer'],
+    }],
+    success ({code}) {}
+});
+```
+

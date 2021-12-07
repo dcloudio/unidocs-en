@@ -1,35 +1,22 @@
 ### uni.showToast(OBJECT)
 
 显示消息提示框。
-A message box is displayed.
 
 **OBJECT参数说明**
-**OBJECT parameter description**
 
 |参数|类型|必填|说明|平台差异说明|
-| parameter | Types of | Required | Description     |平台差异说明|
 |:-|:-|:-|:-|:-|:-|
 |title|String|是|提示的内容，长度与 icon 取值有关。||
-| title     | String   | Yes      | The length of the prompt content is related to the icon value. ||
 |icon|String|否|图标，有效值详见下方说明。||
-| icon      | String   | no       | Icon, the effective value is detailed in the description below. ||
 |image|String|否|自定义图标的本地路径（app端暂不支持gif）|App、H5|
-| image     | String   | no       | The local path of the custom icon   ||
 |mask|Boolean|否|是否显示透明蒙层，防止触摸穿透，默认：false|App|
-| mask      | Boolean  | no       | Whether to display a transparent mask to prevent touch penetration, default: false ||
 |duration|Number|否|提示的延迟时间，单位毫秒，默认：1500||
-| duration  | Number   | no       | Prompt delay time, in milliseconds, default: 1500  ||
 |position|String|否|纯文本轻提示显示位置，填写有效值后只有 `title` 属性生效， 有效值详见下方说明。|App|
-| position  | String   | no       | Light plain text display position, only fill the effective value of `title`property to take effect, the effective value see note below. ||
 |success|Function|否|接口调用成功的回调函数||
-| success   | Function | no       | Callback function for successful interface call    ||
 |fail|Function|否|接口调用失败的回调函数||
-| fail      | Function | no       | Callback function for interface call failure   ||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
-| complete  | Function | no       | The callback function for the end of the interface call (the call will be executed if it succeeds or fails) ||
 
 **icon 值说明**
-**icon value description**
 
 |值|说明|平台差异说明|
 |:-|:-|:-|
@@ -39,7 +26,6 @@ A message box is displayed.
 |none|不显示图标，此时 title 文本在`App`仅支持单行显示。|&nbsp;|
 
 **示例**
-**Example**
 
 ```javascript
 uni.showToast({
@@ -49,30 +35,18 @@ uni.showToast({
 ```
 
 **position 值说明（仅App生效）**
-**Description of position value (valid only for App)**
 
 |值|说明|
-| value  | Description    |
 |:-|:-|
 |top|居上显示|
-| top    | Top display    |
 |center|居中显示|
-| center | Center display |
 |bottom|居底显示|
-| bottom | Bottom display |
-
-**Tips**
-
-- App端可通过[plus.nativeUI.toast API](https://www.html5plus.org/doc/zh_cn/nativeui.html#plus.nativeUI.toast)实现更多功能。
-- can achieve more functions through [plus.nativeUI.toast API](https://www.html5plus.org/doc/zh_cn/nativeui.html#plus.nativeUI.toast)。
 
 ### uni.hideToast()
 
 隐藏消息提示框。
-Hide the message box.
 
 **示例**
-**Example**
 
 ```javascript
 uni.hideToast();
@@ -82,24 +56,16 @@ uni.hideToast();
 ### uni.showLoading(OBJECT)
 
 显示 loading 提示框, 需主动调用 [uni.hideLoading](api/ui/prompt?id=hideloading) 才能关闭提示框。
-The loading prompt box is displayed, and [uni.hideLoading](api/ui/prompt?id=hideloading) must be actively called to close the prompt box.
 
 **OBJECT参数说明**
-**OBJECT parameter description**
 
 |参数|类型|必填|说明|平台差异说明|
-| parameter | Types of | Required | Description  |平台差异说明|
 |:-|:-|:-|:-|:-|
 |title|String|是|提示的文字内容，显示在loading的下方||
-| title     | String   | Yes      | The prompt text content is displayed below loading   ||
 |mask|Boolean|否|是否显示透明蒙层，防止触摸穿透，默认：false|App|
-| mask      | Boolean  | no       | Whether to display a transparent mask to prevent touch penetration, default: false ||
 |success|Function|否|接口调用成功的回调函数||
-| success   | Function | no       | Callback function for successful interface call   ||
 |fail|Function|否|接口调用失败的回调函数||
-| fail      | Function | no       | Callback function for interface call failure  ||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
-| complete  | Function | no       | The callback function for the end of the interface call (the call will be executed if it succeeds or fails) ||
 
 **示例**
 
@@ -112,10 +78,8 @@ uni.showLoading({
 ### uni.hideLoading()
 
 隐藏 loading 提示框。
-Hide the loading prompt box.
 
 **示例**
-**Example**
 
 ```javascript
 uni.showLoading({
@@ -130,7 +94,6 @@ setTimeout(function () {
 ### uni.showModal(OBJECT)
 
 显示模态弹窗，可以只有一个确定按钮，也可以同时有确定和取消按钮。类似于一个API整合了 html 中：alert、confirm。
-The display modal pop-up window can have only one OK button, or both OK and Cancel buttons. Similar to an API that integrates html: alert, confirm.
 
 **OBJECT参数说明**
 
@@ -143,24 +106,21 @@ The display modal pop-up window can have only one OK button, or both OK and Canc
 |cancelColor|HexColor|否|取消按钮的文字颜色，默认为"#000000"|H5|
 |confirmText|String|否|确定按钮的文字，默认为"确定"，最多 4 个字符||
 |confirmColor|HexColor|否|确定按钮的文字颜色，H5平台默认为"#007aff"|H5|
+|editable|Boolean|否|是否显示输入框|H5 (3.2.10+)、App (3.2.10+)|
+|placeholderText|String|否|显示输入框时的提示文本|H5 (3.2.10+)、App (3.2.10+)|
 |success|Function|否|接口调用成功的回调函数||
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
 
 **success返回参数说明**
-**success return parameter description**
 
 |参数|类型|说明|
-| parameter | Types of | Description    |
 |:-|:-|:-|:-|
 |confirm|Boolean|为 true 时，表示用户点击了确定按钮|
-| confirm   | Boolean  | When true, it means that the user clicked the OK button      |
 |cancel|Boolean|为 true 时，表示用户点击了取消（用于 Android 系统区分点击蒙层关闭还是点击取消按钮关闭）|
-| cancel    | Boolean  | When it is true, it means that the user clicked cancel (used for the Android system to distinguish between clicking the mask to close or clicking the cancel button to close) |
 
 
 **示例**
-**Example**
 
 ```javascript
 uni.showModal({
@@ -177,18 +137,14 @@ uni.showModal({
 ```
 
 **注意**
-- 弹框同时使用确定取消时，需注意不同平台的确认取消按钮位置不同。在微信、H5中，确认按钮默认在右边。在App中，iOS的确认按钮默认在右边，而Android默认在左边。产生这种差异的原因是uni.showModa在App上调用的是原生提供的弹出框，原生平台的策略本身就不同。如果需要调整，可以通过自行控制按钮的文字，即“确定”按钮的文字其实可以设置为“取消”。
+- 弹框同时使用确定取消时，需注意不同平台的确认取消按钮位置不同。在H5中，确认按钮默认在右边。在App中，iOS的确认按钮默认在右边，而Android默认在左边。产生这种差异的原因是uni.showModa在App上调用的是原生提供的弹出框，原生平台的策略本身就不同。如果需要调整，可以通过自行控制按钮的文字，即“确定”按钮的文字其实可以设置为“取消”。
 - showModal不满足需求时，可以自行开发组件弹框。插件市场有很多自定义弹框的组件，需注意在非H5平台，前端组件无法覆盖原生组件（如地图、video），遮罩也无法盖住tabbar和navigationbar。如需覆盖原生组件或遮罩tabbar等，App端推荐使用[subNvue](https://uniapp.dcloud.net.cn/api/window/subNVues)。
-- App端还有原生的[prompt API](https://www.html5plus.org/doc/zh_cn/nativeui.html#plus.nativeUI.prompt)，弹出界面中内置一个输入框。其他平台需自行封装前端组件实现。
-
 
 ### uni.showActionSheet(OBJECT)
 
 从底部向上弹出操作菜单
-Pop up the operation menu from the bottom up
 
 **OBJECT参数说明**
-**OBJECT parameter description**
 
 |参数|类型|必填|说明|平台差异说明|
 |:-|:-|:-|:-|:-|
@@ -230,7 +186,6 @@ uni.showActionSheet({
 
 **Tips**
 
-- App平台，iPad设备支持设置弹出框的位置，详见 [plus.nativeUI的文档](https://www.html5plus.org/doc/zh_cn/nativeui.html#plus.nativeUI.ActionSheetStyles)
 - App平台，实现原生的、复杂的底部图文菜单，例如分享菜单，可参考[https://ext.dcloud.net.cn/plugin?id=69](https://ext.dcloud.net.cn/plugin?id=69)
 
 **注意**

@@ -2,7 +2,6 @@
 * 快速上手
   * [1. 通过 HBuilderX 可视化界面](quickstart-hx.md)
   * [2. 通过vue-cli命令行](quickstart-cli.md)
-* [uni-app的由来](history.md)
 * [如何学习](resource.md)
 * [框架简介](frame.md)
 * vue2教程
@@ -21,7 +20,6 @@
   * [样式](nvue-css.md)
   * [API](nvue-api.md)
   * [事件](nvue-event.md)
-* [使用 HTML5+ 注意事项](use-html5plus.md)
 * [条件编译 解决各端差异](platform.md)
 * [uni-app 跨端开发注意](matter.md)
 * [高效开发技巧](snippet.md)

@@ -1,22 +1,16 @@
 #### label
 
 用来改进表单组件的可用性，使用for属性找到对应的id，或者将控件放在该标签下，当点击时，就会触发对应的控件。
-Used to improve the usability of form components, use the for attribute to find the corresponding id, or place the control under the label. When clicked, the corresponding control will be triggered.
 
 for优先级高于内部控件，内部有多个控件的时候默认触发第一个控件。
-The priority of for is higher than internal controls. When there are multiple controls inside, the first control is triggered by default.
 
 目前可以绑定的控件有：``<button>``, ``<checkbox>``, ``<radio>``, ``<switch>``。
-Currently controls can be bound to include: `<button>`, `<checkbox>`, `<radio>`, `<switch>`.
 
 **属性说明**
-**Property description**
 
 |属性名|类型|说明|
-| Attribute name | Types of | Description                 |
 |:-|:-|:-|
 |for|String|绑定控件的 id|
-| for            | String   | The id of the bound control |
 
 **注：**
 - app-nvue平台 暂不支持for属性
@@ -30,7 +24,7 @@ Currently controls can be bound to include: `<button>`, `<checkbox>`, `<radio>`,
 	<view>
 		<view class="uni-common-mt">
 			<view class="uni-form-item uni-column">
-				<view class="title">The form component is in the label</view>
+				<view class="title">表单组件在label内</view>
 				<checkbox-group class="uni-list" @change="checkboxChange">
 					<label class="uni-list-cell uni-list-cell-pd" v-for="item in checkboxItems" :key="item.name">
 						<view>
@@ -42,7 +36,7 @@ Currently controls can be bound to include: `<button>`, `<checkbox>`, `<radio>`,
 			</view>
 
 			<view class="uni-form-item uni-column">
-				<view class="title">label uses for to identify form components</view>
+				<view class="title">label用for标识表单组件</view>
 				<radio-group class="uni-list" @change="radioChange">
 					<label class="uni-list-cell uni-list-cell-pd" v-for="(item,index) in radioItems" :key="index">
 						<view>
@@ -58,16 +52,16 @@ Currently controls can be bound to include: `<button>`, `<checkbox>`, `<radio>`,
 			</view>
 
 			<view class="uni-form-item uni-column">
-				<view class="title">Select the first one when there are multiple labels</view>
+				<view class="title">label内有多个时选中第一个</view>
 				<checkbox-group class="uni-list" @change="checkboxChange">
 					<label class="label-3">
 						<view class="uni-list-cell uni-list-cell-pd">
-							<checkbox class="checkbox-3">option 1</checkbox>
+							<checkbox class="checkbox-3">选项一</checkbox>
 						</view>
 						<view class="uni-list-cell uni-list-cell-pd">
-							<checkbox class="checkbox-3">option 2</checkbox>
+							<checkbox class="checkbox-3">选项二</checkbox>
 						</view>
-						<view class="uni-link uni-center" style="margin-top:20rpx;">Click the text under the label to select the first checkbox by default</view>
+						<view class="uni-link uni-center" style="margin-top:20rpx;">点击该label下的文字默认选中第一个checkbox</view>
 					</label>
 				</checkbox-group>
 			</view>
@@ -83,21 +77,21 @@ export default {
         return {
             checkboxItems: [{
                     name: 'USA',
-                    value: 'United States'
+                    value: '美国'
                 },
                 {
                     name: 'CHN',
-                    value: 'China',
+                    value: '中国',
                     checked: 'true'
                 }
             ],
             radioItems: [{
                     name: 'USA',
-                    value: 'United States'
+                    value: '美国'
                 },
                 {
                     name: 'CHN',
-                    value: 'China',
+                    value: '中国',
                     checked: 'true'
                 }
             ],

@@ -1,33 +1,20 @@
 #### video
 视频播放组件。
-Video playback component.
 
 **属性说明**
-**Property description**
 
 |属性名|类型|默认值|说明|平台差异说明|
-| Attribute name| Types of     | Defaults | Description| Platform difference description |
 |:-|:-|:-|:-|:-|
 |src|String||要播放视频的资源地址||
-|src|String||The resource address of the video to be played||
 |autoplay|Boolean|false|是否自动播放||
-|autoplay|Boolean|false|Whether to play automatically||
 |loop|Boolean|false|是否循环播放||
-|loop|Boolean|false|Whether to loop||
 |muted|Boolean|false|是否静音播放||
-|muted|Boolean|false|Whether to play silently||
 |initial-time|Number||指定视频初始播放位置，单位为秒（s）。||
-|initial-time|Number||Specify the initial playback position of the video, in seconds (s).||
 |duration|Number||指定视频时长，单位为秒（s）。||
-|duration|Number||Specify the video duration in seconds (s).||
 |controls|Boolean|true|是否显示默认播放控件（播放/暂停按钮、播放进度、时间）||
-|controls|Boolean|true|Whether to display the default playback controls (play/pause button, playback progress, time)||
 |danmu-list|Object Array||弹幕列表||
-|danmu-list|Object Array||Barrage list||
 |danmu-btn|Boolean|false|是否显示弹幕按钮，只在初始化时有效，不能动态变更||
-|danmu-btn|Boolean|false|Whether to display the barrage button, it is only valid during initialization and cannot be changed dynamically||
 |enable-danmu|Boolean|false|是否展示弹幕，只在初始化时有效，不能动态变更||
-|enable-danmu|Boolean|false|Whether to display the barrage, it is only valid during initialization and cannot be changed dynamically||
 |page-gesture|Boolean|false|在非全屏模式下，是否开启亮度与音量调节手势|H5|
 |direction|Number||设置全屏时视频的方向，不指定则根据宽高比自动判断。有效值为 0（正常竖向）, 90（屏幕逆时针90度）, -90（屏幕顺时针90度）|H5不支持|
 |show-progress|Boolean|true|若不设置，宽度大于240时才会显示||
@@ -36,7 +23,7 @@ Video playback component.
 |show-center-play-btn|Boolean|true|是否显示视频中间的播放按钮||
 |show-loading|Boolean|true|是否显示loading控件|仅app 2.8.12+|
 |enable-progress-gesture|Boolean|true|是否开启控制进度的手势||
-|object-fit|String|contain|当视频大小与 video 容器大小不一致时，视频的表现形式。contain：包含，fill：填充，cover：覆盖|H5|
+|object-fit|String|contain|当视频大小与 video 容器大小不一致时，视频的表现形式。contain：包含，fill：填充，cover：覆盖|App、H5|
 |poster|String||视频封面的图片网络资源地址，如果 controls 属性值为 false 则设置 poster 无效||
 |codec|String|hardware|解码器选择，hardware：硬解码（硬解码可以增加解码算力，提高视频清晰度。少部分老旧硬件可能存在兼容性问题）；software：ffmpeg 软解码；|App-Android 3.1.0+|
 |http-cache|Boolean|true|是否对 http、https 视频源开启本地缓存。缓存策略:开启了此开关的视频源，在视频播放时会在本地保存缓存文件，如果本地缓存池已超过100M，在进行缓存前会清空之前的缓存（不适用于m3u8等流媒体协议）|App-Android 3.1.0+|
@@ -55,35 +42,24 @@ Video playback component.
 
 
 `<video>` 默认宽度 300px、高度 225px，可通过 css 设置宽高。
-`<video>` The default width is 300px, height is 225px, and the width and height can be set through css.
 
 
 ##### direction 的合法值
-##### legal value of direction
 
 |值|说明|
-| value | Description                        |
 |:-|:-|
 |0|正常竖向|
-|0|Normal vertical|
 |90|屏幕逆时针90度|
-|90|Screen 90 degrees counterclockwise|
 |-90|屏幕顺时针90度|
-|-90|Screen 90 degrees clockwise|
 
 
 ##### object-fit 的合法值
-##### Legal value of object-fit
 
 |值|说明|
-| value | Description |
 |:-|:-|
 |contain|包含|
-|contain|contain|
 |fill|填充|
-|fill|filling|
 |cover|覆盖|
-|cover|cover|
 
 
 **示例** [查看示例](https://hellouniapp.dcloud.net.cn/pages/component/video/video)
@@ -96,11 +72,10 @@ Video playback component.
                 <video id="myVideo" src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/%E7%AC%AC1%E8%AE%B2%EF%BC%88uni-app%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D%EF%BC%89-%20DCloud%E5%AE%98%E6%96%B9%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B@20200317.mp4"
                     @error="videoErrorCallback" :danmu-list="danmuList" enable-danmu danmu-btn controls></video>
             </view>
-            <!-- #ifndef MP-ALIPAY -->
             <view class="uni-list uni-common-mt">
                 <view class="uni-list-cell">
                     <view>
-                        <view class="uni-label">Barrage content</view>
+                        <view class="uni-label">弹幕内容</view>
                     </view>
                     <view class="uni-list-cell-db">
                         <input v-model="danmuValue" class="uni-input" type="text" placeholder="在此处输入弹幕内容" />
@@ -108,9 +83,8 @@ Video playback component.
                 </view>
             </view>
             <view class="uni-btn-v">
-                <button @click="sendDanmu" class="page-body-button">Send barrage</button>
+                <button @click="sendDanmu" class="page-body-button">发送弹幕</button>
             </view>
-            <!-- #endif -->
         </view>
     </view>
 </template>
@@ -122,12 +96,12 @@ export default {
         return {
             src: '',
             danmuList: [{
-                    text: 'Barrage appeared in 1s',
+                    text: '第 1s 出现的弹幕',
                     color: '#ff0000',
                     time: 1
                 },
                 {
-                    text: 'Barrage appearing in 3s',
+                    text: '第 3s 出现的弹幕',
                     color: '#ff00ff',
                     time: 3
                 }
@@ -136,9 +110,7 @@ export default {
         }
     },
     onReady: function(res) {
-        // #ifndef MP-ALIPAY
         this.videoContext = uni.createVideoContext('myVideo')
-        // #endif
     },
     methods: {
         sendDanmu: function() {
@@ -185,7 +157,7 @@ export default {
 - 如何实现抖音、映客等全屏视频垂直滑动切换效果？
 	* app端nvue 2.1.5 以上，可通过在垂直的swiper中内嵌video来实现。原生导航栏设置为custom，视频长宽设为手机屏幕大小，通过cover-view覆盖视频内容。插件市场有相关[示例](https://ext.dcloud.net.cn/search?q=%E6%8A%96%E9%9F%B3)
 
-- `<video/>` 组件在非H5端是原生组件，层级高于普通前端组件，覆盖其需要使用[cover-view](https://uniapp.dcloud.io/component/cover-view?id=cover-view)组件或plus.nativeObj.view、subNVue。
+- `<video/>` 组件在非H5端是原生组件，层级高于普通前端组件，覆盖其需要使用[cover-view](https://uniapp.dcloud.io/component/cover-view?id=cover-view)组件或subNVue。
 - 除 app-nvue 2.1.5+，其他情况下非H5的video不能放入scroll-view和swiper。注意参考 [原生组件使用限制](/component/native-component)。
 - 你也可以尝试换个设计思路，如：列表中的视频组件是通过图片与icon模拟的，点击后播放全屏播放视频的方案。详情[【video组件会覆盖页面其他非原生组件的设计替代方案示例】](https://ext.dcloud.net.cn/plugin?id=3549)
 

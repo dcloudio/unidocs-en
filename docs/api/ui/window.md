@@ -26,9 +26,7 @@ uni.onWindowResize((res) => {
 
 **TIPS**
 - 如App端设置软键盘弹出方式为adjustResize ，则在键盘弹出时，会触发此事件。
-- If the App side sets the soft keyboard pop-up mode to adjustResize, this event will be triggered when the keyboard pops up.
 - 横竖屏切换时，会触发此事件。
-- This event will be triggered when the screen is switched between landscape and portrait.
 
 ### uni.offWindowResize(CALLBACK)
 取消监听窗口尺寸变化事件

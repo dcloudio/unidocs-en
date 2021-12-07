@@ -1,16 +1,12 @@
 #### input
 
 输入框。
-Input box.
 
 **属性说明**
-**Property description**
 
 |属性名|类型|默认值|说明|平台差异说明|
-|Attribute name|Types of|Defaults|Description|Platform difference description|
 |:-|:-|:-|:-|:-|
 |value|String||输入框的初始内容||
-| value             | String      |                     | The initial content of the input box                         ||
 |type|String|text|input 的类型|H5 暂未支持动态切换，详见下方 Tips，请使用 v-if 进行整体切换|
 |text-content-type|String| |文本区域的语义，根据类型自动填充|仅 App-nvue-iOS 支持|
 |password|Boolean|false|是否是密码类型|H5和App写此属性时，type失效|
@@ -97,14 +93,6 @@ App平台在iOS上，webview中的软键盘弹出时，默认在软键盘上方�
 }
 ```
 
-- 如需使用js动态设置softinputNavBar
-```javascript
-this.$scope.$getAppWebview().setStyle({
-	softinputNavBar: 'none'
-})
-//this.$scope.$getAppWebview()相当于html5plus里的plus.webview.currentWebview()。在uni-app里vue页面直接使用plus.webview.currentWebview()无效，非v3编译模式使用this.$mp.page.$getAppWebview()
-```
-
 如果是nvue页面，iOS默认就没有键盘上方的横条，无需任何设置。
 
 #### 关于软键盘弹出的逻辑说明
@@ -126,7 +114,7 @@ App平台软键盘弹出有 adjustResize|adjustPan 两种模式，默认为 adju
 - adjustResize模式在Android App上，弹起键盘和收回键盘时，因为要重设webview窗体高度，可能会在个别安卓机型闪现灰屏或漏出下层页面内容。
 - H5平台只能在用户交互时修改 focus 生效。
 - 如果遇到 focus 属性设置不生效的问题参考：[组件属性设置不生效解决办法](/vue-api?id=_4-组件属性设置不生效解决办法)
-- 如需禁止点击其他位置收起键盘的默认行为，可以监听`touch`事件并使用`prevent`修饰符（仅支持App-v3、H5，其他平台可以通过设置`focus`来使输入框重新获取焦点），例如在确认按钮上使用：```@touchend.prevent="onTap"```
+- 如需禁止点击其他位置收起键盘的默认行为，可以监听`touch`事件并使用`prevent`修饰符（仅支持App、H5，其他平台可以通过设置`focus`来使输入框重新获取焦点），例如在确认按钮上使用：```@touchend.prevent="onTap"```
 
 
 #### 关于软键盘收起的逻辑说明
@@ -136,7 +124,7 @@ App平台软键盘弹出有 adjustResize|adjustPan 两种模式，默认为 adju
 以上为默认逻辑，uni-app同时提供了隐藏软键盘的api：[uni.hideKeyboard()](https://uniapp.dcloud.io/api/key?id=hidekeyboard)
 
 #### App平台原生输入框的说明
-在app平台，有titleNView配置的[searchinput](/collocation/pages?id=app-titlenview)原生输入框和plus.nativeObj.view的drawinput。这两种方式的输入框都是原生的，不是webview里的。
+在app平台，有titleNView配置的[searchinput](/collocation/pages?id=app-titlenview)原生输入框。这些方式的输入框都是原生的，不是webview里的。
 - 原生输入框在iOS上不会有软键盘上方的横条
 - 原生输入框一样受配置的`adjustPan|adjustResize`模式影响
 
@@ -149,16 +137,16 @@ App平台软键盘弹出有 adjustResize|adjustPan 两种模式，默认为 adju
 	<view>
 		<view class="uni-common-mt">
 			<view class="uni-form-item uni-column">
-				<view class="title">Auto-focusable input</view>
-				<input class="uni-input" focus placeholder="Get focus automatically" />
+				<view class="title">可自动聚焦的input</view>
+				<input class="uni-input" focus placeholder="自动获得焦点" />
 			</view>
 			<view class="uni-form-item uni-column">
-				<view class="title">The button at the bottom right corner of the keyboard is displayed as search</view>
-				<input class="uni-input" confirm-type="search" placeholder="The button at the bottom right corner of the keyboard is displayed as search" />
+				<view class="title">键盘右下角按钮显示为搜索</view>
+				<input class="uni-input" confirm-type="search" placeholder="键盘右下角按钮显示为搜索" />
 			</view>
 			<view class="uni-form-item uni-column">
-				<view class="title">Input to control the maximum input length</view>
-				<input class="uni-input" maxlength="10" placeholder="Maximum input length is 10" />
+				<view class="title">控制最大输入长度的input</view>
+				<input class="uni-input" maxlength="10" placeholder="最大输入长度为10" />
 			</view>
 			<view class="uni-form-item uni-column">
 				<view class="title">实时获取输入值：{{inputValue}}</view>
@@ -168,12 +156,6 @@ App平台软键盘弹出有 adjustResize|adjustPan 两种模式，默认为 adju
 				<view class="title">控制输入的input</view>
 				<input class="uni-input" @input="replaceInput" v-model="changeValue" placeholder="连续的两个1会变成2" />
 			</view>
-			<!-- #ifndef MP-BAIDU -->
-			<view class="uni-form-item uni-column">
-				<view class="title">控制键盘的input</view>
-				<input class="uni-input" ref="input1" @input="hideKeyboard" placeholder="输入123自动收起键盘" />
-			</view>
-			<!-- #endif -->
 			<view class="uni-form-item uni-column">
 				<view class="title">数字输入的input</view>
 				<input class="uni-input" type="number" placeholder="这是一个数字输入框" />

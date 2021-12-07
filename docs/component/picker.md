@@ -1,33 +1,22 @@
 #### picker
 
 从底部弹起的滚动选择器。支持五种选择器，通过mode来区分，分别是普通选择器，多列选择器，时间选择器，日期选择器，省市区选择器，默认是普通选择器。
-The scroll selector that pops up from the bottom. Supports five types of selectors, distinguished by mode, they are ordinary selector, multi-column selector, time selector, date selector, province/city selector, and the default is normal selector.
 
 #### 普通选择器
-#### Normal selector
 
 ``mode = selector``
 
 **属性说明**
-**Property description**
 
 |属性名|类型|默认值|说明|平台差异说明|
-| Attribute name | Types of| Defaults | Description |Platform difference description|
 |:-|:-|:-|:-|:-|
-|range|Array / Array＜Object＞|[]|mode为 selector 或 multiSelector 时，range 有效||
-| range          | Array / Array＜Object＞ | []       | When mode is selector or multiSelector, range is valid       ||
-|range-key|String||当 range 是一个 Array＜Object＞ 时，通过 range-key 来指定 Object 中 key 的值作为选择器显示内容||
-| range-key      | String                  |          | When range is an `Array<Object>`, use range-key to specify the value of key in Object as the selector display content ||
+|range|Array / Array&lt;Object&gt;|[]|mode为 selector 或 multiSelector 时，range 有效||
+|range-key|String||当 range 是一个 `Array＜Object＞` 时，通过 range-key 来指定 Object 中 key 的值作为选择器显示内容||
 |value|Number|0|value 的值表示选择了 range 中的第几个（下标从 0 开始）||
-| value          | Number                  | 0        | The value of value indicates which number in the range is selected (the subscript starts from 0) ||
 |selector-type|String|auto|大屏时UI类型，支持 picker、select、auto，默认在 iPad 以 picker 样式展示而在 PC 以 select 样式展示|H5 2.9.9+|
-| selector-type  | String                  | auto     | UI type for large screens, support picker, select, auto, by default it is displayed in picker style on iPad and select style on PC ||
 |@change|EventHandle||value 改变时触发 change 事件，event.detail = {value: value}||
-| @change        | EventHandle             |          | The change event is triggered when the value changes, event.detail = {value: value} ||
 |disabled|Boolean|false|是否禁用||
-| disabled       | Boolean                 | false    | Whether to disable                                           ||
 |@cancel|EventHandle||取消选择或点遮罩层收起 picker 时触发||
-| @cancel        | EventHandle             |          | Triggered when you cancel the selection or click the mask layer to retract the picker ||
 
 - picker在各平台的实现是有UI差异的，有的平台没有取消按钮如App-iOS端。但均不影响功能使用。
 
@@ -118,14 +107,14 @@ The scroll selector that pops up from the bottom. Supports five types of selecto
  
 以下示例代码，来自于[hello uni-app项目](https://github.com/dcloudio/hello-uniapp)，推荐使用HBuilderX，新建uni-app项目，选择hello uni-app模板，可直接体验完整示例。
 ```html
-<!-- This example does not include the complete css, please refer to the above to obtain the external css, check it in the hello uni-app project -->
+<!-- 本示例未包含完整css，获取外链css请参考上文，在hello uni-app项目中查看 -->
 <template>
 	<view>
-		<view class="uni-title uni-common-pl">Region selector</view>
+		<view class="uni-title uni-common-pl">地区选择器</view>
 		<view class="uni-list">
 			<view class="uni-list-cell">
 				<view class="uni-list-cell-left">
-					Current selection
+					当前选择
 				</view>
 				<view class="uni-list-cell-db">
 					<picker @change="bindPickerChange" :value="index" :range="array">
@@ -135,11 +124,11 @@ The scroll selector that pops up from the bottom. Supports five types of selecto
 			</view>
 		</view>
 
-		<view class="uni-title uni-common-pl">Time selector</view>
+		<view class="uni-title uni-common-pl">时间选择器</view>
 		<view class="uni-list">
 			<view class="uni-list-cell">
 				<view class="uni-list-cell-left">
-					Current selection
+					当前选择
 				</view>
 				<view class="uni-list-cell-db">
 					<picker mode="time" :value="time" start="09:01" end="21:01" @change="bindTimeChange">
@@ -149,11 +138,11 @@ The scroll selector that pops up from the bottom. Supports five types of selecto
 			</view>
 		</view>
 
-		<view class="uni-title uni-common-pl">Date picker</view>
+		<view class="uni-title uni-common-pl">日期选择器</view>
 		<view class="uni-list">
 			<view class="uni-list-cell">
 				<view class="uni-list-cell-left">
-					Current selection
+					当前选择
 				</view>
 				<view class="uni-list-cell-db">
 					<picker mode="date" :value="date" :start="startDate" :end="endDate" @change="bindDateChange">
@@ -173,7 +162,7 @@ export default {
         })
         return {
             title: 'picker',
-            array: ['China', 'United States', 'Brazil', 'Japan'],
+            array: ['中国', '美国', '巴西', '日本'],
             index: 0,
             date: currentDate,
             time: '12:01'
@@ -189,7 +178,7 @@ export default {
     },
     methods: {
         bindPickerChange: function(e) {
-            console.log('Picker sends the selection change, and the carry value is', e.target.value)
+            console.log('picker发送选择改变，携带值为', e.target.value)
             this.index = e.target.value
         },
         bindDateChange: function(e) {
