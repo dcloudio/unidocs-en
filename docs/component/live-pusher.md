@@ -1,112 +1,176 @@
 #### live-pusher
 
 实时音视频录制，也称直播推流。
+Live audio and video recording, also known as live-pusher.
 
 **平台差异说明**
+**Platform difference description**
 
 |App|H5|
 |:-:|:-:|
 |√(仅nvue)|x|
+| √(nvue only)| x|
 
 app开发，推荐使用nvue做直播，比使用vue的优势有：
+For app development, it is recommended to use nvue for live streaming. Compared with vue, it has the following advantages:
 1. nvue也可一套代码编译多端。
+1. nvue can also compile multiple sides with a set of codes.
 2. nvue的cover-view比vue的cover-view更强大，在视频上绘制元素更容易。如果只考虑App端的话，不用cover-view，任意组件都可以覆盖live-pusher组件，因为nvue没有层级问题。
+2. cover-view of nvue is more powerful than that of vue, making it easier to draw elements on video. If only the App side is considered, any component can override the live-pusher component without using cover-view, for there is no hierarchy problem.
 3. 若需要视频内嵌在swiper里上下滑动（类抖音、映客首页模式），App端只有nvue才能实现
+3. If you need the video embedded in the swiper to slide up and down (such as the home page modes like Tik Tok and Inke), only nvue can achieve on the app side
 
 
 **参数说明**
+**Parameter Description**
 
 设置live-pusher组件的推流地址，推流视频模式等。
+Set the live-pusher address and live-pusher video mode of the live-pusher component.
 
-属性|类型 |默认值|必填|说明|平台差异说明|
-:--|:--|:--|:--|:--|:--|
-url|string| |是|推流地址，支持RTMP协议。|
-mode |string|SD|否|推流视频模式，可取值：SD（标清）, HD（高清）, FHD（超清）。|
-aspect |string|3:2|否|视频宽高比例|
-muted|Boolean|false|否|是否静音。|
-enable-camera|Boolean|true|否|开启摄像头。|
-auto-focus|Boolean|true|否|自动聚集。|
-beauty|Number|0|否|美颜，取值范围 0-9（iOS取值范围为1） ，0 表示关闭。|
-whiteness|Number|0|否|美白，取值范围 0-9（iOS取值范围为1） ，0 表示关闭。|
-orientation|String|"vertical"|否|画面方向|
-min-bitrate|Number|200|否|最小码率。|
-max-bitrate|Number|1000|否|最大码率。|
-@statechange|EventHandle|||状态变化事件，detail = {code}|
-@netstatus|EventHandle|||网络状态通知，detail = {info}|
-@error|EventHandle|||渲染错误事件，detail = {errMsg, errCode}|
+|属性|类型 |默认值|必填|说明|平台差异说明|
+| Attribute| Type| Defaults| Required| Instruction| Platform difference description
+|:--|:--|:--|:--|:--|:--|
+|url|string| |是|推流地址，支持RTMP协议。|
+| url| string| | Yes| live-pusher address, supporting RTMP protocol.
+|mode |string|SD|否|推流视频模式，可取值：SD（标清）, HD（高清）, FHD（超清）。|
+| mode| string| SD| No| live-pusher video mode. Options include: SD (standard definition), HD (high definition) and FHD (Full high definition).
+|aspect |string|3:2|否|视频宽高比例|
+| aspect| string| 3:2| No| Video aspect ratio
+|muted|Boolean|false|否|是否静音。|
+| muted| Boolean| false| No| Mute or not.
+|enable-camera|Boolean|true|否|开启摄像头。|
+| enable-camera| Boolean| true| No| Enable the camera.
+|auto-focus|Boolean|true|否|自动聚集。|
+| auto-focus| Boolean| true| No| Automatic clustering.
+|beauty|Number|0|否|美颜，取值范围 0-9（iOS取值范围为1） ，0 表示关闭。|
+| beauty| Number| 0| No| Make-up mode, with the value range of 0-9 (iOS value range of 1), 0 indicates off.
+|whiteness|Number|0|否|美白，取值范围 0-9（iOS取值范围为1） ，0 表示关闭。|
+| whiteness| Number| 0| No| Skin whitening, with the value range of 0-9 (iOS value range of 1), 0 indicates off.
+|orientation|String|"vertical"|否|画面方向|
+| orientation| String| "vertical"| No| Screen orientation
+|min-bitrate|Number|200|否|最小码率。|
+| min-bitrate| Number| 200| No| Minimum bit rate.
+|max-bitrate|Number|1000|否|最大码率。|
+| max-bitrate| Number| 1000| No| Maximum bit rate.
+|@statechange|EventHandle|||状态变化事件，detail = {code}|
+| @statechange|EventHandle|||state change event，detail = {code}
+|@netstatus|EventHandle|||网络状态通知，detail = {info}|
+| @netstatus|EventHandle|||status notice，detail = {info}
+|@error|EventHandle|||渲染错误事件，detail = {errMsg, errCode}|
+| @error|EventHandle|||error event，detail = {errMsg, errCode}
 
 
 
 #### orientation 的合法值
+#### Legal value of orientation
 
 |值|说明|
+| Value| Instruction|
 |:-|:-|
 |vertical|竖直|
+| vertical| Vertical|
 |horizontal|水平|
+| horizontal| Horizontal|
 
 
 #### 网络状态数据（info）安卓
+#### Network status data (info) Android
 
-键名|说明
-:--|:--|
-videoBitrate | 当前视频编/码器输出的比特率，单位 kbps
-audioBitrate | 当前音频编/码器输出的比特率，单位 kbps
-videoFPS | 当前视频帧率
-videoGOP | 当前视频 GOP,也就是每两个关键帧(I帧)间隔时长，单位 s
-netSpeed | 当前的发送/接收速度
-netJitter | 网络抖动情况，抖动越大，网络越不稳定
-videoWidth | 视频画面的宽度
-videoHeight | 视频画面的高度
+|键名|说明
+| Key name| Instruction
+|:--|:--|
+|videoBitrate | 当前视频编/码器输出的比特率，单位 kbps
+| videoBitrate| The bit rate of current video encoder output, in kbps
+|audioBitrate | 当前音频编/码器输出的比特率，单位 kbps
+| audioBitrate| The bit rate of current audio encoder output, in kbps
+|videoFPS | 当前视频帧率
+| videoFPS| Current video frame rate
+|videoGOP | 当前视频 GOP,也就是每两个关键帧(I帧)间隔时长，单位 s
+| videoGOP| GOP of current video, namely the interval time of every two key frames (I frames), in s
+|netSpeed | 当前的发送/接收速度
+| netSpeed| The current sending/receiving speed
+|netJitter | 网络抖动情况，抖动越大，网络越不稳定
+| netJitter| Network jitter, the greater the jitter, the more unstable the network is
+|videoWidth | 视频画面的宽度
+| videoWidth| Width of the video screen
+|videoHeight | 视频画面的高度
+| videoHeight| Height of the video screen
 
 #### 网络状态数据（info）iOS
+#### Network status data (info) iOS
 
-参数|类型 |说明
-:--|:--|:--|
-code|Number|  code码
-message|string| 具体的网络状态信息
+|参数|类型 |说明
+| Parameter| Type| Instruction
+|:--|:--|:--|
+|code|Number|  code码
+| code| Number| code
+|message|string| 具体的网络状态信息
+| message| string| Specific network status information
 
 #### 事件
+#### Event
 
 #### statechange
 > 状态变化事件
+> State change event
 
 #####  返回参数（detail）的详细说明
-参数|类型|说明
-:--|:--|:--|
-code|Number|
-message|string|
+##### Detailed description of return parameter (detail)
+|参数|类型|说明
+| Parameter| Type| Instruction
+|:--|:--|:--|
+|code|Number|
+|message|string|
 
 
 #### netstatus
 > 网络状态通知事件
+> Network status notification event
 
 #####  安卓 返回参数（detail）的详细说明
-键名|说明
-:--|:--|
-videoBitrate | 当前视频编/码器输出的比特率，单位 kbps
-audioBitrate | 当前音频编/码器输出的比特率，单位 kbps
-videoFPS | 当前视频帧率
-videoGOP | 当前视频 GOP,也就是每两个关键帧(I帧)间隔时长，单位 s
-netSpeed | 当前的发送/接收速度
-netJitter | 网络抖动情况，抖动越大，网络越不稳定
-videoWidth | 视频画面的宽度
-videoHeight | 视频画面的高度
+##### For Android, the detailed description of return parameter (detail)
+|键名|说明
+| Key name| Instruction
+|:--|:--|
+|videoBitrate | 当前视频编/码器输出的比特率，单位 kbps
+| videoBitrate| The bit rate of current video encoder output, in kbps
+|audioBitrate | 当前音频编/码器输出的比特率，单位 kbps
+| audioBitrate| The bit rate of current audio encoder output, in kbps
+|videoFPS | 当前视频帧率
+| videoFPS| Current video frame rate
+|videoGOP | 当前视频 GOP,也就是每两个关键帧(I帧)间隔时长，单位 s
+| videoGOP| GOP of current video, namely the interval time of every two key frames (I frames), in s
+|netSpeed | 当前的发送/接收速度
+| netSpeed| The current sending/receiving speed
+|netJitter | 网络抖动情况，抖动越大，网络越不稳定
+| netJitter| Network jitter, the greater the jitter, the more unstable the network is
+|videoWidth | 视频画面的宽度
+| videoWidth| Width of the video screen
+|videoHeight | 视频画面的高度
+| videoHeight| Height of the video screen
 
 ##### iOS 返回参数（detail）的详细说明
-参数|类型 |说明
-:--|:--|:--|
-code|Number| code码
-message|string| 具体的网络状态信息
+##### For iOS, the detailed description of return parameter (detail)
+|参数|类型 |说明
+| Parameter| Type| Instruction
+|:--|:--|:--|
+|code|Number| code码
+| code| Number| code
+|message|string| 具体的网络状态信息
+| message| string| Specific network status information
 
 
 #### error
 > 渲染错误事件
+> Render error event
 
 #####  返回参数（detail）的详细说明
-参数|类型 |说明
-:--|:--|:--|
-errCode|Number|
-errMsg|string|
+##### Detailed description of return parameter (detail)
+|参数|类型 |说明
+| Parameter| Type| Instruction
+|:--|:--|:--|
+|errCode|Number|
+|errMsg|string|
 
 
 
@@ -117,14 +181,14 @@ errMsg|string|
         mode="SD" :muted="true" :enable-camera="true" :auto-focus="true" :beauty="1" whiteness="2"
         aspect="9:16" @statechange="statechange" @netstatus="netstatus" @error = "error"
         ></live-pusher>
-        <button class="btn" @click="start">开始推流</button>
-        <button class="btn" @click="pause">暂停推流</button>
+        <button class="btn" @click="start">Start live-pusher</button>
+        <button class="btn" @click="pause">Pause live-pusher</button>
         <button class="btn" @click="resume">resume</button>
-        <button class="btn" @click="stop">停止推流</button>
-        <button class="btn" @click="snapshot">快照</button>
-        <button class="btn" @click="startPreview">开启摄像头预览</button>
-        <button class="btn" @click="stopPreview">关闭摄像头预览</button>
-        <button class="btn" @click="switchCamera">切换摄像头</button>
+        <button class="btn" @click="stop">Stop live-pusher</button>
+        <button class="btn" @click="snapshot">Snapshot</button>
+        <button class="btn" @click="startPreview">Start camera preview</button>
+        <button class="btn" @click="stopPreview">Stop camera preview</button>
+        <button class="btn" @click="switchCamera">Switch camera</button>
     </view>
 </template>
 ```
@@ -137,6 +201,7 @@ errMsg|string|
         },
         onReady() {
             // 注意：需要在onReady中 或 onLoad 延时
+            // Note: Need to delay in onReady or onLoad
             this.context = uni.createLivePusherContext("livePusher", this);
         },
         methods: {
@@ -218,9 +283,12 @@ errMsg|string|
 ```
 
 相关api：[uni.createLivePusherContext](/api/media/live-pusher-context?id=createLivePusherContext)
+Related api: [uni.createLivePusherContext](/api/media/live-pusher-context?id=createLivePusherContext)
 
 
 
 **注意**
+**Notice**
 
 * App平台：使用 `<live-pusher/>` 组件，打包 App 时必须勾选 manifest.json->App 模块权限配置->LivePusher(直播推流) 模块。
+* App platform: When using the `<live-pusher/>` component, you must check manifest.json->App module permission configuration->LivePusher module when packaging the App.

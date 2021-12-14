@@ -1,34 +1,45 @@
 > 自 HBuilderX 2.0.0 起支持，[使用指南](https://ask.dcloud.net.cn/article/36010)
+> Supported by HBuilderX 2.0.0+, [User Guide](https://ask.dcloud.net.cn/article/36010)
 
 ### uni.$emit(eventName,OBJECT)
 
 触发全局的自定事件。附加参数都会传给监听器回调。
+Trigger global custom event. Additional parameters are passed to the listener callback.
 
 |属性		|类型	|描述				|
+| Attribute| Type| Describe|
 |---		|---	|---				|
 |eventName	|String	|事件名				|
+| eventName| String| Event name|
 |OBJECT		|Object	|触发事件携带的附加参数	|
+| OBJECT| Object| Additional parameters carried by triggering events|
 
 **代码示例**
+**Code example**
 ```javascript
-	uni.$emit('update',{msg:'页面更新'})
+	uni.$emit('update',{msg:'page update'})
 ```
 
 
 ### uni.$on(eventName,callback)
 
 监听全局的自定义事件。事件可以由 uni.$emit 触发，回调函数会接收所有传入事件触发函数的额外参数。
+Listen to global custom events. Events can be triggered by uni.$emit, and the callback function receives all the additional parameters of the incoming event trigger function.
 
 |属性		|类型		|描述			|
+| Attribute| Type| Describe|
 |---		|---		|---			|
 |eventName	|String		|事件名			|
+| eventName| String| Event name|
 |callback	|Function	|事件的回调函数	|
+| callback| Function| Event callback function|
 
 
 **代码示例**
+**Code example**
 ```javascript
 	uni.$on('update',function(data){
-		console.log('监听到事件来自 update ，携带参数 msg 为：' + data.msg);
+		console.log('it is listened that the event comes from update, with parameter msg as:' + data.msg);
 	})
 ```
 
@@ -36,38 +47,53 @@
 ### uni.$once(eventName,callback)
 
 监听全局的自定义事件。事件可以由 uni.$emit 触发，但是只触发一次，在第一次触发之后移除监听器。
+Listen to global custom events. Events can be triggered by uni.$emit, but only once. Remove the listener after the first trigger.
 
 |属性		|类型		|描述			|
+| Attribute| Type| Describe|
 |---		|---		|---			|
 |eventName	|String		|事件名			|
+| eventName| String| Event name|
 |callback	|Function	|事件的回调函数	|
+| callback| Function| Event callback function|
 
 
 **代码示例**
+**Code example**
 ```javascript
 	uni.$once('update',function(data){
-		console.log('监听到事件来自 update ，携带参数 msg 为：' + data.msg);
+		console.log('it is listened that the event comes from update, with parameter msg as:' + data.msg);
 	})
 ```
 
 ### uni.$off([eventName, callback])
 
 移除全局自定义事件监听器。
+Remove the global custom event listener.
 
 |属性		|类型			|描述			|
+| Attribute| Type| Describe|
 |---		|---			|---			|
 |eventName	|Array＜String＞ |事件名			|
+| eventName| Array＜String＞| Event name|
 |callback	|Function		|事件的回调函数	|
+| callback| Function| Event callback function|
 
 **Tips**
 - 如果没有提供参数，则移除所有的事件监听器；
+- If no parameters are provided, remove all event listeners;
 - 如果只提供了事件，则移除该事件所有的监听器；
+- If only the event is provided, remove all listeners of the event;
 - 如果同时提供了事件与回调，则只移除这个回调的监听器；
+- If both event and callback are provided, only the listener of this callback will be removed;
 - 提供的回调必须跟$on的回调为同一个才能移除这个回调的监听器；
+- The provided callback must be the same one as the callback of $on to remove the listener of this callback;
 
 **代码示例**
+**Code example**
 
 `$emit`、`$on`、`$off`常用于跨页面、跨组件通讯，这里为了方便演示放在同一个页面
+`$emit`, `$on` and `$off` are commonly used for cross-page and cross-component communication, and are placed on the same page for easy demonstration
 
 ```html
 	<template>
@@ -75,7 +101,7 @@
 			<view class="data">
 				<text>{{val}}</text>
 			</view>
-			<button type="primary" @click="comunicationOff">结束监听</button>
+			<button type="primary" @click="comunicationOff">End listening to</button>
 		</view>
 	</template>
 	
@@ -129,5 +155,8 @@
 
 
 **注意事项**
+**Precautions**
 - uni.$emit、 uni.$on 、 uni.$once 、uni.$off 触发的事件都是 App 全局级别的，跨任意组件，页面，nvue，vue 等
+- The events triggered by uni.$emit, uni.$on, uni.$once and uni.$off are all at the App global level, spanning arbitrary component, page, nvue, vue, etc.
 - 使用时，注意及时销毁事件监听，比如，页面 onLoad 里边 uni.$on 注册监听，onUnload 里边 uni.$off 移除，或者一次性的事件，直接使用 uni.$once 监听
+- When using, remember to destroy event listening to in time, for example, uni.$on registered listening to in the page onLoad, uni.$off removed in the page onUnload, or one-off events that use uni.$once to listen to directly
