@@ -1,6 +1,6 @@
 function isSame(origin, target, isCode) {
-  const commentTest1 = /\s*\/\//
-  const commentTest2 = /\s*<!--.+-->/
+  const commentTest1 = /^\s*\/\//
+  const commentTest2 = /^\s*<!--.+-->\s*$/
   if (isCode) {
     return (commentTest1.test(origin) || commentTest2.test(origin)) && (commentTest1.test(target) || commentTest2.test(target))
   }
@@ -17,7 +17,8 @@ function isPlaceholder(text) {
 
 function parse(str = '') {
   const originTest = /[\u4e00-\u9fa5]/
-  const codeTest = /^\s*(```\s*[a-zA-Z]*)$/
+  const codeTest1 = /^\s*(```[\sa-zA-Z]*)$/
+  const codeTest2 = /^\s*<\/?code.*?>\s*$/
   const origin = []
   const target = []
   const notTranslated = []
@@ -25,7 +26,9 @@ function parse(str = '') {
   let isCode
   for (let index = 0; index < array.length; index++) {
     const item = array[index]
-    isCode = codeTest.test(item) ? !isCode : isCode
+    if (codeTest1.test(item) || codeTest2.test(item)) {
+      isCode = !isCode
+    }
     const nextItem = array[index + 1]
     const isPlaceholderItem = isPlaceholder(nextItem)
     if (item && originTest.test(item) && nextItem && !originTest.test(nextItem) && isSame(item, nextItem, isCode)) {
