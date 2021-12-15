@@ -3,9 +3,28 @@ const fs = require('fs')
 const { slugify } = require('@vuepress/shared-utils')
 const parse = require('../../scripts/parse')
 const convertRouterLinkPlugin = require('./link')
+const sharedUtils = require('@vuepress/shared-utils')
+
+function filter(content) {
+  return parse(content).target.join('\n')
+}
+
+// hook node_modules/@vuepress/core/lib/node/Page.js:process()
+sharedUtils.fs.readFile = (function (readFile) {
+  return function (...array) {
+    if (array.length === 2) {
+      const file = array[0]
+      const encoding = array[1]
+      if (typeof file === 'string' && encoding === 'utf-8' && file.endsWith('.md')) {
+        return readFile(...array).then(filter)
+      }
+    }
+    return readFile(...array)
+  }
+})(sharedUtils.fs.readFile)
 
 function parseBar(file, options) {
-  const text = parse(fs.readFileSync(file, { encoding: 'utf8' })).target.join('\n')
+  const text = filter(fs.readFileSync(file, { encoding: 'utf8' }))
   const itemArray = []
   let itemCache
   const textName = options.text || 'text'
