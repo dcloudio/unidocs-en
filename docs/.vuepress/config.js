@@ -2,29 +2,15 @@ const path = require('path')
 const fs = require('fs')
 const { slugify } = require('@vuepress/shared-utils')
 const parse = require('../../scripts/parse')
-const convertRouterLinkPlugin = require('./link')
-const sharedUtils = require('@vuepress/shared-utils')
-
-function filter(content) {
-  return parse(content).target.join('\n')
-}
-
-// hook node_modules/@vuepress/core/lib/node/Page.js:process()
-sharedUtils.fs.readFile = (function (readFile) {
-  return function (...array) {
-    if (array.length === 2) {
-      const file = array[0]
-      const encoding = array[1]
-      if (typeof file === 'string' && encoding === 'utf-8' && file.endsWith('.md')) {
-        return readFile(...array).then(filter)
-      }
-    }
-    return readFile(...array)
-  }
-})(sharedUtils.fs.readFile)
+const translatePlugin = require('./markdown/translate')
+const headerPlugin = require('./markdown/header')
 
 function parseBar(file, options) {
-  const text = filter(fs.readFileSync(file, { encoding: 'utf8' }))
+  // TODO use markdown-it
+  function translate(content) {
+    return parse(content).target.join('\n')
+  }
+  const text = translate(fs.readFileSync(file, { encoding: 'utf8' }))
   const itemArray = []
   let itemCache
   const textName = options.text || 'text'
@@ -82,20 +68,17 @@ const config = {
   markdown: {
     slugify(str) {
       const array = str.split('@')
-      return array.length > 1 ? array[array.length - 1] : slugify(str)
+      return slugify(array.length > 1 ? array[array.length - 1] : str)
     },
     extractHeaders: ['h1', 'h2', 'h3', 'h4'],
     chainMarkdown(config) {
       config
-        .plugin('convert-router-link')
-        .use(convertRouterLinkPlugin, [{
-          target: '_blank',
-          rel: 'noopener noreferrer'
-        }])
+        .plugin('translate')
+        .use(translatePlugin)
+        .end()
+        .plugin('convert-header')
+        .use(headerPlugin)
     }
-  },
-  chainWebpack(config) {
-    config.module.rule('markdown').use('translate').loader(path.resolve(path.join(__dirname, '../../scripts/translate-loader.js'))).before()
   }
 }
 
