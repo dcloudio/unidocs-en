@@ -1,3 +1,6 @@
+---
+pageClass: custom-page-class
+---
 
 ``uni-app`` 是一个使用 [Vue.js](https://vuejs.org/) 开发所有前端应用的框架，开发者编写一套代码，可发布到iOS、Android、PC或Mobile Web（响应式）多个平台。
 `uni-app` is a framework that uses [Vue.js](https://vuejs.org/) to develop all front-end applications, and developers write a set of codes that can be published to iOS, Android, PC or Mobile Web (responsive) platforms.
