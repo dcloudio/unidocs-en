@@ -141,12 +141,12 @@ As can be seen from the following `uni-app` functional framework diagram, `uni-a
 ### 一套代码，运行到多个平台
 ### A set of code that runs on multiple platforms.
 
-``uni-app``实现了一套代码，同时运行到多个平台；如下图所示，一套代码，同时运行到iOS模拟器、Android模拟器、H5（底部8个终端选项卡代表8个终端模拟器）：
-`uni-app` implements a set of code that runs to multiple platforms at the same time; As shown in the figure below, a set of code runs to iOS emulator, Android emulator and H5 at the same time (the bottom 8 terminal tabs represent 8 terminal emulators):
+``uni-app``实现了一套代码，同时运行到多个平台；如下图所示，一套代码，同时运行到iOS模拟器、Android模拟器、H5（底部3个终端选项卡代表3个终端模拟器）：
+`uni-app` implements a set of code that runs to multiple platforms at the same time; As shown in the figure below, a set of code runs to iOS emulator, Android emulator and H5 at the same time (the bottom 3 terminal tabs represent 3 terminal emulators):
 
-![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/efd8e280-60a9-11eb-a16f-5b3e54966275.jpg)
+![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/b9a89b3b-d423-4f25-a61a-7fabde5fa6f5.jpg)
 
 实际运行效果如下（点击图片可放大）：
 The actual running effect is as follows (click on the image to enlarge):
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/ec6e95dd-77ad-4d14-aafa-ca503f5b9e53.jpg)
+![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/a62bec9f-0e95-4e33-8a2e-8d5a9f19c5f1.png)

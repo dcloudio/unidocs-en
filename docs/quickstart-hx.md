@@ -28,7 +28,7 @@ If you use the `cli` method to create a project, you can download the standard v
 在点击工具栏里的文件 -> 新建 -> 项目：
 Click File -> New -> Project in the toolbar:
 <div align=center>
-  <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/b925a1c0-4f19-11eb-97b7-0dc4655d6e68.png"/>
+  <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/9f53bf42-b206-437a-9cd6-333fb6af3904.jpg"/>
 </div>
 
 选择`uni-app`类型，输入工程名，选择模板，点击创建，即可成功创建。
@@ -38,7 +38,7 @@ uni-app自带的模板有 Hello uni-app ，是官方的组件和API示例。还�
 uni-app comes with a template called Hello uni-app, which is an official component and API example. Another important template is the uni ui project template, which is recommended for daily development and has quantities of built-in commonly used components.
 
 <div align=center>
-  <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/f5d5fa70-4f19-11eb-8ff1-d5dcf8779628.png"/>
+  <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/4da27a35-8683-46ff-b890-cb3e57c94175.jpg"/>
 </div>
 
 ## 运行uni-app
@@ -48,13 +48,13 @@ uni-app comes with a template called Hello uni-app, which is an official compone
 1. 浏览器运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到浏览器 -> 选择浏览器，即可在浏览器里面体验uni-app 的 H5 版。
 1. Run on browser: Enter the hello-uniapp project, click Run -> Run to browser -> Select browser on the toolbar, and you can experience the H5 version of uni-app in the browser.
   <div align=center>
-  	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/1ad34710-4f1a-11eb-8ff1-d5dcf8779628.png"/>
+  	<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/52e3ae83-38e7-419f-adf7-7410b80efac5.jpg"/>
   </div>
 
 2. 真机运行：连接手机，开启USB调试，进入hello-uniapp项目，点击工具栏的运行 -> 真机运行 -> 选择运行的设备，即可在该设备里面体验uni-app。
 2. Run on mobile App Playground: Connect the mobile phone, turn on USB debugging, enter the hello-uniapp project, click Run -> Run on mobile App Playground -> Select the device to run, and you can experience uni-app in the device.
 	<div align=center>
-		<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/3a1faaf0-4f1a-11eb-b680-7980c8a877b8.png"/>
+		<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/5d7ebe44-0146-4cce-8fa8-b57f4f39f358.jpg"/>
 	</div>
 	
 	如手机无法识别，请点击菜单运行-运行到手机或模拟器-真机运行常见故障排查指南。
@@ -65,7 +65,7 @@ The shortcut key for running is `Ctrl+r`.
 HBuilderX 还提供了快捷运行菜单，可以按数字快速选择要运行的设备：
 HBuilderX also provides a shortcut run menu, which allows quick selection for the equipment to run by pressing number keys:
 <div align=center>
-	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/aef21b70-4f37-11eb-a16f-5b3e54966275.png"/>
+	<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/a8be0b4d-c81d-466a-ab30-38bc86344669.jpg"/>
 </div>
 
 如需调试，可参考：[uni-app调试](/snippet?id=使用-chrome-调试)
@@ -81,12 +81,12 @@ For debugging, please refer to: [Uni-app debugging](/snippet?id=%E4%BD%BF%E7%94%
 On the HBuilderX toolbar, click Release and select Native app - Cloud packaging, as shown in the figure below:
 
 <div align=center>
-  <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/b8332fd0-4f37-11eb-8ff1-d5dcf8779628.png"/>
+  <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/01428666-e555-4e3d-8f08-496e0510a801.jpg"/>
 </div>
 出现如下界面，点击打包即可。
 ...
 <div align=center>
-  <img style="max-width:600px;" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/001a20b0-d85a-11ea-81ea-f115fe74321c.png"/>
+  <img style="max-width:600px;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/919fc62e-936a-4a3d-8bdb-9f9670f15ed8.jpg"/>
 </div>
 
 云端打包支持安心打包，保护用户隐私，不会上传代码和证书，通过差量包制作方式实现安心打包。详见：[https://ask.dcloud.net.cn/article/37979](https://ask.dcloud.net.cn/article/37979)
@@ -111,7 +111,7 @@ Although peace of mind packaging has met the demand, if you still want to use xc
 2. On the toolbar of HBuilderX, click Release, and select the Website - H5 Mobile Version, as shown in the figure below. Click to generate the H5-related resource files and save them in unpackage directory.
 
 <div align=center>
-	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/b7391860-4f37-11eb-8a36-ebb87efcf8c0.png" style="max-width:600px;height:auto;"/>
+	<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/d6d22340-e7b6-4650-8abb-a4a605de6802.jpg" style="max-width:600px;height:auto;"/>
 </div>
 
 **注意**
