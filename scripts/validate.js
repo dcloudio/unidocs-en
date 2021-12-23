@@ -11,7 +11,7 @@ function runner(mdPath = '', clear = true) {
     validateMd(path.join(__dirname, '../docs', mdPath.replace(/^docs\//, '')))
   } else {
     clear && (fs.existsSync(validateResultPath) && fs.unlinkSync(validateResultPath))
-    glob(`docs/${mdPath}/**/*.`, (err, files) => {
+    glob(`docs/${mdPath}/**/*.md`, (err, files) => {
       if(err) {
         console.error(err);
         return;
