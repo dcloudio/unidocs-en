@@ -64,11 +64,12 @@ export function resolvePage(pages, rawPath, base) {
     rawPath = resolvePath(rawPath, base)
   }
   const path = normalize(rawPath)
+  const hash = rawPath.split('#')[1]
   for (let i = 0; i < pages.length; i++) {
     if (normalize(pages[i].regularPath) === path) {
       return Object.assign({}, pages[i], {
         type: 'page',
-        path: ensureExt(pages[i].path)
+        path: ensureExt(pages[i].path) + (hash ? `#${hash}` : '')
       })
     }
   }
