@@ -1282,7 +1282,7 @@ For `v-model` bindings with arguments, the generated prop name will be `arg + "M
 
 
 Vue 实现了一套内容分发的 API，这套 API 的设计灵感源自 [Web Components 规范草案](https://github.com/WICG/webcomponents/blob/gh-pages/proposals/Slots-Proposal.md)，将 `<slot>` 元素作为承载分发内容的出口。
-Vue implements a content distribution API inspired by the [Web Components spec draft](https://github.com/WICG/webcomponents/blob/gh-pages/proposals/Slots-Proposal.md) (opens new window), using the <slot> element to serve as distribution outlets for content.
+Vue implements a content distribution API inspired by the [Web Components spec draft](https://github.com/WICG/webcomponents/blob/gh-pages/proposals/Slots-Proposal.md) (opens new window), using the `<slot>` element to serve as distribution outlets for content.
 
 
 它允许你像这样合成组件：
