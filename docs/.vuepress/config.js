@@ -63,7 +63,12 @@ const config = {
     docsBranch: 'main',
     docsDir: 'docs',
     editLinks: true,
-    smoothScroll: true
+    smoothScroll: true,
+    algolia: {
+      apiKey: 'ca67b01d14df58783e2f7dc45c79736e',
+      indexName: 'en-uniapp-dcloud',
+      appId: 'TZ0EGQ9J1Y'
+    }
   },
   markdown: {
     slugify(str) {
