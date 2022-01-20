@@ -25,7 +25,7 @@ Custom component instance.
 | observeAll| Boolean| Whether to observe multiple reference nodes (instead of one) simultaneously. If it is set to `true`, the `targetSelector` of `observe` will select multiple nodes (note: selecting too many nodes simultaneously will affect rendering performance)|
 
 ### IntersectionObserver 对象的方法列表
-### Method form of IntersectionObserver object
+### Method list of IntersectionObserver object
 
 |方法|说明|
 | Method| Instruction|

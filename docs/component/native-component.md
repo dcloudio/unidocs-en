@@ -52,7 +52,7 @@ Judgement can be made by listening to the same layer failure callback bindrender
     * 无法对原生组件设置 CSS 动画；
     * Unable to set CSS animation for native components;
     * 无法定义原生组件为 position: fixed；
-    * Unable to define native assembly as position: fixed；
+    * Unable to define native assembly as position: fixed;
     * 不能在父级节点使用 overflow: hidden 来裁剪原生组件的显示区域。
     * overflow cannot be used in parent node: hidden for cropping the display area of native components.
 
@@ -96,7 +96,7 @@ In addition, cover-view is unable to solve the cover problem of native navigatio
 - [subNVue](https://ask.dcloud.net.cn/article/35948)
 
 subNVue是原生渲染的nvue子窗体，把一个nvue页面以半屏的方式覆盖在vue页面上。提供了强大的层级问题解决方案。subNVue的详细介绍见：[https://ask.dcloud.net.cn/article/35948](https://ask.dcloud.net.cn/article/35948)
-subNVue is a native rendered nvue child window, which covers an nvue page on the vue page in a half-screen manner. It provides a powerful solution to layer problems. For a detailed introduction of subNVue, please see: [https://ask.dcloud.net.cn/article/35948](https://ask.dcloud.net.cn/article/35948)
+subNVue is a native rendered nvue subwindow, which covers an nvue page on the vue page in a half-screen manner. It provides a powerful solution to layer problems. For a detailed introduction of subNVue, please see: [https://ask.dcloud.net.cn/article/35948](https://ask.dcloud.net.cn/article/35948)
 
 - [弹出部分区域透明的nvue页面](https://ext.dcloud.net.cn/plugin?id=953)
 - [A partially transparent nvue page pops up](https://ext.dcloud.net.cn/plugin?id=953)

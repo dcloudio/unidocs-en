@@ -41,11 +41,11 @@ If you are familiar with weex or react native development, nvue is your better c
 If you are a web front-end unfamiliar with native typesetting, it is recommended that you still use vue pages as the main method, and use nvue as an enhancement supplement in the case of poor performance of some vue pages on the App side. These scenarios are as follows:
 
 1. 需要高性能的区域长列表或瀑布流滚动。webview的页面级长列表滚动是没有性能问题的（就是滚动条覆盖webview整体高度），但页面中某个区域做长列表滚动，则需要使用nvue的```list```、```recycle-list```、```waterfall```等组件([详见](https://uniapp.dcloud.io/component/list))。这些组件的性能要高于vue页面里的区域滚动组件```scroll-view```。
-1. Long lists or waterfall scrolling in areas that require high performance. There is no performance problem in webview's page-level long list scrolling (i.e., the scroll bar covers the overall height of webview), but for a long list scrolling in a certain area of the page, you need to use nvue's `list`, `recycle-list`, `waterfall` and other components ([See details](https://uniapp.dcloud.io/component/list)). The performance of these components is higher than that of the area scroll component `scroll-view` in the vue page.
+1. Long lists or waterfall scrolling in areas that require high perlistance. There is no perlistance problem in webview's page-level long list scrolling (i.e., the scroll bar covers the overall height of webview), but for a long list scrolling in a certain area of the page, you need to use nvue's `list`, `recycle-list`, `waterfall` and other components ([See details](https://uniapp.dcloud.io/component/list)). The performance of these components is higher than that of the area scroll component `scroll-view` in the vue page.
 2. 复杂高性能的自定义下拉刷新。uni-app的pages.json里可以配置原生下拉刷新，但引擎内置的下拉刷新样式只有雪花和circle圈2种样式。如果你需要自己做复杂的下拉刷新，推荐使用nvue的refresh组件。当然[插件市场](https://ext.dcloud.net.cn/search?q=%E4%B8%8B%E6%8B%89%E5%88%B7%E6%96%B0)里也有很多vue下的自定义下拉刷新插件，只要是基于renderjs或wxs的，性能也可以商用，只是没有nvue的```refresh```组件更极致。
 2. Complex high-performance custom pull-down refresh. Native pull-down refresh can be configured in uni-app's pages.json, but the built-in pull-down refresh style of the engine only has two styles: snowflake and circle. If you need to generate a complex pull-down refresh yourself, nvue's refresh component is recommended. Of course, there are many custom pull-down refresh plug-ins under Vue in the [Plug-in market](https://ext.dcloud.net.cn/search?q=%E4%B8%8B%E6%8B%89%E5%88%B7%E6%96%B0). As long as they are based on renderjs or wxs, the performance can also be commercialized, but it is not more extreme than the `refresh` component of nvue.
 3. 左右拖动的长列表。在webview里，通过```swiper```+```scroll-view```实现左右拖动的长列表，前端模拟下拉刷新，这套方案的性能不好。此时推荐使用nvue，比如新建uni-app项目时的[新闻示例模板](https://ext.dcloud.net.cn/plugin?id=103)，就采用了nvue，切换很流畅。
-3. Long list that can be dragged left and right. In the webview, the performance of the solution that implements a long list of dragging left and right through `swiper`+`scroll-view` and the front end simulates pull-down refresh is not good. At this time, nvue is recommended. For example, the [news sample template](https://ext.dcloud.net.cn/plugin?id=103) used in the new uni-app project achieved smooth switching by using nvue.
+3. Long list that can be dragged left and right. In the webview, the perlistance of the solution that implements a long list of dragging left and right through `swiper`+`scroll-view` and the front end simulates pull-down refresh is not good. At this time, nvue is recommended. For example, the [news sample template](https://ext.dcloud.net.cn/plugin?id=103) used in the new uni-app project achieved smooth switching by using nvue.
 4. 实现区域滚动长列表+左右拖动列表+吸顶的复杂排版效果，效果可参考hello uni-app模板里的```swiper-list```。[详见](https://ext.dcloud.net.cn/plugin?id=2128)
 4. Realize the complex typesetting effect of scrolling long list in area + dragging list left and right + sticky. For the effect, please refer to `swiper-list` in the hello uni-app template. [See details](https://ext.dcloud.net.cn/plugin?id=2128)
 5. 如需要将软键盘右下角按钮文字改为“发送”，则需要使用nvue。比如聊天场景，除了软键盘右下角的按钮文字处理外，还涉及聊天记录区域长列表滚动，适合nvue来做。
@@ -64,7 +64,7 @@ If you are a web front-end unfamiliar with native typesetting, it is recommended
 但注意，在某些场景下，nvue不如vue页面，如下：
 But note that in some scenarios, nvue is not as good as vue page, as follows:
 1. ```canvas```。nvue的canvas性能不高，尤其是Android App平台，所以这个组件干脆没有内置，而是需要单独引入。操作canvas动画，最高性能的方式是使用vue页面的renderjs技术，在hello uni-app里的canvas示例就是如此。
-1. `canvas`。 nvue's canvas performance is not high, especially in the Android App platform. Therefore, canvas is not built in this component, but needs to be introduced separately. The highest performance way to operate canvas animation is to use the renderjs technology of vue page, as shown in the canvas example in hello uni-app.
+1. `canvas`. nvue's canvas performance is not high, especially in the Android App platform. Therefore, canvas is not built in this component, but needs to be introduced separately. The highest performance way to operate canvas animation is to use the renderjs technology of vue page, as shown in the canvas example in hello uni-app.
 2. 动态横竖屏。nvue页面的css不支持媒体查询，所以横竖屏动态切换、动态适配屏幕是很困难的。
 2. Dynamic horizontal and vertical screens. The css of nvue page does not support media query, so it is very difficult to dynamically switch between landscape and portrait screens and dynamically adapt the screens.
 
@@ -247,7 +247,7 @@ If there are different names and there are only nvue pages, on non-app sides, on
 `nvue` is the same as `vue` in terms of the page structure, which is composed of `template`, `style`, and `script`.
 
 - template： 模板写法、数据绑定同 vue。组件支持2种模式，
-- template： The template writing method and data binding are the same as vue. The component supports 2 modes,
+- template: The template writing method and data binding are the same as vue. The component supports 2 modes,
 	- weex 组件，同weex写法，参考：[weex 内置组件](http://emas.weex.io/zh/docs/components/a.html)；
 	- weex component, written as weex, refer to: [weex built-in components](http://emas.weex.io/zh/docs/components/a.html);
 	- uni-app组件，同uni-app写法。

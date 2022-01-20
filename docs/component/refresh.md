@@ -1,7 +1,7 @@
 #### refresh
 
 app端nvue专用组件。
-app side nvue specific component
+app side nvue specific component.
 
 `<refresh>` 为容器提供下拉刷新功能。在nvue上，可通过此组件实现灵活的、自定义的、高性能的下拉刷新。
 `<refresh>` provides a pull-down refresh function for the container. On nvue, flexible, customized and high-performance pull-down refresh can be realized with this component.

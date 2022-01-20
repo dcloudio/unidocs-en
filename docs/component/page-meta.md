@@ -29,7 +29,7 @@ From HBuilderX 2.6.3+, `page-meta` can be compiled to all platforms.
 | Attribute| Type| Defaults| Required| Instruction| Version required
 |:-|:-|:-|:-|:-|:-|
 |page-style|string|""|否|页面根节点样式，页面根节点是所有页面节点的祖先节点，相当于 HTML 中的 body 节点|H5 2.6.7、App-vue 2.6.7|
-| page-style| string| ""| No| Page root node style. Page root node is the ancestor node of all page nodes, which is equivalent to body node in HTML| H5 2.6.7、App-vue 2.6.7|
+| page-style| string| ""| No| Page root node style. Page root node is the ancestor node of all page nodes, which is equivalent to body node in HTML| H5 2.6.7, App-vue 2.6.7|
 |root-font-size|string|""|否|页面的根字体大小，页面中的所有 rem 单位，将使用这个字体大小作为参考值，即 1rem 等于这个字体大小|H5 2.6.7、App-vue 2.6.7|
 | root-font-size| string| ""| No| The root font size of the page. All rem units in the page will use this font size as a reference value, that is, 1 rem is equal to this font size.| H5 2.6.7, App-vue 2.6.7|
 |enable-pull-down-refresh|Boolean|""|否|是否开启下拉刷新|App 2.6.7|

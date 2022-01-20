@@ -141,7 +141,7 @@ Find the project directory in `webpack` under `Page`, you can directly find the 
 
 
 `点击工具栏的运行 -> 运行到浏览器 -> 选择 Chrome`，也可将 `uni-app`运行到 浏览器，可参考 [运行uni-app](/quickstart?id=运行uni-app)。
-`Click on toolbar run -> run on the browser -> Select Chrome` can also run `uni-app` into the browser, please refer to [Run uni-app](/quickstart?id=%E8%BF%90%E8%A1%8Cuni-app)
+`Click on toolbar run -> run on the browser -> Select Chrome` can also run `uni-app` into the browser, please refer to [Run uni-app](/quickstart?id=%E8%BF%90%E8%A1%8Cuni-app).
 
 ### 关于 App 的调试debug
 ### Debugging of App

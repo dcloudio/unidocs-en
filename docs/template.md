@@ -57,10 +57,10 @@ Including a corner mark on that right side, a secondary fold list, a three-line 
 <img src="//img.cdn.aliyun.dcloud.net.cn/guide/uniapp/template-10.jpg" width="200"/>
 
 **8.资讯类列表到详情示例**
-**8. Examples of information list to details**
+**8. Examples of inlistation list to details**
 
 包括资讯类列表页及详情页
-Including information list page and details page
+Including inlistation list page and details page
 
 <div style="display:flex;justify-content: space-around;">
 	<div style="display:flex;align-items: center;flex-direction: column;">

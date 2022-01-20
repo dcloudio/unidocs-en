@@ -1,7 +1,7 @@
 #### list
 
 app端nvue专用组件。在app-nvue下，如果是长列表，使用list组件的性能高于使用view或scroll-view的滚动。原因在于list在不可见部分的渲染资源回收有特殊的优化处理。
-app side nvue specific component Under app-nvue, if it is a long list, the performance of using the list component is higher than that of scrolling using view or scroll-view. The reason lies in that list has special optimization for rendering resource recycling of the invisible part.
+app side nvue specific component. Under app-nvue, if it is a long list, the perlistance of using the list component is higher than that of scrolling using view or scroll-view. The reason lies in that list has special optimization for rendering resource recycling of the invisible part.
 
 原生渲染的资源回收机制，与webview渲染不同。webview不需要数据有规则格式，长页面处于不可视的部分，其渲染资源会自动回收，除非webview使用区域滚动而不是页面滚动。所以vue页面只要不用scroll-view，就不需要关注这个问题。而原生渲染则必须注意。
 The resource recycling mechanism of native rendering is different from webview rendering. webview does not require data to have a regular format. The rendering resources will be automatically recycled when the long page is in the invisible part, unless webview uses area scrolling instead of page scrolling. Therefore, this problem needs no attention as long as the vue page doesn't use scroll-view. Native rendering, on the other hand, must be noted.

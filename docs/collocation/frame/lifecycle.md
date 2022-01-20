@@ -26,7 +26,7 @@
 **Notice**
 
 - 应用生命周期仅可在``App.vue``中监听，在其它页面监听无效。
-- Application life cycle can only be listened in `App.vue`, and listening on other pages is invalid
+- Application life cycle can only be listened in `App.vue`, and listening on other pages is invalid.
 - onlaunch里进行页面跳转，如遇白屏报错，请参考[https://ask.dcloud.net.cn/article/35942](https://ask.dcloud.net.cn/article/35942)
 - Page jump can be performed in onlaunch. In case of a white screen error, please refer to [https://ask.dcloud.net.cn/article/35942](https://ask.dcloud.net.cn/article/35942)
 
@@ -76,13 +76,13 @@
 |onReachBottom|页面滚动到底部的事件（不是scroll-view滚到底），常用于下拉下一页数据。具体见下方注意事项|||
 | onReachBottom| The event that a page scrolls to the bottom (not scroll-view to the bottom) is often used to pull down the data on the next page. See the precautions below for details| | |
 |onTabItemTap|点击 tab 时触发，参数为Object，具体见下方注意事项|H5、App||
-| onTabItemTap| Triggered when tab is clicked with the parameter of Object. See the notes below for details| H5、App| |
+| onTabItemTap| Triggered when tab is clicked with the parameter of Object. See the notes below for details| H5, App| |
 |onPageScroll|监听页面滚动，参数为Object|nvue暂不支持||
 | onPageScroll| Listen to page scrolling with the parameter of Object| not supported by nvue temporarily| |
 |onNavigationBarButtonTap|监听原生标题栏按钮点击事件，参数为Object|App、H5||
 | onNavigationBarButtonTap| Listen to the click event of native title bar button with the parameter of Object| App, H5| |
 |onBackPress|监听页面返回，返回 event = {from:backbutton、 navigateBack} ，backbutton 表示来源是左上角返回按钮或 android 返回键；navigateBack表示来源是 uni.navigateBack ；详细说明及使用：[onBackPress 详解](http://ask.dcloud.net.cn/article/35120)。|app、H5||
-| onBackPress| listen to page return, return event = {from:backbutton, navigateBack}. backbutton indicates that the source is the return button in the upper left corner or the android return button. navigateBack indicates that the source is uni.navigateBack. For detailed description and usage, see: [onBackPress details](http://ask.dcloud.net.cn/article/35120).| app、H5| |
+| onBackPress| listen to page return, return event = {from:backbutton, navigateBack}. backbutton indicates that the source is the return button in the upper left corner or the android return button. navigateBack indicates that the source is uni.navigateBack. For detailed description and usage, see: [onBackPress details](http://ask.dcloud.net.cn/article/35120).| app, H5| |
 |onNavigationBarSearchInputChanged|监听原生标题栏搜索输入框输入内容变化事件|App、H5|1.6.0|
 | onNavigationBarSearchInputChanged| Listen to the input content change event of search input box of the native title bar| App, H5| 1.6.0|
 |onNavigationBarSearchInputConfirmed|监听原生标题栏搜索输入框搜索事件，用户点击软键盘上的“搜索”按钮时触发。|App、H5|1.6.0|

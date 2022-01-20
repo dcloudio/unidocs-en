@@ -113,7 +113,7 @@ onLoad: function(option) {
 
 
 url有长度限制，太长的字符串会传递失败，可改用[窗体通信](https://uniapp.dcloud.io/collocation/frame/communication)、[全局变量](https://ask.dcloud.net.cn/article/35021)，另外参数中出现空格等特殊字符时需要对参数进行编码，如下为使用`encodeURIComponent`对参数进行编码的示例。
-The url has a length limit. A string that is too long will fail to be delivered, and [Form communication](https://uniapp.dcloud.io/collocation/frame/communication) and [Global variable](https://ask.dcloud.net.cn/article/35021) can be used instead. In addition, when special characters such as spaces appear in the parameters, the parameters need to be encoded. The following is an example of using `encodeURIComponent` to encode the parameters.
+The url has a length limit. A string that is too long will fail to be delivered, and [window communication](https://uniapp.dcloud.io/collocation/frame/communication) and [Global variable](https://ask.dcloud.net.cn/article/35021) can be used instead. In addition, when special characters such as spaces appear in the parameters, the parameters need to be encoded. The following is an example of using `encodeURIComponent` to encode the parameters.
 ```html
 <navigator :url="'/pages/test/test?item='+ encodeURIComponent(JSON.stringify(item))"></navigator>
 ```
@@ -289,7 +289,7 @@ Close the current page and return to the one or more levels of previous page. Yo
 
 ```javascript
 // 注意：调用 navigateTo 跳转时，调用该方法的页面会被加入堆栈，而 redirectTo 方法则不会。见下方示例代码
-//Note: When the navigateTo is called for page jumping, the page calling this method will be added to the stack, but the redirectTo method will not. See the sample code below
+//Note: At calling the navigateTo for jumping, the page calling this method will be added to the stack, but the redirectTo method will not. See the sample code below
 
 // 此处是A页面
 //Here is the page A
@@ -487,29 +487,29 @@ There will be default corresponding rules for turning on/off the animation. Howe
 | Show animation| Close animation| Description of animation on (animation off on the contrary)
 |:-|:-|:-|
 |slide-in-right|slide-out-right|新窗体从右侧进入|
-| slide-in-right| slide-out-right| The new form enters from the right|
+| slide-in-right| slide-out-right| The new window enters from the right|
 |slide-in-left|slide-out-left|新窗体从左侧进入|
-| slide-in-left| slide-out-left| The new form enters from the left|
+| slide-in-left| slide-out-left| The new window enters from the left|
 |slide-in-top|slide-out-top|新窗体从顶部进入|
-| slide-in-top| slide-out-top| The new form enters from the top|
+| slide-in-top| slide-out-top| The new window enters from the top|
 |slide-in-bottom|slide-out-bottom|新窗体从底部进入|
-| slide-in-bottom| slide-out-bottom| The new form enters from the bottom|
+| slide-in-bottom| slide-out-bottom| The new window enters from the bottom|
 |pop-in|pop-out|新窗体从左侧进入，且老窗体被挤压而出|
-| pop-in| pop-out| The new form enters from the left to squeeze out the old form|
+| pop-in| pop-out| The new window enters from the left to squeeze out the old window|
 |fade-in|fade-out|新窗体从透明到不透明逐渐显示|
-| fade-in| fade-out| The new form is gradually displayed from transparent to opaque|
+| fade-in| fade-out| The new window is gradually displayed from transparent to opaque|
 |zoom-out|zoom-in|新窗体从小到大缩放显示|
-| zoom-out| zoom-in| The new form is scaled from small to large.|
+| zoom-out| zoom-in| The new window is scaled from small to large.|
 |zoom-fade-out|zoom-fade-in|新窗体从小到大逐渐放大并且从透明到不透明逐渐显示|
-| zoom-fade-out| zoom-fade-in| The new form is gradually enlarged from small to large and gradually displayed from transparent to opaque.|
+| zoom-fade-out| zoom-fade-in| The new window is gradually enlarged from small to large and gradually displayed from transparent to opaque.|
 |none|none|无动画|
 | none| none| No animation|
 
 **注意**
 **Notice**
 - 纯nvue项目（render为native），窗体动画默认进入动画为popin，返回为pop-out。如果想修改动画类型，只能通过uni.navigateTo API修改，在组件或pages.json里配置动画类型无效
-- For pure nvue project (rendered as native), the default entry animation of form is pop-in, and the return animation is pop-out. If you want to modify the animation type, you can only modify it through uni.navigateTo API, and the animation type configured in the component or pages.json is invalid.
+- For pure nvue project (rendered as native), the default entry animation of window is pop-in, and the return animation is pop-out. If you want to modify the animation type, you can only modify it through uni.navigateTo API, and the animation type configured in the component or pages.json is invalid.
 - 非纯nvue项目，App端窗体动画，默认进入动画为slider-in-right，默认返回动画为pop-out
-- For non-pure nvue project on the App side, the default entry animation of form animation is slider-in-right, and the return animation is pop-out.
+- For non-pure nvue project on the App side, the default entry animation of window animation is slider-in-right, and the return animation is pop-out.
 - webview 中嵌入 uni-app H5时，使用 uni.webView.navigateTo... 跳转页面
 - Use uni.webView.navigateTo ... to jump to the page after embedding the uni-app H5 in webview.

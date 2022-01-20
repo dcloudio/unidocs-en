@@ -20,7 +20,7 @@ Default events are supported, including click, touchstart, touchmove, touchcance
 ##### nodes
 
 nodes 值为 HTML String 时，在组件内部将自动解析为节点列表，推荐直接使用 Array 类型避免内部转换导致的性能下降。App-nvue 不支持 HTML String 方式，仅支持直接使用节点列表即 Array 类型，如要使用 HTML String，则需自己将 HTML String 转化为 nodes 数组，可使用 [html-parser](https://github.com/dcloudio/hello-uniapp/blob/master/common/html-parser.js) 转换。
-For the node value of HTML String, it will be automatically resolved into a node list inside the component. It is recommended to use Array type directly to avoid performance degradation caused by internal conversion. App-nvue does not support the HTML String method, but only supports the direct use of the node list, i.e., Array type. If you want to use HTML String, you need to convert the HTML String into an array of nodes with the help of [html-parser](https://github.com/dcloudio/hello-uniapp/blob/master/common/html-parser.js).
+For the node value of HTML String, it will be automatically resolved into a node list inside the component. It is recommended to use Array type directly to avoid perlistance degradation caused by internal conversion. App-nvue does not support the HTML String method, but only supports the direct use of the node list, i.e., Array type. If you want to use HTML String, you need to convert the HTML String into an array of nodes with the help of [html-parser](https://github.com/dcloudio/hello-uniapp/blob/master/common/html-parser.js).
 
 节点列表内的节点现支持两种类型，通过 type 来区分，分别是元素节点和文本节点，默认是元素节点，在富文本区域里显示的 HTML 节点。
 The nodes in the list now support two types, and distinguished by types: element nodes and text nodes. Element nodes are the default nodes, and HTML nodes are displayed in the rich text area.

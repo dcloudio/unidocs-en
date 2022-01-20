@@ -269,7 +269,7 @@ HBuilderX provides syntax highlighting for the code comment part of conditional 
 **Correct comment and quick selection**
 
 在 HBuilderX 中，ctrl+alt+/ 即可生成正确注释（js：``// 注释``、css：``/* 注释 */``、vue/nvue模板： ``<!-- 注释 -->``）。
-In HBuilderX, ctrl+alt+/ can generate correct comments (js: `// Comments`, css: `/* Comments */`, vue/nvue template: `<!-- Comments -->`）。
+In HBuilderX, ctrl+alt+/ can generate correct comments (js: `// Comments`, css: `/* Comments */`, vue/nvue template: `<!-- Comments -->`).
 
 ![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/0af9d7b0-4f3c-11eb-8a36-ebb87efcf8c0.png)
 

@@ -10,7 +10,7 @@ Create and return videoContext object of the video context. Under custom compone
 |√|√|
 
 **videoContext 对象的方法列表**
-**Method form of videoContext object**
+**Method list of videoContext object**
 
 |方法|参数|说明|平台差异说明
 | Method| Parameter| Instruction| Platform difference description

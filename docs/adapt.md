@@ -5,16 +5,16 @@ uni-app是以移动为先的理念诞生的。从uni-app 2.9起，提供了PC等
 uni-app was born with the concept of mobile first. For uni-app 2.9+, the widescreen adaptation scheme for PC and other devices has been provided to achieve all-side unification.
 
 PC适配和屏幕适配略有差异。PC适配包含`宽屏适配`和`uni-app内置组件适配PC`两方面的工作。
-There is slight difference between PC adaptation and screen adaptation. PC adaptation includes two aspects of work: `Widescreen adaptation`and`uni-app build-in component adaptive PC`.
+There is slight difference between PC adaptation and screen adaptation. PC adaptation includes two aspects of work: `Widescreen adaptation` and `uni-app build-in component adaptive PC`.
 
 uni-app内置组件的PC适配，又包括`PC交互习惯的UI调整`和`非webkit浏览器适配`这两部分。这块工作不在本文的讨论范围内，尤其是开发者在PC端可以随意使用普通html元素和组件，不局限于uni-app内置组件。所以本文重点讨论屏幕适配。
-PC adaptation of uni-app built-in components also includes two aspects: `UI adaption to the PC interaction habits`and`Non-webkit browser adaption`. However, this aspect is beyond the scope of this article. Especially, the developers can freely use the ordinary html elements and components at the PC side, not limited to the built-in components of uni-app. Therefore, this article focuses on the screen adaptation.
+PC adaptation of uni-app built-in components also includes two aspects: `UI adaption to the PC interaction habits` and `Non-webkit browser adaption`. However, this aspect is beyond the scope of this article. Especially, the developers can freely use the ordinary html elements and components at the PC side, not limited to the built-in components of uni-app. Therefore, this article focuses on the screen adaptation.
 
 uni-app提供的屏幕适配方案，包括3部分：
 The screen adaptation scheme provided by uni-app consists of 3 parts:
 
 #### 1. 页面窗体级适配方案：leftWindow、rightWindow、topWindow
-#### 1. Page and window level adaptation scheme: leftWindow, rightWindow and topWindow
+#### 1. Page and window level adaptation scheme: leftwindow, rightwindow and topwindow
 以目前手机屏幕为主window，在左右上，可新扩展 leftWindow、rightWindow、topWindow，这些区域可设定在一定屏幕宽度范围自动出现或消失。这些区域各自独立，切换页面支持在各自的window内刷新，而不是整屏刷新。
 With the current mobile phone screen as the main window, the new created leftWindow, rightWindow and topWindow on the left, right and top of the window can be set to appear or disappear automatically within a certain screen width range. These areas are independent. For page shifting, the respective windows, instead of the whole screen, can be refreshed.
 
@@ -109,7 +109,7 @@ Configuration example of pages.json
 - Tutorials of schemes for leftWindow and others
 
 如果已经有了一个为小屏设计的uni-app，在使用leftWindow等窗体适配大屏时，需理清一个思路：现有的小屏内容，放在哪个window里？
-If there is a uni-app designed for small screen at hand and it is intended to use leftWindow and others to adapt to a large screen, you need to clarify which window the content of the existing small screen should be placed in?
+If there is a uni-app designed for small screen at hand and it is intended to use leftwindow and others to adapt to a large screen, you need to clarify which window the content of the existing small screen should be placed in?
 
 如果应用的首页是列表，二级页是详情，此时适合的做法是，将原有的小屏列表作为主window，在右边扩展rightWindow来显示详情。
 If the parent page of the application is a list and the child page is the details, it is appropriate to use the original small-screen list as the main window and extend the rightWindow to display the details on the right.
@@ -133,7 +133,7 @@ First, configure [`rightWindow`option](https://uniapp.dcloud.net.cn/collocation/
 ```
 
 `rightWindow`对应的页面不需要重写一遍新闻详情的页面逻辑，只需要引入之前的详情页面组件（详情页面`/pages/detail/detail`可自动转化为`pages-detail-detail`组件使用）。
-The page corresponding to `rightWindow` does not need to rewrite the page logic of news details, but only needs to introduce the previous detail page component (details page `/pages/detail/detail` can be automatically converted into `pages-detail-detail` component for use).
+The page corresponding to `rightWindow` does not need to rewrite the page logic of news details, but only needs to introduce the previous detail page component (details page `/pages/detail/detail` can be automatically converted into `pages-detail-detail` component).
 
 ```html
 <!--responsive/right-window.vue-->
@@ -210,10 +210,10 @@ The current leftWindow, rightWindow and topWindow are supported only on the web 
 #### 2. Component-level adaptation scheme: match-media component
 
 leftWindow等方案是页面窗体级适配方案。适于独立的页面。那么在同一个页面中，是否可以适配不同屏宽？当然可以，此时可以使用组件级适配方案。
-For leftWindow and others, the page and window level adaptation scheme are used. Suitable for standalone pages Whether one page is able to adapt to different screen widths? Yes, of course. Component-level adaptation scheme can be used in such case.
+For leftwindow and others, the page and window level adaptation scheme are used. Suitable for standalone pages. Whether one page is able to adapt to different screen widths? Yes, of course. Component-level adaptation scheme can be used in such case.
 
 uni-app提供了 [match-media组件](https://uniapp.dcloud.net.cn/component/match-media) 和配套的 [uni.createMediaQueryObserver](https://uniapp.dcloud.net.cn/api/ui/media-query-observer) 方法。
-uni-app provides [match-media component](https://uniapp.dcloud.net.cn/component/match-media) and supporting [uni.createMediaQueryObserver](https://uniapp.dcloud.net.cn/api/ui/media-query-observer) methods.
+uni-app provides the [match-media component](https://uniapp.dcloud.net.cn/component/match-media) and the supporting method [uni.createMediaQueryObserver](https://uniapp.dcloud.net.cn/api/ui/media-query-observer).
 
 这是一个媒体查询适配组件，可以更简单的用于动态屏幕适配。
 This is a media query and adaptation component that can be used for dynamic screen adaptation more easily.

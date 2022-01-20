@@ -934,7 +934,7 @@ export default {
 	},
 	methods: {
 		// props发生变化时被调用，在组件中覆盖此方法
-		//props is called when it is changed, this method will be overridden in the components
+		//It is called when props is changed, and this method will be overridden in the component
 		// 非 pageCurrent，pageSize 改变时 needReset=true,需要重置数据
 		//For non pageCurrent, when pageSize changes, needReset=true, and data needs to be reset
 		// changed，发生变化的属性名，类型为Array，例如 ['collection', 'action']

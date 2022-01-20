@@ -65,7 +65,7 @@ Note: cover-view of nvue is not restricted by the above factors, it only support
 - App端 `cover-image` 使用本地图像的话，打包前需要设置资源为释放模式，在manifest文件内app-plus新增runmode节点，设置值为liberate。
 - If the `cover-image` on the App side uses local images, you need to set the resources to release mode before packaging, and add a runmode node to app-plus in the manifest file, with the setting value of liberate.
 - App端还提供了更灵活和强大的`subNvue`，参考[原生子窗体subNvue](/api/window/subNVues)
-- The App side also provides a more flexible and powerful`subNvue`, please refer to [Native sub-form subNvue](/api/window/subNVues)
+- The App side also provides a more flexible and powerful`subNvue`, please refer to [Native subwindow subNvue](/api/window/subNVues)
 - 在 video 组件中使用时，若想在全屏模式下使用`cover-view`，只有在App端的nvue页面可实现。
 - When using in the video component, if you want to use `cover-view` in full-screen mode, it can only be implemented on the nvue page on the App side.
 - 在App端，如果重度使用video和map，推荐使用nvue页面。

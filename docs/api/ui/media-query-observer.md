@@ -13,7 +13,7 @@ Custom component instance. Only supported by App 2.8.12+, app-vue.
 
 
 ### MediaQueryObserver 对象的方法列表
-### Method form of MediaQueryObserver object
+### Method list of MediaQueryObserver object
 
 >tips: 和 UI 相关的 api 在组件 mounted 后执行
 > tips: UI-related api will be executed after the component is mounted

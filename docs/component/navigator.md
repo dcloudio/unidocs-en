@@ -105,7 +105,7 @@ export default {
 ```
 
 url有长度限制，太长的字符串会传递失败，可使用[窗体通信](https://uniapp.dcloud.io/collocation/frame/communication)、[全局变量](https://ask.dcloud.net.cn/article/35021)，或`encodeURIComponent`等多种方式解决，如下为`encodeURIComponent`示例。
-The url has a length limit. A string that is too long will fail to be delivered, which can be solved in a variety of ways, such as [form communication](https://uniapp.dcloud.io/collocation/frame/communication), [global variables](https://ask.dcloud.net.cn/article/35021), or `encodeURIComponent`. The following is an example of `encodeURIComponent`.
+The url has a length limit. A string that is too long will fail to be delivered, which can be solved in a variety of ways, such as [window communication](https://uniapp.dcloud.io/collocation/frame/communication), [global variables](https://ask.dcloud.net.cn/article/35021), or `encodeURIComponent`. The following is an example of `encodeURIComponent`.
 ```html
 <navigator :url="'/pages/navigate/navigate?item='+ encodeURIComponent(JSON.stringify(item))"></navigator>
 ```

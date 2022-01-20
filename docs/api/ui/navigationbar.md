@@ -53,7 +53,7 @@ Set the color for the page navigation bar. **If the color needs to be set right 
 | Parameter| Type| Required| Instruction| Platform difference description|
 |:-|:-|:-|:-|:-|
 |frontColor|String|是|前景颜色值，包括按钮、标题、状态栏的颜色，仅支持 #ffffff 和 #000000|App、H5|
-| frontColor| String| Yes| Foreground color value, including the color of button, title and status bar. Only #ffffff and #000000 are supported| App、H5|
+| frontColor| String| Yes| Foreground color value, including the color of button, title and status bar. Only #ffffff and #000000 are supported| App, H5|
 |backgroundColor|String|是|背景颜色值，有效值为十六进制颜色||
 | backgroundColor| String| Yes| Background color value, valid value is hexadecimal color| |
 |success|Function|否|接口调用成功的回调函数||

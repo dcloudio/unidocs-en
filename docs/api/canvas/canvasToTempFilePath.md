@@ -29,7 +29,7 @@ Export the contents of the specified area in the current canvas to generate a im
 |destHeight	|Number		|否			|输出图片高度（默认为 height * 屏幕像素密度）|					
 | destHeight| Number| No| Output image height (default is height * screen pixel density)|
 |canvasId	|String		|是			|画布标识，传入 ``<canvas/>`` 的 canvas-id|						
-| canvasId| String| Yes| Canvas identification, pass in the canvas-id of `<canvas/>`|
+| canvasId| String| Yes| Canvas identification, passing in canvas-id of `<canvas/>` |
 |fileType	|String		|否			|目标文件的类型，只支持 'jpg' 或 'png'。默认为 'png'|		
 | fileType| String| No| Supported target file types are 'jpg' and 'png' only. The default is 'png'|
 |quality	|Number		|否			|图片的质量，取值范围为 (0, 1]，不在范围内时当作1.0处理|		

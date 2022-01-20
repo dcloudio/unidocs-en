@@ -92,7 +92,7 @@ Q：如何暂时禁用掉下拉刷新，待需要的时候再重新开启？
 Q: How to temporarily disable the pull-down refresh and turn it on when needed?
 
 A：`App` 平台下可以处理此类场景，详细参考：[uni-app 中实现动态禁用/开启下拉刷新](https://ask.dcloud.net.cn/article/35134)
-A：`App` This type of scenario can be handled on the platform. For details, please refer to [Dynamic disable/enable pull-down refresh in uni-app](https://ask.dcloud.net.cn/article/35134)
+A: `App` This type of scenario can be handled on the platform. For details, please refer to [Dynamic disable/enable pull-down refresh in uni-app](https://ask.dcloud.net.cn/article/35134)
 
 Q：自定义title如何让下拉刷新在title之下
 Q: How to place pull-down refresh under title with custom title
@@ -104,4 +104,4 @@ Q：如何自定义下拉刷新样式
 Q: How to customize the pull-down refresh style
 
 A：App端原生的下拉刷新有2种样式可选择，下拉漏出雪花和下拉circle圈。如果使用nvue，可以使用[refresh组件](https://uniapp.dcloud.io/component/refresh)自定义下拉刷新，都是原生渲染。如果想使用scroll-view在前端实现自定义下拉刷新，需要注意列表不可太长和太复杂，否则会有性能问题。[插件市场](https://ext.dcloud.net.cn/)搜索下拉刷新有示例。
-A: There are two styles to choose from for the native pull-down refresh on the App side, i.e. pull-down snowflake and pull-down circle. If nvue is used, you can use [refresh component](https://uniapp.dcloud.io/component/refresh) to customize the pull-down refresh, which is native rendering. If you want to use scroll-view to implement custom pull-down refresh in the front end, please note that the list shall not be too long or too complicated, or there will be performance problems. Relevant examples can be found by searching for pull-down refresh on the [Plug-in market](https://ext.dcloud.net.cn/).
+A: There are two styles to choose from for the native pull-down refresh on the App side, i.e. pull-down snowflake and pull-down circle. If nvue is used, you can use [refresh component](https://uniapp.dcloud.io/component/refresh) to customize the pull-down refresh, which is native rendering. If you want to use scroll-view to implement custom pull-down refresh in the front end, please note that the list shall not be too long or too complicated, or there will be perlistance problems. Relevant examples can be found by searching for pull-down refresh on the [Plug-in market](https://ext.dcloud.net.cn/).

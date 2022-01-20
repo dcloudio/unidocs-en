@@ -25,7 +25,7 @@ Dynamically set the content of any item in tabBar
 |selectedIconPath|String||否|选中时的图片路径，icon 大小限制为 40kb，建议尺寸为 81px * 81px ，当 position 为 top 时，此参数无效||
 | selectedIconPath| String| | No| Path of the selected image, the size of icon is limited to 40kb, and the recommended size is 81px * 81px. For position = top, this parameter is invalid| |
 |pagePath|String||否|页面绝对路径，必须在 [pages](/collocation/pages?id=pages) 中先定义，被替换掉的 pagePath 不会变成普通页面（仍然需要使用 uni.swichTab 跳转）|App（2.8.4+）、H5（2.8.4+）|
-| pagePath| String| | No| The absolute path of the page must be defined in [pages](/collocation/pages?id=pages) first, and the replaced pagePath will not become a normal page (you still need to use uni.swichTab to jump)| App（2.8.4+）、H5（2.8.4+）|
+| pagePath| String| | No| The absolute path of the page must be defined in [pages](/collocation/pages?id=pages) first, and the replaced pagePath will not become a normal page (you still need to use uni.swichTab to jump)| App(2.8.4+), H5(2.8.4+)|
 |visible|Boolean|true|否|该项是否显示|App（3.2.10+）、H5（3.2.10+）|
 | visible| Boolean| true| No| Whether the item is displayed?| App(3.2.10+), H5(3.2.10+)|
 |success|Funtion||否|接口调用成功的回调函数||

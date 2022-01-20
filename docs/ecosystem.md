@@ -39,7 +39,7 @@ On the App side of `uni-app`, on the one hand, HTML can be loaded through the we
 `uni-app`逻辑层在独立jscore，而渲染层可选webview渲染和weex引擎渲染。
 `uni-app` The logic layer is in the independent jscore, and the rendering layer can be rendered by webview and weex engine.
 1. 使用webview渲染，此时页面后缀为vue文件。
-1. Use webview rendering, and the page is suffixed with a vue file at this time
+1. Use webview rendering, and the page is suffixed with a vue file at this time.
 2. 使用weex引擎（经过改造）渲染，此时页面后缀为nvue文件。使用webview渲染时，可以指定由系统webview渲染还是由x5引擎渲染。
 2. Use weex engine (modified) for rendering, and the page is suffixed with a nvue file at this time. When using webview rendering, you can specify system webview rendering or x5 engine rendering.
 

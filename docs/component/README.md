@@ -30,7 +30,7 @@ Each component includes the following parts: start tag and end tag marked by com
 The following is an example of a basic component. Insert an `<button>` component under the root `<view>` component of a vue page. Write the text "button" in the content area of this component, and set an attribute "size" for this component, and the attribute value of "size" is set to "mini".
 
 > 注：按照[vue单文件组件规范](https://cn.vuejs.org/v2/guide/single-file-components.html)，每个vue文件的根节点必须为 `<template>`，且这个 `<template>` 下只能且必须有一个根 `<view>` 组件。
-> Note: According to [vue single file component specification](https://cn.vuejs.org/v2/guide/single-file-components.html), the root node of each vue file must be `<template>`，and there must be only one root `<view>` component under this `<template>`.
+> Note: According to [vue single file component specification](https://cn.vuejs.org/v2/guide/single-file-components.html), the root node of each vue file must be `<template>`, and there must be only one root `<view>` component under this `<template>`.
 
 ```html
 <template>
@@ -280,7 +280,7 @@ Basic components are divided into the following ten categories:
 |[picker](component/picker.md)|弹出式列表选择器|
 | [picker](component/picker.md)| Pop-up list selector|
 |[picker-view](component/picker-view.md)|窗体内嵌式列表选择器|
-| [picker-view](component/picker-view.md)| Window embedded list selector|
+| [picker-view](component/picker-view.md)| window embedded list selector|
 |[radio](component/radio.md)|单项选择器|
 | [radio](component/radio.md)| Single selector|
 |[slider](component/slider.md)|滑动选择器|
@@ -642,7 +642,7 @@ Not on H5 but on App side, the logical layer and view layer are separated both f
 For example, if you drag a component that can follow the finger on the view layer, it is difficult to achieve the immediacy with js listening to due to communication loss.
 
 这时就需要使用css动画以及平台底层提供的wxs、bindingx等技术。不过这些技术都比较复杂，所以uni ui里做了封装，在需要跟手式操作的ui组件，比如swiperaction列表项左滑菜单，就在底层使用了这些技术，实现了高性能的交互体验
-For such case, we need to use css animation and wxs, bindingx and other technologies provided by the bottom of the platform. However, these technologies are complicated and encapsulated in uni ui, requiring ui components that conduct the follow-the-finger operation. For example, the left slide menu of the swiperaction list items used these technologies at bottom layer, realizing high-performance interactive experience
+For such case, we need to use css animation and wxs, bindingx and other technologies provided by the bottom of the platform. However, these technologies are complicated and encapsulated in uni ui, requiring ui components that conduct the follow-the-finger operation. For example, the left slide menu of the swiperaction list items used these technologies at bottom layer, realizing high-perlistance interactive experience
 
 - 背景停止
 - Background stop

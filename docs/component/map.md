@@ -40,7 +40,7 @@ Map components are used to display the map, while positioning API is just to get
 |controls|Array||控件||
 | controls| Array| | Control| |
 |include-points|Array||缩放视野以包含所有给定的坐标点|App-nvue 2.1.5+、H5|
-| include-points| Array| | Scale the view to include all given coordinate points| App-nvue 2.1.5+、H5|
+| include-points| Array| | Scale the view to include all given coordinate points| App-nvue 2.1.5+, H5|
 |enable-3D|Boolean|false|是否显示3D楼块|App-nvue 2.1.5+|
 | enable-3D| Boolean| false| Whether to display 3D blocks?| App-nvue 2.1.5+|
 |show-compass|Boolean|false|是否显示指南针|App-nvue 2.1.5+|
@@ -133,7 +133,7 @@ Markers are used to show the location of markers on the map
 |callout|自定义标记点上方的气泡窗口|Object|否|支持的属性见下表，可识别换行符。|App-nvue 2.1.5+|
 | callout| Customize the callout window above the marker point| Object| No| See the table below for supported attributes. Line breaks can be recognized.| App-nvue 2.1.5+|
 |label|为标记点旁边增加标签|Object|否|支持的属性见下表，可识别换行符。|App-nvue 2.1.5+、H5、App|
-| label| Add labels next to marker| Object| No| See the table below for supported attributes. Line breaks can be recognized.| App-nvue 2.1.5+、H5、App|
+| label| Add labels next to marker| Object| No| See the table below for supported attributes. Line breaks can be recognized.| App-nvue 2.1.5+, H5, App|
 |anchor|经纬度在标注图标的锚点，默认底边中点|Object|否|{x, y}，x表示横向(0-1)，y表示竖向(0-1)。{x: .5, y: 1} 表示底边中点|App-nvue 2.1.5+、H5|
 | anchor| Anchor point for latitude and longitude on the markup icon, defaulting to be the midpoint of the bottom edge| Object| No| {x, y}, x indicates horizontal direction (0-1), and y indicates vertical direction (0-1). {x: .5, y: 1} indicates the midpoint of the bottom edge| App-nvue 2.1.5+, H5|
 |clusterId|自定义点聚合簇效果时使用|Number|否||App-nvue 3.1.0+|

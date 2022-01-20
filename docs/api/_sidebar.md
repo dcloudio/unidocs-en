@@ -141,13 +141,13 @@
   * [语言](api/ui/locale.md)
   * [Language](api/ui/locale.md)
 * 页面和窗体
-* Pages and forms
+* Pages and window
   * [页面](api/window/window.md)
   * [Page](api/window/window.md)
   * [页面通讯](api/window/communication.md) 
   * [Page newsletter](api/window/communication.md)
   * [subNVue原生子窗体](api/window/subNVues.md)
-  * [subNVue native sub-form](api/window/subNVues.md)
+  * [subNVue native subwindow](api/window/subNVues.md)
 * 文件
 * Document
   * [uni.saveFile](/api/file/file?id=savefile)

@@ -72,7 +72,7 @@ Legal value of object-fit
 | Value| Instruction|
 |:-|:-|
 |contain|图像长边填满屏幕，短边区域会被填充⿊⾊|
-| contain| The long side of the image matches the screen, and the short side area is filled with black|
+| contain| The long side of the image fits the screen, and the short side area is filled with black|
 |fillCrop|图像铺满屏幕，超出显示区域的部分将被截掉|
 | fillCrop| The image overspreads the screen, and the part beyond the display area will be cut off|
 

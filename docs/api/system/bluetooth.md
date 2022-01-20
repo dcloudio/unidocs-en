@@ -210,7 +210,7 @@ uni.onBluetoothDeviceFound(function (devices) {
 ### uni.stopBluetoothDevicesDiscovery(OBJECT)
 
 停止搜寻附近的蓝牙外围设备。若已经找到需要的蓝牙设备并不需要继续搜索时，建议调用该接口停止蓝牙搜索。
-Stop searching for nearby Bluetooth peripherals If the required Bluetooth device that has been found needn't to continue searching, it is recommended to call this interface to stop Bluetooth searching.
+Stop searching for nearby Bluetooth peripherals. If the required Bluetooth device that has been found needn't to continue searching, it is recommended to call this interface to stop Bluetooth searching.
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
@@ -552,7 +552,7 @@ uni.getBluetoothAdapterState({
 ### uni.closeBluetoothAdapter(OBJECT)
 
 关闭蓝牙模块。调用该方法将断开所有已建立的连接并释放系统资源。建议在使用蓝牙流程后，与 [`uni.openBluetoothAdapter`](/api/system/bluetooth?id=openbluetoothadapter) 成对调用。
-Disable the Bluetooth module. Calling this method will disconnect all established connections and release the system resources It is recommended to call in pairs with [`uni.openBluetoothAdapter`](/api/system/bluetooth?id=openbluetoothadapter) after using the Bluetooth process.
+Disable the Bluetooth module. Calling this method will disconnect all established connections and release the system resources. It is recommended to call in pairs with [`uni.openBluetoothAdapter`](/api/system/bluetooth?id=openbluetoothadapter) after using the Bluetooth process.
 
 **OBJECT 参数说明**
 **OBJECT parameter description**

@@ -6,7 +6,7 @@ Return a `SelectorQuery` object instance. On this instance, methods such as `sel
 **Tips:** 
 
 * 使用 `uni.createSelectorQuery()` 需要在生命周期 `mounted` 后进行调用。
-* `uni.createSelectorQuery()` can only be used if it is called after the life cycle `mounted`.
+* `uni.createSelectorQuery()` can only be called for use after the life cycle is `mounted`.
 * 默认需要使用到 `selectorQuery.in` 方法。
 * The `selectorQuery.in` method is required by default.
 

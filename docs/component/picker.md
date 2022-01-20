@@ -134,7 +134,7 @@ Date selection calls the native date selection control of os on the App side and
 |end|String||表示有效日期范围的结束，字符串格式为"YYYY-MM-DD"||
 | end| String| | Indicate the ending of the valid date range with the string format of "YYYY-MM-DD"| |
 |fields|String|day|有效值 year、month、day，表示选择器的粒度，默认为 day，App 端未配置此项时使用系统 UI|H5、App 2.6.3+|
-| fields| String| day| Valid value for year, month and day, indicating the granularity of the selector, with day as default, if this item is not configured on the App side, the system UI will be used| H5、App 2.6.3+|
+| fields| String| day| Valid value for year, month and day, indicating the granularity of the selector, with day as default, if this item is not configured on the App side, the system UI will be used| H5, App 2.6.3+|
 |@change|EventHandle||value 改变时触发 change 事件，event.detail = {value: value}||
 | @change| EventHandle| | change event will be triggered when value changes, event.detail = {value: value}| |
 |@cancel|EventHandle||取消选择时触发||

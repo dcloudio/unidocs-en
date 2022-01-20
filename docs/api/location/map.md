@@ -23,7 +23,7 @@ mapContext
 `mapContext` is bound to a `<map>` component through mapId, through which you can manipulate the corresponding `<map>` component.
 
 **mapContext 对象的方法列表**
-**Method form of mapContext object**
+**Method list of mapContext object**
 
 |方法|参数|说明|平台差异说明|最低版本|
 | Method| Parameter| Instruction| Platform difference description| Minimum version|
@@ -47,7 +47,7 @@ mapContext
 |initMarkerCluster|OBJECT|初始化点聚合的配置，未调用时采用默认配置||App-nvue 3.1.0+|
 | initMarkerCluster| OBJECT| Configuration of marker cluster initialization. Use the default configuration if not being called| | App-nvue 3.1.0+|
 |moveAlong|OBJECT|沿指定路径移动 marker，用于轨迹回放等场景。动画完成时触发回调事件，若动画进行中，对同一 marker 再次调用 moveAlong 方法，前一次的动画将被打断。|支持 android 不支持autoRotate属性设置 默认ture|App-nvue 3.1.0+|
-| moveAlong| OBJECT| Move the marker along the specified path for scenes such as track playback. The callback event can be triggered when the animation is finished. The previous animation will be interrupted if the same marker is called the moveAlong method again while the animation is in progress.| Support android, but not the attribute setting with autoRotate. ture as default| App-nvue 3.1.0+|
+| moveAlong| OBJECT| Move the marker along the specified path for scenes such as track playback. The callback event can be triggered when the animation is finished. The previous animation will be interrupted if the same marker called the moveAlong method again while the animation is in progress.| Support android, but not the attribute setting with autoRotate. ture as default| App-nvue 3.1.0+|
 |openMapApp|OBJECT|拉起地图APP选择导航。||App-nvue 3.1.0+|
 | openMapApp| OBJECT| Open the map APP and select navigation.| | App-nvue 3.1.0+|
 |removeGroundOverlay|OBJECT|移除自定义图片图层||App-nvue 3.1.0+|
@@ -60,7 +60,7 @@ mapContext
 | on| EventHandle| listen to map events.| | App-nvue 3.1.0+|
 
 **getCenterLocation 的 OBJECT 参数列表**
-**parameter form of getCenterLocation OBJECT**
+**parameter list of getCenterLocation OBJECT**
 
 |参数|类型|必填|说明|
 | Parameter| Type| Required| Instruction|
@@ -74,7 +74,7 @@ mapContext
 
 
 **moveToLocation 的 OBJECT 参数列表**
-**parameter form of moveToLocation OBJECT**
+**parameter list of moveToLocation OBJECT**
 
 |参数			|类型		|必填	|说明	|
 | Parameter| Type| Required| Instruction|
@@ -92,7 +92,7 @@ mapContext
 
 
 **translateMarker 的 OBJECT 参数列表**
-**parameter form of translateMarker OBJECT**
+**parameter list of translateMarker OBJECT**
 
 |参数|类型|必填|说明|
 | Parameter| Type| Required| Instruction|
@@ -113,7 +113,7 @@ mapContext
 | fail| Function| No| Callback function for failed interface calling|
 
 **includePoints 的 OBJECT 参数列表**
-**parameter form of includePoints OBJECT**
+**parameter list of includePoints OBJECT**
 
 |参数|类型|必填|说明|
 | Parameter| Type| Required| Instruction|
@@ -124,7 +124,7 @@ mapContext
 | padding| Array| No| Distance from rectangular edge formed by coordinates to map edge, in pixel. The format is [up, right, down, left]. On Android, only the first item of the array can be identified, and the padding on the up, down, left and right is consistent. Padding parameter is temporarily not supported by the developer tools.|
 
 **getRegion 的 OBJECT 参数列表**
-**parameter form of getRegion OBJECT**
+**parameter list of getRegion OBJECT**
 
 |参数|类型|必填|说明|
 | Parameter| Type| Required| Instruction|
@@ -137,7 +137,7 @@ mapContext
 | complete| Function| No| Callback function for closed interface calling (available both for successful and failed calling)|
 
 **getScale 的 OBJECT 参数列表**
-**parameter form of getScale OBJECT**
+**parameter list of getScale OBJECT**
 
 |参数|类型|必填|说明|
 | Parameter| Type| Required| Instruction|
@@ -151,7 +151,7 @@ mapContext
 
 
 **addCustomLayer 的 OBJECT 参数列表**
-**parameter form of addCustomLayer OBJECT**
+**parameter list of addCustomLayer OBJECT**
 
 |属性		|类型		|默认值	|必填	|说明												|
 | Attribute| Type| Defaults| Required| Instruction|
@@ -167,7 +167,7 @@ mapContext
 
 
 **addGroundOverlay 的 OBJECT 参数列表**
-**parameter form of addGroundOverlay OBJECT**
+**parameter list of addGroundOverlay OBJECT**
 
 |属性		|类型		|默认值	|必填	|说明												|
 | Attribute| Type| Defaults| Required| Instruction|
@@ -226,7 +226,7 @@ Structure of `northeast`
 
 
 **addMarkers 的 OBJECT 参数列表**
-**parameter form of addMarkers OBJECT**
+**parameter list of addMarkers OBJECT**
 
 |属性		|类型		|默认值	|必填	|说明												|
 | Attribute| Type| Defaults| Required| Instruction|
@@ -243,7 +243,7 @@ Structure of `northeast`
 | complete| function| | No| Callback function for closed interface calling (available both for successful and failed calling)|
 
 **removeMarkers 的 OBJECT 参数列表**
-**parameter form of removeMarkers OBJECT**
+**parameter list of removeMarkers OBJECT**
 
 |属性		|类型		|默认值	|必填	|说明												|
 | Attribute| Type| Defaults| Required| Instruction|

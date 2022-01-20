@@ -325,7 +325,7 @@ ctx.draw()
 ![uniapp](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/03cf3750-4f28-11eb-b997-9918a5dda011.png)
 
 针对 ```moveTo(20, 20)`` ```bezierCurveTo(20, 100, 200, 100, 200, 20)``` 的三个关键坐标如下：
-The three key coordinates for ```moveTo(20, 20)`` ```bezierCurveTo(20, 100, 200, 100, 200, 20)\`\`\` are as follows:
+The three key coordinates for ```moveTo(20, 20)`` ``` bezierCurveTo(20, 100, 200, 100, 200, 20)\`\`\` are as follows:
 
 * 红色：起始点(20, 20)
 * Red: starting point (20, 20)
@@ -1056,7 +1056,7 @@ ctx.draw()
 
 ### CanvasContext.scale
 在调用```scale```方法后，之后创建的路径其横纵坐标会被缩放。多次调用```scale```，倍数会相乘。
-After the `scale` method is called, the horizontal and vertical coordinates of the path created later will be scaled. If `scale` is called multiple times, the multiples will be multiplied.
+After calling the `scale` method, the horizontal and vertical coordinates of the path created later will be scaled. If calling `scale` for multiple times, the multiples will be multiplied.
 
 **参数**
 **Parameter**
@@ -1193,7 +1193,7 @@ Set the endpoint style of the line.
 | Parameter| Type| Instruction|
 |---	|---						|---				|
 |lineCap|String	|'butt'、'round'、'square'	|线条的结束端点样式	|
-| lineCap| String| 'butt'、'round'、'square'| End point style of the line|
+| lineCap| String| 'butt', 'round', 'square'| End point style of the line|
 
 **示例代码**
 **Sample code**
@@ -1275,7 +1275,7 @@ Set the intersection point style of lines.
 | Parameter| Type| Scope| Instruction|
 |---	|---						|---				|---|
 |lineJoin	|String	|'bevel'、'round'、'miter'	|线条的结束交点样式	|
-| lineJoin| String| 'bevel'、'round'、'miter'| End intersection style of the line|
+| lineJoin| String| 'bevel', 'round', 'miter'| End intersection style of the line|
 
 **示例代码**
 **Sample code**

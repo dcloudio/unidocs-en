@@ -1,10 +1,10 @@
 #### recycle-list
 
 app端nvue专用组件。
-app side nvue specific component
+app side nvue specific component.
 
 `<recycle-list>` 是一个新的列表容器，具有回收和复用的能力，可以大幅优化内存占用和渲染性能。它的性能比list组件更高，但写法受限制。它除了会释放不可见区域的渲染资源，在非渲染的数据结构上也有更多优化。
-`<recycle-list>` is a new list container with the ability of recycling and reuse, which can greatly optimize memory usage and rendering performance. Its performance is higher than that of the list component, but its writing mode is limited. In addition to releasing the rendering resources in invisible areas, it also has more optimization on non-rendered data structures.
+`<recycle-list>` is a new list container with the ability of recycling and reuse, which can greatly optimize memory usage and rendering perlistance. Its performance is higher than that of the list component, but its writing mode is limited. In addition to releasing the rendering resources in invisible areas, it also has more optimization on non-rendered data structures.
 
 此组件自HBuilderX 2.2.6+起支持。
 This component has been supported since HBuilderX 2.2.6+.
@@ -34,7 +34,7 @@ This component has been supported since HBuilderX 2.2.6+.
 |default|表示当前模板为默认模板类型，不需要指定值。如果数据项没有匹配到任何 case 类型，则渲染带有 default 模板。如果存在多个 default，则只会使用第一个默认模板。
 | default| It indicates that the current template is the default template type, and no value is required. If the data item does not match any case type, the default template will be rendered. If there is more than one default, only the first default template will be used.
 |key|可选属性，用于指定列表数据中可以作为唯一标识的键值，可以优化渲染性能。
-| key| Optional attribute, which is used to specify the key value that can be used as unique identifier in the list data, and can optimize the rendering performance.
+| key| Optional attribute, which is used to specify the key value that can be used as unique identifier in the list data, and can optimize the rendering perlistance.
 
 - warning 属性的省略 - 如果没写 `switch`，无论有没有写 `case` 或 `default`，都只使用第一个模板 - 在写了 `switch` 的情况下，`case` 和 `default` 必须写一个，否则该模板将会被忽略
 - Omission of warning attribute - If `switch` is not written, no matter if `case` or `default` is written or not, only the first template is used - If `switch` is written, either `case` or `default` must be written, otherwise the template will be ignored

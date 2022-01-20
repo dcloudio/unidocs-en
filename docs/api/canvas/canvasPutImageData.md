@@ -10,7 +10,7 @@ Method of drawing pixel data to the canvas. Under custom components, the second 
 | Parameter| Type| Required| Instruction| Minimum version|
 |---|---|---|---|--|
 |canvasId|String|是|画布标识，传入 ```<canvas />``` 的 canvas-id||
-| canvasId| String| Yes| Canvas identification, pass in the canvas-id of `<canvas />`| |
+| canvasId| String| Yes| Canvas identification, passing in canvas-id of `<canvas />`| |
 |data|Uint8ClampedArray|是|图像像素点数据，一维数组，每四项表示一个像素点的rgba||
 | data| Uint8ClampedArray| Yes| Image pixel data is a one-dimensional array and every four terms represent the rgba of a pixel.| |
 |x|Number|是|源图像数据在目标画布中的位置偏移量（x 轴方向的偏移量）||

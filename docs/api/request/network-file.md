@@ -21,7 +21,7 @@ If the page obtains the temporary file path of a local resource through an inter
 |url|String|是|开发者服务器 url||
 | url| String| Yes| Developer server url| |
 |files|Array|是（files和filePath选其一）|需要上传的文件列表。**使用 files 时，filePath 和 name 不生效。**|App、H5（ 2.6.15+）|
-| files| Array| Yes (choose files or filepath)| List of files to be uploaded. **filePath and name will not take effect if using files.**| App、H5（ 2.6.15+）|
+| files| Array| Yes (choose files or filepath)| List of files to be uploaded. **filePath and name will not take effect if using files.**| App, H5( 2.6.15+)|
 |file|File|否|要上传的文件对象。|仅H5（2.6.15+）支持|
 | file| File| No| File object to be uploaded.| Only supported by H5 (2.6.15+)|
 |filePath|String|是（files和filePath选其一）|要上传文件资源的路径。||
@@ -133,7 +133,7 @@ If the success/fail/complete parameter is not passed in, the encapsulated Promis
 You can listen to upload progress change events and cancel upload tasks with `uploadTask`.
 
 **uploadTask 对象的方法列表**
-**Method form of uploadTask object**
+**Method list of uploadTask object**
 
 |方法|参数|说明|
 | Method| Parameter| Instruction|
@@ -276,7 +276,7 @@ If the success/fail/complete parameter is not passed in, the encapsulated Promis
 You can listen to download progress change events and cancel upload download tasks with `downloadTask`.
 
 **downloadTask 对象的方法列表**
-**Method form of downloadTask object**
+**Method list of downloadTask object**
 
 |方法|参数|说明|最低版本|
 | Method| Parameter| Instruction| Minimum version|

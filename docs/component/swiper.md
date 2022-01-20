@@ -44,7 +44,7 @@ Note the difference between sliding switching and scrolling. Sliding switching i
 |skip-hidden-item-layout|Boolean|false|是否跳过未显示的滑块布局，设为 true 可优化复杂情况下的滑动性能，但会丢失隐藏状态滑块的布局信息|App|
 | skip-hidden-item-layout| Boolean| false| Whether to skip the layout of the slider that is not displayed. If set to true, the sliding performance in complex situations can be optimized, but the layout information of the hidden state slider will be lost| App|
 |disable-touch|Boolean|false|是否禁止用户 touch 操作|App 2.5.5+、H5 2.5.5+|
-| disable-touch| Boolean| false| Whether to prevent user from performing touch operations| App 2.5.5+、H5 2.5.5+|
+| disable-touch| Boolean| false| Whether to prevent user from performing touch operations| App 2.5.5+, H5 2.5.5+|
 |@change|EventHandle||current 改变时会触发 change 事件，event.detail = {current: current, source: source}||
 | @change| EventHandle| | change event will be triggered when current changes, event.detail = {current: current, source: source}| |
 |@transition|EventHandle||swiper-item 的位置发生改变时会触发 transition 事件，event.detail = {dx: dx, dy: dy}|App、H5|
@@ -67,9 +67,9 @@ A source field is contained when change event returns detail, which indicates th
 - swiper是单页组件，适合做banner图轮播和简单列表左右滑动。
 - Swiper is a single page component suitable for banner picture carousel and simple list sliding left and right.
 - 因为性能问题，用swiper做复杂长列表，需要较高的优化技巧以及接受一些限制。
-- For performance reasons, making complex long lists with swiper requires high optimization skills and will be subject to certain limitations.
+- For perlistance reasons, making complex long lists with swiper requires high optimization skills and will be subject to certain limitations.
 - 这是一个范例，[插件市场新闻模板示例](https://ext.dcloud.net.cn/plugin?id=103)，它在App端使用了nvue的原生渲染，实现高性能的左右拖动长列表；并支持可自定义的任何形式的下拉刷新。它在非App端使用的模式是只缓存左右一共3列的数据，dom中的数据过多时，它会自动释放。就是说App上，只要看过这一页，再进去时内容是还在的。而在非App上，只能做到缓存3页数据，其他页即便看过，再进去也会重新加载。并且非App的这种情况下，不再提供下拉刷新。虽然插件市场也有其他前端模拟的下拉刷新，但性能不佳。
-- For the [example of news template in the plug-in market](https://ext.dcloud.net.cn/plugin?id=103), it uses the native rendering of nvue on the App side to achieve high-performance dragging of long lists, and supports any form of pull-down refresh that can be customized. The mode it uses on non-App sides is to cache only three columns of data on the left and right. It will be released automatically in case of too much data in dom. That is to say, on the App, as long as you read this page, the content is cached when you read again. But on non-App sides, only 3 pages of data can be cached, and other pages will be reloaded when you read again. In the case of non-App sides, pull-down refresh is no longer provided. Although there are other front-end analog pull-down refreshes available in the plug-in market, the performance is not good.
+- For the [example of news template in the plug-in market](https://ext.dcloud.net.cn/plugin?id=103), it uses the native rendering of nvue on the App side to achieve high-perlistance dragging of long lists, and supports any list of pull-down refresh that can be customized. The mode it uses on non-App sides is to cache only three columns of data on the left and right. It will be released automatically in case of too much data in dom. That is to say, on the App, as long as you read this page, the content is cached when you read again. But on non-App sides, only 3 pages of data can be cached, and other pages will be reloaded when you read again. In the case of non-App sides, pull-down refresh is no longer provided. Although there are other front-end analog pull-down refreshes available in the plug-in market, the performance is not good.
 
 **Tips**
 

@@ -380,7 +380,7 @@ H5 platform is a single-page application of SPA. The home page of ordinary SEO i
 | disableHostCheck| Boolean| false| Disable Host check|
 
 Tips：`uni-app` 中 `manifest.json->h5->devServer` 实际上对应 `webpack` 的 [devServer](https://webpack.js.org/configuration/dev-server/)，鉴于 manifest 为 json 文件，故 `webpack.config.js->devServer` 配置项下的简单类型属性均可在`manifest.json->h5->devServer`节点下配置，funciton 等复杂类型暂不支持。
-Tips：`uni-app` `manifest.json->h5->devServer` actually corresponds to [devServer](https://webpack.js.org/configuration/dev-server/) of `webpack`. Since the manifest is a json file, the simple type attributes under the `webpack.config.js->devServer` configuration item can all be configured under the `manifest.json->h5->devServer` node, and complex types such as funciton are temporarily not supported.
+Tips: `uni-app` `manifest.json->h5->devServer` actually corresponds to [devServer](https://webpack.js.org/configuration/dev-server/) of `webpack`. Since the manifest is a json file, the simple type attributes under the `webpack.config.js->devServer` configuration item can all be configured under the `manifest.json->h5->devServer` node, and complex types such as funciton are temporarily not supported.
 
 #### publicPath
 配置 publicPath 为 cdn 资源地址前缀，这样编译出来的 html 文件，引用的 js，css 路径会自动变成 cdn 上的地址。
@@ -739,8 +739,8 @@ Take the above subpackage as an example, the static files placed in the root cor
         "ssl": "accept|refuse|warning, the processing logic for untrusted certificates when accessing the https network",
         "runmode": "normal",
         "appWhitelist": [
-            "Android platform downloads the apk address whitelist",
-            "iOS platform jumps to the appstore address whitelist"
+            "Android platlist downloads the apk address whitelist",
+            "iOS platlist jumps to the appstore address whitelist"
         ],
         "schemeWhitelist": [
             "URL Scheme whitelist, for example: mqq"

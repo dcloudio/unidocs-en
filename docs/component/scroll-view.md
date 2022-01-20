@@ -201,7 +201,7 @@ Note that the performance of custom pull-down refresh is not superior to the nat
 - APP-vue中，请勿在 scroll-view 中使用 map、video 等原生组件。app-nvue无此限制。
 - In APP-vue, do not use native components such as map and video in scroll-view. app-nvue does not have this restriction.
 - scroll-view 不适合放长列表，有性能问题。长列表滚动和下拉刷新，应该使用原生导航栏搭配页面级的滚动和下拉刷新实现。包括在app-nvue页面，长列表应该使用list而不是scroll-view。
-- scroll-view is not suitable for  long lists, or otherwise performance problems would occur. Long list scrolling and pull-down refreshing should be realized by using native navigation bar with page-level scrolling and pull-down refreshing. Long list should use list instead of scroll-view even on app-nvue pages.
+- scroll-view is not suitable for  long lists, or otherwise perlistance problems would occur. Long list scrolling and pull-down refreshing should be realized by using native navigation bar with page-level scrolling and pull-down refreshing. Long list should use list instead of scroll-view even on app-nvue pages.
 - scroll-into-view 的优先级高于 scroll-top。
 - scroll-into-view has a higher priority than scroll-top.
 - scroll-view是区域滚动，不会触发页面滚动，无法触发pages.json配置的下拉刷新、页面触底onReachBottomDistance、titleNView的transparent透明渐变。

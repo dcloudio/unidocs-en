@@ -1,6 +1,6 @@
 ### uni.onCompassChange(CALLBACK)
 监听罗盘数据，频率：5次/秒，接口调用后会自动开始监听，可使用 ``uni.offCompassChange`` 取消监听。
-listen to the compass data at a frequency of 5 times/second. The listening to will automatically start after the interface is called. You can use `uni.offCompassChange` to cancel the listening to.
+listen to the compass data at a frequency of 5 times/second. The listening to will automatically start after calling the interface. You can use `uni.offCompassChange` to cancel the listening to.
 
 **CALLBACK 返回参数**
 **CALLBACK return parameter**

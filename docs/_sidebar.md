@@ -52,7 +52,7 @@
 * [uni_modules插件规范](uni_modules.md)
 * [uni_modules plug-in specification](uni_modules.md)
 * [从其他项目转uni-app](translate.md)
-* [Jump from other projects to uni-app](translate.md)
+* [Convert other projects to uni-app](translate.md)
 * [混合开发](hybrid.md)
 * [Hybrid Development](hybrid.md)
 * [uni小程序sdk](https://nativesupport.dcloud.net.cn/README)

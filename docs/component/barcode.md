@@ -4,7 +4,7 @@ app端nvue专用的扫码组件。
 Scanning component specific to the app-side nvue.
 
 - 此组件用于app端nvue页面实现内嵌到界面上的扫码。其他场景、其他平台，请使用全屏扫码API：[uni.scanCode](https://uniapp.dcloud.io/api/system/barcode) 
-- This component is used for the nvue page on the app side to realize the code scanning embedded in the interface. For other scenes and other platforms, please use the full-screen scanning API: [uni.scanCode](https://uniapp.dcloud.io/api/system/barcode)
+- This component is used for the nvue page on the app side to realize the scanning embedded in the interface. For other scenes and other platforms, please use the full-screen scanning API: [uni.scanCode](https://uniapp.dcloud.io/api/system/barcode)
 - App下纯nvue项目（manifest中renderer为native），暂不支持uni.scanCode API，此时只能使用barcode组件来替代。
 - For the pure nvue project of App (rendered as native in manifest), the uni.scanCode API is temporarily not supported, and only the barcode component can be used instead.
 - 此组件自HBuilderX 2.1.5+起支持。
@@ -13,7 +13,7 @@ Scanning component specific to the app-side nvue.
 **属性说明**
 **Attribute description**
 设置Barcode扫码控件的属性，如扫码框、扫码条的颜色等。
-Set the attributes of Barcode scanning control, such as the color of the barcode scanning box and the barcode scanning bar.
+Set the attributes of Barcode scanning control, such as the color of the scanning box and the barcode scanning bar.
 
 |属性|类型 |默认值|必填|说明
 | Attribute| Type| Defaults| Required| Instruction
@@ -23,11 +23,11 @@ Set the attributes of Barcode scanning control, such as the color of the barcode
 |background|string| |否|条码识别控件背景颜色,颜色值支持(参考CSS颜色规范)：颜色名称(参考CSS Color Names)/十六进制值/rgb值，默认值为黑色。
 | background| string| | No| Background color of the barcode identification control. The color value supported (refer to CSS color specification): color name (refer to CSS Color Names)/ hexadecimal value /rgb value, with black as default.
 |frameColor |string| |否|扫码框颜色,颜色值支持(参考CSS颜色规范)：颜色名称(参考CSS Color Names)/十六进制值/rgb值/rgba值，默认值为红色。
-| frameColor| string| | No| Color of code scanning box. The color value supported (refer to CSS color specification): color name (refer to CSS Color Names)/ hexadecimal value /rgb value/rgba value, with red as default.
+| frameColor| string| | No| Color of scanning box. The color value supported (refer to CSS color specification): color name (refer to CSS Color Names)/ hexadecimal value /rgb value/rgba value, with red as default.
 |scanbarColor|string||否|扫码条颜色,颜色值支持(参考CSS颜色规范)：颜色名称(参考CSS Color Names)/十六进制值/rgb值/rgba值，默认值为红色。
-| scanbarColor| string| | No| Color of code scanning bar. The color value supported (refer to CSS color specification): color name (refer to CSS Color Names)/ hexadecimal value /rgb value/rgba value, with red as default.
+| scanbarColor| string| | No| Color of scanning bar. The color value supported (refer to CSS color specification): color name (refer to CSS Color Names)/ hexadecimal value /rgb value/rgba value, with red as default.
 |filters|Array[Number] |[0,1,2]|否|条码类型过滤器，条码类型常量数组，默认情况支持QR、EAN13、EAN8类型。 通过此参数可设置扫码识别支持的条码类型（注意：设置支持的条码类型越多，扫描识别速度可能将会降低）。
-| filters| Array\[Number]| \[0,1,2]| No| Barcode filter, with the barcode type of constant array. QR, EAN13 and EAN8 types are supported by default. With this parameter, the barcode types supported by code scanning identification can be set (Note: the more supported barcode types you set, the slower scanning identification speed may be).
+| filters| Array\[Number]| \[0,1,2]| No| Barcode filter, with the barcode type of constant array. QR, EAN13 and EAN8 types are supported by default. With this parameter, the barcode types supported by scanning identification can be set (Note: the more supported barcode types you set, the slower scanning identification speed may be).
 
 **码类型常量**
 **Code type constant**
@@ -119,11 +119,11 @@ Set the attributes of Barcode scanning control, such as the color of the barcode
 |type|string|"success" 表示成功
 | type| string| "success" means being successful.
 |message|string|识别到的条码数据，扫码识别出的数据内容，字符串类型，采用UTF8编码格式。
-| message| string| Identified barcode data, data content identified by code scanning, character string type, in UTF8 encoding format.
+| message| string| Identified barcode data, data content identified by scanning, character string type, in UTF8 encoding format.
 |code|Number|识别到的条码类型，与Barcode组件的条码类型常量一致。
 | code| Number| Identified barcode type, consistent with the barcode type constant of Barcode component.
 |file|string|扫码成功的截图文件路径，扫码识别到的截图，png格式文件，如果设置为不保存截图，则返回undefined。
-| file| string| Screenshot file path of successful code scanning, screenshot identified by code scanning, png format file. If set to not save the screenshot, it will return undefined.
+| file| string| Screenshot file path of successful scanning, screenshot identified by scanning, png format file. If set to not save the screenshot, it will return undefined.
 
 
 ##### error

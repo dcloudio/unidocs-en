@@ -10,7 +10,7 @@ Get the **globally unique** recording manager `recorderManager`.
 |√|x|
 
 **recorderManager 对象的方法列表**
-**Method form of recorderManager object**
+**Method list of recorderManager object**
 
 |方法|参数|说明|平台差异说明|
 | Method| Parameter| Instruction| Platform difference description|

@@ -323,7 +323,7 @@ Release process:
 - 发布插件时，可以选择上传当前项目作为示例工程，完整的示例工程，可以方便用户快速上手。
 - When releasing the plug-ins, you can choose to upload the current project as an example project. A complete example project helps users get started quickly.
 #### 修改插件基本信息
-#### Modify the plug-in basic information
+#### Modify plug-in basic information
 当您的插件发布到插件市场后，如果需要调整插件市场上的一些基本信息，比如插件中文名称，描述，关键词，readme.md等，可以直接在插件目录右键`修改插件基本信息`
 When your plug-in is released to the plug-in market, if you need to adjust some basic information in the plug-in market, such as Chinese name, description, keywords, and readme.md, you can right-click the `Modify the plug-in basic information` directly in the plug-in directory.
 

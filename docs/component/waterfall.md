@@ -1,7 +1,7 @@
 #### waterfall
 
 app端nvue专用组件。
-app side nvue specific component
+app side nvue specific component.
 
 `<waterfall>` 组件是提供瀑布流布局的核心组件。瀑布流，又称瀑布流式布局是比较流行的一种页面布局，视觉表现为参差不齐的多栏布局。随着页面滚动条向下滚动，这种布局还可以不断加载数据块并附加至当前尾部。
 The `<waterfall>` component is the core component that provides the waterfall flow layout. Waterfall flow, also known as waterfall flow layout, is a popular page layout, which is visually represented by uneven multi-column layout. With the page scroll bar scrolls down, this layout can also continuously load data blocks and attach them to the current tail.

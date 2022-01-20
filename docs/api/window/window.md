@@ -8,7 +8,7 @@ The `getCurrentPages()` function is used to obtain an instance of the stack of t
 **Notice:** `getCurrentPages()` is only used to display the page stack. Please do not modify the page stack to avoid page status errors.
 
 每个页面实例的方法属性列表：
-List of method attributes for each page instance:
+Method attribute list of each page instance:
 
 |方法|描述|平台说明|
 | Method| Describe| Platform description|

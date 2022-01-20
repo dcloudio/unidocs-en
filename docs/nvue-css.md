@@ -529,15 +529,15 @@ Allows the name of the transitional animation to set the value of the different 
 
 #### transition-duration
 指定过渡的持续时间 (单位是毫秒)，默认值是 0，表示没有动画效果。
-Specifies the duration of the transition transition (in milliseconds). The default value is 0, indicating that there is no animation.
+Specifies the duration of the transition (in milliseconds). The default value is 0, indicating that there is no animation.
 
 #### transition-delay
 指定请求过渡操作到执行过渡之间的时间间隔 (单位是毫秒或者秒)，默认值是 0，表示没有延迟，在请求后立即执行过渡。
-Specifies the time interval (in milliseconds or seconds) between the request transition transition and the transition transition. The default value is 0, indicating that there is no delay, and the transition transition is performed immediately after the request.
+Specifies the time interval (in milliseconds or seconds) between the request transition and the transition. The default value is 0, indicating that there is no delay, and the transition is performed immediately after the request.
 
 #### transition-timing-function
 描述过渡执行的速度曲线，用于使过渡更为平滑。默认值是 ```ease```。下表列出了所有合法的属性：
-Describes the velocity curve of the transition transition, which is used to make the transition transition smoother. The default is ease. The following table lists all the valid attributes:
+Describes the velocity curve of the transition, which is used to make the transition smoother. The default is ease. The following table lists all the valid attributes:
 
 
 |参数名							|描述																																			|
@@ -838,7 +838,7 @@ Weex currently supports two color gradients. The direction of the gradient is as
 ## Box-shadow@boxshadow
 
 ### IOS平台：阴影```box-shadow```@ios-box-shadow
-### Weex supports box-shadow in iOS： inset,offset-x,offset-y, blur-radius,color
+### Weex supports box-shadow in iOS: inset,offset-x,offset-y, blur-radius,color
 
 	{box-shadow:投影方式 X轴偏移量 Y轴偏移量 阴影模糊半径  阴影颜色}
 	{box-shadow:inset offset-x offset-y blur-radius color}

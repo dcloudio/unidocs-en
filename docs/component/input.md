@@ -158,9 +158,9 @@ For nvue page, iOS has no bar above the keyboard by default, and without any set
 App平台软键盘弹出有 adjustResize|adjustPan 两种模式，默认为 adjustPan 模式，H5平台因不同浏览器而异
 Soft keyboard pops up with two modes, adjustResize|adjustPan, with adjustPan mode as default on App platform but variable on H5 platform depending on different browsers
 - adjustResize：软键盘弹出时，webview窗体高度挤压。屏幕高度=webview窗体高度+软键盘高度
-- adjustResize: when the soft keyboard pops up, the form height of webview will be squeezed. Screen height= the form height of webview+ soft keyboard height
+- adjustResize: when the soft keyboard pops up, the window height of webview will be squeezed. Screen height= the window height of webview+ soft keyboard height
 - adjustPan：软键盘弹出时，webview窗体高度不变，但窗体上推，以保证输入框不被软键盘盖住
-- adjustPan: when the soft keyboard pops up, the form height of webview will be unchanged, but the form will be pushed up to ensure that the input box will not be covered by the soft keyboard
+- adjustPan: when the soft keyboard pops up, the window height of webview will be unchanged, but the window will be pushed up to ensure that the input box will not be covered by the soft keyboard
 
 配置方式，在 pages.json 中配置 style
 Configuration mode, to configure style in pages.json

@@ -23,7 +23,7 @@ The logic layer runs in an independent jscore instead of depending on the webvie
 - node.js引擎，则是v8基础上补充一些电脑专用API，比如本地io；
 - node.js engine means to supplement some computer-specific API on the basis of v8, such as local io;
 - 那么uni-app的App端的js引擎，其实是在jscore上补充了一批手机端常用的JS API，比如扫码。
-- Then, the js engine on the App side of uni-app actually supplements a number of commonly used mobile phone side JS API on jscore, such as code scanning.
+- Then, the js engine on the App side of uni-app actually supplements a number of commonly used mobile phone side JS API on jscore, such as scanning.
 
 ![](https://img.cdn.aliyun.dcloud.net.cn/uni-app/jscore.jpg)
 
@@ -46,10 +46,10 @@ Therefore, js of uni-app basically has no compatibility problem with different m
 ###### Pros and cons of separation of logic layer and view layer
 
 逻辑层和视图层分离，好处是js运算不卡渲染，最简单直接的感受就是：窗体动画稳。
-The advantage of separating the logic layer from the view layer is that js operation does not stagnate rendering. The simplest and most direct feeling is that the form animation is stable.
+The advantage of separating the logic layer from the view layer is that js operation does not stagnate rendering. The simplest and most direct feeling is that the window animation is stable.
 
 如果开发者使用过App，应该有概念，webview新窗体一边做进入动画，一边自身渲染，很容易卡动画。而uni-app则无需写预载代码，新窗体渲染快且动画稳定。
-If developers have used App, they should have the idea that if making the entry animation and rendering itself at the same time, the new webview form is very likely to stagnate animation. uni-app, on the other hand, does not need to write preload code, and the new form is rendered quickly and the animation is stable.
+If developers have used App, they should have the idea that if making the entry animation and rendering itself at the same time, the new webview window is very likely to stagnate animation. uni-app, on the other hand, does not need to write preload code, and the new window is rendered quickly and the animation is stable.
 
 但是两层分离也带来一个坏处，这两层互相通信，其实是有损耗的。
 However, the separation of the two layers also brings a disadvantage, that is, it will cause loss while the two layers communicate with each other.
@@ -153,9 +153,9 @@ When some nvue pages are first rendered on Android low-end phones, they will see
 ##### Optimize page switching animation
 
 * 页面初始化时若存在大量图片或原生组件渲染和大量数据通讯，会发生新页面渲染和窗体进入动画抢资源，造成页面切换卡顿、掉帧。建议延时100ms~300ms渲染图片或复杂原生组件，分批进行数据通讯，以减少一次性渲染的节点数量。
-* During the initialization of the page, if there are a lot of images or native component rendering and a lot of data communication, new page rendering and form entry animation will happen to grab resources, resulting in page switching stagnation and frame dropping. It is suggested to delay rendering images or complex native components for 100ms-300ms, and communicate data in batches to reduce the number of nodes rendered at one time.
+* During the initialization of the page, if there are a lot of images or native component rendering and a lot of data communication, new page rendering and window entry animation will happen to grab resources, resulting in page switching stagnation and frame dropping. It is suggested to delay rendering images or complex native components for 100ms-300ms, and communicate data in batches to reduce the number of nodes rendered at one time.
 * App端动画效果可以自定义。popin/popout的双窗体联动挤压动画效果对资源的消耗更大，如果动画期间页面里在执行耗时的js，可能会造成动画掉帧。此时可以使用消耗资源更小的动画效果，比如slide-in-right/slide-out-right。
-* The animation effect on the App side can be customized. Double-form linkage extrusion animation effect of popin/popout consumes more resources. If js is executed in the page during animation, it may cause the animation to drop frames. At this time, you can use animation effects that consume less resources, such as slide-in-right/slide-out-right.
+* The animation effect on the App side can be customized. Double-window linkage extrusion animation effect of popin/popout consumes more resources. If js is executed in the page during animation, it may cause the animation to drop frames. At this time, you can use animation effects that consume less resources, such as slide-in-right/slide-out-right.
 * App-nvue和H5，还支持页面预载，[uni.preloadPage](https://uniapp.dcloud.io/api/preload-page)，可以提供更好的使用体验
 * App-nvue and H5 also support page preloading, [uni.preloadPage](https://uniapp.dcloud.io/api/preload-page), which can provide a better user experience
 
@@ -164,7 +164,7 @@ When some nvue pages are first rendered on Android low-end phones, they will see
 1. 如果是新页面进入时背景闪白
 1. If the background flashes when a new page enters
   * 如果页面背景是深色，在vue页面中可能会发生新窗体刚开始动画时是灰白色背景，动画结束时才变为深色背景，造成闪屏。这是因为webview的背景生效太慢的问题。此时需将样式写在 ``App.vue`` 里，可以加速页面样式渲染速度。``App.vue`` 里面的样式是全局样式，每次新开页面会优先加载 ``App.vue`` 里面的样式，然后加载普通 vue 页面的样式。
-  * If the page background is dark in color, the new form might be grayish-white background at the beginning of animation in vue page, and then it becomes dark background at the end of animation, causing flicker. This is because the background of webview takes too long to become valid. At this time, you need to write the style in `App.vue` to speed up the page style rendering speed. `App.vue` The style inside is a global style. Every time a new page is opened, the style in `App.vue` will be loaded first, and then the style of the normal vue page will be loaded.
+  * If the page background is dark in color, the new window might be grayish-white background at the beginning of animation in vue page, and then it becomes dark background at the end of animation, causing flicker. This is because the background of webview takes too long to become valid. At this time, you need to write the style in `App.vue` to speed up the page style rendering speed. `App.vue` The style inside is a global style. Every time a new page is opened, the style in `App.vue` will be loaded first, and then the style of the normal vue page will be loaded.
   * app端还可以在pages.json的页面的style里单独配置页面原生背景色，比如在globalStyle->style->app-plus->background下配置全局背景色
   * app side can also configure the page native background color separately in the style of pages.json page, for example, configure the global background color under globalStyle->style->app-plus->background
 ```json

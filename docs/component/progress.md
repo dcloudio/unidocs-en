@@ -27,7 +27,7 @@ Progress bar.
 |active-mode	|String		|backwards	|backwards: 动画从头播；forwards：动画从上次结束点接着播|App、H5|
 | active-mode| String| backwards| backwards: Animation plays from the beginning; forwards: the animation continues from the last ending point| App, H5|
 |duration|number|30|进度增加1%所需毫秒数|App-nvue2.6.1+、H5 3.1.11+|
-| duration| number| 30| Milliseconds required if progressing forward 1%| App-nvue2.6.1+、H5 3.1.11+|
+| duration| number| 30| Milliseconds required if progressing forward 1%| App-nvue2.6.1+, H5 3.1.11+|
 
 
 **示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/progress/progress)

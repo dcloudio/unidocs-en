@@ -44,7 +44,7 @@ Background audio is not the background music of games, but similar to QQ Music w
 | protocol| String| Audio protocal. Default is 'http'. The direct broadcast audio with HLS protocol is supported after setting to 'hls'. However, it is temporarily not supported by the App platform.| No|
 
 **backgroundAudioManager 对象的方法列表**
-**Method form of backgroundAudioManager object**
+**Method list of backgroundAudioManager object**
 
 |方法|参数|说明|
 | Method| Parameter| Instruction|

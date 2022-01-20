@@ -90,7 +90,7 @@ Movable view container. Dragging and sliding or scaling with two fingers on the 
 |@change|EventHandle||拖动过程中触发的事件，event.detail = {x: x, y: y, source: source}，其中source表示产生移动的原因，值可为touch（拖动）、touch-out-of-bounds（超出移动范围）、out-of-bounds（超出移动范围后的回弹）、friction（惯性）和空字符串（setData）||
 | @change| EventHandle| | Event triggered during dragging, event.detail = {x: x, y: y, source: source}, wherein the source represents the reason for the movement, with the options of touch (drag), touch-out-of-bounds (out of the movement bound), out-of-bounds (rebound after exceeding the movement bound), friction (Inertia) and empty string (setData)| |
 |@scale|EventHandle||缩放过程中触发的事件，event.detail = {x: x, y: y, scale: scale}，|App、H5|
-| @scale| EventHandle| | Event triggered during zooming, event.detail = {x: x, y: y, scale: scale}，| App, H5|
+| @scale| EventHandle| | Event triggered during zooming, event.detail = {x: x, y: y, scale: scale},| App, H5|
 
 除了基本事件外，movable-view提供了两个特殊事件
 In addition to the basic events, the movable-view also provides two special events

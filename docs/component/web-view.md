@@ -281,7 +281,7 @@ web-view component has a higher level in App. If you need to write code in the v
 1. 比较简单的方式是actionsheet等原生弹出菜单
 1. The simpler way is the native pop-up menu such as actionsheet
 2. 使用[原生子窗体subNvue](/api/window/subNVues)
-2. Use [Native sub-form subNvue](/api/window/subNVues)
+2. Use [Native subwindow subNvue](/api/window/subNVues)
 
 ##### web-view组件的浏览器内核说明
 ##### Browser kernel description of the web-view component

@@ -131,7 +131,7 @@ setTimeout(function () {
 ### uni.showModal(OBJECT)
 
 显示模态弹窗，可以只有一个确定按钮，也可以同时有确定和取消按钮。类似于一个API整合了 html 中：alert、confirm。
-Display the modal pop-up window with only one OK button or both OK and Cancel buttons. Similar to an API integrating alert and confirm in html
+Display the modal pop-up window with only one OK button or both OK and Cancel buttons. Similar to an API integrating alert and confirm in html.
 
 **OBJECT参数说明**
 **OBJECT parameter description**
@@ -154,7 +154,7 @@ Display the modal pop-up window with only one OK button or both OK and Cancel bu
 |confirmColor|HexColor|否|确定按钮的文字颜色，H5平台默认为"#007aff"|H5|
 | confirmColor| HexColor| No| The text color of the OK button is "#007aff" by default for H5 platform| H5|
 |editable|Boolean|否|是否显示输入框|H5 (3.2.10+)、App (3.2.10+)|
-| editable| Boolean| No| Whether to display the input box?| H5 (3.2.10+)、App (3.2.10+)|
+| editable| Boolean| No| Whether to display the input box?| H5 (3.2.10+), App (3.2.10+)|
 |placeholderText|String|否|显示输入框时的提示文本|H5 (3.2.10+)、App (3.2.10+)|
 | placeholderText| String| No| Prompt text when the input box is displayed| H5 (3.2.10+), App (3.2.10+)|
 |success|Function|否|接口调用成功的回调函数||
@@ -216,7 +216,7 @@ Pop up the operation menu from the bottom up
 |itemColor|HexColor|否|按钮的文字颜色，字符串格式，默认为"#000000"|App-iOS不支持|
 | itemColor| HexColor| No| Button text color, in string format. The default is "#000000".| Not supported by App-iOS|
 |popover|Object|否|大屏设备弹出原生选择按钮框的指示区域，默认居中显示|App-iPad（2.6.6+）、H5（2.9.2）|
-| popover| Object| No| On large-screen devices, the display area of the native selection button box is popped up and displayed in the center by default| App-iPad（2.6.6+）、H5（2.9.2）|
+| popover| Object| No| On large-screen devices, the display area of the native selection button box is popped up and displayed in the center by default| App-iPad(2.6.6+), H5(2.9.2)|
 |success|Function|否|接口调用成功的回调函数，详见返回参数说明||
 | success| Function| No| Callback function for successful interface calling. See the notices on returning parameter description.| |
 |fail|Function|否|接口调用失败的回调函数||

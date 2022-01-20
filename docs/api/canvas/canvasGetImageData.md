@@ -10,7 +10,7 @@ Return an array to describe the pixel data hidden in the canvas area. Under cust
 | Parameter| Type| Required| Instruction|
 |---|---|---|---|
 |canvasId|String|是|画布标识，传入 ```<canvas />``` 的 canvas-id|
-| canvasId| String| Yes| Canvas identification, pass in the canvas-id of `<canvas />`|
+| canvasId| String| Yes| Canvas identification, passing in canvas-id of `<canvas />`|
 |x|Number|是|将要被提取的图像数据矩形区域的左上角 x 坐标|
 | x| Number| Yes| x coordinate of the upper left corner of the rectangular area of the image data to be extracted|
 |y|Number|是|将要被提取的图像数据矩形区域的左上角 y 坐标|

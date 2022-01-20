@@ -23,7 +23,7 @@ The App platform does not use its API for live broadcast, but directly uses the 
 | livePlayerId| `<live-player>` component id| |
 
 **livePlayerContext 对象的方法列表：**
-**Method form of livePlayerContext object:**
+**Method list of livePlayerContext object:**
 
 |方法|参数|说明|
 | Method| Parameter| Instruction|
@@ -44,7 +44,7 @@ The App platform does not use its API for live broadcast, but directly uses the 
 | exitFullScreen| Object| Exit full screen|
 
 **requestFullScreen 的 Object 参数列表：**
-**Parameter form of requestFullScreen Object:**
+**Parameter list of requestFullScreen Object:**
 
 |参数|类型|必填|说明|
 | Parameter| Type| Required| Instruction|
@@ -59,7 +59,7 @@ The App platform does not use its API for live broadcast, but directly uses the 
 | complete| Function| No| Callback function for closed interface calling (available both for successful and failed calling).|
 
 **其他方法的 Object 参数列表：**
-**Parameter form of Objects for other methods:**
+**Parameter list of Objects for other methods:**
 
 |参数|类型|必填|说明|
 | Parameter| Type| Required| Instruction|

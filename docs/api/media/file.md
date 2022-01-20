@@ -86,7 +86,7 @@ This API is mainly used to select non-media files. For media files, there are th
 |tempFilePaths|Array&lt;String&gt;|文件的本地文件路径列表|
 | tempFilePaths| Array\<String>| List of local file paths for files.|
 |tempFiles|Array&lt;Object&gt;、Array&lt;File&gt;|文件的本地文件列表，每一项是一个 File 对象|
-| tempFiles| Array\<Object>、Array\<File>| List of local files. Each item is a file object.|
+| tempFiles| Array\<Object>, Array\<File>| List of local files. Each item is a file object.|
 
 **File 对象结构如下**
 **The structure of File object is as follows.**

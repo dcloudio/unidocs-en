@@ -6,7 +6,7 @@
 ## Development specification
 
 为了实现多端兼容，综合考虑编译速度、运行性能等因素，`uni-app` 约定了如下开发规范：
-In order to achieve multi-terminal compatibility, factors such as compilation speed and running performance are comprehensively considered. `uni-app` has agreed on the following development specifications:
+In order to achieve multi-terminal compatibility, factors such as compilation speed and running performance are comprehensively considered. `uni-app` has the following development specifications:
 
 - 页面文件遵循 [Vue 单文件组件 (SFC) 规范](https://vue-loader.vuejs.org/zh/spec.html)
 - The page file follows the [Vue Single File Component (SFC) specification](https://vue-loader.vuejs.org/zh/spec.html)
@@ -481,7 +481,7 @@ The styles defined in App.vue are global styles, which act on every page. The st
 **注意：** 
 **Notice:**
 - App.vue 中通过 ``@import`` 语句可以导入外联样式，一样作用于每一个页面。
-- In App.vue, you can import out-of-line styles through the `@import` statement, which also applies to every page
+- In App.vue, you can import out-of-line styles through the `@import` statement, which also applies to every page.
 - nvue页面暂不支持全局样式
 - nvue pages do not support global styles temporarily
 
@@ -507,7 +507,7 @@ uni-app provides built-in CSS variables
 - ``var(--status-bar-height)`` 此变量在 App 里为手机实际状态栏高度。
 - `var(--status-bar-height)` represents the height of the actual status bar of the phone in the App.
 - 当设置 ``"navigationStyle":"custom"`` 取消原生导航栏后，由于窗体为沉浸式，占据了状态栏位置。此时可以使用一个高度为 ``var(--status-bar-height)`` 的 view 放在页面顶部，避免页面内容出现在状态栏。
-- When setting `"navigationStyle":"custom"` to cancel the native navigation bar, the status bar position is occupied because the form is immersive. At this time, a view with a height of `var(--status-bar-height)` can be placed at the top of the page to prevent the page content from appearing in the status bar.
+- When setting `"navigationStyle":"custom"` to cancel the native navigation bar, the status bar position is occupied because the window is immersive. At this time, a view with a height of `var(--status-bar-height)` can be placed at the top of the page to prevent the page content from appearing in the status bar.
 - 由于在H5端，不存在原生导航栏和tabbar，也是前端div模拟。如果设置了一个固定位置的居底view，在App端是在tabbar上方，但在H5端会与tabbar重叠。此时可使用`--window-bottom`，不管在哪个端，都是固定在tabbar上方。
 - Since it is on the H5 side, there is no native navigation bar and tabbar and it is also a front-end div simulation. If a fixed-position bottom view is set, it is above the tabbar on the App side, but will overlap with the tabbar on the H5 side. At this time, you can use `--window-bottom`, no matter which end it is, it is fixed above the tabbar.
 - 目前 nvue 在App端，还不支持 `--status-bar-height`变量，替代方案是在页面onLoad时通过uni.getSystemInfoSync().statusBarHeight获取状态栏高度，然后通过style绑定方式给占位view设定高度。下方提供了示例代码

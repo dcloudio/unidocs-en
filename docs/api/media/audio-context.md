@@ -10,7 +10,7 @@ Create and return the internal audio context `innerAudioContext` object.
 |√|√|
 
 **innerAudioContext 对象的属性列表**
-**attribute form of innerAudioContext object**
+**Attribute list of innerAudioContext object**
 
 |属性|类型|说明|只读|平台差异说明|
 | Attribute| Type| Instruction| Read only| Platform difference description|
@@ -36,7 +36,7 @@ Create and return the internal audio context `innerAudioContext` object.
 
 
 **innerAudioContext 对象的方法列表**
-**Method form of innerAudioContext object**
+**Method list of innerAudioContext object**
 
 |方法|参数|说明|
 | Method| Parameter| Instruction|

@@ -46,7 +46,7 @@ Multi-line input box.
 |@linechange|EventHandle||输入框行数变化时调用，event.detail = {height: 0, heightRpx: 0, lineCount: 0}|nvue ios暂不支持|
 | @linechange| EventHandle| | Called when the number of input boxes changes, event.detail = {height: 0, heightRpx: 0, lineCount: 0}| not supported by nvue ios temporarily|
 |@input|EventHandle||当键盘输入时，触发 input 事件，event.detail = {value, cursor}， @input 处理函数的返回值并不会反映到 textarea 上||
-| @input| EventHandle| | input event is triggered at keyboard inputting, event.detail = {value, cursor}， @input. The return value of the processing function will not be reflected on the textarea| |
+| @input| EventHandle| | input event is triggered at keyboard inputting, event.detail = {value, cursor},  @input. The return value of the processing function will not be reflected on the textarea| |
 |@keyboardheightchange|Eventhandle||键盘高度发生变化的时候触发此事件，event.detail = {height: height, duration: duration}|App 3.1.0+|
 | @keyboardheightchange| Eventhandle| | Trigger this event when the height of keyboard changes, event.detail = {height: height, duration: duration}| App 3.1.0+|
 
@@ -189,6 +189,6 @@ In the input box, the content is mixed with graphics and text. On the web, this 
 - 方式一：使用uni-app自带的`editor`组件，该组件支持App、H5。
 - Method 1: Use the `editor` component that comes with uni-app, which is supported on App and H5 sides.
 - 方式二：采用markdown编辑器方案，输入区输入markdown语法，预览区提供预览。这种方式可以跨端。插件市场搜[富文本编辑](https://ext.dcloud.net.cn/search?q=%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91)，有不少插件。
-- Method 2: Adopt markdown editor scheme, input markdown syntax in input area, and provide preview in preview area. In this way, cross sides are allowed. Numerous plug-ins are available in the plug-in market when searching for [Rich text editing](https://ext.dcloud.net.cn/search?q=%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91)
+- Method 2: Adopt markdown editor scheme, input markdown syntax in input area, and provide preview in preview area. In this way, cross sides are allowed. Numerous plug-ins are available in the plug-in market when searching for [Rich text editing](https://ext.dcloud.net.cn/search?q=%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91).
 - 方式三：使用web-view组件，加载html页面，此时可使用web中常见的各种富文本编辑器，插件市场也有这类插件。
 - Method 3: Use web-view component, load html pages. At this time, you can use various rich-text editors commonly found in the web, which are also available in the plug-in market.

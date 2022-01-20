@@ -18,7 +18,7 @@ Initiate a network request.
 |method|String|否|GET|有效值详见下方说明||
 | method| String| No| GET| See the description below for valid values| |
 |timeout|Number|否|60000|超时时间，单位 ms|H5(HBuilderX 2.9.9+)、APP(HBuilderX 2.9.9+)|
-| timeout| Number| No| 60000| Timeout, in ms| H5(HBuilderX 2.9.9+)、APP(HBuilderX 2.9.9+)|
+| timeout| Number| No| 60000| Timeout, in ms| H5(HBuilderX 2.9.9+), APP(HBuilderX 2.9.9+)|
 |dataType|String|否|json	|如果设为 json，会尝试对返回的数据做一次 JSON.parse||
 | dataType| String| No| json| If it is set to json, one JSON.parse will be applied to the returned data| |
 |responseType|String|否|text	|设置响应的数据类型。合法值：text、arraybuffer||
@@ -127,7 +127,7 @@ If the success/fail/complete parameter is not passed in, the encapsulated Promis
 The request task can be interrupted by `requestTask`.
 
 **requestTask 对象的方法列表**
-**Method form of requestTask object**
+**Method list of requestTask object**
 
 |方法|参数|说明|
 | Method| Parameter| Instruction|

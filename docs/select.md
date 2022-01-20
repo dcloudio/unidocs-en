@@ -58,7 +58,7 @@ Also note that conditional compilation is different from if logic judgment in co
 <!-- ... -->
 
 `uni-app`在App端，基于能力层/渲染层分离的架构设计（见下图），渲染层是webview和weex二选一，能力调用都是共同的api，比如蓝牙、扫码等能力；也就是weex被内置到`uni-app`中，并且被强化了。
-`uni-app`On the App side, based on the architecture design of capability layer/rendering layer separation (see the figure below), the rendering layer is either webview or weex, and capability calls are common APIs, such as Bluetooth, code scanning and other capabilities; That is, weex is built into`uni-app` and has been strengthened.
+`uni-app`On the App side, based on the architecture design of capability layer/rendering layer separation (see the figure below), the rendering layer is either webview or weex, and capability calls are common APIs, such as Bluetooth, scanning and other capabilities; That is, weex is built into`uni-app` and has been strengthened.
 
 ![](https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/frame_app.png)
 
@@ -96,7 +96,7 @@ If the projects on different sides are separated, it is very troublesome for mai
 In short, `uni-app` is the syntax of `Vue` + API, and there is not much additional learning cost.
 
 没学过vue的同学，也不用掌握vue的全部，只需了解vue基础语法、虚拟dom、数据绑定、组件、vuex，其他如路由、loader 不用学，cli、node.js、webpack也不需要学。
-Novices who have never learned vue do not need to master all of vue, they only need to learn about are the basic syntax of vue, virtual dom, data binding, components and vuex. Others such as routing, loader, cli, node.js, webpack are not within the scope of learning
+Novices who have never learned vue do not need to master all of vue, they only need to learn about are the basic syntax of vue, virtual dom, data binding, components and vuex. Others such as routing, loader, cli, node.js, webpack are not within the scope of learning.
 
 **uni-app 开发体验如何？支持现代前端开发流程吗？**
 **How is the development experience of uni-app? Does it support modern front-end development process?**

@@ -4,4 +4,4 @@
 
 
 **vue h5项目转换uni-app指南：**[https://ask.dcloud.net.cn/article/36174](https://ask.dcloud.net.cn/article/36174)
-**Guide to converting uni-app for vue h5 projects:** [https://ask.dcloud.net.cn/article/36174](https://ask.dcloud.net.cn/article/36174)
+**Guide to converting to uni-app for vue h5 projects:** [https://ask.dcloud.net.cn/article/36174](https://ask.dcloud.net.cn/article/36174)

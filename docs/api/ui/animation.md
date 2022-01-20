@@ -69,7 +69,7 @@ var animation = uni.createAnimation({
 The animation instance can call the following methods to describe the animation, and it will return itself after the call. It supports the writing mode of chain call.
 
 **animation 对象的方法列表：**
-**Method form of animation object:**
+**Method list of animation object:**
 
 样式：
 Style:

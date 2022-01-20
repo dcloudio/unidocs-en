@@ -2,7 +2,7 @@
 #### Migrate from the vue2 project to vue3, parts to be adapted to
 
 以下列举迁移到 vue3，必须适配的几个点，vue2 项目才能正常运行在 vue3 上。更多查看完整的[非兼容特性列表](https://github.com/vuejs/vue-next/tree/master/packages/vue-compat#incompatible)
-The following are the points that must be adapted for migration to vue3, so that the vue2 project can run normally on vue3. For more information, see the complete [List of non-compatible features](https://github.com/vuejs/vue-next/tree/master/packages/vue-compat#incompatible)
+The following are the points that must be adapted for migration to vue3, so that the vue2 project can run normally on vue3. For more inlistation, see the complete [List of non-compatible features](https://github.com/vuejs/vue-next/tree/master/packages/vue-compat#incompatible)
 
 - main.js
 
@@ -143,7 +143,7 @@ The following are the points that must be adapted for migration to vue3, so that
 - Avoid using v-if and v-for on the same element at the same time
 
   > 而 Vue3 中，v-if 总是优先于 v-for 生效。以上写法将会在 Vue3 中与预期不符合，由于语法上存在歧义，建议避免在同一元素上同时使用两者（[更多](https://v3.cn.vuejs.org/guide/migration/v-if-v-for.html#%E6%A6%82%E8%A7%88)）。
-  > However, in Vue3, v-if always become valid before v-for The above writing will be inconsistent with expectations in Vue3. Because of grammatical ambiguity, it is recommended to avoid using both on the same element ([More details](https://v3.cn.vuejs.org/guide/migration/v-if-v-for.html#%E6%A6%82%E8%A7%88)).
+  > However, in Vue3, v-if always become valid before v-for. The above writing will be inconsistent with expectations in Vue3. Because of grammatical ambiguity, it is recommended to avoid using both on the same element ([More details](https://v3.cn.vuejs.org/guide/migration/v-if-v-for.html#%E6%A6%82%E8%A7%88)).
 
 - 生命周期的适配
 - Adaptation of life cycle

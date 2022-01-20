@@ -158,7 +158,7 @@ Used for setting the applied status bar, navigation bar, title, window backgroun
 |navigationBarTitleText|String||导航栏标题文字内容||
 | navigationBarTitleText| String| | Navigation bar title text content| |
 |navigationStyle|String|default|导航栏样式，仅支持 default/custom。custom即取消默认的原生导航栏，需看[使用注意](/collocation/pages?id=customnav)|H5、App（2.0.3+）|
-| navigationStyle| String| default| Navigation bar style, can only be default/custom. custom means to cancel the default native navigation bar, please see [Notes for Use](/collocation/pages?id=customnav)| H5、App（2.0.3+）|
+| navigationStyle| String| default| Navigation bar style, can only be default/custom. custom means to cancel the default native navigation bar, please see [Notes for Use](/collocation/pages?id=customnav)| H5, App(2.0.3+)|
 |enablePullDownRefresh|Boolean|false|是否开启下拉刷新，详见[页面生命周期](/collocation/frame/lifecycle?id=页面生命周期)。||
 | enablePullDownRefresh| Boolean| false| Whether to enable pull-down refresh, see [Page Life Cycle](/collocation/frame/lifecycle?id=%E9%A1%B5%E9%9D%A2%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F) for details.| |
 |onReachBottomDistance|Number|50|页面上拉触底事件触发时距页面底部距离，单位只支持px，详见[页面生命周期](/collocation/frame/lifecycle?id=页面生命周期)||
@@ -168,7 +168,7 @@ Used for setting the applied status bar, navigation bar, title, window backgroun
 |backgroundColorBottom|HexColor|#ffffff|底部窗口的背景色（bounce回弹区域）|仅 iOS 平台|
 | backgroundColorBottom| HexColor| #ffffff| The background color of the window on the bottom (bounce area)| IOS platform only|
 |titleImage|String||导航栏图片地址（替换当前文字标题）|H5、APP|
-| titleImage| String| | Navigation bar image address (replace current text title)| H5、APP|
+| titleImage| String| | Navigation bar image address (replace current text title)| H5, APP|
 |transparentTitle|String|none|导航栏整体（前景、背景）透明设置。支持 always 一直透明 / auto 滑动自适应 / none 不透明|H5、APP|
 | transparentTitle| String| none| Overall (foreground, background) transparency setting of navigation bar. always transparent/auto sliding /none transparent are supported| H5, APP|
 |titlePenetrate|String|NO|导航栏点击穿透|H5|
@@ -190,13 +190,13 @@ Used for setting the applied status bar, navigation bar, title, window backgroun
 |rightWindow|Boolean|true|当存在 rightWindow 时，默认是否显示 rightWindow|H5|
 | rightWindow| Boolean| true| Whether or not to display the rightWindow by default when the rightWindow is present| H5|
 |rpxCalcMaxDeviceWidth|Number|960|rpx 计算所支持的最大设备宽度，单位 px|App、H5（2.8.12+）|
-| rpxCalcMaxDeviceWidth| Number| 960| Maximum device width supported by rpx calculation, in px| App、H5（2.8.12+）|
+| rpxCalcMaxDeviceWidth| Number| 960| Maximum device width supported by rpx calculation, in px| App, H5(2.8.12+)|
 |rpxCalcBaseDeviceWidth|Number|375|rpx 计算使用的基准设备宽度，设备实际宽度超出 rpx 计算所支持的最大设备宽度时将按基准宽度计算，单位 px|App、H5（2.8.12+）|
 | rpxCalcBaseDeviceWidth| Number| 375| As for the width of reference device used by rpx calculation, if actual width of the device exceeds the maximum device width supported by rpx calculation, it will be calculated according to the reference width, in px| App, H5(2.8.12+)|
 |rpxCalcIncludeWidth|Number|750|rpx 计算特殊处理的值，始终按实际的设备宽度计算，单位 rpx|App、H5（2.8.12+）|
 | rpxCalcIncludeWidth| Number| 750| The value dealt specially by rpx calculation, always according to the actual equipment width, in rpx| App, H5(2.8.12+)|
 |maxWidth|Number||单位px，当浏览器可见区域宽度大于maxWidth时，两侧留白，当小于等于maxWidth时，页面铺满；不同页面支持配置不同的maxWidth；maxWidth = leftWindow(可选)+page(页面主体)+rightWindow(可选)|H5（2.9.9+）|
-| maxWidth| Number| | In px, when the width of the visible area of the browser is greater than maxWidth, both sides are left blank; when less than or equal to maxWidth, the pages are covered; different pages support maxWidth with different configurations; maxWidth = leftWindow(optional)+page(page body)+rightWindow(optional)| H5（2.9.9+）|
+| maxWidth| Number| | In px, when the width of the visible area of the browser is greater than maxWidth, both sides are left blank; when less than or equal to maxWidth, the pages are covered; different pages support maxWidth with different configurations; maxWidth = leftWindow(optional)+page(page body)+rightWindow(optional)| H5(2.9.9+)|
 
 **注意**
 **Notice**
@@ -212,7 +212,7 @@ uni-app 2.9+ 新增 leftWindow, topWindow, rightWindow 配置。用于解决宽�
 Uni-app 2.9+ adds leftWindow, topWindow and rightWindow configurations. Used for solving the problem of widescreen adaptation.
 
 以现有的手机应用为mainWindow，在左、上、右，可以追加新的页面显示窗体。
-With the existing mobile phone application as mainWindow, new page display forms can be added on the left, top and right sides.
+With the existing mobile phone application as mainwindow, new page display windows can be added on the left, top and right sides.
 
 整体的宽屏适配思路，参考单独的[宽屏适配指南](https://uniapp.dcloud.net.cn/adapt)
 For the overall widescreen adaptation ideas, please refer to the separate [Guide to widescreen adaptation](https://uniapp.dcloud.net.cn/adapt)
@@ -481,7 +481,7 @@ The configuration items on the page will override the same configuration items i
 当navigationStyle设为custom或titleNView设为false时，原生导航栏不显示，此时要注意几个问题：
 When navigationStyle is set to custom or titleNView is set to false, the native navigation bar will not be displayed. At this time, several issues should be noted:
 - 非H5端，手机顶部状态栏区域会被页面内容覆盖。这是因为窗体是沉浸式的原因，即全屏可写内容。uni-app提供了状态栏高度的css变量[--status-bar-height](/frame?id=css%e5%8f%98%e9%87%8f)，如果需要把状态栏的位置从前景部分让出来，可写一个占位div，高度设为css变量。
-- For non-H5 side, the status bar area at the top of the mobile phone will be covered by the page content. That is because that it is an immersive form and the content is writable on full screen. uni-app provides css variables for the height of the status bar.[--status-bar-height](/frame?id=css%e5%8f%98%e9%87%8f). If you need to give up the position of the status bar from the foreground part, you can write a placeholder div with the height set to css variable.
+- For non-H5 side, the status bar area at the top of the mobile phone will be covered by the page content. That is because that it is an immersive window and the content is writable on full screen. uni-app provides css variables for the height of the status bar.[--status-bar-height](/frame?id=css%e5%8f%98%e9%87%8f). If you need to give up the position of the status bar from the foreground part, you can write a placeholder div with the height set to css variable.
 ```html
 <template>
     <view>
@@ -510,7 +510,7 @@ When navigationStyle is set to custom or titleNView is set to false, the native 
 	* 如果是App下，建议使用[titleNView](/collocation/pages?id=app-titleNView)或[subNVue](/collocation/pages?id=app-subNVues)，体验更好
 	* If it is on App side, it is recommended to use [titleNView](/collocation/pages?id=app-titleNView) or [subNVue](/collocation/pages?id=app-subNVues) for better experience
 - 前端组件在渲染速度上不如原生导航栏，原生导航可以在动画期间渲染，保证动画期间不白屏，但使用前端导航栏，在新窗体进入的动画期间可能会整页白屏，越低端的手机越明显。
-- The front-end component is inferior to the native navigation bar in rendering speed, and the native navigation bar can render during the animation to ensure that there is no blank screen during the animation. However, using the front-end navigation bar may lead to the whole page being blank during the animation once the new form enters. The more low end the mobile phone is, the more obvious this phenomenon is.
+- The front-end component is inferior to the native navigation bar in rendering speed, and the native navigation bar can render during the animation to ensure that there is no blank screen during the animation. However, using the front-end navigation bar may lead to the whole page being blank during the animation once the new window enters. The more low end the mobile phone is, the more obvious this phenomenon is.
 - 以上讨论的是前端自定义导航栏，但在App侧，原生导航栏也提供了更丰富的自定义性
 - The above-discussed is the front-end custom navigation bar, but on the App side, the native navigation bar also provides more customization
 	* titleNView：给原生导航栏提供更多配置，包括自定义按钮、滚动渐变效果、搜索框等，详见[titleNView](/collocation/pages?id=app-titleNView)
@@ -532,11 +532,11 @@ Configure the specific style when compiling to App platform, some common configu
 |Attribute|Type|Default|Description|Platform compatibility|
 |:-|:-|:-|:-|:-|
 |background|HexColor|#FFFFFF|窗体背景色。无论vue页面还是nvue页面，在App上都有一个父级原生窗体，该窗体的背景色生效时间快于页面里的css生效时间|App|
-|background|HexColor|#FFFFFF|Window background color. Both for vue pages and nvue pages, there is a parent native form on App side. The effective time of the background color of the form is faster than that of the css in the page |App|
+|background|HexColor|#FFFFFF|window background color. Both for vue pages and nvue pages, there is a parent native window on App side. The effective time of the background color of the window is faster than that of the css in the page |App|
 |titleNView|Object||导航栏 ，详见:[导航栏](/collocation/pages?id=app-titleNView)|App、H5|
 |titleNView|Object||Navigation bar, see details: [Navigation bar](/collocation/pages?id=app-titleNView)|App, H5|
 |subNVues|Object||原生子窗体，详见:[原生子窗体](/collocation/pages?id=app-subNVues)|App 1.9.10+|
-|subNVues|Object||Native subform, see details: [Native subform](/collocation/pages?id=app-subNVues)|App 1.9.10+|
+|subNVues|Object||Native subwindow, see details: [Native subwindow](/collocation/pages?id=app-subNVues)|App 1.9.10+|
 |bounce|String||页面回弹效果，设置为 "none" 时关闭效果。|App（nvue Android无页面级bounce效果，仅list、recycle-list、waterfall等滚动组件有bounce效果）|
 |bounce|String||Page bounce effect, set to "none" to close the effect. |App (nvue Android has no page-level bounce effect. Only scroll components such as list, recycle-list, and waterfall have the bounce effect) |
 |popGesture|String|close|侧滑返回功能，可选值："close"（启用侧滑返回）、"none"（禁用侧滑返回）|App-iOS|
@@ -563,7 +563,7 @@ Configure the specific style when compiling to App platform, some common configu
 | Attribute| Type| Defaults| Describe| Version compatibility|
 |:-|:-|:-|:-|:-|
 |backgroundColor|String|#F7F7F7|背景颜色，颜色值格式为"#RRGGBB"。在使用半透明标题栏时，也可以设置rgba格式||
-| backgroundColor| String| #F7F7F7| Background color, the color value format is "#RRGGBB". You can also set rgba format when using translucent title bar| |
+| backgroundColor| String| #F7F7F7| Background color, the color value format is "#RRGGBB". You can also set rgba format when using translucent title bar|
 |buttons|Array||自定义按钮，详见 [buttons](/collocation/pages?id=app-titlenview-buttons)|纯nvue即render:native时暂不支持|
 | buttons| Array| | For custom buttons, see [buttons](/collocation/pages?id=app-titlenview-buttons) for details| not supported by pure nvue, i.e. render:native, temporarily|
 |titleColor|String|#000000|标题文字颜色||
@@ -864,13 +864,13 @@ Some configurations are listed below. Regarding the comprehensive navigation bar
 
 
 #### 原生子窗体@app-subNVues
-#### Native sub-form @app-subNVues
+#### Native subwindow @app-subNVues
 
 `subNVues` 是 vue 页面的原生子窗体。用于解决App中 vue 页面中的层级覆盖和原生界面灵活自定义用的。
-`subNVues` is the native sub-form of the vue page. It is used to solve the hierarchical coverage and flexible customization of native interface in vue page in App.
+`subNVues` is the native subwindow of the vue page. It is used to solve the hierarchical coverage and flexible customization of native interface in vue page in App.
 
 它不是全屏页面，也不是组件，就是一个原生子窗体。它是一个 nvue 页面，使用 weex 引擎渲染，提供了比 cover-view 更强大的原生排版能力，方便自定义原生导航或覆盖原生地图、视频等。请详读[subNVues 开发指南](http://ask.dcloud.net.cn/article/35948)
-It is just a native child form, not a full-screen page or component. It is an nvue page, rendered by weex engine, which provides more powerful native typesetting ability than cover-view, and is convenient to customize native navigation or cover native maps, videos and so on. Please read carefully the [subNVues Development Guide](http://ask.dcloud.net.cn/article/35948)
+It is just a native subwindow, not a full-screen page or component. It is an nvue page, rendered by weex engine, which provides more powerful native typesetting ability than cover-view, and is convenient to customize native navigation or cover native maps, videos and so on. Please read carefully the [subNVues Development Guide](http://ask.dcloud.net.cn/article/35948)
 
 `subNVue` 也可以在 nvue 页面中使用。但目前在纯nvue下（render为native）还不支持。
 `subNVue` can also be used in the nvue page. However, it is currently not supported under pure nvue (rendered as native).
@@ -879,13 +879,13 @@ It is just a native child form, not a full-screen page or component. It is an nv
 | Attribute| Type| Describe|
 |:- |:-  |:-|
 |id|String| subNVue 原生子窗体的标识 |
-| id| String| Identification of native sub-form|
+| id| String| Identification of native subwindow|
 |path|String|配置 nvue 文件路径，nvue 文件需放置到使用 subNvue 的页面文件目录下|
 | path| String| Configure the nvue file path, and the nvue file needs to be placed in the page file directory using subNvue|
 |type|String|原生子窗口内置样式，可取值：'popup',弹出层；"navigationBar",导航栏|
 | type| String| Native sub-form internal style. Options include: 'popup', pop-up layer; "navigationBar", navigation bar|
 |style|Object|subNVue 原生子窗体的样式，配置项参考下方 [subNVuesStyle](/collocation/pages?id=app-subNVuesStyle)|
-| style| Object| For the configuration items of the subNVue native sub-form style, please refer to the following [subNVuesStyle](/collocation/pages?id=app-subNVuesStyle)|
+| style| Object| For the configuration items of the subNVue native subwindow style, please refer to the following [subNVuesStyle](/collocation/pages?id=app-subNVuesStyle)|
 
 **Tips**
 - `subNVues` 的 `id` 是全局唯一的，不能重复
@@ -896,32 +896,32 @@ It is just a native child form, not a full-screen page or component. It is an nv
 - The `path` attribute of `subNVues` can only be `nvue` file path
 
 ##### 原生子窗体样式@app-subNVuesStyle
-##### Native sub-form style @app-subNVuesStyle
+##### Native subwindow style @app-subNVuesStyle
 |属性|类型|默认值|描述|
 | Attribute| Type| Defaults| Describe|
 |:-|:-|:-|:-|
 |position|String|absolute|原生子窗体的排版位置，排版位置决定原生子窗体在父窗口中的定位方式。 可取值："static"，原生子窗体在页面中正常定位，如果页面存在滚动条则随窗口内容滚动；"absolute"，原生子窗体在页面中绝对定位，如果页面存在滚动条不随窗口内容滚动；"dock"，原生子窗体在页面中停靠，停靠的位置由dock属性值决定。 默认值为"absolute"。|
-| position| String| absolute| The layout position of the native child form determines the positioning mode of the native child form in the parent window. Options include: "static", the native child form is positioned normally in the page, and if there is a scroll bar on the page, it will scroll with the content of the window; "absolute", the native child form is absolutely positioned in the page. If there is a scroll bar on the page, it will not scroll with the content of the window; "dock", the native child form is docked in the page, and the location of the docking is determined by the value of the dock attribute. The default value is "absolute".|
+| position| String| absolute| The layout position of the native subwindow determines the positioning mode of the native subwindow in the parent window. Options include: "static", the native subwindow is positioned normally in the page, and if there is a scroll bar on the page, it will scroll with the content of the window; "absolute", the native subwindow is absolutely positioned in the page. If there is a scroll bar on the page, it will not scroll with the content of the window; "dock", the native subwindow is docked in the page, and the location of the docking is determined by the value of the dock attribute. The default value is "absolute".|
 |dock|String|bottom|原生子窗体的停靠方式,仅当原生子窗体 "position" 属性值设置为 "dock" 时才生效，可取值："top"，原生子窗体停靠则页面顶部；"bottom"，原生子窗体停靠在页面底部；"right"，原生子窗体停靠在页面右侧；"left"，原生子窗体停靠在页面左侧。 默认值为"bottom"。|
-| dock| String| bottom| The docking mode of the native child form will only take effect when the attribute value of "position" of the native child form is set to "dock". Options include: "top", the native child form will be docked at the top of the page. "bottom", the native child form will be docked at the bottom of the page; "right", the native child form will be docked on the right side of the page; "left", the native child form will be docked on the left side of the page. The default value is "bottom".|
+| dock| String| bottom| The docking mode of the native subwindow will only take effect when the attribute value of "position" of the native subwindow is set to "dock". Options include: "top", the native subwindow will be docked at the top of the page. "bottom", the native subwindow will be docked at the bottom of the page; "right", the native subwindow will be docked on the right side of the page; "left", the native subwindow will be docked on the left side of the page. The default value is "bottom".|
 |mask|HexColor|rgba(0,0,0,0.5)|原生子窗体的遮罩层,仅当原生子窗体 "type" 属性值设置为 "popup" 时才生效，可取值： rgba格式字符串，定义纯色遮罩层样式，如"rgba(0,0,0,0.5)"，表示黑色半透明；|
-| mask| HexColor| rgba(0,0,0,0.5)| The mask layer of the native child form is valid only when the attribute value of "type" of the native child form is set to "popup", and the Options include: rgba format string, which defines the style of solid color mask layer, such as "rgba(0,0,0,0.5)", means black and semitransparent;|
+| mask| HexColor| rgba(0,0,0,0.5)| The mask layer of the native subwindow is valid only when the attribute value of "type" of the native subwindow is set to "popup", and the Options include: rgba format string, which defines the style of solid color mask layer, such as "rgba(0,0,0,0.5)", means black and semitransparent;|
 |width|String|100%|原生子窗体的宽度,支持百分比、像素值，默认为100%。未设置width属性值时，可同时设置left和right属性值改变窗口的默认宽度。|
-| width| String| 100%| The width of the native child form, supports percentage and pixel value, with 100% as default. When the width attribute value is not set, the left and right attribute values can be set at the same time to change the default width of the window.|
+| width| String| 100%| The width of the native subwindow, supports percentage and pixel value, with 100% as default. When the width attribute value is not set, the left and right attribute values can be set at the same time to change the default width of the window.|
 |height|String|100%|原生子窗体的高度,支持百分比、像素值，默认为100%。 当未设置height属性值时，优先通过top和bottom属性值来计算原生子窗体的高度。|
-| height| String| 100%| The height of the native child form, supports percentage and pixel value, with 100% as default. When the height attribute value is not set, the top and bottom attribute values are used to calculate the height of the native child form first.|
+| height| String| 100%| The height of the native subwindow, supports percentage and pixel value, with 100% as default. When the height attribute value is not set, the top and bottom attribute values are used to calculate the height of the native subwindow first.|
 |top|String|0px|原生子窗体垂直向下的偏移量，支持百分比、像素值，默认值为0px。 未设置top属性值时，优先通过bottom和height属性值来计算原生子窗体的top位置。|
-| top| String| 0px| The vertical downward offset of the native child form, supporting percentage and pixel value, with 0px as default. When the top attribute value is not set, the bottom and height attribute values are used to calculate the top position of the native child form first.|
+| top| String| 0px| The vertical downward offset of the native subwindow, supporting percentage and pixel value, with 0px as default. When the top attribute value is not set, the bottom and height attribute values are used to calculate the top position of the native subwindow first.|
 |bottom|String||原生子窗体垂直向上偏移量,支持百分比、像素值，默认值无值（根据top和height属性值来自动计算）。 当同时设置了top和height值时，忽略此属性值； 当未设置height值时，可通过top和bottom属性值来确定原生子窗体的高度。|
-| bottom| String| | The vertical upward offset of the native child form supports percentage and pixel values, with null as default (calculated automatically according to the top and height attribute values). Ignore this attribute value when both top and height values are set; When the height value is not set, the height of the native child form can be determined by the top and bottom attribute values.|
+| bottom| String| | The vertical upward offset of the native subwindow supports percentage and pixel values, with null as default (calculated automatically according to the top and height attribute values). Ignore this attribute value when both top and height values are set; When the height value is not set, the height of the native subwindow can be determined by the top and bottom attribute values.|
 |left|String|0px|原生子窗体水平向左的偏移量，支持百分比、像素值，默认值为0px。 未设置left属性值时，优先通过right和width属性值来计算原生子窗体的left位置。|
-| left| String| 0px| The horizontal leftward offset of the native child form, supporting percentage and pixel value, with 0px as default. When the left attribute value is not set, the right and width attribute values are used to calculate the left position of the native child form first.|
+| left| String| 0px| The horizontal leftward offset of the native subwindow, supporting percentage and pixel value, with 0px as default. When the left attribute value is not set, the right and width attribute values are used to calculate the left position of the native subwindow first.|
 |right|String||原生子窗体水平向右的偏移量，支持百分比、像素值，默认无值（根据left和width属性值来自动计算）。 当设置了left和width值时，忽略此属性值； 当未设置width值时，可通过left和bottom属性值来确定原生子窗体的宽度。|
-| right| String| | The horizontal right offset of the native child form, supports percentage and pixel value, with null as default (calculated automatically according to the left and width attribute values). Ignore this attribute value when left and width values are set. When the width value is not set, the width of the native child form can be determined by the left and bottom attribute values.|
+| right| String| | The horizontal right offset of the native subwindow, supports percentage and pixel value, with null as default (calculated automatically according to the left and width attribute values). Ignore this attribute value when left and width values are set. When the width value is not set, the width of the native subwindow can be determined by the left and bottom attribute values.|
 |margin|String||原生子窗体的边距，用于定位原生子窗体的位置，支持auto，auto表示居中。若设置了left、right、top、bottom则对应的边距值失效。|
-| margin| String| | The margin of the native child form is used to locate the location of the native child form. auto (centered) is supported. If left, right, top and bottom values are set, the corresponding margin values will be invalid.|
+| margin| String| | The margin of the native subwindow is used to locate the location of the native subwindow. auto (centered) is supported. If left, right, top and bottom values are set, the corresponding margin values will be invalid.|
 |zindex|Number||原生子窗体的窗口的堆叠顺序值，拥有更高堆叠顺序的窗口总是会处于堆叠顺序较低的窗口的前面，拥有相同堆叠顺序的窗口后调用show方法则在前面。|
-| zindex| Number| | The stacking order value of the windows of the native child form, the window with higher stacking order is always in front of the window with lower stacking order, after the windows are set with the same stacking order and the show method is applied, the windows shall be positioned in the front.|
+| zindex| Number| | The stacking order value of the windows of the native subwindow, the window with higher stacking order is always in front of the window with lower stacking order, after the windows are set with the same stacking order and the show method is applied, the windows shall be positioned in the front.|
 |background|String|#FFFFFF|窗口的背景颜色,Android平台4.0以上系统才支持“transparent”背景透明样式。比如subnvue为圆角时需要设置为transparent才能看到正确的效果|
 | background| String| #FFFFFF| The background color of the window. The "transparent" background transparent style is only supported by Android platform 4.0 or above. For example, if subnvue uses rounded corner, it needs to be set to transparent to see the correct effect|
 
@@ -1026,7 +1026,7 @@ You can customize the configuration `page->app-plus->pullToRefresh` of partial p
 - 如果想在app端实现更多复杂的下拉刷新，比如美团、京东App那种拉下一个特殊图形，可以使用nvue的`<refresh>`组件。HBuilderX 2.0.3+起，新建项目选择新闻模板可以体验
 - If you want to achieve more complex pull-down refreshes on the App side, such as the Meituan and JD.COM App, you can use the `<refresh>` component of nvue. Since HBuilderX 2.0.3+, new projects can be created from news templates
 - 如果想在vue页面通过web前端技术实现下拉刷新，插件市场有例子，但前端下拉刷新的性能不如原生，复杂长列表会很卡
-- If you want to realize the pull-down refresh on vue page by web front-end technology, there are examples in the plug-in market. However, the performance of the front-end pull-down refresh is not as good as the native one, and the complex long list will be stuck
+- If you want to realize the pull-down refresh on vue page by web front-end technology, there are examples in the plug-in market. However, the perlistance of the front-end pull-down refresh is not as good as the native one, and the complex long list will be stuck
 - iOS上，default模式的下拉刷新和bounce回弹是绑定的，如果设置了bounce:none，会导致无法使用default下拉刷新
 - On iOS, the default mode pull-down refresh and bounce are bound together. If bounce:none is set, the default pull-down refresh cannot be used
 
@@ -1340,7 +1340,7 @@ tabBar configuration is provided in pages.json, not only to facilitate the rapid
 |list|Array|是||tab 的列表，详见 list 属性说明，最少2个、最多5个 tab||
 | list| Array| Yes| | tab list. See the list attribute description for details, with at least 2 tabs and at most 5 tabs| |
 |fontSize|String|否|10px|文字默认大小|App 2.3.4+、H5 3.0.0+|
-| fontSize| String| No| 10px| Default text size| App 2.3.4+、H5 3.0.0+|
+| fontSize| String| No| 10px| Default text size| App 2.3.4+, H5 3.0.0+|
 |iconWidth|String|否|24px|图标默认宽度（高度等比例缩放）|App 2.3.4+、H5 3.0.0+|
 | iconWidth| String| No| 24px| Default width of icon (height scales in equal proportion)| App 2.3.4+, H5 3.0.0+|
 |spacing|String|否|3px|图标和文字的间距|App 2.3.4+、H5 3.0.0+|
@@ -1365,7 +1365,7 @@ The list receives an array, and each item in the array is an object with the fol
 |selectedIconPath|String|否|选中时的图片路径，icon 大小限制为40kb，建议尺寸为 81px * 81px ，当 position 为 top 时，此参数无效||
 | selectedIconPath| String| No| Path of the selected image, the size of icon is limited to 40kb, and the recommended size is 81px * 81px. For position = top, this parameter is invalid| |
 |visible|Boolean|否|该项是否显示，默认显示|App (3.2.10+)、H5 (3.2.10)+|
-| visible| Boolean| No| This item is displayed or not, with displayed as default| App (3.2.10+)、H5 (3.2.10)+|
+| visible| Boolean| No| This item is displayed or not, with displayed as default| App (3.2.10+), H5 (3.2.10)+|
 
 **midButton 属性说明**
 **midButton attribute description**
@@ -1408,7 +1408,7 @@ There is no pagePath on midButton, so you need to listen to click events and han
 - 前端弹出遮罩层挡不住tabbar的问题，跨端处理方式时动态隐藏tabbar。App端可以使用subNVue做弹出和遮罩，可参考这个[底部原生图标分享菜单例子](https://ext.dcloud.net.cn/plugin?id=69)
 - The front-end pop-up mask layer can't stop the tabbar problem, and the tabbar should be dynamically hidden when the cross-platform processing mode is adopted. subNVue can be used to make pop-ups and masks on the App side, please refer to this [Example of native icon sharing menu at the bottom](https://ext.dcloud.net.cn/plugin?id=69).
 - PC宽屏上，当页面存在topWindow或leftWindow或rightWindow等多窗体结构时，若想改变 tabbar 显示的位置，请使用 [custom-tab-bar组件](https://uniapp.dcloud.io/component/custom-tab-bar) 配置，若想隐藏 tabbar，可以使用如下 css（好处是可以和 leftwindow 等窗体联动）：
-- On the PC widescreen, if you want to change the display position of tabbar when there are multi-form structures such as topWindow, leftWindow or rightWindow on the page, please use [custom-tab-bar component](https://uniapp.dcloud.io/component/custom-tab-bar) configuration. If you want to hide tabbar, you can use the following css (the advantage is that it can be linked with forms such as leftwindow):
+- On the PC widescreen, if you want to change the display position of tabbar when there are multi-window structures such as topwindow, leftwindow or rightwindow on the page, please use [custom-tab-bar component](https://uniapp.dcloud.io/component/custom-tab-bar) configuration. If you want to hide tabbar, you can use the following css (the advantage is that it can be linked with windows such as leftwindow):
     
     ```html
       .uni-app--showleftwindow + .uni-tabbar-bottom {
@@ -1503,7 +1503,7 @@ Startup mode configuration, valid only during the development period, used to si
 			//Startup page, required
 			"path": "pages/component/swiper/swiper",
 			//启动参数，在页面的onLoad函数里面得到。
-			// Startup parameter, obtained from the onLoad function of the page
+			// Startup parameter, obtained from the onLoad function of the page.
 			"query": "interval=4000&autoplay=false"
 		},
 		{

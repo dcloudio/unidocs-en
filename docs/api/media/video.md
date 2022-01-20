@@ -44,7 +44,7 @@ If you select and upload non-image and video files, please refer to: [https://un
 |tempFile|File|选定的视频文件|仅H5（2.6.15+）支持|
 | tempFile| File| Selected video file| Only supported by H5 (2.6.15+)|
 |duration|Number|选定视频的时间长度，单位为 s|APP 2.1.0+、H5|
-| duration| Number| Duration of the selected video, in s| APP 2.1.0+、H5|
+| duration| Number| Duration of the selected video, in s| APP 2.1.0+, H5|
 |size|Number|选定视频的数据量大小|APP 2.1.0+、H5|
 | size| Number| Data size of the selected video| APP 2.1.0+, H5|
 |height|Number|返回选定视频的高|APP 2.1.0+、H5|
@@ -224,11 +224,11 @@ Get video details
 | Parameter name| Type| Instruction| Platform difference description|
 |:-					|:-			|:-									||
 |orientation|string	|画面方向						|App（3.1.14+）|
-| orientation| string| Screen orientation| App（3.1.14+）|
+| orientation| string| Screen orientation| App(3.1.14+)|
 |type				|string	|视频格式						|App（3.1.14+）|
 | type| string| Video format| App(3.1.14+)|
 |duration		|number	|视频长度						|App（3.1.10+）、H5|
-| duration| number| Video length| App（3.1.10+）、H5|
+| duration| number| Video length| App(3.1.10+), H5|
 |size				|number	|视频大小，单位 kB	|App（3.1.10+）、H5|
 | size| number| Video size, in kB| App(3.1.10+), H5|
 |height			|number	|视频的长，单位 px	|App（3.1.10+）、H5|
