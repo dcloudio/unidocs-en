@@ -1,79 +1,56 @@
-const path = require('path')
-const fs = require('fs')
 const { slugify } = require('@vuepress/shared-utils')
-const parse = require('../../scripts/parse')
 const translatePlugin = require('./markdown/translate')
 const headerPlugin = require('./markdown/header')
-
-function parseBar(file, options) {
-  // TODO use markdown-it
-  function translate(content) {
-    return parse(content).target.join('\n')
-  }
-  const text = translate(fs.readFileSync(file, { encoding: 'utf8' }))
-  const itemArray = []
-  let itemCache
-  const textName = options.text || 'text'
-  const linkName = options.link || 'link'
-  const childrenName = options.children || 'children'
-  const array = text.match(/^[\t ]*[-*]\s+.+/gm) || []
-  array.forEach(str => {
-    const [_, text, link] = str.match(/[-*]\s+\[(.+?)\]\((.+?)\)/) || str.match(/[-*]\s+(.+)/)
-    const item = {}
-    item[textName] = text
-    item[linkName] = link && (/^\S+\:\/\//.test(link) ? link : path.join('/', link.replace(/\.md\b/, '').replace(/\bREADME\b/, '').replace(/\?id=/, '#')).replace(/\\/g, '/'))
-    if (/^[-*]/.test(str)) {
-      itemCache = item
-      itemArray.push(item)
-    } else {
-      delete itemCache[linkName]
-      itemCache[childrenName] = itemCache[childrenName] || []
-      itemCache[childrenName].push(item)
-    }
-  })
-  return itemArray
-}
-
-const nav = parseBar(path.join(__dirname, '../', '_navbar.md'), {
-  children: 'items'
-})
-
-const tabs = ['/collocation/', '/component/', '/api/', '/']
-const sidebar = {}
-tabs.forEach(tab => {
-  sidebar[tab] = parseBar(path.join(__dirname, '../', tab, '_sidebar.md'), {
-    text: 'title',
-    link: 'path'
-  })
-})
+const createSidebar = require('./markdown/createSidebar')
+const { simplifySlugText, tabs } = require('./utils')
 
 const config = {
+  theme: 'vuepress-theme-uni-app-test',
   // TODO use theme
   title: 'uni-app',
+  head: [
+    ['link', {
+      rel: 'shortcut icon',
+      type: 'image/x-icon',
+      href: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/d23e842c-58fc-4574-998d-17fdc7811cc3.png?v=1556263038788'
+    }]
+  ],
   themeConfig: {
+    titleLogo: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/1ae87107-2943-4ba6-be2b-390ca27c6260.png',
+    logo: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/5a7f902b-21a7-4822-884f-925219eacc4b.png',
     // TODO use plugin/theme
-    nav,
-    // TODO use plugin/theme
-    sidebar,
+    sidebar: createSidebar(tabs),
+    // sidebarDepth: 2,
     nextLinks: false,
     prevLinks: false,
     // TODO use theme
     repo: 'dcloudio/uni-app',
-    docsRepo: 'dcloudio/unidocs-en',
+    docsRepo: 'https://github.com/dcloudio/unidocs-en',
     docsBranch: 'main',
     docsDir: 'docs',
     editLinks: true,
-    smoothScroll: true,
+    editLinkText: 'Edit this page on GitHub',
+    lastUpdated: 'lastUpdated',
+    // smoothScroll: true,
     algolia: {
       apiKey: 'ca67b01d14df58783e2f7dc45c79736e',
       indexName: 'en-uniapp-dcloud',
-      appId: 'TZ0EGQ9J1Y'
+      appId: 'TZ0EGQ9J1Y',
+      searchParameters: { hitsPerPage: 50 }
     }
   },
   markdown: {
     slugify(str) {
-      const array = str.split('@')
-      return slugify(array.length > 1 ? array[array.length - 1] : str)
+      if (typeof str !== 'string') return ''
+
+      let slug = str
+      if (slug.includes('@')) {
+        let array = slug.split('@')
+        slug = array.length > 1 ? array[array.length - 1] : str
+      } else {
+        slug = simplifySlugText(slug.toLowerCase()).trim()
+      }
+      return slugify(slug)
     },
     extractHeaders: ['h1', 'h2', 'h3', 'h4'],
     chainMarkdown(config) {
@@ -83,6 +60,9 @@ const config = {
         .end()
         .plugin('convert-header')
         .use(headerPlugin)
+        .end()
+        .plugin('normallize-link')
+        .use(require('./markdown/normallizeLink'))
     }
   }
 }
