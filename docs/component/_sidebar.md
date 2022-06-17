@@ -62,9 +62,6 @@
   * [recycle-list](component/recycle-list.md)
   * [waterfall](component/waterfall.md)
   * [refresh](component/refresh.md)
-* uniCloud专用组件
-* uniCloud specific component
-  * [unicloud-db](uniCloud/unicloud-db)
 * [基础组件中原生组件说明](component/native-component.md)
 * [Description of native component in base component](component/native-component.md)
 * 扩展组件（uni ui）
