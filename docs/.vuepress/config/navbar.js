@@ -37,7 +37,7 @@ export const navbar = [
         type: 'links',
         link: 'http://www.html5plus.org/doc/h5p.html',
         items: [
-          {
+          /* {
             text: 'App扩展规范 HTML5 Plus',
             type: 'link',
             link: 'http://www.html5plus.org/doc/h5p.html'
@@ -96,7 +96,7 @@ export const navbar = [
             text: '360小程序',
             type: 'link',
             link: 'https://mp.360.cn/doc/miniprogram/dev/#/view'
-          },
+          }, */
           {
             text: 'Weex',
             type: 'link',
