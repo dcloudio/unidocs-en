@@ -33,7 +33,7 @@ export const navbar = [
         link: '/api/'
       },
       {
-        text: '其他规范',
+        text: 'Other specifications',
         type: 'links',
         link: 'http://www.html5plus.org/doc/h5p.html',
         items: [
