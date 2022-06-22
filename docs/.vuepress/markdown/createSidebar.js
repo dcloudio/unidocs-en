@@ -4,13 +4,8 @@ const MarkdownIt = require('markdown-it');
 const createMarkdownArray = require('./createMarkdownArray')
 const { isExternal } = require('../utils')
 const createSiteMap = require('./createSiteMap');
-const parse = require('../../../scripts/parse')
 
 const links = []
-
-function translate(content) {
-  return parse(content).target.join('\n')
-}
 
 function parseBar(file, options) {
   const textName = options.text || 'text'
@@ -18,10 +13,32 @@ function parseBar(file, options) {
   const contents = []
 
   new MarkdownIt()
-    .parse(translate(fs.readFileSync(file, { encoding: 'utf-8' })))
+    .parse(fs.readFileSync(file, { encoding: 'utf-8' }))
     .forEach(token => {
       if (token.type === 'inline') {
-        let [_, text, link] = token.content.match(/\[(.+?)\]\((.+?)\)/) || token.content.match(/(.+)/)
+        let text
+        let link
+        let config = {}
+        token.children.forEach(child => {
+          switch (child.type) {
+            case 'text':
+              text = child.content
+              break;
+            case 'link_open':
+              child.attrs.forEach(attr => {
+                if (attr[0] === 'href') link = attr[1]
+              })
+              break;
+            case 'code_inline':
+              try {
+                config = JSON.parse(child.content)
+              } catch (error) { }
+              break;
+
+            default:
+              break;
+          }
+        })
 
         if (link && !isExternal(link)) {
           link = path.join('/', link.replace(/\.md\b/, '')
@@ -36,7 +53,8 @@ function parseBar(file, options) {
         contents.push({
           level: token.level,
           [textName]: text,
-          [linkName]: link
+          [linkName]: link,
+          ...config
         })
       }
     })
