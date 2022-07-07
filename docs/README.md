@@ -14,9 +14,12 @@ uni-app has built-in a complete set of cross-platform ui components, and the App
 `uni-app`在手，做啥都不愁。不管领导安排什么样的项目，你都可以快速交付，不需要转换开发思维、不需要更改开发习惯。
 With `uni-app` in hand, there's nothing to worry about. No matter what kind of project your leader arranges, you can deliver it quickly without switching development mindset or changing development habits.
 
+### 快速体验
+### Quick experience
+
 <div class="quick">
-    <h3 id="快速体验"><a href="/README?id=%e5%bf%ab%e9%80%9f%e4%bd%93%e9%aa%8c" data-id="快速体验" class="anchor"><span>快速体验</span></a></h3>
-    <h3 id="..."><a href="/README?id=%e5%bf%ab%e9%80%9f%e4%bd%93%e9%aa%8c" data-id="..." class="anchor"><span>Quick experience</span></a></h3>
+   <!-- <h3 id="快速体验"><a href="/README?id=%e5%bf%ab%e9%80%9f%e4%bd%93%e9%aa%8c" data-id="快速体验" class="anchor"><span>快速体验</span></a></h3>
+    <h3 id="..."><a href="/README?id=%e5%bf%ab%e9%80%9f%e4%bd%93%e9%aa%8c" data-id="..." class="anchor"><span>Quick experience</span></a></h3> -->
     <p>一套代码，无需改动，直接编到所有平台，这不是梦想。眼见为实，扫描下面二维码，亲自体验最全面的跨平台效果！</p>
     <p>A set of codes that can be directly compiled to all platforms without modification. It is definitely not a dream. Seeing is believing. Scan the QR code below and experience the most comprehensive cross-platform effect for yourself!</p>
     <div class="flex-img-group-view">
@@ -46,7 +49,7 @@ With `uni-app` in hand, there's nothing to worry about. No matter what kind of p
 
 
 ### 为什么要选择uni-app？
-### Why choose uni-app?
+### Why uni-app?
 
 ``uni-app``在开发者数量、案例、跨端抹平度、扩展灵活性、性能体验、周边生态、学习成本、开发成本等8大关键指标上拥有更强的优势。
 `uni-app` has stronger advantages in eight key indicators, such as the number of developers, cases, cross-end smoothness, expansion flexibility, performance experience, surrounding ecology, learning cost and development cost.
