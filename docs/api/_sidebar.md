@@ -157,7 +157,7 @@
   * [uni.getFileInfo](/api/file/file?id=getFileInfo)
   * [uni.openDocument](/api/file/file?id=openDocument)
 * 绘画
-* Painting
+* Canvas
 	* [uni.createCanvasContext](api/canvas/createCanvasContext.md)
 	* [uni.canvasToTempFilePath](api/canvas/canvasToTempFilePath.md)
 	* [uni.canvasPutImageData](api/canvas/canvasPutImageData.md)
