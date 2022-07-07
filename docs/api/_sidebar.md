@@ -55,7 +55,7 @@
   * [图片](api/media/image.md)
   * [Image](api/media/image.md)
   * [文件](api/media/file.md)
-  * [Document](api/media/file.md)
+  * [File](api/media/file.md)
   * [录音管理](api/media/record-manager.md)
   * [Recording Management](api/media/record-manager.md)
   * [背景音频播放管理](api/media/background-audio-manager.md)
