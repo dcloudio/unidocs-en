@@ -17,6 +17,11 @@ export const navbar = [
         type: 'link',
         link: '/'
       },
+	  {
+	    text: 'Tutorial',
+	    type: 'link',
+	    link: '/tutorial/'
+	  },
       {
         text: 'Framework',
         type: 'link',
@@ -126,7 +131,7 @@ export const navbar = [
   },
   {
     text: 'uniMPSdk',
-    link: 'https://nativesupport.dcloud.net.cn/UniMPDocs/SDKDownload/android',
+    link: 'https://nativesupport.dcloud.net.cn/README',
     type: "link",
     target: '_blank',
     needOutbound: false

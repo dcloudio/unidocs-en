@@ -55,8 +55,6 @@
 * [Convert other projects to uni-app](translate.md)
 * [混合开发](hybrid.md)
 * [Hybrid Development](hybrid.md)
-* [uni小程序sdk](https://nativesupport.dcloud.net.cn/README)
-* [uni applet sdk](https://nativesupport.dcloud.net.cn/README)
 * [选型评估指南](select.md)
 * [Guide to selection and evaluation](select.md)
 * [应用市场上架](store.md)
