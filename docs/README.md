@@ -2,14 +2,14 @@
 pageClass: custom-page-class
 ---
 
-``uni-app`` 是一个使用 [Vue.js](https://vuejs.org/) 开发所有前端应用的框架，开发者编写一套代码，可发布到iOS、Android、PC或Mobile Web（响应式）多个平台。
+`uni-app` 是一个使用 [Vue.js](https://vuejs.org/) 开发所有前端应用的框架，开发者编写一套代码，可发布到iOS、Android、PC或Mobile Web（响应式）多个平台。
 `uni-app` is a framework that uses [Vue.js](https://vuejs.org/) to develop all front-end applications, and developers write a set of codes that can be published to iOS, Android, PC or Mobile Web (responsive) platforms.
 
 `DCloud`公司拥有900万开发者，他们创建了数百万的应用。
 `DCloud` company has 9 million developers who have created millions of applications.
 
-uni-app内置了一套完善的跨平台ui组件，App引擎内置了各种常见原生能力封装，生态中有5千多个扩展插件。
-uni-app has built-in a complete set of cross-platform ui components, and the App engine has various built-in common native capability encapsulations, with more than 5,000 expansion plug-ins in the ecology.
+`uni-app`内置了一套完善的跨平台ui组件，App引擎内置了各种常见原生能力封装，生态中有5千多个扩展插件。
+`uni-app` has built-in a complete set of cross-platform ui components, and the App engine has various built-in common native capability encapsulations, with more than 5,000 expansion plug-ins in the ecology.
 
 `uni-app`在手，做啥都不愁。不管领导安排什么样的项目，你都可以快速交付，不需要转换开发思维、不需要更改开发习惯。
 With `uni-app` in hand, there's nothing to worry about. No matter what kind of project your leader arranges, you can deliver it quickly without switching development mindset or changing development habits.
