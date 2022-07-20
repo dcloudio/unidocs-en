@@ -6,7 +6,6 @@ const { simplifySlugText, tabs } = require('./utils')
 
 const config = {
   theme: 'vuepress-theme-uni-app-test',
-  // TODO use theme
   title: 'uni-app',
   head: [
     ['link', {
@@ -18,12 +17,10 @@ const config = {
   themeConfig: {
     titleLogo: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/1ae87107-2943-4ba6-be2b-390ca27c6260.png',
     logo: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/5a7f902b-21a7-4822-884f-925219eacc4b.png',
-    // TODO use plugin/theme
     sidebar: createSidebar(tabs),
     sidebarDepth: 0,
     nextLinks: false,
     prevLinks: false,
-    // TODO use theme
     repo: 'dcloudio/uni-app',
     docsRepo: 'https://github.com/dcloudio/unidocs-en',
     docsBranch: 'main',
