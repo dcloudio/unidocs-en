@@ -71,9 +71,9 @@ const routerMap = {
   '/nvue-api': '/tutorial/nvue-api.html',
   '/nvue-css': '/tutorial/nvue-css.html', */
 
-  '/uniCloud/database': '/uniCloud/clientdb.html',
+  /* '/uniCloud/database': '/uniCloud/clientdb.html',
   '/uniCloud/uni-clientDB': '/uniCloud/clientdb.html',
-  '/uniCloud/uni-data-picker': '/component/uniui/uni-data-picker.html',
+  '/uniCloud/uni-data-picker': '/component/uniui/uni-data-picker.html', */
 
   '/share': '/api/plugins/share.html',
   '/plugin/hybrid': '/hybrid.html',
@@ -86,6 +86,7 @@ const routerMap = {
 }
 
 export default ({ fullPath, path, hash }) => {
+  return false
   fullPath = decodeURIComponent(fullPath)
   const matchFullPath = routerMap[fullPath.replace('?id=', '#').replace('.html', '')];
   if (matchFullPath) {
