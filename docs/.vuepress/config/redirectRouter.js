@@ -14,7 +14,6 @@ const routerMap = {
   '/collocation/auto/uniapp-cli-project': '/worktile/auto/uniapp-cli-project.html',
   '/collocation/i18n': '/tutorial/i18n.html',
   '/worktile/i18n': '/tutorial/i18n.html',
-  '/worktile/i18n.html': '/tutorial/i18n.html',
   '/collocation/env': '/tutorial/env.html',
   '/collocation/ssr': '/tutorial/ssr.html',
   '/ssr': '/tutorial/ssr.html',
@@ -59,7 +58,6 @@ const routerMap = {
   '/use-html5plus': '/tutorial/use-html5plus.html',
 
   '/vue-components': '/tutorial/vue-components.html',
-  '/vue-components.html': '/tutorial/vue-components.html',
   '/vue-basics': '/tutorial/vue-basics.html',
   '/vue-api': '/tutorial/vue-api.html',
   '/vue-vuex': '/tutorial/vue-vuex.html',
@@ -89,7 +87,7 @@ const routerMap = {
 
 export default ({ fullPath, path, hash }) => {
   fullPath = decodeURIComponent(fullPath)
-  const matchFullPath = routerMap[fullPath.replace('?id=', '#')];
+  const matchFullPath = routerMap[fullPath.replace('?id=', '#').replace('.html', '')];
   if (matchFullPath) {
     return {
       path: matchFullPath,
