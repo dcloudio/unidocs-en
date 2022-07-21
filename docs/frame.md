@@ -23,8 +23,7 @@ In order to achieve multi-terminal compatibility, factors such as compilation sp
 一个uni-app工程，默认包含如下目录及文件：
 A uni-app project, which contains the following directories and files by default:
 
-<pre v-pre="" data-lang="">
-	<code class="lang-" style="padding:0">
+```
 ┌─components            ...
 │  └─comp-a.vue         ...
 ├─hybrid                ...
@@ -40,8 +39,7 @@ A uni-app project, which contains the following directories and files by default
 ├─App.vue               ...
 ├─manifest.json         ...
 └─pages.json            ...
-	</code>
-</pre>
+```
 
 **Tips**
 - 编译到任意平台时，`static` 目录下的文件均会被完整打包进去，且不会编译。非 `static` 目录下的文件（vue、js、css 等）只有被引用到才会被打包编译进去。
