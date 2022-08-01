@@ -17,11 +17,6 @@ export const navbar = [
         type: 'link',
         link: '/'
       },
-	  {
-	    text: 'Tutorial',
-	    type: 'link',
-	    link: '/tutorial/'
-	  },
       {
         text: 'Framework',
         type: 'link',
