@@ -119,7 +119,7 @@ export const navbar = [
   }, */
   {
     text: 'HBuilder X',
-    link: 'https://www.dcloud.io/hbuilderx.html',
+    link: 'https://www.dcloud.io/hbuilderx.html?lang=en',
     type: "link",
     target: '_blank',
     needOutbound: false
