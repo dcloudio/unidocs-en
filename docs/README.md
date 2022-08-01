@@ -133,13 +133,6 @@ With `uni-app` in hand, there's nothing to worry about. No matter what kind of p
     </div>
 </div>
 
-### 功能框架
-### Functional framework
-
-从下面```uni-app```功能框架图可看出，```uni-app```在跨平台的过程中，不牺牲平台特色，可优雅的调用平台专有能力，真正做到海纳百川、各取所长。
-As can be seen from the following `uni-app` functional framework diagram, `uni-app` does not sacrifice platform features in the process of cross-platform, and can elegantly call platform proprietary capabilities, and truly embrace all rivers and learn from each other's strengths.
-
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/423744c0-5673-4a14-adca-14bd986c3f05.jpg)
 
 ### 一套代码，运行到多个平台
 ### A set of code that runs on multiple platforms.
