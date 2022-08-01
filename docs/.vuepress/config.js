@@ -35,7 +35,8 @@ const config = {
       indexName: 'en-uniapp-dcloud',
       appId: 'TZ0EGQ9J1Y',
       searchParameters: { hitsPerPage: 50 }
-    }
+    },
+    isDevelopment: process.env.NODE_ENV === 'development'
   },
   markdown: {
     slugify(str) {
