@@ -8165,10 +8165,10 @@ vuepress-plugin-smooth-scroll@^0.0.3:
   dependencies:
     smoothscroll-polyfill "^0.4.3"
 
-vuepress-theme-uni-app-test@^1.0.13, vuepress-theme-uni-app-test@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/vuepress-theme-uni-app-test/-/vuepress-theme-uni-app-test-1.1.0.tgz#49dc6b01c956ef42dcc71123ad453eab467ac734"
-  integrity sha512-Mcf1Db1KOqr7Dgg5lXv2l9tjYBvO1FRaxBSXUuSsrgMAyv8hULgM96RljvpNf1wEjyGVx25XfFIU8X9mmVP7Qg==
+vuepress-theme-uni-app-test@^1.1.2:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/vuepress-theme-uni-app-test/-/vuepress-theme-uni-app-test-1.1.3.tgz#6497f5b164ce23fbdbeddff9acc04760936e303e"
+  integrity sha512-95JNDzZ6hFfYwBU7ykR4EwEroHqT3Fge3GZI2C530vqpnFYcft+uKImYOgkw+NLPYnOA55hWrWMoKxpMPlwGlw==
   dependencies:
     "@vuepress/plugin-back-to-top" "^1.9.5"
     "@vuepress/theme-default" "^1.8.2"
@@ -8176,12 +8176,12 @@ vuepress-theme-uni-app-test@^1.0.13, vuepress-theme-uni-app-test@^1.1.0:
     clipboard "^2.0.11"
     vuepress "^1.8.2"
     vuepress-plugin-juejin-style-copy "^1.0.4"
-    vuepress-theme-uni-app-test "^1.0.13"
+    vuepress-theme-uni-app-test "^1.1.2"
 
-vuepress-theme-uni-app-test@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/vuepress-theme-uni-app-test/-/vuepress-theme-uni-app-test-1.1.1.tgz#1276325b50e4796ceaf28cb3b2acb53e721da02b"
-  integrity sha512-damDJthVDXLx+wGdS1C/kE8ppAtHAZb0eTgs4Kj64RDfT4qB8/l4Bk3kW209hv9QYsT58j0DcpidisnrlaNJmQ==
+vuepress-theme-uni-app-test@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/vuepress-theme-uni-app-test/-/vuepress-theme-uni-app-test-1.1.4.tgz#2ec8c9c92a9641d4932947092e887d2fda499020"
+  integrity sha512-KOTuouZX7454581T1KEY2HZRo0Jx9eGfrE9eHNcGrW8cjW3BDYTJX/AWcWJjbpJczzhCOMUFBlCxq15zNkOLQQ==
   dependencies:
     "@vuepress/plugin-back-to-top" "^1.9.5"
     "@vuepress/theme-default" "^1.8.2"
@@ -8189,7 +8189,7 @@ vuepress-theme-uni-app-test@^1.1.1:
     clipboard "^2.0.11"
     vuepress "^1.8.2"
     vuepress-plugin-juejin-style-copy "^1.0.4"
-    vuepress-theme-uni-app-test "^1.1.0"
+    vuepress-theme-uni-app-test "^1.1.2"
 
 vuepress@^1.8.2:
   version "1.8.2"

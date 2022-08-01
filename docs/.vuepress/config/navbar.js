@@ -118,19 +118,19 @@ export const navbar = [
     link: '/uniCloud/'
   }, */
   {
-    text: 'HBuilder',
-    link: 'https://hx.dcloud.net.cn/',
+    text: 'HBuilder X',
+    link: 'https://www.dcloud.io/hbuilderx.html',
     type: "link",
     target: '_blank',
     needOutbound: false
   },
-  {
+  /* {
     text: 'uniMPSdk',
     link: 'https://nativesupport.dcloud.net.cn/README',
     type: "link",
     target: '_blank',
     needOutbound: false
-  },
+  }, */
   /* {
     text: '问答社区',
     link: 'https://ask.dcloud.net.cn/explore/',
@@ -146,3 +146,17 @@ export const navbar = [
     needOutbound: false
   } */
 ]
+
+export const navbarLanguage = {
+  default: 1,
+  items: [
+    {
+      text: '简体中文',
+      link: 'https://uniapp.dcloud.net.cn/'
+    },
+    {
+      text: 'English',
+      link: 'https://en.uniapp.dcloud.io/'
+    }
+  ]
+}
