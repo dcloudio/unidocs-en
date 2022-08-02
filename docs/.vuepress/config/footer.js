@@ -147,19 +147,11 @@ export default {
           url: 'https://dcloud.io/',
         },
         {
-          subTitle: 'case',
-          url: 'https://uniapp.dcloud.io/case',
-        },
-        {
-          subTitle: 'wish',
-          url: 'https://dev.dcloud.net.cn/wish/?channel=uniapp',
-        },
-        {
           subTitle: 'License',
           url: 'https://ask.dcloud.net.cn/article/35623',
         },
         {
-          subTitle: 'join us',
+          subTitle: 'Jobs',
           url: 'https://www.dcloud.io/hr/',
         }
       ],
