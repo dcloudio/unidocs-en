@@ -117,7 +117,7 @@ export default {
           url: 'https://uniapp.dcloud.io/uniCloud/README',
         },
         {
-          subTitle: 'native-develop',
+          subTitle: 'native-support',
           url: 'https://nativesupport.dcloud.net.cn/',
         },
         {
