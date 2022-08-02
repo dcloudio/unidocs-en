@@ -52,25 +52,11 @@ export const navbar = [
     target: '_blank',
     needOutbound: false
   },
-  /* {
+  {
     text: 'uniMPSdk',
     link: 'https://nativesupport.dcloud.net.cn/README',
     type: "link",
     target: '_blank',
-    needOutbound: false
-  }, */
-  {
-    text: 'Forum',
-    link: 'https://ask.dcloud.net.cn/explore/',
-    type: "link",
-    target: '_blank',
-    needOutbound: false
-  },
-  {
-    text: 'Marketplace',
-    type: "link",
-    target: '_blank',
-    link: 'https://ext.dcloud.net.cn/',
     needOutbound: false
   }
 ]
