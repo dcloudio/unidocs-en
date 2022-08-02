@@ -13,7 +13,8 @@ const config = {
       rel: 'shortcut icon',
       type: 'image/x-icon',
       href: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/d23e842c-58fc-4574-998d-17fdc7811cc3.png?v=1556263038788'
-    }]
+    }],
+    ['script', { src: 'https://hm.baidu.com/hm.js?335faa6b53d8671e088767b0b95a706e' }]
   ],
   themeConfig: {
     titleLogo: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/1ae87107-2943-4ba6-be2b-390ca27c6260.png',
