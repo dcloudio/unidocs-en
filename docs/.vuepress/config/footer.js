@@ -146,14 +146,23 @@ export default {
           subTitle: 'DCloud',
           url: 'https://dcloud.io/',
         },
+		{
+		  subTitle: 'Jobs',
+		  url: 'https://www.dcloud.io/hr/',
+		},
         {
-          subTitle: 'License',
-          url: 'https://ask.dcloud.net.cn/article/35623',
+          subTitle: 'Terms of service',
+          url: 'https://account.dcloud.io/privacy-policy/DCloud-Terms-of-Service.html',
         },
-        {
-          subTitle: 'Jobs',
-          url: 'https://www.dcloud.io/hr/',
-        }
+		{
+		  subTitle: 'Privacy policy',
+		  url: 'https://account.dcloud.io/privacy-policy/DCloud-Privacy-Policy.html',
+		},
+		{
+		  subTitle: 'acceptable use policy',
+		  url: 'https://account.dcloud.io/privacy-policy/DCloud-Acceptable-Use-Policy.html',
+		}
+        
       ],
     },
     {
