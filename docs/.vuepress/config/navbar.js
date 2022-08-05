@@ -67,9 +67,9 @@ export const navbarLanguage = {
     {
       text: '简体中文',
       link: 'https://uniapp.dcloud.net.cn/',
-      click() {
+      /* click() {
         localStorage.setItem(window.__UNI_DOCS_ZH_KEY__ || 'unidocs-zh-language', 'zh')
-      }
+      } */
     },
     {
       text: 'English',
