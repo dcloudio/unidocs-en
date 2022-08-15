@@ -25,7 +25,7 @@ With `uni-app` in hand, there's nothing to worry about. No matter what kind of p
     <div class="flex-img-group-view">
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
-          <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/7c946930-bcf2-11ea-b997-9918a5dda011.png" width="160" />
+          <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-97fca9f2-41f6-449f-a35e-3f135d4c3875/078ef38e-e2e9-4994-9a2c-9a5219105153.png" width="160" />
         </div>
         <b>Android版</b>
         <b>Android version</b>
