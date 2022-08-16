@@ -23,9 +23,9 @@ With `uni-app` in hand, there's nothing to worry about. No matter what kind of p
     <p>一套代码，无需改动，直接编到所有平台，这不是梦想。眼见为实，扫描下面二维码，亲自体验最全面的跨平台效果！</p>
     <p>A set of codes that can be directly compiled to all platforms without modification. It is definitely not a dream. Seeing is believing. Scan the QR code below and experience the most comprehensive cross-platform effect for yourself!</p>
     <div class="flex-img-group-view">
-      <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
+      <a href="https://play.google.com/store/apps/details?id=io.dcloud.hellouniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
-          <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-97fca9f2-41f6-449f-a35e-3f135d4c3875/078ef38e-e2e9-4994-9a2c-9a5219105153.png" width="160" />
+          <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/65396ac1-13e3-440d-b421-8e37f230a544.png" width="160" />
         </div>
         <b>Android版</b>
         <b>Android version</b>
