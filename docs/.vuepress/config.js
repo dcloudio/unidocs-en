@@ -1,3 +1,4 @@
+const path = require('path');
 const { slugify } = require('@vuepress/shared-utils')
 const translatePlugin = require('./markdown/translate')
 const headerPlugin = require('./markdown/header')
@@ -68,7 +69,13 @@ const config = {
   },
   plugins: [
     ["vuepress-plugin-juejin-style-copy", copyOptions]
-  ]
+  ],
+  chainWebpack(config, isServer) {
+    config.resolve.alias.set(
+      '@theme-config',
+      path.resolve(process.cwd(), 'docs/.vuepress/config')
+    )
+  }
 }
 
 module.exports = config
