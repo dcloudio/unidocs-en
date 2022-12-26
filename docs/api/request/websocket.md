@@ -210,7 +210,7 @@ uni.onSocketOpen(function () {
   uni.closeSocket();
 });
 
-uni.onSocketClose(function (res) {
+uni.onSocketClose(function () {
   console.log('WebSocket 已关闭！');
 });
 ```
